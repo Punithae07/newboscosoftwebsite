@@ -97,11 +97,11 @@ function LeadershipPage() {
           ].map((person) => (
             <article
               key={person.slug}
-              className="leader-card group relative flex flex-col overflow-hidden rounded-xl border border-[#e2e8f0] bg-white shadow-md transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl"
+              className="leader-card group relative flex flex-col overflow-hidden rounded-xl border border-[#dce8f3] bg-white shadow-md transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl"
               style={{
                 borderRadius: "14px",
                 overflow: "hidden",
-                border: "1px solid #e2e8f0",
+                border: "1px solid #dce8f3",
                 backgroundColor: "#ffffff",
                 boxShadow: "0 6px 20px -8px rgba(15,23,42,0.12)",
               }}
@@ -112,7 +112,7 @@ function LeadershipPage() {
                   position: "relative",
                   width: "100%",
                   aspectRatio: "1 / 0.84",
-                  backgroundColor: "#eceff2",
+                  backgroundColor: "#dcebf7",
                   overflow: "hidden",
                   display: "flex",
                   alignItems: "flex-end",
@@ -154,7 +154,7 @@ function LeadershipPage() {
                     alignItems: "center",
                     justifyContent: "center",
                     borderRadius: "7px",
-                    backgroundColor: "#94a3b8",
+                    backgroundColor: "#8bb9da",
                     color: "#ffffff",
                     boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
                   }}

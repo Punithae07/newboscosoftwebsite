@@ -39,7 +39,7 @@ export function LeadershipProfilePage({ profile }: { profile: LeadershipProfile 
             <div className="w-full max-w-xs justify-self-center lg:max-w-sm lg:justify-self-end">
               <div
                 className="overflow-hidden rounded-2xl border border-white/20 shadow-card"
-                style={{ backgroundColor: "#dce8f3" }}
+                style={{ backgroundColor: "#dcebf7" }}
               >
                 <img
                   src={profile.image}

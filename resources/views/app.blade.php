@@ -43,7 +43,7 @@
       .leader-card {
         border-radius: 14px !important;
         overflow: hidden !important;
-        border: 1px solid #e2e8f0 !important;
+        border: 1px solid #dce8f3 !important;
         background-color: #ffffff !important;
         box-shadow: 0 6px 20px -8px rgba(15, 23, 42, 0.12) !important;
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease !important;
@@ -51,16 +51,16 @@
 
       .leader-card:hover {
         transform: translateY(-5px) !important;
-        border-color: #cbd5e1 !important;
+        border-color: #93c5fd !important;
         box-shadow: 0 16px 32px -10px rgba(15, 23, 42, 0.2) !important;
       }
 
-      /* Reduced photo height and light gray background */
+      /* Reduced photo height and light blue background matching reference */
       .leader-photo-wrap {
         position: relative !important;
         width: 100% !important;
         aspect-ratio: 1 / 0.84 !important;
-        background-color: #eceff2 !important;
+        background-color: #dcebf7 !important;
         overflow: hidden !important;
         display: flex !important;
         align-items: flex-end !important;
@@ -69,7 +69,7 @@
       }
 
       .leader-card:hover .leader-photo-wrap {
-        background-color: #e5e9ed !important;
+        background-color: #d0e4f5 !important;
       }
 
       .leader-photo-wrap img {
@@ -87,7 +87,7 @@
         transform: scale(1.04) !important;
       }
 
-      /* LinkedIn Button with light bright hover */
+      /* LinkedIn Button with light sky-blue matching reference */
       .leader-linkedin-btn {
         position: absolute !important;
         right: 14px !important;
@@ -99,7 +99,7 @@
         align-items: center !important;
         justify-content: center !important;
         border-radius: 7px !important;
-        background-color: #94a3b8 !important;
+        background-color: #8bb9da !important;
         color: #ffffff !important;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12) !important;
         transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
