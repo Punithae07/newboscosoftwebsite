@@ -1,0 +1,35 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class ContactStoreRequest extends FormRequest
+{
+    public function authorize(): bool
+    {
+        return true;
+    }
+
+    public function rules(): array
+    {
+        return [
+            'name' => ['required', 'string', 'max:120'],
+            'email' => ['required', 'email:rfc', 'max:190'],
+            'phone' => ['required', 'string', 'max:60', 'regex:/^[0-9+\-\s()]{7,20}$/'],
+            'company' => ['nullable', 'string', 'max:190'],
+            'country' => ['nullable', 'string', 'max:120'],
+            'industry' => ['nullable', 'string', 'max:120'],
+            'product_interest' => ['nullable', 'string', 'max:160'],
+            'message' => ['required', 'string', 'max:5000'],
+            'source_page' => ['nullable', 'string', 'max:255'],
+            'company_url' => ['nullable', 'string', 'max:255'],
+            'website' => ['nullable', 'string', 'max:255'],
+            'botcheck' => ['nullable', 'string', 'max:255'],
+            'form_issued_at' => ['nullable', 'integer', 'min:1'],
+            'form_nonce' => ['nullable', 'string', 'max:255'],
+            'form_signature' => ['nullable', 'string', 'max:255'],
+            'captcha_token' => ['nullable', 'string', 'max:4096'],
+        ];
+    }
+}

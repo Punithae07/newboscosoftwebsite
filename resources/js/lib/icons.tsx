@@ -1,0 +1,78 @@
+import {
+  ArrowRight,
+  Sparkles,
+  Cloud,
+  Network,
+  Shield,
+  Bot,
+  Building2,
+  GraduationCap,
+  Heart,
+  Landmark,
+  HandHeart,
+  Church,
+  FileCheck2,
+  Briefcase,
+  Cpu,
+  BarChart3,
+  Workflow,
+  Zap,
+  CheckCircle2,
+  Quote,
+  Star,
+  Layers,
+} from "lucide-react";
+
+export {
+  ArrowRight,
+  Sparkles,
+  Cloud,
+  Network,
+  Shield,
+  Bot,
+  Building2,
+  GraduationCap,
+  Heart,
+  Landmark,
+  HandHeart,
+  Church,
+  FileCheck2,
+  Briefcase,
+  Cpu,
+  BarChart3,
+  Workflow,
+  Zap,
+  CheckCircle2,
+  Quote,
+  Star,
+  Layers,
+};
+
+export const serviceIconMap = {
+  "ai-transformation": Bot,
+  "integration-ecosystems": Network,
+  "saas-engineering": Layers,
+  "erp-crm-implementation": Workflow,
+  "data-analytics-ai": BarChart3,
+  "cloud-infrastructure": Cloud,
+} as const;
+
+export const industryIconMap = {
+  education: GraduationCap,
+  healthcare: Heart,
+  "finance-microfinance": Landmark,
+  ngos: HandHeart,
+  enterprises: Building2,
+  "audit-compliance": Shield,
+  "faith-based": Church,
+} as const;
+
+export const productLogoMap = {
+  smartschoolnxt: "/images/product/SSP.webp",
+  higrade: "/images/product/higrade.webp",
+  "acme-erp": "/images/product/acemeerp.webp",
+  microfund: "/images/product/MicroFund.webp",
+  medsysb: "/images/product/Medsys.webp",
+  "cristo-suite": "/images/product/Cristo.webp",
+  eaudithub: "/images/product/authub.webp",
+} as const;

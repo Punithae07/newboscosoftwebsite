@@ -1,0 +1,69 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^products/audithub/?$ /products/eaudithub [R=301,L]
+    RewriteRule ^index\.php/?$ / [R=301,L]
+    RewriteRule ^services/bespoke-solutions/?$ /services/saas-engineering [R=301,L]
+    RewriteRule ^effective-case-studies/medsysb-case/?$ /success-stories/euphrasia-chikitsalaya-medsysb-rural-healthcare [R=301,L]
+    RewriteRule ^effective-case-studies/ssp-case/?$ /blog/ai-tracking-academic-progress-intelligently [R=301,L]
+    RewriteRule ^career/?$ /careers [R=301,L]
+    RewriteRule ^effective-case-studies/higrade-case/?$ /blog/higrade-higher-education-management [R=301,L]
+    RewriteRule ^cristo/parish-church-management-software/?$ /blog/parokia-transforming-church-management [R=301,L]
+    RewriteRule ^cristo/charisma-church-management-software/?$ /blog/parokia-transforming-church-management [R=301,L]
+    RewriteRule ^services/erp-customization/?$ /services/erp-crm-implementation [R=301,L]
+    RewriteRule ^cristo/about/?$ /products/cristo-suite [R=301,L]
+    RewriteRule ^services/mobile-app/?$ /services/saas-engineering [R=301,L]
+    RewriteRule ^products/cristo/?$ /products/cristo-suite [R=301,L]
+    RewriteRule ^cristo/diocese-church-management-software/?$ /products/cristo-suite [R=301,L]
+    RewriteRule ^products/smart-school-plus/?$ /products/smartschoolnxt [R=301,L]
+    RewriteRule ^cristo/religious-congregation-church-management-software/?$ /products/cristo-suite [R=301,L]
+    RewriteRule ^services/app-modernization/?$ /services/saas-engineering [R=301,L]
+    RewriteRule ^cristo/blog/?$ /blog/parokia-transforming-church-management [R=301,L]
+    RewriteRule ^chief-technology-officer/?$ /leadership/mr-felix-rajan [R=301,L]
+    RewriteRule ^public/index\.php/products/audithub/?$ /products/eaudithub [R=301,L]
+    RewriteRule ^services/web-development/?$ /services/saas-engineering [R=301,L]
+    RewriteRule ^public/index\.php/products/microfunds/?$ /products/microfund [R=301,L]
+    RewriteRule ^services/staff-augmentation/?$ /services/saas-engineering [R=301,L]
+    RewriteRule ^chief-finance-officer/?$ /leadership/fr-bosco-augustine [R=301,L]
+    RewriteRule ^cristo/?$ /products/cristo-suite [R=301,L]
+    RewriteRule ^cristo/contact/?$ /contact-us [R=301,L]
+    RewriteRule ^cristo/parokia\.html/?$ /blog/parokia-transforming-church-management [R=301,L]
+    RewriteRule ^cristo/about\.html/?$ /products/cristo-suite [R=301,L]
+    RewriteRule ^cristo/diocese\.html/?$ /products/cristo-suite [R=301,L]
+    RewriteRule ^cristo/religious-congregation\.html/?$ /products/cristo-suite [R=301,L]
+    RewriteRule ^subscribe/?$ / [R=301,L]
+    RewriteRule ^assets/images/bsoft/pdf/medsysb-brochure\.pdf$ /images/whitepaper/MSB-White-paper.pdf [R=301,L]
+    RewriteRule ^about-us/team/?$ /leadership [R=301,L]
+    RewriteRule ^public/index\.php/services/digitalmarketing/?$ /services/ai-transformation-automation [R=301,L]
+    RewriteRule ^public/index\.php/services/app-modernization/?$ /services/saas-engineering [R=301,L]
+    RewriteRule ^public/index\.php/effective-case-studies/medsysb-case/?$ /success-stories/euphrasia-chikitsalaya-medsysb-rural-healthcare [R=301,L]
+    RewriteRule ^about-us/mission/?$ /about-us [R=301,L]
+    RewriteCond %{HTTPS} !=on
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+    RewriteCond %{HTTP_HOST} ^www\.boscosofttech\.com [NC]
+    RewriteRule ^(.*)$ https://boscosofttech.com/$1 [L,R=301]
+
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+<Files ".env">
+    Require all denied
+</Files>
+
+<FilesMatch "(composer\.json|composer\.lock|package\.json|package-lock\.json|vite\.config\.js|webpack\.mix\.js)$">
+    Require all denied
+</FilesMatch>
+
+<IfModule mime_module>
+  AddHandler application/x-httpd-alt-php83___lsphp .php .php8 .phtml
+</IfModule>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php83” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php83___lsphp .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

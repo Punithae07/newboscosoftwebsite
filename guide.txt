@@ -1,0 +1,132 @@
+========================================================================
+PROJECT SETUP & EXECUTION GUIDE (BOSCO SOFT TECHNOLOGIES)
+========================================================================
+
+Step-by-step guide to set up and run the Laravel + React application from
+scratch on any machine.
+
+
+------------------------------------------------------------------------
+1. PREREQUISITES CHECKLIST
+------------------------------------------------------------------------
+Ensure the machine has the following tools installed:
+1. PHP (>= 8.2 or 8.3) with required extensions enabled:
+   - pdo_pgsql (for PostgreSQL) or pdo_mysql (for MySQL)
+   - curl, mbstring, openssl, fileinfo, xml, zip
+2. Composer (PHP Dependency Manager)
+3. Node.js (v18+ or v20+) & npm
+4. Database Engine:
+   - PostgreSQL (Port 5432) OR MySQL (Port 3306)
+5. Local Web Server:
+   - Laragon (Recommended for Windows) or standalone PHP / Apache
+
+* Laragon Tip: Open Laragon and click the "Terminal" button. It will
+  automatically configure PHP, Composer, and Node.js in the PATH.
+
+
+------------------------------------------------------------------------
+2. STEP-BY-STEP SETUP PROCESS
+------------------------------------------------------------------------
+
+STEP 1: Open Terminal & Navigate to Project Directory
+  cd C:\laragon\www\boscosoftwebsite
+
+
+STEP 2: Configure Environment Variables (.env)
+  1. If .env does not exist, copy from .env.example:
+     copy .env.example .env
+
+  2. Open .env in a text editor and configure:
+     APP_NAME="Bosco Soft Technologies"
+     APP_ENV=local
+     APP_DEBUG=true
+     APP_URL=http://127.0.0.1:8000
+
+     # Database Configuration (PostgreSQL)
+     DB_CONNECTION=pgsql
+     DB_HOST=127.0.0.1
+     DB_PORT=5432
+     DB_DATABASE=bsoft_website
+     DB_USERNAME=postgres
+     DB_PASSWORD=your_password
+
+
+STEP 3: Create the Database
+  - PostgreSQL: Open pgAdmin or HeidiSQL and create a database named:
+    bsoft_website
+  - MySQL: Open phpMyAdmin or HeidiSQL and create database:
+    bsoft_website
+
+
+STEP 4: Install PHP Dependencies
+  Run in terminal:
+  composer install
+
+
+STEP 5: Application Initialization & Database Migrations
+  Run the following commands:
+  1. Generate key:
+     php artisan key:generate
+
+  2. Run database migrations:
+     php artisan migrate
+
+  3. Create public storage symlink:
+     php artisan storage:link
+
+
+STEP 6: Frontend Setup & Assets
+  - Option A (Quickest - Run with pre-built production assets):
+    Pre-compiled assets are already included in public/build/.
+    No build step is needed if you only want to test/run the site!
+
+  - Option B (Active UI Development):
+    npm.cmd install
+    npm.cmd run dev       # For live development with Hot Reload
+    # OR
+    npm.cmd run build     # For production build
+
+
+STEP 7: Start the Server
+  Method 1 (Simplest - Artisan Serve):
+    php artisan serve
+    => Open in browser: http://127.0.0.1:8000
+
+  Method 2 (Using Laragon Virtual Host):
+    Put project in C:\laragon\www\boscosoftwebsite
+    Click "Start All" in Laragon
+    => Open in browser: http://boscosoftwebsite.test
+
+
+------------------------------------------------------------------------
+3. TROUBLESHOOTING & COMMON GOTCHAS
+------------------------------------------------------------------------
+1. "npm.ps1 cannot be loaded because running scripts is disabled":
+   Use "npm.cmd" instead of "npm" (e.g. npm.cmd run dev)
+   OR run in Admin PowerShell: Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+
+2. "composer is not recognized":
+   Use the "Terminal" button inside Laragon, or add C:\laragon\bin\composer
+   to your Windows PATH.
+
+3. Database connection refused / SQLSTATE[08006]:
+   Verify PostgreSQL or MySQL service is started, and credentials in .env
+   match your local database.
+
+4. Assets or images failing to load:
+   Ensure APP_URL=http://127.0.0.1:8000 and APP_ENV=local in .env.
+
+
+------------------------------------------------------------------------
+4. QUICK COPY-PASTE FOR DEVELOPERS
+------------------------------------------------------------------------
+cd C:\laragon\www\boscosoftwebsite
+copy .env.example .env
+composer install
+php artisan key:generate
+php artisan migrate
+php artisan storage:link
+npm.cmd install
+npm.cmd run build
+php artisan serve
+========================================================================

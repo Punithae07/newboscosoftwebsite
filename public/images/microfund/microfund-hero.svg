@@ -1,0 +1,48 @@
+<svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#1F3A5F"/>
+      <stop offset="1" stop-color="#0B1320"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#F8FBFF"/>
+      <stop offset="1" stop-color="#E3EEF9"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#FF9A5A"/>
+      <stop offset="1" stop-color="#F1662D"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="720" rx="42" fill="url(#bg)"/>
+  <circle cx="780" cy="140" r="90" fill="#F1662D" fill-opacity="0.18"/>
+  <circle cx="205" cy="150" r="70" fill="#49C2E7" fill-opacity="0.16"/>
+  <rect x="100" y="120" width="760" height="480" rx="34" fill="white" fill-opacity="0.08" stroke="white" stroke-opacity="0.14"/>
+
+  <rect x="150" y="185" width="300" height="340" rx="28" fill="url(#card)"/>
+  <rect x="170" y="215" width="260" height="18" rx="9" fill="#C7D9EA"/>
+  <rect x="170" y="255" width="182" height="16" rx="8" fill="#DDEAF7"/>
+  <rect x="170" y="295" width="220" height="14" rx="7" fill="#DDEAF7"/>
+  <rect x="170" y="335" width="160" height="14" rx="7" fill="#E8F1F8"/>
+  <rect x="170" y="385" width="260" height="90" rx="20" fill="#0F172A" fill-opacity="0.92"/>
+  <path d="M210 430H380" stroke="#49C2E7" stroke-width="12" stroke-linecap="round"/>
+  <path d="M210 395H320" stroke="#F1662D" stroke-width="12" stroke-linecap="round"/>
+
+  <rect x="490" y="165" width="320" height="180" rx="28" fill="url(#card)"/>
+  <rect x="520" y="205" width="120" height="18" rx="9" fill="#C7D9EA"/>
+  <rect x="520" y="245" width="180" height="12" rx="6" fill="#DDEAF7"/>
+  <rect x="520" y="275" width="150" height="12" rx="6" fill="#DDEAF7"/>
+  <path d="M710 285C710 247.026 740.026 217 778 217C815.974 217 846 247.026 846 285V315H710V285Z" fill="url(#accent)"/>
+  <rect x="724" y="315" width="122" height="16" rx="8" fill="#FFB98D"/>
+  <path d="M742 252C742 233.222 757.222 218 776 218C794.778 218 810 233.222 810 252V278H742V252Z" fill="#1F3A5F" fill-opacity="0.95"/>
+
+  <rect x="490" y="375" width="320" height="150" rx="28" fill="url(#card)"/>
+  <path d="M540 460C540 421.026 571.026 390 610 390C648.974 390 680 421.026 680 460V490H540V460Z" fill="#39B68D"/>
+  <path d="M700 490C700 448.026 732.026 416 774 416C815.974 416 848 448.026 848 490V490H700V490Z" fill="#1E90FF"/>
+  <rect x="540" y="420" width="80" height="12" rx="6" fill="#DDEAF7"/>
+  <rect x="700" y="445" width="110" height="12" rx="6" fill="#DDEAF7"/>
+
+  <rect x="150" y="560" width="660" height="18" rx="9" fill="#FFFFFF" fill-opacity="0.12"/>
+  <rect x="150" y="594" width="470" height="12" rx="6" fill="#FFFFFF" fill-opacity="0.12"/>
+  <rect x="700" y="98" width="150" height="42" rx="21" fill="#F1662D" fill-opacity="0.9"/>
+  <text x="731" y="125" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">MicroFund</text>
+</svg>

@@ -1,0 +1,259 @@
+import { Link } from "@tanstack/react-router";
+import { Suspense, startTransition, useEffect, useRef, useState } from "react";
+import { lazyWithRetry } from "@/lib/lazy-with-retry";
+import { ArrowRight, Award, Cpu, Globe2, Users2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const HomePageDeferred = lazyWithRetry("HomePageDeferred", () =>
+  import("./HomePageDeferred").then((module) => ({
+    default: module.HomePageDeferred,
+  })),
+);
+
+const trustMetrics = [
+  { icon: Award, value: "25+", label: "Years of experience" },
+  { icon: Users2, value: "2,600+", label: "Customers" },
+  { icon: Globe2, value: "22+", label: "Countries reached" },
+  { icon: Cpu, value: "7+", label: "Products" },
+];
+
+export function HomePage({
+  heroVideoUrl,
+  heroPosterUrl,
+}: {
+  heroVideoUrl: string;
+  heroPosterUrl: string;
+}) {
+  const [showHeroVideo, setShowHeroVideo] = useState(false);
+  const [heroVideoReady, setHeroVideoReady] = useState(false);
+  const heroVideoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const browserWindow = window as Window & {
+      requestIdleCallback?: (callback: IdleRequestCallback, options?: IdleRequestOptions) => number;
+      cancelIdleCallback?: (handle: number) => void;
+    };
+
+    let idleId: number | undefined;
+    let timeoutId: number | undefined;
+
+    const revealVideo = () => {
+      startTransition(() => {
+        setShowHeroVideo(true);
+      });
+    };
+
+    const scheduleVideo = () => {
+      if (browserWindow.requestIdleCallback && browserWindow.cancelIdleCallback) {
+        idleId = browserWindow.requestIdleCallback(revealVideo, { timeout: 1200 });
+        return;
+      }
+
+      timeoutId = window.setTimeout(revealVideo, 400);
+    };
+
+    if (document.readyState === "complete") {
+      scheduleVideo();
+    } else {
+      window.addEventListener("load", scheduleVideo, { once: true });
+    }
+
+    return () => {
+      window.removeEventListener("load", scheduleVideo);
+
+      if (idleId !== undefined) {
+        browserWindow.cancelIdleCallback?.(idleId);
+      }
+
+      if (timeoutId !== undefined) {
+        window.clearTimeout(timeoutId);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const video = heroVideoRef.current;
+
+    if (!showHeroVideo || !video) {
+      return;
+    }
+
+    const ensurePlayback = () => {
+      video.muted = true;
+      video.defaultMuted = true;
+      video.playsInline = true;
+
+      const playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === "function") {
+        playPromise.catch(() => {
+          // Ignore autoplay rejection; browser may retry after media is ready.
+        });
+      }
+    };
+
+    ensurePlayback();
+
+    const handleCanPlay = () => {
+      setHeroVideoReady(true);
+      ensurePlayback();
+    };
+    const handleLoadedData = () => setHeroVideoReady(true);
+    const handleError = () => setHeroVideoReady(false);
+    const handlePageShow = () => ensurePlayback();
+    const handleVisibilityChange = () => {
+      if (!document.hidden) {
+        ensurePlayback();
+      }
+    };
+
+    video.addEventListener("canplay", handleCanPlay);
+    video.addEventListener("loadeddata", handleLoadedData);
+    video.addEventListener("error", handleError);
+    window.addEventListener("pageshow", handlePageShow);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    return () => {
+      video.removeEventListener("canplay", handleCanPlay);
+      video.removeEventListener("loadeddata", handleLoadedData);
+      video.removeEventListener("error", handleError);
+      window.removeEventListener("pageshow", handlePageShow);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, [showHeroVideo]);
+
+  return (
+    <>
+      <section
+        className="relative overflow-hidden text-white hero-hero-background"
+        style={{
+          backgroundImage: `linear-gradient(135deg, rgba(7,18,54,0.96) 0%, rgba(10,47,120,0.82) 56%, rgba(11,60,152,0.72) 100%), url(${heroPosterUrl})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(54,125,255,0.30),transparent_24%),radial-gradient(circle_at_82%_16%,rgba(0,191,255,0.18),transparent_22%)]" aria-hidden="true" />
+        {showHeroVideo ? (
+          <video
+            ref={heroVideoRef}
+            className={`pointer-events-none absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${heroVideoReady ? "opacity-100" : "opacity-0"}`}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={heroPosterUrl}
+            aria-hidden="true"
+          >
+            <source src={heroVideoUrl} type="video/mp4" />
+          </video>
+        ) : null}
+        <div className="pointer-events-none absolute inset-0 opacity-70" aria-hidden="true" style={{ background: "linear-gradient(to right, rgba(5,15,58,0.95) 0%, rgba(7,26,94,0.88) 34%, rgba(7,26,94,0.68) 52%, rgba(7,26,94,0.42) 68%, rgba(7,26,94,0.18) 84%, rgba(7,26,94,0.08) 100%)" }} />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-white/15" aria-hidden="true" />
+
+        <div className="relative z-10 mx-auto max-w-7xl px-4 pb-10 pt-12 sm:px-6 md:pb-12 md:pt-16 lg:px-8 lg:pb-16 lg:pt-20">
+          <div className="max-w-6xl animate-slide-right lg:max-w-[67rem]">
+            <div className="mb-5 inline-flex flex-wrap items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 backdrop-blur-md">
+              <span className="text-sm font-medium tracking-wide text-white/92">AI-Enabled Platforms</span>
+              <span aria-hidden="true" className="text-sm text-white/55">|</span>
+              <span className="text-sm font-medium tracking-wide text-white/92">Connected Ecosystems</span>
+              <span aria-hidden="true" className="text-sm text-white/55">|</span>
+              <span className="text-sm font-medium tracking-wide text-white/92">Transformation That Scales</span>
+            </div>
+
+            <h1 className="t-display max-w-6xl text-white lg:max-w-none">
+              <span className="text-white">Your Partner for Digital Transformation</span>
+              <span className="block text-white">for Connected, Scalable Organizations</span>
+            </h1>
+
+            <p className="mt-5 max-w-4xl text-[18px] leading-8 text-white">
+              Boscosoft helps enterprises and institutions modernize systems, automate workflows, and connect business platforms through AI-enabled SaaS products, ERP/CRM implementation, system integrations, data analytics, and cloud infrastructure. With a practical, implementation-focused approach, we support organizations in driving long-term digital transformation and sustainable business growth.
+            </p>
+
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Button
+                asChild
+                size="lg"
+                className="hidden bg-white text-primary hover:bg-white/90 shadow-glow lg:inline-flex"
+              >
+                <Link to="/contact-us" preload="intent">
+                  Schedule Consultation <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-white/25 bg-white/10 text-white hover:bg-white/20 hover:text-white backdrop-blur-md"
+              >
+                <Link to="/products">
+                  Explore Our Products <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        <div className="relative z-10 mx-auto max-w-7xl px-4 pb-10 sm:px-6 md:pb-12 lg:px-8">
+          <div className="grid grid-cols-1 gap-3 rounded-[1.75rem] border border-white/30 bg-white/18 p-3 backdrop-blur-xl min-[420px]:grid-cols-2 lg:grid-cols-4">
+            {trustMetrics.map((stat) => {
+              const Icon = stat.icon;
+              return (
+                <div
+                  key={stat.label}
+                  className="flex flex-col items-center justify-center gap-3 rounded-2xl border border-white/20 bg-[rgba(255,255,255,0.12)] px-4 py-4 text-center shadow-[0_14px_40px_-28px_rgba(8,18,54,0.7)] min-[420px]:px-5 min-[420px]:py-5 sm:flex-row sm:items-center sm:justify-start sm:gap-4 sm:px-6 sm:text-left"
+                >
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#8ec5ff]/45 bg-[linear-gradient(180deg,rgba(77,151,255,0.38),rgba(32,87,184,0.22))] shadow-[inset_0_1px_0_rgba(255,255,255,0.22),0_14px_26px_-18px_rgba(5,15,58,0.9)] backdrop-blur-md">
+                    <Icon className="h-5 w-5 text-[#f8fbff]" />
+                  </div>
+                  <div className="min-w-0 sm:text-left">
+                    <div className="text-lg font-bold tracking-tight text-white md:text-xl">
+                      {stat.value}
+                    </div>
+                    <div className="mt-0.5 text-sm leading-6 text-white/82">{stat.label}</div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <Suspense fallback={<HomePageDeferredFallback />}>
+        <HomePageDeferred />
+      </Suspense>
+    </>
+  );
+}
+
+function HomePageDeferredFallback() {
+  return (
+    <div aria-hidden="true" className="bg-background">
+      <section className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto h-6 w-40 animate-pulse rounded-full bg-slate-200/80" />
+          <div className="mx-auto mt-5 h-11 w-full max-w-2xl animate-pulse rounded-2xl bg-slate-200/80" />
+          <div className="mx-auto mt-4 h-6 w-full max-w-3xl animate-pulse rounded-xl bg-slate-100" />
+        </div>
+
+        <div className="mt-12 grid gap-8 lg:grid-cols-2">
+          {Array.from({ length: 2 }).map((_, index) => (
+            <div
+              key={`intro-card-skeleton-${index}`}
+              className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm"
+            >
+              <div className="h-6 w-32 animate-pulse rounded-full bg-slate-200/80" />
+              <div className="mt-5 h-11 w-4/5 animate-pulse rounded-2xl bg-slate-200/80" />
+              <div className="mt-4 h-24 animate-pulse rounded-2xl bg-slate-100" />
+              <div className="mt-6 h-11 w-44 animate-pulse rounded-full bg-slate-200/80" />
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+}

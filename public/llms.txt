@@ -1,0 +1,18 @@
+# Boscosoft Technologies
+
+Boscosoft Technologies builds AI-enabled SaaS platforms, ERP and CRM implementations, analytics solutions, integration services, and cloud modernization services.
+
+## Public Pages
+
+- [Home](https://www.boscosofttech.com/)
+- [Products](https://www.boscosofttech.com/products)
+- [Services](https://www.boscosofttech.com/services)
+- [Resources](https://www.boscosofttech.com/resources)
+- [About Us](https://www.boscosofttech.com/about)
+- [Contact Us](https://www.boscosofttech.com/contact-us)
+
+## Policies
+
+- [Privacy Policy](https://www.boscosofttech.com/privacy-policy)
+- [Terms of Use](https://www.boscosofttech.com/terms-of-use)
+- [Security](https://www.boscosofttech.com/security)

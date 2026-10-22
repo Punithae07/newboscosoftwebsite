@@ -1,0 +1,1488 @@
+export type ProductSlug =
+  | "smartschoolnxt"
+  | "higrade"
+  | "acme-erp"
+  | "microfund"
+  | "medsysb"
+  | "cristo-suite"
+  | "eaudithub";
+
+export const products: Record<
+  ProductSlug,
+  {
+    name: string;
+    slug: ProductSlug;
+    category: string;
+    tagline: string;
+    description: string;
+    headline: string;
+    subheadline: string;
+    modules: string[];
+    benefits: string[];
+    idealUsers: string[];
+    heroImage: string;
+    successStoriesImage: string;
+    ctaBannerImage: string;
+    clients: { name: string; location?: string; logo: string }[];
+    testimonials: { q: string; n: string; o: string }[];
+    cta: string;
+    productSuiteIntro?: string;
+    productItems?: { title: string; description: string; logo?: string }[];
+    featuresIntro?: string;
+    featureItems?: { title: string; description: string }[];
+    advantagesIntro?: string;
+    advantageItems?: { title: string; description: string }[];
+  }
+> = {
+  smartschoolnxt: {
+    name: "SmartSchoolNxt",
+    slug: "smartschoolnxt",
+    seoTitle: "School Management System | SmartSchoolNxt | Free Demo",
+    seoDescription:
+    "SmartSchoolNxt is a school management system that simplifies admissions, attendance, examinations, fees, communication, transport, and school administration.",
+    category: "EdTech",
+    tagline: "AI-ready school ERP for connected school management.",
+    description:
+      "Simplify academics, administration, communication, fees, attendance, transport, exams, and reporting in one digital school platform.",
+    headline: "SmartSchoolNxt: AI-Ready School ERP for Connected School Management",
+    subheadline:
+      "Simplify academics, administration, communication, fees, attendance, transport, exams, and reporting in one digital school platform.",
+    featuresIntro:
+      "SmartSchoolNxt brings together the day-to-day workflows schools need to manage academics, administration, parent communication, and reporting with greater speed and clarity.",
+    featureItems: [
+      {
+        title: "Admissions Management",
+        description:
+          "Manage student admissions with streamlined registration, documentation, and approval workflows.",
+      },
+      {
+        title: "Academic Administration",
+        description:
+          "Manage academic operations with connected curriculum, classes, and performance tracking.",
+      },
+      {
+        title: "Fee Collection Control",
+        description:
+          "Simplify fee management with secure collection, tracking, and payment reporting.",
+      },
+      {
+        title: "Attendance Tracking",
+        description:
+          "Track student attendance with automated records and real-time monitoring.",
+      },
+      {
+        title: "Examination Workflows",
+        description:
+          "Manage examinations with scheduling, grading, results, and report generation.",
+      },
+      {
+        title: "Parent Communication",
+        description:
+          "Strengthen parent-school communication through connected alerts, notices, and updates.",
+      },
+      {
+        title: "Transport Coordination",
+        description:
+          "Manage school transport with route planning, vehicle tracking, and student allocation.",
+      },
+      {
+        title: "Reports and Dashboards",
+        description:
+          "Generate school reports with real-time insights for academic and operational decisions.",
+      },
+    ],
+    modules: [
+      "Admissions",
+      "Academics",
+      "Fees",
+      "Attendance",
+      "Examinations",
+      "Homework",
+      "Communication",
+      "Transport",
+      "Timetable",
+      "Reports",
+      "Mobile access",
+    ],
+    benefits: [
+      "Reduced paperwork and manual administration",
+      "Better parent-school communication",
+      "Faster fee, attendance, and examination workflows",
+      "Improved academic visibility",
+      "More organized school operations",
+    ],
+    advantagesIntro:
+      "SmartSchoolNxt is designed for schools that need tighter process control, better parent engagement, and more reliable academic and administrative visibility.",
+    advantageItems: [
+      {
+        title: "Reduced paperwork and manual administration",
+        description:
+          "Reduce paperwork with automated workflows, centralized records, and efficient school management.",
+      },
+      {
+        title: "Better parent-school communication",
+        description:
+          "Strengthen parent-school communication through timely updates, notices, and connected communication.",
+      },
+      {
+        title: "Faster fee, attendance, and examination workflows",
+        description:
+          "Simplify fee management, attendance, and examinations with automated digital workflows.",
+      },
+      {
+        title: "Improved academic visibility",
+        description:
+          "Gain better academic visibility with real-time insights, reports, and performance tracking.",
+      },
+      {
+        title: "More organized school operations",
+        description:
+          "Streamline school management with connected academic and administrative workflows.",
+      },
+      {
+        title: "Implementation-friendly for growing institutions",
+        description:
+          "Support schools as they scale with a platform that is easier to manage, train, and adopt across teams.",
+      },
+    ],
+    idealUsers: ["Schools", "School groups", "Principals", "Administrators", "Teachers", "Parents", "Students"],
+    heroImage: "/images/product/smartschoolnxt-school-erp-hd.avif",
+    successStoriesImage: "/images/smartschool/smartschool-schoolimg.avif",
+    ctaBannerImage: "/images/smartschool/smartschoolimge-pr.avif",
+    clients: [
+      { name: "Fuscos School", logo: "/images/smartschool/client01.avif" },
+      { name: "St. Joseph's Matric Hr. Sec. School", logo: "/images/smartschool/client02.avif" },
+      { name: "Auxilium ICSE School", logo: "/images/smartschool/client03.avif" },
+      { name: "K-12 partner school", logo: "/images/smartschool/client04.avif" },
+      { name: "District school partner", logo: "/images/smartschool/client05.avif" },
+      { name: "Regional school partner", logo: "/images/smartschool/client06.avif" },
+    ],
+    testimonials: [
+      {
+        q: "We are using SmartSchoolNxT software for the past 8 years. The software program is mainly useful to print the report cards, sending SMS and other features. We are happy and satisfied with your services.",
+        n: "Sr. Ronica Chandra",
+        o: "Principal, Bangalore",
+      },
+      {
+        q: "We use SmartSchoolNxT software by Bosco Soft Technologies for the past two year. The software is excellent. We are happy and satisfied with the services rendered by your staff.",
+        n: "Sr. Shiji Abraham",
+        o: "Principal, Angamaly",
+      },
+      {
+        q: "Giving of Progress Cards are very easy and it saves lot of time than when it was hand written by individual class Teachers. Thanks to SmartSchool Team.",
+        n: "Sr. Lincy FMA",
+        o: "Principal, Bangalore",
+      },
+      {
+        q: "I personally appreciate your team for the patient listening to our staff to solve the issues whenever raised. Together with your cooperation we are able to give quality services to our students and parents.",
+        n: "Fr. G. Maria Gladston",
+        o: "Correspondent, Nagercoil",
+      },
+      {
+        q: "With the help of SmartSchoolNxT, we get a complete end to end system that enables us to cohesively and efficiently manage all our School management activities in an efficient manner. The way you respond to the problem areas and troubleshoot accordingly is great. We are very happy to be associated with you.",
+        n: "Rev. Msgr. Leslie Moras",
+        o: "Episcopal Vicar, For Education & Medical Ministries, Mysore",
+      },
+      {
+        q: "We would like to extend our heartfelt gratitude for the exceptional support and dedication in implementing and utilizing various modules such as Student Attendance, Examination, Mark Entry, Report Card, Fees, Fee Reminder, Inventory, Circular & Notification, Staff Attendance, and Website. The seamless integration of these features has played a pivotal role in streamlining our administrative processes and significantly enhancing the overall efficiency of our school operations. Your tireless efforts in ensuring the successful execution of these modules have not only improved day-to-day management but also brought about a more structured and effective system. We greatly appreciate the continuous support and collaboration that has been key to achieving these milestones.",
+        n: "Fr. Dr J. Dennis solomon sdb",
+        o: "Baithalongso, Assam",
+      },    ],
+    cta: "Request a SmartSchoolNxt Demo",
+  },
+  higrade: {
+    name: "HiGrade",
+    slug: "higrade",
+    category: "Higher Education ERP",
+    seoTitle: "ERP for Colleges | Campus Management System | HiGrade",
+    seoDescription:
+    "HiGrade is an ERP for colleges and a campus management system that manages admissions, academics, examinations, faculty, fees, accreditation, and campus operations.",
+    tagline: "AI-ready higher education ERP for connected campus management.",
+    description:
+      "Unify admissions, academics, examinations, accreditation, finance, HR, LMS, communication, and reporting in one higher education ERP.",
+    headline: "HiGrade: AI-Ready Higher Education ERP for Connected Campus Management",
+    subheadline:
+      "Unify admissions, academics, examinations, accreditation, finance, HR, LMS, communication, and reporting in one scalable higher education ERP.",
+    featuresIntro:
+      "HiGrade is built to support the full academic and administrative lifecycle of colleges and universities, from admissions to accreditation and reporting.",
+    featureItems: [
+      {
+        title: "Student Lifecycle Management",
+        description:
+          "Track admissions, enrollment, progression, examination history, and academic records from one campus platform.",
+      },
+      {
+        title: "Academic Programme Coordination",
+        description:
+          "Manage courses, departments, timetables, faculty allocation, and academic calendars with better institutional control.",
+      },
+      {
+        title: "Examinations and Results",
+        description:
+          "Handle exam planning, marks processing, results publication, and student performance review through structured workflows.",
+      },
+      {
+        title: "Outcome-Based Education Support",
+        description:
+          "Capture academic outcomes, assessment alignment, and program performance to strengthen institutional quality processes.",
+      },
+      {
+        title: "Accreditation Readiness",
+        description:
+          "Organize compliance documentation, reports, and academic evidence needed for NAAC, NBA, and institutional review cycles.",
+      },
+      {
+        title: "LMS and Communication Integration",
+        description:
+          "Support connected learning, notifications, and campus communication between faculty, students, and administrators.",
+      },
+      {
+        title: "Finance and HR Administration",
+        description:
+          "Connect academic operations with finance, payroll, and staff administration for smoother institutional management.",
+      },
+      {
+        title: "Campus Reporting",
+        description:
+          "Generate dashboards and reports that help management monitor academic, operational, and accreditation performance.",
+      },
+    ],
+    modules: [
+      "Admissions",
+      "Academic programme management",
+      "Timetable",
+      "Examinations",
+      "OBE",
+      "Accreditation",
+      "LMS",
+      "Finance",
+      "HR & Payroll",
+      "Reports",
+      "Student portals",
+    ],
+    benefits: [
+      "Improved academic and administrative coordination",
+      "Better accreditation and documentation readiness",
+      "Centralized student lifecycle management",
+      "Faster reporting and decision-making",
+      "Stronger stakeholder communication",
+    ],
+    advantagesIntro:
+      "HiGrade helps higher education institutions improve coordination, documentation, student visibility, and decision-making across the campus ecosystem.",
+    advantageItems: [
+      {
+        title: "Improved academic and administrative coordination",
+        description:
+          "Bring departments, faculty, examination offices, and administration teams onto one coordinated operational system.",
+      },
+      {
+        title: "Better accreditation and documentation readiness",
+        description:
+          "Maintain organized records and academic evidence that support faster response during audits and accreditation cycles.",
+      },
+      {
+        title: "Centralized student lifecycle management",
+        description:
+          "Manage student information from application to graduation without fragmented systems and duplicated records.",
+      },
+      {
+        title: "Faster reporting and decision-making",
+        description:
+          "Provide institutional leaders with timely reports on academics, compliance, and operational performance.",
+      },
+      {
+        title: "Stronger stakeholder communication",
+        description:
+          "Improve communication across faculty, students, departments, and administration with more connected workflows.",
+      },
+      {
+        title: "Built for multi-campus and evolving institutions",
+        description:
+          "Support institutions that need a scalable ERP foundation for growth, compliance, and academic modernization.",
+      },
+    ],
+    idealUsers: ["Colleges", "Universities", "Autonomous institutions", "Multi-campus education groups"],
+    heroImage: "/images/product/higrade-campus-erp-hd.webp",
+    successStoriesImage: "/images/cristo/college-staff.avif",
+    ctaBannerImage: "/images/cristo/college-student.avif",
+    clients: [
+      { name: "Mar Gregorios College", location: "Chennai", logo: "/images/higrade/client01.avif" },
+      { name: "Voorhees College", location: "Vellore", logo: "/images/higrade/client012.avif" },
+            {
+        name: "Chevalier T. Thomas Elizabeth College for Women",
+        location: "Perambur",
+        logo: "/images/higrade/client03.avif",
+      },
+      { name: "Don Bosco College", location: "Yelagiri Hills", logo: "/images/higrade/client04.avif" },
+            {
+        name: "Marudhar Kesari Jain College for Women",
+        location: "Vaniyambadi",
+        logo: "/images/higrade/client05.avif",
+      },
+      { name: "Don Bosco College", location: "Itanagar", logo: "/images/higrade/client08.avif" },
+    ],
+    testimonials: [
+      {
+        q: "The HiGrade ERP is user friendly and it gives overall reports of the institute. And it helps us to maintain students profile effectively and we are able maintain students mentoring easily for our reference. It's easy to access from anywhere.",
+        n: "Rev. Fr. John Joseph SDB",
+        o: "Vice Principal, Don Bosco Polytechnic College, Thirukazhukundram",
+      },
+      {
+        q: "Kudos to Boscosoft Team for strategizing and developing a comprehensive and effective ERP for automation of HEIs. St. Alphonsa College of Arts and Science, Karungal is very happy to manage the College through HiGrade. We are very happy to receive prompt services in managing and resolving issues. Keep up the good work and come out with newer modules and features for effective management of HEIs.",
+        n: "Dr S Isias",
+        o: "Principal, St Alphonsa College of Arts and Science, Kanyakumari",
+      },
+      {
+        q: "The HiGrade ERP offered by Bosco Soft Technologies enables our institute to move towards excellence. With various possibilities of analysis and report generation, we are endowed with transparency, accountability and systematization. It helps both the staff and the students to be aware and to be exact in their duties and responsibilities. With many processes made simple, we are now able to invest our time and energy, not so much in maintaining the records, but in the formation of students. Thanks to Boscosoft.",
+        n: "Rev. Fr. Prince Raja SDB",
+        o: "Dean of Studies, Don Bosco Polytechnic College, Tharangambadi",
+      },
+      {
+        q: "We had two strong months so far with the HiGrade ERP portal. As an institution believes in the trustworthiness of a software, you have made it to the next level of executing reliability and convenience. The portal is user friendly and easily operated and understood by faculty members. The availability of the technical staff to clarify any doubts either at the level of admin or faculty is appreciable.",
+        n: "Dr. Deepa BM",
+        o: "Principal, Sacred Heart Degree College for Women, Bengaluru",
+      },
+      {
+        q: "I appreciate the initiatives taken by the Boscosoft to make our dream realized in the form of HiGrade ERP. It can be of great help for the higher education institutions to keep them up to date. The options provided are user friendly. The customer support is prompt and of standard. Congratulations to the team and all those who are accompanying them. God bless you all.",
+        n: "Rev. Fr. S. Bharathi Bernadsha SDB",
+        o: "Vice Principal, Don Bosco College, Dharmapuri",
+      },
+      {
+        q: "Loyola College commends HiGrade for significantly streamlining the administrative processes and delivering outstanding service. I Appreciate and highly recommend the platform for reliable college automation software.",
+        n: "Rev. Fr. Basil Xavier SJ",
+        o: "Principal, Loyola College, Vettavalam",
+      },
+      {
+        q: "I would like to express my sincere thanks for your continuous effort and strong backend support. Your prompt responses, technical expertise, and dedication greatly helped us ensure smooth and accurate mark entry, verification, and the successful publication of results within the scheduled timeline. Thank you for your timely clarifications, quick resolutions, and constant follow-up throughout the process-your support made a significant impact, and we sincerely appreciate your commitment.",
+        n: "Dr. G. Vinu Priya",
+        o: "Controller of Examinations, DKM College for Women (Autonomous)",
+      },
+    ],
+    cta: "Request a HiGrade Demo",
+  },
+  "acme-erp": {
+    name: "Acme.erp",
+    slug: "acme-erp",
+    seoTitle: "NGO Accounting Software | Acme ERP | Book a Free Demo",
+    seoDescription:
+    "Acme ERP is NGO accounting software that simplifies fund accounting, financial management, payroll, reporting, compliance, and branch accounting for nonprofit organizations.",
+    category: "Financial Management ERP",
+    tagline: "ERP for accounting, fund control, branch reporting, payroll, assets, and compliance.",
+    description:
+      "Manage accounting, fund control, branch reporting, payroll, assets, compliance, and consolidated financial visibility in one ERP platform.",
+    headline: "Acme.erp: Financial Management ERP for Purpose-Driven Organizations",
+    subheadline:
+      "Manage accounting, fund control, branch reporting, payroll, assets, compliance, and consolidated financial visibility in one ERP platform.",
+    featuresIntro:
+      "Acme.erp delivers financial control, branch-wise reporting, payroll, and compliance workflows for organizations that need stronger accounting discipline across distributed operations.",
+    featureItems: [
+      {
+        title: "Financial Accounting",
+        description:
+          "Record transactions accurately and maintain structured accounting workflows with stronger control over day-to-day finance operations.",
+      },
+      {
+        title: "Fund Management",
+        description:
+          "Track designated funds, internal allocations, and fund utilization with clearer accountability and reporting.",
+      },
+      {
+        title: "Branch-Level Monitoring",
+        description:
+          "Monitor branch performance, expenses, and compliance from head office without relying on disconnected spreadsheets.",
+      },
+      {
+        title: "Head Office Consolidation",
+        description:
+          "Combine branch financial data into consolidated reports for leadership review, planning, and audit readiness.",
+      },
+      {
+        title: "Payroll Administration",
+        description:
+          "Manage salary processing, payroll records, and employee-related finance workflows with greater consistency.",
+      },
+      {
+        title: "Asset and Stock Control",
+        description:
+          "Track assets and stock movements alongside financial records to improve operational and accounting alignment.",
+      },
+      {
+        title: "Budgeting and Compliance",
+        description:
+          "Support planned spending, internal controls, and compliance processes with structured digital finance workflows.",
+      },
+      {
+        title: "Management Reporting",
+        description:
+          "Generate reports that help organizations monitor fund utilization, branch performance, and financial health.",
+      },
+    ],
+    modules: [
+      "Financial accounting",
+      "Fund management",
+      "Branch control",
+      "Head office consolidation",
+      "Payroll",
+      "Assets",
+      "Stock",
+      "Budgeting",
+      "Reporting",
+      "Compliance",
+    ],
+    benefits: [
+      "Better fund visibility and transparency",
+      "Faster financial consolidation",
+      "Stronger audit and compliance readiness",
+      "Improved branch-level control",
+      "Better financial governance",
+    ],
+    advantagesIntro:
+      "Acme.erp is built for mission-driven and multi-branch organizations that need trustworthy finance operations, stronger controls, and transparent reporting.",
+    advantageItems: [
+      {
+        title: "Better fund visibility and transparency",
+        description:
+          "Give leadership and finance teams a clearer picture of fund inflows, allocations, utilization, and accountability.",
+      },
+      {
+        title: "Faster financial consolidation",
+        description:
+          "Reduce the time and effort required to combine branch data and prepare consolidated financial reports.",
+      },
+      {
+        title: "Stronger audit and compliance readiness",
+        description:
+          "Keep financial records more organized and review-friendly for internal checks, external audits, and governance needs.",
+      },
+      {
+        title: "Improved branch-level control",
+        description:
+          "Support distributed institutions with stronger oversight into branch transactions, reporting discipline, and performance.",
+      },
+      {
+        title: "Better financial governance",
+        description:
+          "Enable smarter decisions through timely reports, stronger controls, and consistent finance workflows across the organization.",
+      },
+      {
+        title: "Purpose-built for nonprofit and institutional finance",
+        description:
+          "Fit the needs of organizations that require accountability, branch visibility, and dependable long-term financial structure.",
+      },
+    ],
+    idealUsers: [
+      "NGOs",
+      "Religious institutes",
+      "Charitable institutions",
+      "Nonprofit networks",
+      "Multi-branch organizations",
+    ],
+    // Acme ERP currently falls back to the shared corporate banking hero.
+    heroImage: "/images/product/acme-erp-finance-hd.avif",
+    successStoriesImage: "/images/acemerp/accounitsoftware01.avif",
+    ctaBannerImage: "/images/acemerp/accounitsoftware02.avif",
+    clients: [
+      { name: "Anne of Providence", logo: "/images/acemerp/client01.avif" },
+      { name: "Claretian Missionaries", logo: "/images/acemerp/client02.avif" },
+      { name: "Order of Friars Minor Capuchin", logo: "/images/acemerp/client03.avif" },
+      { name: "Immaculate Heart of Mary's Generalate", logo: "/images/acemerp/client04.avif" },
+      { name: "SAV", logo: "/images/acemerp/client05.avif" },
+      { name: "Sisters of St. Anne Madras", logo: "/images/acemerp/client06.avif" },
+    ],
+    testimonials: [
+      {
+        q: "The Best ERP, that helped us to bring our accounts in branches under control",
+        n: "Fr. Edwin Vasanth",
+        o: "Economer, Salesians of Don Bosco, Chennai Province.",
+      },
+      {
+        q: "Acme.erp is one of the best accounting software, very easy and simple to use and get the desirable reports.",
+        n: "Sr. Bridgit Joseph",
+        o: "Sisters of Charity Hyderabad, Provincial Treasurer.",
+      },
+      {
+        q: "I appreciate all of your help, enthusiasm, and attention to detail with your duties. This ERP is better off with you. We are happy and satisfied with the services rendered by your staff.",
+        n: "Sr. Theresa",
+        o: "SAT Mumbai, Provincial Treasurer.",
+      },
+      {
+        q: "Acme.erp software helps all Institutions and organizations to make efficient use of their system and maintain complete transparency.",
+        n: "Sr. T. Agnes",
+        o: "SAT Trichy, Treasurer.",
+      },
+    ],
+    cta: "Request an Acme.erp Demo",
+  },
+  microfund: {
+    name: "MicroFund",
+    slug: "microfund",
+    category: "Microfinance ERP",
+    tagline:
+      "Digital platform for microfinance lending, collections, borrower management, reporting, and field operations.",
+    description:
+      "Manage loan origination, borrower accounts, repayments, collections, field operations, reporting, and compliance through one connected platform.",
+    headline: "MicroFund: Digital Microfinance ERP for Responsible Financial Inclusion",
+    subheadline:
+      "Manage loan origination, borrower accounts, repayments, collections, field operations, reporting, and compliance through one connected platform.",
+    featuresIntro:
+      "MicroFund helps microfinance institutions manage lending, collections, borrower records, and field operations through one connected digital workflow.",
+    featureItems: [
+      {
+        title: "Loan Origination",
+        description:
+          "Capture borrower applications, eligibility details, and approval steps in a structured and traceable lending workflow.",
+      },
+      {
+        title: "Disbursement Management",
+        description:
+          "Manage approved disbursements with better visibility into loan release timing, borrower records, and controls.",
+      },
+      {
+        title: "Repayment Tracking",
+        description:
+          "Monitor installments, overdue accounts, repayment history, and loan performance with better operational clarity.",
+      },
+      {
+        title: "Borrower Management",
+        description:
+          "Maintain organized borrower profiles, group information, loan history, and related documentation in one system.",
+      },
+      {
+        title: "Field Staff Mobility",
+        description:
+          "Support field operations with mobile-friendly workflows for collection activity, borrower follow-up, and on-ground updates.",
+      },
+      {
+        title: "Collections Control",
+        description:
+          "Coordinate collection processes with stronger visibility into dues, receipts, and field recovery progress.",
+      },
+      {
+        title: "Savings and Compliance Records",
+        description:
+          "Track savings-linked activity and maintain cleaner compliance records for operational and regulatory review.",
+      },
+      {
+        title: "MIS and Impact Reporting",
+        description:
+          "Generate reporting that helps leadership monitor portfolio health, field execution, and institutional impact.",
+      },
+    ],
+    modules: [
+      "Loan origination",
+      "Disbursement",
+      "Repayment tracking",
+      "Borrower management",
+      "Field staff mobile access",
+      "Collections",
+      "Savings",
+      "Compliance reports",
+      "MIS dashboards",
+      "Impact reporting",
+    ],
+    benefits: [
+      "Improved borrower visibility",
+      "Better repayment tracking",
+      "Stronger field collection management",
+      "Reduced manual loan administration",
+      "More reliable financial and impact reporting",
+    ],
+    advantagesIntro:
+      "MicroFund is built for community lending and microfinance teams that need stronger borrower visibility, collection control, and field-level execution.",
+    advantageItems: [
+      {
+        title: "Improved borrower visibility",
+        description:
+          "Help teams access complete borrower and loan information more quickly for better follow-up and decision-making.",
+      },
+      {
+        title: "Better repayment tracking",
+        description:
+          "Track collection status, overdue accounts, and repayment patterns with stronger operational discipline.",
+      },
+      {
+        title: "Stronger field collection management",
+        description:
+          "Support field officers with connected workflows that reduce delays and improve collection accountability.",
+      },
+      {
+        title: "Reduced manual loan administration",
+        description:
+          "Minimize paperwork and fragmented processes across origination, disbursement, collections, and reporting.",
+      },
+      {
+        title: "More reliable financial and impact reporting",
+        description:
+          "Provide management with clearer reporting on portfolio performance, operational efficiency, and outreach impact.",
+      },
+      {
+        title: "Purpose-built for responsible lending operations",
+        description:
+          "Fit the needs of institutions that balance financial sustainability, compliance, and community-focused lending.",
+      },
+    ],
+    idealUsers: ["Microfinance institutions", "SHGs", "Cooperatives", "NGOs", "Community finance organizations"],
+    heroImage: "/images/product/microfund-lending-platform-hd.avif",
+    successStoriesImage: "/images/microfund/microfund012.avif",
+    ctaBannerImage: "/images/microfund/microfund011.avif",
+    clients: [
+      { name: "Regional microfinance partner", logo: "/images/microfund/mic-clit1.avif" },
+      { name: "Field finance partner", logo: "/images/microfund/mic-clit2.avif" },
+      { name: "Impact lending partner", logo: "/images/microfund/mic-clit3.avif" },
+    ],
+    testimonials: [
+      {
+        q: "Enhancing Financial Inclusion: In our mission to enhance financial inclusion, Boscosoft's Micro-Funding software has been instrumental. It has allowed us to efficiently manage small loans, which has had a profound impact on the lives of individuals who previously had limited access to financial services.",
+        n: "Dhruv Bhattacharya",
+        o: "Financial Inclusion Lead",
+      },
+      {
+        q: "Empowering Entrepreneurs: As a startup founder, securing funding was my biggest hurdle. MicroFUND offered by BoscoSoft was a game-changer. It simplified the loan application process and connected me with lenders interested in supporting small businesses. I'm grateful for the opportunity to grow my business with such an intuitive platform.",
+        n: "Bellamy Ainsworth",
+        o: "Startup Founder",
+      },
+      {
+        q: "Revolutionizing Microloans: MicroFUND from BoscoSoft has revolutionized how we manage our microloan portfolio. Its user-friendly interface and powerful analytics have enabled us to make data-driven decisions, streamline our operations, and offer better support to the entrepreneurs we serve.",
+        n: "Farrah Zeytoun",
+        o: "Microloan Portfolio Manager",
+      },
+      {
+        q: "A Catalyst for Change: MicroFUND is about more than just loans; it's about making dreams a reality. BoscoSoft's MicroFUND has been a catalyst for change in our community, providing a seamless experience for both lenders and borrowers. It's not just a tool; it's a bridge to a better future.",
+        n: "Richard Walker",
+        o: "Community Finance Leader",
+      },
+    ],
+    cta: "See MicroFund in Action",
+  },
+  
+  medsysb: {
+    name: "MedSysB",
+    slug: "medsysb",
+    category: "Hospital Management Software",
+    seoTitle: "Hospital Management System | MedSysB HMS | Free Demo",
+    seoDescription:
+   "MedSysB is a hospital management system (HMS) that streamlines patient registration, appointments, billing, pharmacy, laboratory, EMR, and hospital administration.",
+    tagline:
+      "AI-ready hospital ERP for patient workflows, diagnostics, pharmacy, billing, and reporting.",
+    description:
+      "Connect patient workflows, diagnostics, pharmacy, billing, OT, medical records, HR, payroll, and reporting in one secure hospital ERP.",
+    headline: "MedSysB: AI-Ready Hospital Management Software for Connected Healthcare Operations",
+    subheadline:
+      "Connect patient workflows, diagnostics, pharmacy, billing, OT, medical records, HR, payroll, and reporting with an AI-ready hospital management system (HMS)..",
+    featuresIntro:
+      "MedSysB supports hospitals with connected clinical, administrative, pharmacy, billing, and reporting workflows through one unified ERP environment.",
+    featureItems: [
+      {
+        title: "Patient Registration and Flow",
+        description:
+          "Manage OP and IP registration, patient movement, and visit records with faster access to essential patient information.",
+      },
+      {
+        title: "Diagnostics Coordination",
+        description:
+          "Connect lab and diagnostic workflows with patient records and downstream billing for smoother clinical operations.",
+      },
+      {
+        title: "Pharmacy Management",
+        description:
+          "Track prescriptions, dispensing, stock, and medicine-related workflows with better control and visibility.",
+      },
+      {
+        title: "Billing Operations",
+        description:
+          "Handle patient billing, service charges, and financial records with greater accuracy and fewer manual gaps.",
+      },
+      {
+        title: "Operation Theatre Support",
+        description:
+          "Support OT-related coordination, scheduling, records, and hospital workflows with more operational clarity.",
+      },
+      {
+        title: "Medical Records Access",
+        description:
+          "Maintain secure patient records that are easier to retrieve, manage, and review across departments.",
+      },
+      {
+        title: "HR and Payroll Integration",
+        description:
+          "Connect staff administration, payroll, and internal hospital workflows through one structured system.",
+      },
+      {
+        title: "Hospital Reporting",
+        description:
+          "Generate management reports that improve visibility into patient flow, departmental operations, and hospital performance.",
+      },
+    ],
+    modules: [
+      "OP/IP registration",
+      "Diagnostics",
+      "Pharmacy",
+      "Billing",
+      "OT",
+      "Medical records",
+      "HR",
+      "Payroll",
+      "Dietary",
+      "Reports",
+      "Messaging",
+    ],
+    benefits: [
+      "Reduced patient waiting time",
+      "Better departmental coordination",
+      "Improved billing accuracy",
+      "Stronger reporting and management visibility",
+      "More organized patient and hospital workflows",
+    ],
+    advantagesIntro:
+      "MedSysB is built for hospitals that need stronger coordination across departments, faster patient workflows, and better operational control.MedSysB enables compliance-ready hospital operations with support for NABH, NABL quality workflows and ICD-10 clinical coding standards.",
+    advantageItems: [
+      {
+        title: "Reduced patient waiting time",
+        description:
+          "Speed up registration, diagnostics coordination, billing, and other patient-facing workflows through connected operations.",
+      },
+      {
+        title: "Better departmental coordination",
+        description:
+          "Improve information flow across reception, diagnostics, pharmacy, billing, and administration teams.",
+      },
+      {
+        title: "Improved billing accuracy",
+        description:
+          "Reduce errors and strengthen revenue control with more consistent and connected billing workflows.",
+      },
+      {
+        title: "Stronger reporting and management visibility",
+        description:
+          "Give hospital leadership a clearer view of departmental performance, patient flow, and administrative operations.",
+      },
+      {
+        title: "More organized patient and hospital workflows",
+        description:
+          "Bring clinical and administrative activity into one structured environment that is easier to manage at scale.",
+      },
+      {
+        title: "Built for secure healthcare operations",
+        description:
+          "Support hospitals that need dependable workflows, better records, and safer access to sensitive operational data.",
+      },
+    ],
+    idealUsers: ["Hospitals", "Clinics", "Healthcare administrators", "Doctors", "Finance teams", "Pharmacy teams"],
+    heroImage: "/images/product/medsysb-hospital-erp-hd.avif",
+    successStoriesImage: "/images/medsysb/hospital01.avif",
+    ctaBannerImage: "/images/medsysb/hospital02.avif",
+    clients: [
+      { name: "Multi-specialty hospital partner", logo: "/images/medsysb/client01.avif" },
+      { name: "Regional health system partner", logo: "/images/medsysb/client02.avif" },
+      { name: "Diagnostic center partner", logo: "/images/medsysb/client03.avif" },
+      { name: "Healthcare network partner", logo: "/images/medsysb/client04.avif" },
+      { name: "Clinic operations partner", logo: "/images/medsysb/client05.avif" },
+      { name: "Patient care technology partner", logo: "/images/medsysb/client06.avif" },
+    ],
+    testimonials: [
+      {
+        q: "The software MedSysB is really good with all its advantages and safety mechanisms. We thank you all for arranging it.",
+        n: "St. Louis Hospital",
+        o: "Krishnagiri",
+      },
+      {
+        q: "Now the system is functioning well and we are very satisfied with the new software.",
+        n: "St. Luke's Health Centre",
+        o: "India",
+      },
+      {
+        q: "Patient registration and discharge times have been cut in half. The seamless integration of diagnostic reports with pharmacy billing has simplified our operations.",
+        n: "Dr. S. Karthik",
+        o: "Medical Director, City Care Multi-Specialty Hospital",
+      },
+      {
+        q: "The security mechanisms and role-based access levels are top-notch. It ensures complete patient record confidentiality while giving doctors quick access to history.",
+        n: "Sister Mary Stella",
+        o: "Administrator, Sacred Heart Mission Hospital",
+      },
+    ],
+    cta: "Request a MedSysB Demo",
+  },
+  "cristo-suite": {
+    name: "CristO Suite",
+    slug: "cristo-suite",
+    category: "FaithTech ERP",
+    seoTitle: "Church Management Software | CristO Suite | Free Demo",
+    seoDescription:
+    "CristO Suite is church management software that simplifies parish administration, member management, donations, events, communication, and church records.",
+    tagline:
+      "Digital platform for parishes, dioceses, religious institutes, congregations, records, communication, giving, and reporting.",
+    description:
+      "Connect parishes, dioceses, congregations, religious institutes, records, communication, giving, reporting, and community engagement.",
+    headline: "CristO Suite: Digital Platform for Faith-Based Organizations",
+    subheadline:
+      "Connect parishes, dioceses, congregations, religious institutes, records, communication, giving, reporting, and community engagement.",
+    productSuiteIntro:
+      "CristO Suite brings together four purpose-built products designed for Church, parish, diocesan, religious institute, and community administration.",
+    productItems: [
+      {
+        title: "CristO - Parokia",
+        logo: "/images/cristo/parokia.avif",
+        description:
+          "A smart parish management solution that simplifies family records, sacraments, certificates, contributions, and parish communication. It helps parishes manage daily administration with better clarity, speed, and accuracy.",
+      },
+      {
+        title: "CristO - ReligiO",
+        logo: "/images/cristo/religio.avif",
+        description:
+          "A dedicated solution for religious institutes, congregations, provinces, and communities. It supports member records, assignments, community details, communication, archives, and institute-level administration.",
+      },
+      {
+        title: "CristO - Cathedra",
+        logo: "/images/cristo/cathedra.avif",
+        description:
+          "A diocesan management platform that connects parishes, clergy, families, institutions, and diocesan offices. It helps dioceses improve coordination, governance, reporting, and pastoral administration.",
+      },
+      {
+        title: "CristO - Charisma",
+        logo: "/images/cristo/charisma.avif",
+        description:
+          "A community engagement solution for faith communities, groups, associations, and ministries. It helps strengthen participation, communication, events, activities, and member involvement.",
+      },
+    ],
+    featuresIntro:
+      "CristO Suite offers connected digital capabilities that support administration, communication, records, engagement, and reporting across Church and faith-based organizations.",
+    featureItems: [
+      {
+        title: "Centralized Records Management",
+        description:
+          "Maintain organized digital records for families, members, clergy, sacraments, certificates, institutions, communities, and archives.",
+      },
+      {
+        title: "Parish & Diocese Administration",
+        description:
+          "Manage parish and diocesan operations, clergy details, family data, institution records, pastoral activities, and administrative workflows.",
+      },
+      {
+        title: "Religious Institute Management",
+        description:
+          "Support congregations and religious institutes with member profiles, assignments, province details, community records, and internal communication.",
+      },
+      {
+        title: "Community Engagement",
+        description:
+          "Connect communities, groups, ministries, associations, and members through events, activities, announcements, and participation tracking.",
+      },
+      {
+        title: "Communication Tools",
+        description:
+          "Share announcements, circulars, updates, reminders, emails, and notifications with the right people at the right time.",
+      },
+      {
+        title: "Giving & Contribution Management",
+        description:
+          "Track donations, offerings, contributions, receipts, and giving records with improved transparency and accountability.",
+      },
+      {
+        title: "Reports & Insights",
+        description:
+          "Generate clear reports for administration, planning, review, decision-making, audits, and long-term institutional visibility.",
+      },
+      {
+        title: "Secure Digital Access",
+        description:
+          "Protect important organizational and member data with structured access, reliable storage, and secure digital workflows.",
+      },
+    ],
+    modules: [
+      "Parokia (Parish)",
+      "ReligiO (Religious Institutes)",
+      "Cathedra (Diocese)",
+      "Charisma (Community)",
+      "Records",
+      "Communication",
+      "Giving",
+      "Reporting",
+    ],
+    benefits: [
+      "Stronger record continuity",
+      "Better parish and diocesan communication",
+      "Improved institutional governance",
+      "More transparent giving and reporting",
+      "Secure digital administration for faith communities",
+    ],
+    advantagesIntro:
+      "CristO Suite is designed specifically for Church and faith-based organizations that need connected administration, secure records, transparent workflows, and stronger community engagement.",
+    advantageItems: [
+      {
+        title: "Purpose-Built for Faith-Based Organizations",
+        description:
+          "Designed for the real needs of parishes, dioceses, religious institutes, congregations, and faith communities.",
+      },
+      {
+        title: "Four Products, One Connected Suite",
+        description:
+          "Bring Parokia, ReligiO, Cathedra, and Charisma together under one CristO ecosystem for smoother administration and better collaboration.",
+      },
+      {
+        title: "Reduced Manual Work",
+        description:
+          "Minimize paperwork, repeated data entry, scattered records, and manual follow-ups through structured digital workflows.",
+      },
+      {
+        title: "Stronger Record Continuity",
+        description:
+          "Preserve important records securely and make them easy to access, update, and manage over time.",
+      },
+      {
+        title: "Better Communication",
+        description:
+          "Improve communication between dioceses, parishes, clergy, religious institutes, families, members, groups, and communities.",
+      },
+      {
+        title: "Improved Governance & Accountability",
+        description:
+          "Support better planning, approvals, documentation, reporting, and institutional decision-making.",
+      },
+      {
+        title: "Transparent Giving & Reporting",
+        description:
+          "Manage contributions, donations, receipts, and reports with greater accuracy, clarity, and confidence.",
+      },
+      {
+        title: "Better Visibility for Leadership",
+        description:
+          "Provide leaders and administrators with organized information, meaningful reports, and a clearer view of operations.",
+      },
+    ],
+    idealUsers: ["Dioceses", "Parishes", "Religious institutes", "Congregations", "Christian communities"],
+    heroImage: "/images/product/cristo-suite-platform-hd.avif",
+    successStoriesImage: "/images/cristo/cristoimg02.avif",
+    ctaBannerImage: "/images/cristo/cristoimg01.avif",
+    clients: [
+      { name: "Diocese technology partner", logo: "/images/cristo/client01.avif" },
+      { name: "Parish administration partner", logo: "/images/cristo/client02.avif" },
+      { name: "Congregation digital partner", logo: "/images/cristo/client03.avif" },
+      { name: "Faith community partner", logo: "/images/cristo/client04.avif" },
+      { name: "Church operations partner", logo: "/images/cristo/client05.avif" },
+      { name: "Religious organization partner", logo: "/images/cristo/client06.avif" },
+    ],
+    testimonials: [
+      {
+        q: "CristO Suite supports dioceses, parishes, religious institutes, and faith communities with secure records, communication, giving, reporting, and archives.",
+        n: "Boscosoft FaithTech Team",
+        o: "CristO Suite",
+      },
+      {
+        q: "Parish administration and tracking sacramental certificates has been simplified across our entire diocese using CristO's secure database system.",
+        n: "Rev. Fr. Charles D'Silva",
+        o: "Chancellor, Diocese of Nagercoil",
+      },
+      {
+        q: "The ReligiO module helps our congregation keep track of members' records, assignments, and archival history with complete safety and ease.",
+        n: "Sr. Teresa Joseph FMA",
+        o: "Provincial Secretary, Salesian Sisters India",
+      },
+    ],
+    cta: "Request a CristO Suite Demo",
+  },
+  eaudithub: {
+    name: "eAuditHub",
+    slug: "eaudithub",
+    category: "Audit & Compliance Platform",
+    seoTitle: "Audit Management System | eAuditHub | Free Demo",
+    seoDescription:
+    "eAuditHub is an audit management system that streamlines audit planning, compliance management, inspections, CAPA tracking, reporting, and risk management.",
+    tagline:
+      "Audit management and compliance platform for checklists, field audits, CAPA, dashboards, and risk visibility.",
+    description:
+      "Digitize audit planning, field execution, checklist management, evidence capture, CAPA, dashboards, and compliance visibility.",
+    headline: "eAuditHub: Audit Management and Compliance Intelligence Platform",
+    subheadline:
+      "Digitize audit planning, field execution, checklist management, evidence capture, CAPA, dashboards, and compliance visibility.",
+    featuresIntro:
+      "eAuditHub helps audit and compliance teams digitize planning, field execution, evidence capture, CAPA tracking, and management reporting.",
+    featureItems: [
+      {
+        title: "SOP and Checklist Management",
+        description:
+          "Maintain structured procedures and digital checklists that standardize audits across teams, locations, and review cycles.",
+      },
+      {
+        title: "Audit Scheduling",
+        description:
+          "Plan and assign audits with better visibility into timing, audit scope, and accountability across teams.",
+      },
+      {
+        title: "Field and Mobile Audits",
+        description:
+          "Support audits in the field with mobile-friendly workflows, including offline execution where needed.",
+      },
+      {
+        title: "Evidence Capture",
+        description:
+          "Collect observations, supporting records, and photo evidence in one structured audit trail.",
+      },
+      {
+        title: "Observation Tracking",
+        description:
+          "Record findings consistently and make it easier for teams to review, escalate, and act on issues.",
+      },
+      {
+        title: "CAPA Management",
+        description:
+          "Track corrective and preventive actions with better follow-up, accountability, and closure visibility.",
+      },
+      {
+        title: "Risk Scoring and Visibility",
+        description:
+          "Highlight risk areas and compliance gaps so leadership can focus on priority actions more effectively.",
+      },
+      {
+        title: "Audit Dashboards and Analytics",
+        description:
+          "Generate reporting that helps managers monitor audit progress, compliance trends, and operational risk exposure.",
+      },
+    ],
+    modules: [
+      "SOP management",
+      "Checklist management",
+      "Audit scheduling",
+      "Mobile audits",
+      "Offline audits",
+      "Photo evidence",
+      "Observation recording",
+      "CAPA",
+      "Risk scoring",
+      "Predictive analytics",
+      "Audit trails",
+    ],
+    benefits: [
+      "Faster and more structured audits",
+      "Stronger evidence management",
+      "Better CAPA tracking",
+      "Improved compliance visibility",
+      "Reduced manual reporting effort",
+    ],
+    advantagesIntro:
+      "eAuditHub is designed for organizations that need consistent audit execution, stronger compliance visibility, and faster follow-through on findings.",
+    advantageItems: [
+      {
+        title: "Faster and more structured audits",
+        description:
+          "Reduce reliance on paper and ad hoc processes with digital workflows that standardize execution across teams.",
+      },
+      {
+        title: "Stronger evidence management",
+        description:
+          "Keep observations, records, and supporting evidence organized for easier review, escalation, and audit traceability.",
+      },
+      {
+        title: "Better CAPA tracking",
+        description:
+          "Follow corrective actions through to closure with clearer ownership, due dates, and accountability.",
+      },
+      {
+        title: "Improved compliance visibility",
+        description:
+          "Help leadership see compliance gaps, risk areas, and audit trends without waiting for fragmented reports.",
+      },
+      {
+        title: "Reduced manual reporting effort",
+        description:
+          "Generate clearer audit reporting with less manual compilation and fewer delays in decision-making.",
+      },
+      {
+        title: "Built for field, office, and leadership teams",
+        description:
+          "Support audit operations end to end, from site-level execution to management review and governance oversight.",
+      },
+    ],
+    idealUsers: [
+      "Audit teams",
+      "Quality managers",
+      "Compliance leaders",
+      "Enterprises",
+      "Hospitality teams",
+      "Food safety teams",
+    ],
+    heroImage: "/images/product/eaudithub-audit-platform-hd.avif",
+    successStoriesImage: "/images/eaudithub/eaudithub01.avif",
+    ctaBannerImage: "/images/eaudithub/eaudithub02.avif",
+    clients: [],
+    testimonials: [
+      {
+        q: "When administration management is needed, eAUDITHub is a solution with security, audit, and compliance features. There is data aggregation and work activity.",
+        n: "Aarav Sharma",
+        o: "Administration Lead",
+      },
+      {
+        q: "Efficiency Unleashed: eAUDITHub seamlessly connects with other modules, making data flow smooth. The platform's user-friendly design simplifies navigation.",
+        n: "Alexander Mitchell",
+        o: "Operations Manager",
+      },
+      {
+        q: "eAUDITHub as promised made our manual processes more efficient, and with automatic notifications, its effective complaint management, and the reports. Their empowered administrative features ease the administration of my team. Super easy and efficient way of implementing this for us has made this our favorite software solution.",
+        n: "Henry Kensington",
+        o: "Compliance Director",
+      },
+      {
+        q: "Have loved eAUDITHub since the beginning, and love it more each year I use it. It has allowed us to automate many functions that were manual before. Their support is exceptional.",
+        n: "Zara Al Maktoum",
+        o: "Quality & Audit Lead",
+      },
+    ],
+    cta: "Request an eAuditHub Demo",
+  },
+};
+
+export type ServiceSlug =
+  | "ai-transformation"
+  | "integration-ecosystems"
+  | "saas-engineering"
+  | "erp-crm-implementation"
+  | "data-analytics-ai"
+  | "cloud-infrastructure";
+
+export const services: Record<
+  ServiceSlug,
+  {
+    name: string;
+    slug: ServiceSlug;
+    group: string;
+    tagline: string;
+    headline: string;
+    deliverables: string[];
+    businessProblem: string;
+    outcomes: string[];
+    heroImage: string;
+    process?: string[];
+    cta: string;
+  }
+> = {
+  "ai-transformation": {
+    name: "AI Transformation & Automation",
+    slug: "ai-transformation",
+    seoTitle: "Artificial Intelligence Solutions | AI Automation Services",
+    seoDescription:
+    "Artificial Intelligence Solutions help businesses automate workflows with AI automation services, AI workflow automation, and enterprise AI solutions.",
+    group: "AI & Automation",
+    tagline:
+      "AI transformation, AI automation, AI assistants, workflow automation, predictive analytics, and intelligent reporting.",
+    headline: "Practical AI Transformation for Measurable Business Outcomes",
+    deliverables: [
+      "AI roadmap",
+      "AI assistants",
+      "Chatbots",
+      "Workflow automation",
+      "RAG systems",
+      "Predictive analytics",
+      "AI reporting",
+      "Smart alerts",
+      "Conversational AI",
+      "Intelligent document processing",
+    ],
+    businessProblem:
+      "Organizations want to adopt AI but often struggle to identify practical use cases, connect data, and turn AI into measurable outcomes.",
+    outcomes: ["Reduced manual work", "Faster response times", "Better decision support", "Improved productivity"],
+    heroImage: "/images/digital-transformation.avif",
+    process: ["Discover", "Prioritize", "Prototype", "Integrate", "Train", "Optimize"],
+    cta: "Build Your AI Roadmap",
+  },
+  "integration-ecosystems": {
+    name: "Integration & Digital Ecosystems",
+    seoTitle: "Enterprise Application Integration | System Integration Services",
+    seoDescription:
+    "Enterprise Application Integration from Bosco Soft connects business applications with system integration services, ERP integration, and digital solutions.",
+    slug: "integration-ecosystems",
+    group: "Enterprise Systems",
+    tagline:
+      "Boscosoft works across enterprise platforms, cloud infrastructure, open-source frameworks, ERP/CRM systems, AI technologies, and data analytics platforms.",
+    headline: "Connect Your Systems, Data, Teams, and Workflows",
+    deliverables: [
+      "API development",
+      "ERP integrations",
+      "Third-party integrations",
+      "Cloud and on-premise connectivity",
+      "Data synchronization",
+      "Payment integrations",
+      "Communication integrations",
+      "DevOps and CI/CD automation",
+    ],
+    businessProblem:
+      "Disconnected applications and data silos slow down reporting, coordination, customer experiences, and daily operations.",
+    outcomes: ["Reduced data silos", "Real-time information flow", "Better coordination", "Smoother user experiences"],
+    heroImage: "/images/ecommerce-analytics.avif",
+    cta: "Connect Your Digital Ecosystem",
+  },
+  "saas-engineering": {
+    name: "SaaS Engineering & Modernization",
+    slug: "saas-engineering",
+    seoTitle: "SaaS Development Services | SaaS Application Development",
+    seoDescription:
+    "SaaS Development Services from Bosco Soft build scalable applications with SaaS application development, modernization, and product engineering.",
+    group: "Platform Engineering",
+    tagline:
+      "AI-enabled SaaS products and ERP/CRM implementation services designed to work together.",
+    headline: "Build and Modernize Cloud-Native SaaS Platforms",
+    deliverables: [
+      "Cloud-native application development",
+      "Multi-tenant SaaS",
+      "Legacy modernization",
+      "Workflow automation",
+      "Role-based access",
+      "Secure tenant separation",
+      "Scalable product engineering",
+    ],
+    businessProblem:
+      "Legacy platforms and rigid applications make it difficult to scale, improve performance, and release useful capabilities quickly.",
+    outcomes: ["Improved scalability", "Better performance", "Reduced technical debt", "Faster platform evolution"],
+    heroImage: "/images/resource-laptop.avif",
+    cta: "Start Your SaaS Journey",
+  },
+  "erp-crm-implementation": {
+    name: "ERP & CRM Platform Implementation",
+    seoTitle: "ERP & CRM Implementation Services | CRM Integration | Bosco Soft",
+    seoDescription:
+    "CRM implementation services from Bosco Soft simplify customer management through CRM integration, customization, deployment, and automation.",
+    slug: "erp-crm-implementation",
+    group: "Enterprise Systems",
+    tagline:
+      "ERP/CRM implementation, Dynamics 365, Zoho, Frappe/ERP Next, CRM workflows, system integrations, dashboards, and AI-powered extensions.",
+    headline: "Implement ERP and CRM Systems That Fit Your Business Workflows",
+    deliverables: [
+      "Dynamics 365 deployment",
+      "Dynamics 365 customization",
+      "Frappe/ERPNext development",
+      "CRM workflows",
+      "ERP integrations",
+      "Power Platform extensions",
+      "Dashboards",
+      "AI-powered ERP extensions",
+    ],
+    businessProblem:
+      "ERP and CRM programs fail when systems are configured around software defaults instead of real workflows, users, and reporting needs.",
+    outcomes: ["Streamlined operations", "Better user adoption", "Improved process control", "Scalable enterprise systems"],
+    heroImage: "/images/banking-system.avif",
+    cta: "Discuss Your ERP Needs",
+  },
+  "data-analytics-ai": {
+    name: "Data, Analytics & AI",
+    slug: "data-analytics-ai",
+    seoTitle: "Data Analytics Services | Data Engineering Services | Bosco Soft",
+    seoDescription:
+    "Data Analytics Services from Bosco Soft transform business data through data engineering services, data visualization, and big data analytics.",
+    group: "AI & Automation",
+    tagline:
+      "Data analytics, dashboards, predictive analytics, AI insights, real-time reporting, and decision intelligence.",
+    headline: "Turn Business Data Into Actionable Intelligence",
+    deliverables: [
+      "Data engineering",
+      "Lakehouse platforms",
+      "Executive dashboards",
+      "KPI analytics",
+      "Predictive models",
+      "AI insights",
+      "Real-time reporting",
+      "Natural language analytics",
+    ],
+    businessProblem:
+      "Leaders need reliable dashboards and insights, but the data is often scattered, inconsistent, delayed, or difficult to interpret.",
+    outcomes: ["Better data visibility", "Faster decision-making", "Predictive planning", "Leadership clarity"],
+    heroImage: "/images/ecommerce-analytics.avif",
+    cta: "Turn Data Into Decisions",
+  },
+  "cloud-infrastructure": {
+    name: "Cloud Infrastructure & Support",
+    slug: "cloud-infrastructure",
+    seoTitle: "Cloud Solutions Company | Cloud Consulting Services | Bosco Soft",
+    seoDescription:
+    "Bosco Soft is a Cloud Solutions Company offering cloud consulting services, cloud infrastructure management, and cloud managed services.",
+    group: "Platform Engineering",
+    tagline:
+      "Cloud infrastructure, deployment, management, optimization, security, compliance, monitoring, backups, and ongoing support. ",
+    headline: "Reliable Cloud Infrastructure for Scalable Digital Operations",
+    deliverables: [
+      "Cloud deployment",
+      "Cloud management",
+      "Performance optimization",
+      "Security",
+      "Compliance support",
+      "Monitoring",
+      "Backup planning",
+      "Ongoing support",
+    ],
+    businessProblem:
+      "Digital platforms need reliable cloud foundations, monitoring, backups, security, and performance tuning to support long-term operations.",
+    outcomes: ["Better uptime", "Improved performance", "Stronger security", "Operational continuity"],
+    heroImage: "/images/cloud-security.avif",
+    cta: "Modernize Your Infrastructure",
+  },
+};
+
+export const companyContact = {
+  email: "binfo@boscosofttech.com",
+  phone: "+91 9626 800 800",
+  registeredOffice:
+    "Bosco Soft Technologies Pvt. Ltd., No. 231/77, S.H.C Complex, Vaniyambadi Road, Tirupattur District, TN 635 601, India.",
+  middleEastOffice:
+    "Bosco Soft Technologies FZE, BC4, Business Park, RAK Free Trade Zone, Ras Al Khaimah, UAE.",
+  middleEastPhone: "+971 058 860 1821",
+  middleEastEmail: "info@boscosoft.ae",
+  middleEastWebsite: "https://www.boscosoft.ae",
+};
+
+export type IndustrySlug =
+  | "education"
+  | "healthcare"
+  | "finance-microfinance"
+  | "ngos"
+  | "enterprises"
+  | "audit-compliance"
+  | "faith-based";
+
+export const industries: Record<
+  IndustrySlug,
+  {
+    name: string;
+    slug: IndustrySlug;
+    tagline: string;
+    pains: string[];
+    solutionSummary: string;
+    products: ProductSlug[];
+    cta: string;
+  }
+> = {
+  education: {
+    name: "Education",
+    slug: "education",
+    tagline: "Connected platforms for schools, colleges, and universities.",
+    pains: [
+      "Manual school operations",
+      "Parent communication gaps",
+      "Attendance tracking",
+      "Fee collection",
+      "Report card generation",
+      "Teacher workload",
+    ],
+    solutionSummary: "AI-ready ERP platforms purpose-built for K-12 and higher education.",
+    products: ["smartschoolnxt", "higrade"],
+    cta: "Explore School ERP",
+  },
+  healthcare: {
+    name: "Healthcare",
+    slug: "healthcare",
+    tagline: "Connected hospital operations from registration to reporting.",
+    pains: [
+      "Patient waiting time",
+      "Fragmented departments",
+      "Billing errors",
+      "Pharmacy control",
+      "Diagnostics coordination",
+      "Reporting gaps",
+    ],
+    solutionSummary: "An AI-ready hospital ERP that unifies clinical and operational workflows.",
+    products: ["medsysb"],
+    cta: "Explore Hospital Management Software",
+  },
+  "finance-microfinance": {
+    name: "Finance & Microfinance",
+    slug: "finance-microfinance",
+    seoTitle: "Finance Management System | Finance ERP | MicroFUND",
+    seoDescription:
+    "MicroFUND is a finance management system and finance ERP that simplifies loans, savings, repayments, collections, reporting, and financial operations for institutions.",
+    tagline: "Digital platforms for responsible financial operations.",
+    pains: [
+      "Loan tracking",
+      "Field collections",
+      "Borrower visibility",
+      "Repayment follow-up",
+      "Reporting",
+      "Compliance",
+    ],
+    solutionSummary: "ERP and microfinance platforms for lending, accounting, and compliance.",
+    products: ["microfund", "acme-erp"],
+    cta: "Modernize Finance Operations",
+  },
+  ngos: {
+    name: "NGOs",
+    slug: "ngos",
+    tagline: "Fund accounting and operational visibility for nonprofits.",
+    pains: [
+      "Fund management",
+      "Donor reporting",
+      "Branch accounting",
+      "Compliance",
+      "Transparency",
+      "Payroll",
+    ],
+    solutionSummary: "Fund-aware ERP designed for nonprofits and mission-driven organizations.",
+    products: ["acme-erp"],
+    cta: "Explore Nonprofit ERP",
+  },
+  enterprises: {
+    name: "Enterprises",
+    slug: "enterprises",
+    tagline: "AI, integration, ERP/CRM, and cloud modernization at scale.",
+    pains: [
+      "Legacy systems",
+      "Disconnected tools",
+      "Manual workflows",
+      "Reporting delays",
+      "Integration complexity",
+      "AI adoption uncertainty",
+    ],
+    solutionSummary: "End-to-end digital transformation across platforms, data, and AI.",
+    products: ["acme-erp"],
+    cta: "Schedule Consultation",
+  },
+  "audit-compliance": {
+    name: "Audit & Compliance",
+    slug: "audit-compliance",
+    tagline: "Digitize audits, CAPA, and compliance intelligence.",
+    pains: ["Paper audits", "Delayed CAPA", "Evidence gaps", "Weak visibility", "Risk tracking"],
+    solutionSummary: "An audit & compliance platform built for field, office, and leadership.",
+    products: ["eaudithub"],
+    cta: "Explore eAuditHub",
+  },
+  "faith-based": {
+    name: "Faith-Based Organizations",
+    slug: "faith-based",
+    tagline: "Connected platforms for parishes, dioceses, and religious institutes.",
+    pains: [
+      "Member records",
+      "Parish administration",
+      "Diocesan reporting",
+      "Community communication",
+      "Giving",
+      "Archives",
+      "Leadership continuity",
+    ],
+    solutionSummary: "A digital ecosystem for faith-based mission, ministry, and stewardship.",
+    products: ["cristo-suite"],
+    cta: "Explore CristO Suite",
+  },
+};
+
+export const techStack = [
+  "Microsoft Dynamics 365",
+  "Power Platform",
+  "Microsoft Azure",
+  "Frappe / ERPNext",
+  "Databricks",
+  "OpenAI / Azure AI",
+  "Power BI",
+  "REST & GraphQL APIs",
+  "Cloud-Native Architecture",
+  "Custom AI Layers",
+];
+
+export const navProducts = [
+  products["acme-erp"],
+  products["microfund"],
+  products["medsysb"],
+  products.smartschoolnxt,
+  products.higrade,
+  products.eaudithub,
+  products["cristo-suite"],
+];
+export const navServices = Object.values(services);
+export const navIndustries = Object.values(industries);
+
+
+
