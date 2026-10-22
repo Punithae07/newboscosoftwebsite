@@ -15,6 +15,7 @@ import { Route as SecurityRouteImport } from './routes/security'
 import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as MissionVisionRouteImport } from './routes/mission-vision'
+import { Route as SocialImpactRouteImport } from './routes/social-impact'
 import { Route as LeadershipRouteImport } from './routes/leadership'
 import { Route as ContactUsRouteImport } from './routes/contact-us'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -79,6 +80,11 @@ const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
 const MissionVisionRoute = MissionVisionRouteImport.update({
   id: '/mission-vision',
   path: '/mission-vision',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SocialImpactRoute = SocialImpactRouteImport.update({
+  id: '/social-impact',
+  path: '/social-impact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LeadershipRoute = LeadershipRouteImport.update({
@@ -266,6 +272,7 @@ export interface FileRoutesByFullPath {
   '/contact-us': typeof ContactUsRoute
   '/leadership': typeof LeadershipRouteWithChildren
   '/mission-vision': typeof MissionVisionRoute
+  '/social-impact': typeof SocialImpactRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/security': typeof SecurityRoute
@@ -308,6 +315,7 @@ export interface FileRoutesByTo {
   '/contact-us': typeof ContactUsRoute
   '/leadership': typeof LeadershipRouteWithChildren
   '/mission-vision': typeof MissionVisionRoute
+  '/social-impact': typeof SocialImpactRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/security': typeof SecurityRoute
@@ -352,6 +360,7 @@ export interface FileRoutesById {
   '/contact-us': typeof ContactUsRoute
   '/leadership': typeof LeadershipRouteWithChildren
   '/mission-vision': typeof MissionVisionRoute
+  '/social-impact': typeof SocialImpactRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/security': typeof SecurityRoute
@@ -397,6 +406,7 @@ export interface FileRouteTypes {
     | '/contact-us'
     | '/leadership'
     | '/mission-vision'
+    | '/social-impact'
     | '/privacy-policy'
     | '/refund-policy'
     | '/security'
@@ -439,6 +449,7 @@ export interface FileRouteTypes {
     | '/contact-us'
     | '/leadership'
     | '/mission-vision'
+    | '/social-impact'
     | '/privacy-policy'
     | '/refund-policy'
     | '/security'
@@ -482,6 +493,7 @@ export interface FileRouteTypes {
     | '/contact-us'
     | '/leadership'
     | '/mission-vision'
+    | '/social-impact'
     | '/privacy-policy'
     | '/refund-policy'
     | '/security'
@@ -526,6 +538,7 @@ export interface RootRouteChildren {
   ContactUsRoute: typeof ContactUsRoute
   LeadershipRoute: typeof LeadershipRouteWithChildren
   MissionVisionRoute: typeof MissionVisionRoute
+  SocialImpactRoute: typeof SocialImpactRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   RefundPolicyRoute: typeof RefundPolicyRoute
   SecurityRoute: typeof SecurityRoute
@@ -591,6 +604,13 @@ declare module '@tanstack/react-router' {
       path: '/mission-vision'
       fullPath: '/mission-vision'
       preLoaderRoute: typeof MissionVisionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/social-impact': {
+      id: '/social-impact'
+      path: '/social-impact'
+      fullPath: '/social-impact'
+      preLoaderRoute: typeof SocialImpactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/leadership': {
@@ -912,6 +932,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactUsRoute: ContactUsRoute,
   LeadershipRoute: LeadershipRouteWithChildren,
   MissionVisionRoute: MissionVisionRoute,
+  SocialImpactRoute: SocialImpactRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   RefundPolicyRoute: RefundPolicyRoute,
   SecurityRoute: SecurityRoute,

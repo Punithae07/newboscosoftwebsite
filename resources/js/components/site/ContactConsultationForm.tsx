@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { submitPublicContact, type PublicContactFormValues } from "@/lib/contacts";
 import { warmSecureFormChallenge } from "@/lib/public-form-security";
 
@@ -14,26 +15,35 @@ const initialValues: PublicContactFormValues = {
   botcheck: "",
 };
 
-const industries = [
-  "Education",
-  "Healthcare",
-  "Finance & Microfinance",
-  "NGOs",
-  "Enterprises",
-  "Audit & Compliance",
-  "Faith-Based Organizations",
-  "Others",
+const inquiryTypes = [
+  "Engineering Projects",
+  "SaaS Platforms",
+  "Co-Development",
+  "Strategic Partnership",
+  "General Inquiry",
 ];
 
 const interests = [
-  "Product Demo",
-  "AI Transformation",
-  "ERP Implementation",
-  "SaaS Modernization",
-  "Integration",
-  "Cloud",
-  "Support",
-  "Partnership",
+  "AI Transformation & Automation",
+  "Integration & Digital Ecosystems",
+  "SaaS Engineering & Modernization",
+  "ERP & CRM Implementation",
+  "Data, Analytics & AI",
+  "Cloud Infrastructure & Support",
+  "SmartSchoolNxt (School ERP)",
+  "HiGrade (Higher Ed ERP)",
+  "Acme.erp (Financial Management)",
+  "Parokia (Parish Management)",
+  "MedSysB (Hospital Management)",
+  "Dedicated Engineering Teams",
+  "Other",
+];
+
+const timelines = [
+  "Immediate (< 1 month)",
+  "1–3 months",
+  "3–6 months",
+  "Exploring options",
 ];
 
 type FormNotice =
@@ -43,6 +53,9 @@ type FormNotice =
 
 export function ContactConsultationForm({ sourcePage }: { sourcePage: string }) {
   const [values, setValues] = useState(initialValues);
+  const [inquiryType, setInquiryType] = useState("");
+  const [timeline, setTimeline] = useState("");
+  const [consent, setConsent] = useState(false);
   const [notice, setNotice] = useState<FormNotice>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -60,16 +73,42 @@ export function ContactConsultationForm({ sourcePage }: { sourcePage: string }) 
     event.preventDefault();
     setNotice(null);
 
+    if (!consent) {
+      setNotice({
+        type: "error",
+        message: "Please agree to the privacy policy to submit your inquiry.",
+      });
+      return;
+    }
+
     try {
       setIsSubmitting(true);
 
-      const response = await submitPublicContact(values, sourcePage);
+      const messageParts = [];
+      if (inquiryType) messageParts.push(`Inquiry Type: ${inquiryType}`);
+      if (timeline) messageParts.push(`Timeline: ${timeline}`);
+      messageParts.push(values.message);
+
+      const finalMessage = messageParts.join("\n\n");
+
+      await submitPublicContact(
+        {
+          ...values,
+          industry: inquiryType || values.industry || "General Inquiry",
+          message: finalMessage,
+        },
+        sourcePage,
+      );
 
       setNotice({
         type: "success",
-        message: response.message,
+        message:
+          "Thank you for reaching out. Your inquiry has been received. Our team will review it and respond through the contact information you provided.",
       });
       setValues(initialValues);
+      setInquiryType("");
+      setTimeline("");
+      setConsent(false);
     } catch (error) {
       setNotice({
         type: "error",
@@ -86,7 +125,10 @@ export function ContactConsultationForm({ sourcePage }: { sourcePage: string }) 
   return (
     <section className="rounded-[2rem] border border-border bg-background p-6 shadow-card sm:p-8">
       <div className="border-b border-border/80 pb-5">
-        <div className="t-eyebrow">Request a Consultation</div>
+        <div className="t-eyebrow">Start a Conversation</div>
+        <h2 className="mt-2 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+          Tell us about your project
+        </h2>
       </div>
 
       {notice ? (
@@ -113,7 +155,7 @@ export function ContactConsultationForm({ sourcePage }: { sourcePage: string }) 
           autoComplete="off"
         />
 
-        <Field label="Name" required htmlFor="contact-name">
+        <Field label="Full Name" required htmlFor="contact-name">
           <input
             id="contact-name"
             name="name"
@@ -122,6 +164,20 @@ export function ContactConsultationForm({ sourcePage }: { sourcePage: string }) 
             placeholder="Your full name"
             value={values.name}
             onChange={(event) => updateValue("name", event.target.value)}
+            required
+            className="h-14 w-full rounded-[1.1rem] border border-border bg-white px-4 text-base font-medium text-foreground shadow-[0_2px_6px_rgba(8,35,58,0.08)] outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15"
+          />
+        </Field>
+
+        <Field label="Business Email" required htmlFor="contact-email">
+          <input
+            id="contact-email"
+            name="email"
+            type="email"
+            autoComplete="email"
+            placeholder="name@organization.com"
+            value={values.email}
+            onChange={(event) => updateValue("email", event.target.value)}
             required
             className="h-14 w-full rounded-[1.1rem] border border-border bg-white px-4 text-base font-medium text-foreground shadow-[0_2px_6px_rgba(8,35,58,0.08)] outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15"
           />
@@ -140,21 +196,71 @@ export function ContactConsultationForm({ sourcePage }: { sourcePage: string }) 
           />
         </Field>
 
-        <Field label="Email" required htmlFor="contact-email">
+        <Field label="Country / Region" htmlFor="contact-country">
           <input
-            id="contact-email"
-            name="email"
-            type="email"
-            autoComplete="email"
-            placeholder="name@company.com"
-            value={values.email}
-            onChange={(event) => updateValue("email", event.target.value)}
-            required
+            id="contact-country"
+            name="country"
+            type="text"
+            autoComplete="country-name"
+            placeholder="e.g. India, UAE, United States"
+            value={values.country}
+            onChange={(event) => updateValue("country", event.target.value)}
             className="h-14 w-full rounded-[1.1rem] border border-border bg-white px-4 text-base font-medium text-foreground shadow-[0_2px_6px_rgba(8,35,58,0.08)] outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15"
           />
         </Field>
 
-        <Field label="Phone" required htmlFor="contact-phone">
+        <Field label="Inquiry Type" htmlFor="contact-inquiry-type">
+          <select
+            id="contact-inquiry-type"
+            name="inquiry_type"
+            value={inquiryType}
+            onChange={(event) => setInquiryType(event.target.value)}
+            className="h-14 w-full rounded-[1.1rem] border border-border bg-white px-4 text-base font-medium text-foreground shadow-[0_2px_6px_rgba(8,35,58,0.08)] outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15"
+          >
+            <option value="">Select inquiry type</option>
+            {inquiryTypes.map((type) => (
+              <option key={type} value={type}>
+                {type}
+              </option>
+            ))}
+          </select>
+        </Field>
+
+        <Field label="Product or Service of Interest" htmlFor="contact-interest">
+          <select
+            id="contact-interest"
+            name="product_interest"
+            value={values.product_interest}
+            onChange={(event) => updateValue("product_interest", event.target.value)}
+            className="h-14 w-full rounded-[1.1rem] border border-border bg-white px-4 text-base font-medium text-foreground shadow-[0_2px_6px_rgba(8,35,58,0.08)] outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15"
+          >
+            <option value="">Select service or product</option>
+            {interests.map((interest) => (
+              <option key={interest} value={interest}>
+                {interest}
+              </option>
+            ))}
+          </select>
+        </Field>
+
+        <Field label="Optional Timeline" htmlFor="contact-timeline">
+          <select
+            id="contact-timeline"
+            name="timeline"
+            value={timeline}
+            onChange={(event) => setTimeline(event.target.value)}
+            className="h-14 w-full rounded-[1.1rem] border border-border bg-white px-4 text-base font-medium text-foreground shadow-[0_2px_6px_rgba(8,35,58,0.08)] outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15"
+          >
+            <option value="">Select expected timeline (optional)</option>
+            {timelines.map((time) => (
+              <option key={time} value={time}>
+                {time}
+              </option>
+            ))}
+          </select>
+        </Field>
+
+        <Field label="Phone (Optional)" htmlFor="contact-phone">
           <input
             id="contact-phone"
             name="phone"
@@ -166,70 +272,40 @@ export function ContactConsultationForm({ sourcePage }: { sourcePage: string }) 
             onChange={(event) =>
               updateValue("phone", event.target.value.replace(/[^\d+\-\s()]/g, "").slice(0, 20))
             }
-            required
             className="h-14 w-full rounded-[1.1rem] border border-border bg-white px-4 text-base font-medium text-foreground shadow-[0_2px_6px_rgba(8,35,58,0.08)] outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15"
           />
         </Field>
 
-        <Field label="Country" htmlFor="contact-country">
-          <input
-            id="contact-country"
-            name="country"
-            type="text"
-            autoComplete="country-name"
-            placeholder="Country"
-            value={values.country}
-            onChange={(event) => updateValue("country", event.target.value)}
-            className="h-14 w-full rounded-[1.1rem] border border-border bg-white px-4 text-base font-medium text-foreground shadow-[0_2px_6px_rgba(8,35,58,0.08)] outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15"
-          />
-        </Field>
-
-        <Field label="Industry" htmlFor="contact-industry">
-          <select
-            id="contact-industry"
-            name="industry"
-            value={values.industry}
-            onChange={(event) => updateValue("industry", event.target.value)}
-            className="h-14 w-full rounded-[1.1rem] border border-border bg-white px-4 text-base font-medium text-foreground shadow-[0_2px_6px_rgba(8,35,58,0.08)] outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15"
-          >
-            <option value="">Select industry</option>
-            {industries.map((industry) => (
-              <option key={industry} value={industry}>
-                {industry}
-              </option>
-            ))}
-          </select>
-        </Field>
-
-        <Field label="I'm interested in" required htmlFor="contact-interest" className="sm:col-span-2">
-          <select
-            id="contact-interest"
-            name="product_interest"
-            value={values.product_interest}
-            onChange={(event) => updateValue("product_interest", event.target.value)}
-            required
-            className="h-14 w-full rounded-[1.1rem] border border-border bg-white px-4 text-base font-medium text-foreground shadow-[0_2px_6px_rgba(8,35,58,0.08)] outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15"
-          >
-            <option value="">Select an interest</option>
-            {interests.map((interest) => (
-              <option key={interest} value={interest}>
-                {interest}
-              </option>
-            ))}
-          </select>
-        </Field>
-
-        <Field label="Message" required htmlFor="contact-message" className="sm:col-span-2">
+        <Field label="Project Brief" required htmlFor="contact-message" className="sm:col-span-2">
           <textarea
             id="contact-message"
             name="message"
-            placeholder="Tell us a bit about your goals, current systems, or timeline."
+            placeholder="Tell us what you need to build, improve, or connect—including current systems, technical requirements, or business goals."
             value={values.message}
             onChange={(event) => updateValue("message", event.target.value)}
             required
             className="min-h-[144px] w-full rounded-[1.1rem] border border-border bg-white px-4 py-4 text-base font-medium text-foreground shadow-[0_2px_6px_rgba(8,35,58,0.08)] outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15"
           />
         </Field>
+
+        <div className="sm:col-span-2">
+          <label className="flex items-start gap-3 cursor-pointer select-none">
+            <input
+              type="checkbox"
+              checked={consent}
+              onChange={(e) => setConsent(e.target.checked)}
+              required
+              className="mt-1 h-4 w-4 rounded border-border text-primary focus:ring-accent"
+            />
+            <span className="text-sm text-muted-foreground leading-relaxed">
+              I agree to the processing of my details and have read the{" "}
+              <Link to="/privacy-policy" className="text-foreground underline hover:text-accent font-medium">
+                Privacy Policy
+              </Link>
+              . <span className="text-rose-500">*</span>
+            </span>
+          </label>
+        </div>
 
         <div className="sm:col-span-2">
           <button

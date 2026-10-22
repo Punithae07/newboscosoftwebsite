@@ -12,13 +12,19 @@ const BlogListingPage = lazyWithRetry("BlogListingPage", () =>
 export const Route = createFileRoute("/resources/blogs")({
   head: () => ({
     meta: [
-      { title: "Blog | Bosco Soft Technologies" },
+      { title: "Enterprise Software, AI & SaaS Insights | Boscosoft" },
       {
         name: "description",
         content:
-          "Bosco Soft Technologies blog articles on ERP, AI in education, healthcare systems, finance operations, and digital transformation.",
+          "Practical perspectives on SaaS engineering, ERP, cloud, AI, data platforms, and domain software from the Boscosoft team.",
       },
-      { property: "og:title", content: "Blog | Bosco Soft Technologies" },
+      { name: "keywords", content: "enterprise software insights, SaaS engineering, ERP, cloud, AI, data platforms, Boscosoft blog" },
+      { property: "og:title", content: "Enterprise Software, AI & SaaS Insights | Boscosoft" },
+      {
+        property: "og:description",
+        content:
+          "Practical perspectives on SaaS engineering, ERP, cloud, AI, data platforms, and domain software from the Boscosoft team.",
+      },
     ],
     links: [{ rel: "canonical", href: "/blog" }],
   }),

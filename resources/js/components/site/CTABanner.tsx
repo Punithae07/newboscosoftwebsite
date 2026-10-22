@@ -3,10 +3,10 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function CTABanner({
-  title = "Ready to build a more connected and intelligent organization?",
-  description = "Whether you are exploring AI, modernizing ERP, building SaaS platforms, integrating systems, or improving visibility, Boscosoft can help you plan the next step.",
-  primary = { label: "Talk to Our Experts", to: "/contact-us" },
-  secondary = { label: "Request Demo", to: "/contact-us" },
+  title = "Have a technology challenge worth solving?",
+  description = "Tell us what you are building, modernizing, or trying to connect. We will help you explore a practical path forward—from the first architecture conversation to an engineering engagement or product demonstration.",
+  primary = { label: "Schedule a Technical Consultation", to: "/contact-us" },
+  secondary = { label: "Request a Product Demo", to: "/contact-us" },
 }: {
   title?: string;
   description?: string;

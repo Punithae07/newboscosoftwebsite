@@ -158,20 +158,20 @@ export function HomePage({
         <div className="relative z-10 mx-auto max-w-7xl px-4 pb-10 pt-12 sm:px-6 md:pb-12 md:pt-16 lg:px-8 lg:pb-16 lg:pt-20">
           <div className="max-w-6xl animate-slide-right lg:max-w-[67rem]">
             <div className="mb-5 inline-flex flex-wrap items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 backdrop-blur-md">
-              <span className="text-sm font-medium tracking-wide text-white/92">AI-Enabled Platforms</span>
+              <span className="text-sm font-medium tracking-wide text-white/92">Enterprise Software Engineering</span>
               <span aria-hidden="true" className="text-sm text-white/55">|</span>
-              <span className="text-sm font-medium tracking-wide text-white/92">Connected Ecosystems</span>
+              <span className="text-sm font-medium tracking-wide text-white/92">Applied AI</span>
               <span aria-hidden="true" className="text-sm text-white/55">|</span>
-              <span className="text-sm font-medium tracking-wide text-white/92">Transformation That Scales</span>
+              <span className="text-sm font-medium tracking-wide text-white/92">SaaS Platforms</span>
             </div>
 
             <h1 className="t-display max-w-6xl text-white lg:max-w-none">
-              <span className="text-white">Your Partner for Digital Transformation</span>
-              <span className="block text-white">for Connected, Scalable Organizations</span>
+              <span className="text-white">Engineering What’s Next.</span>
+              <span className="block text-white">Empowering Who’s Next.</span>
             </h1>
 
             <p className="mt-5 max-w-4xl text-[18px] leading-8 text-white">
-              Boscosoft helps enterprises and institutions modernize systems, automate workflows, and connect business platforms through AI-enabled SaaS products, ERP/CRM implementation, system integrations, data analytics, and cloud infrastructure. With a practical, implementation-focused approach, we support organizations in driving long-term digital transformation and sustainable business growth.
+              From legacy systems to modern SaaS, AI-powered workflows, and connected data platforms, Boscosoft brings the engineering talent and implementation experience to move critical technology forward. Work with dedicated teams who understand your systems, your business goals, and the value of long-term partnership.
             </p>
 
             <div className="mt-7 flex flex-wrap gap-3">
@@ -181,7 +181,7 @@ export function HomePage({
                 className="hidden bg-white text-primary hover:bg-white/90 shadow-glow lg:inline-flex"
               >
                 <Link to="/contact-us" preload="intent">
-                  Schedule Consultation <ArrowRight className="ml-2 h-4 w-4" />
+                  Talk to an Engineering Expert <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button
@@ -191,7 +191,7 @@ export function HomePage({
                 className="border-white/25 bg-white/10 text-white hover:bg-white/20 hover:text-white backdrop-blur-md"
               >
                 <Link to="/products">
-                  Explore Our Products <ArrowRight className="ml-2 h-4 w-4" />
+                  Explore Our Platforms <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </div>

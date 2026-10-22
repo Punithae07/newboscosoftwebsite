@@ -219,8 +219,7 @@ export function SiteFooter() {
             />
           </Link>
           <p className="mt-4 max-w-md text-[1.0625rem] leading-8 text-primary-foreground/86">
-            Bosco Soft Technologies Pvt. Ltd. is a technology partner focused on helping enterprises
-            and institutions become more connected, efficient, data-driven, and future-ready.
+            Boscosoft is an enterprise engineering and SaaS solutions company combining software delivery, domain experience, and a distinctive talent development mission.
           </p>
         </div>
  
@@ -242,6 +241,7 @@ export function SiteFooter() {
  
         <FooterCol title="Company">
           <FooterLink to="/about">About Us</FooterLink>
+          <FooterLink to="/social-impact">Social Impact</FooterLink>
           <FooterLink to="/leadership">Leadership</FooterLink>
           <FooterLink to="/careers">Careers</FooterLink>
           <FooterLink to="/contact-us">Contact Us</FooterLink>

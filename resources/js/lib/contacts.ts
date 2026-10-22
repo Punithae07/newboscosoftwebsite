@@ -95,7 +95,7 @@ export type AdminContactFormValues = z.infer<typeof adminContactSchema>;
 export const publicContactSchema = z.object({
   name: z.string().trim().min(1, "Name is required"),
   email: z.string().trim().email("Enter a valid email address"),
-  phone: z.string().trim().min(1, "Phone number is required"),
+  phone: z.string().trim().optional().or(z.literal("")),
   company: z.string().trim().optional().or(z.literal("")),
   country: z.string().trim().optional().or(z.literal("")),
   industry: z.string().trim().optional().or(z.literal("")),

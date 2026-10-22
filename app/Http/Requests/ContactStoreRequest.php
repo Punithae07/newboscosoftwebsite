@@ -16,7 +16,7 @@ class ContactStoreRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:120'],
             'email' => ['required', 'email:rfc', 'max:190'],
-            'phone' => ['required', 'string', 'max:60', 'regex:/^[0-9+\-\s()]{7,20}$/'],
+            'phone' => ['nullable', 'string', 'max:60', 'regex:/^[0-9+\-\s()]{7,20}$/'],
             'company' => ['nullable', 'string', 'max:190'],
             'country' => ['nullable', 'string', 'max:120'],
             'industry' => ['nullable', 'string', 'max:120'],

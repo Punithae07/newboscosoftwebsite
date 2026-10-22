@@ -15,23 +15,22 @@ export function BlogListingPage() {
           <Breadcrumbs items={[{ label: "Blog" }]} variant="light" />
           <div className="mt-8 max-w-4xl animate-fade-up">
             <div className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3.5 py-1.5 text-xs font-medium text-white/92">
-              Insights, product thinking, and implementation stories
+              Ideas and Insights
             </div>
             <h1 className="page-hero-title mt-5 max-w-4xl">
-              Blog articles built from the latest Boscosoft product and industry notes
+              Practical thinking for a changing technology landscape
             </h1>
-            <p className="page-hero-copy mt-5 max-w-2xl">
-              Browse practical articles on ERP, education, healthcare, finance, and digital
-              operations, all connected to the source markdown files provided in the project.
+            <p className="page-hero-copy mt-5 max-w-3xl">
+              Explore clear, actionable perspectives on engineering, connected platforms, domain software, and responsible AI adoption.
             </p>
           </div>
         </div>
       </section>
 
       <Section
-        eyebrow="All articles"
-        title="Browse the full blog library"
-        subtitle="Each card links to a dedicated detail page with the full article content and supporting imagery."
+        eyebrow="Article Library"
+        title="Explore clear perspectives on modern software"
+        subtitle="Practical articles on SaaS engineering, ERP, cloud, AI, data platforms, and domain software."
       >
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {blogArticles.map((article) => (
@@ -76,7 +75,33 @@ export function BlogListingPage() {
         </div>
       </Section>
 
-      <CTABanner />
+      <section className="relative overflow-hidden border-t border-border/80 bg-gradient-cta py-20 text-primary-foreground sm:py-24">
+        <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+            Move from reading to action.
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base text-primary-foreground/85 sm:text-lg">
+            Connect with our engineering specialists or discover how our industry SaaS platforms support your workflows.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <Button
+              asChild
+              size="lg"
+              className="bg-white text-primary hover:bg-white/90 shadow-elegant font-semibold px-7"
+            >
+              <Link to="/contact-us">Talk to an Expert</Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-white/40 bg-white/10 text-white hover:bg-white/20 font-semibold px-7"
+            >
+              <Link to="/products">Explore Our Solutions</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

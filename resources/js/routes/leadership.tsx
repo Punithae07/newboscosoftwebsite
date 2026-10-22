@@ -2,20 +2,27 @@ import { createFileRoute, Link, Outlet, useLocation } from "@tanstack/react-rout
 import { Section } from "@/components/site/Section";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { CTABanner } from "@/components/site/CTABanner";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { ArrowRight, Users } from "lucide-react";
+import { Layers, Users, BookOpen, Heart } from "lucide-react";
 
 export const Route = createFileRoute("/leadership")({
   head: () => ({
     meta: [
-      { title: "Leadership | Bosco Soft Technologies" },
+      { title: "Boscosoft Leadership & Engineering Culture" },
       {
         name: "description",
         content:
-          "Meet the leadership team at Bosco Soft Technologies driving innovation in AI, ERP, cloud, SaaS, and digital transformation.",
+          "Meet the leaders guiding Boscosoft’s engineering, products, customer delivery, and talent development mission.",
       },
-      { property: "og:title", content: "Leadership — Boscosoft" },
+      {
+        name: "keywords",
+        content: "Boscosoft leadership",
+      },
+      { property: "og:title", content: "Boscosoft Leadership & Engineering Culture" },
+      {
+        property: "og:description",
+        content:
+          "Meet the leaders guiding Boscosoft’s engineering, products, customer delivery, and talent development mission.",
+      },
     ],
     links: [{ rel: "canonical", href: "/leadership" }],
   }),
@@ -34,75 +41,78 @@ function LeadershipPage() {
     <>
       <section className="page-hero">
         <div className="page-hero-inner">
-          <Breadcrumbs items={[{ label: "Leadership" }]} variant="light" />
+          <Breadcrumbs items={[{ label: "About", to: "/about" }, { label: "Leadership" }]} variant="light" />
           <h1 className="page-hero-title">
-            The people behind Boscosoft's{" "}
-            <span className="text-white">digital transformation work</span>
+            Experienced leadership. Shared responsibility for results.
           </h1>
           <p className="page-hero-copy content-measure-wide">
-            Our team brings together product thinking, engineering discipline, implementation
-            experience, domain understanding, and a service mindset.
+            Our leadership brings together domain experience, engineering discipline, customer partnerships, and a conviction that opportunity should not be limited by geography.
           </p>
         </div>
       </section>
-      <Section bg="surface" eyebrow="Leadership" title="Leadership profiles">
+
+      <Section
+        bg="surface"
+        eyebrow="Leadership"
+        title="People behind the work"
+        subtitle="Display approved leadership profiles, titles, photographs, and brief expertise statements. Current names, roles, and biographies must be confirmed with HR or the corporate office before publication."
+      >
         <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
               slug: "fr-don-bosco",
               name: "Fr. Don Bosco Lourdusamy SDB",
               role: "President",
-              image: "/images/leaders/Don Bosco Lourdusamy SDB.png",
+              image: "/images/leaders/don-bosco-lourdusamy.png",
               linkedin: "https://in.linkedin.com/company/boscosoft-technologies",
             },
             {
               slug: "fr-thaddeus-singarayan",
               name: "Dr Thaddeus Singarayan SDB",
               role: "CEO & Managing Director",
-              image: "/images/leaders/Thaddeus Singarayan SDB.png",
+              image: "/images/leaders/thaddeus-singarayan.png",
               linkedin: "https://in.linkedin.com/company/boscosoft-technologies",
             },
             {
               slug: "fr-bosco-augustine",
               name: "Fr.Bosco Augustine SDB",
               role: "Chief Finance Officer",
-              image: "/images/leaders/Bosco Augustine SDB.png",
+              image: "/images/leaders/bosco-augustine.png",
               linkedin: "https://in.linkedin.com/company/boscosoft-technologies",
             },
             {
               slug: "mr-m-lingesh",
               name: "Mr. M Lingesh",
               role: "Chief Operations Officer",
-              image: "/images/leaders/Lingesh.png",
+              image: "/images/leaders/lingesh.png",
               linkedin: "https://in.linkedin.com/company/boscosoft-technologies",
             },
             {
               slug: "mr-felix-rajan",
               name: "Mr. Felix Rajan Meri Cruze",
               role: "Chief Technology Officer",
-              image: "/images/leaders/Felix Rajan Meri Cruze.png",
+              image: "/images/leaders/felix-rajan.png",
               linkedin: "https://in.linkedin.com/company/boscosoft-technologies",
             },
           ].map((person) => (
             <article
               key={person.slug}
-              className="leader-card group relative flex flex-col overflow-hidden rounded-xl border border-[#cfe1f0] bg-white shadow-md transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl"
+              className="leader-card group relative flex flex-col overflow-hidden rounded-xl border border-[#e2e8f0] bg-white shadow-md transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl"
               style={{
                 borderRadius: "14px",
                 overflow: "hidden",
-                border: "1px solid #d0e2f2",
+                border: "1px solid #e2e8f0",
                 backgroundColor: "#ffffff",
-                boxShadow: "0 8px 24px -10px rgba(7,21,43,0.18)",
+                boxShadow: "0 6px 20px -8px rgba(15,23,42,0.12)",
               }}
             >
-              {/* Photo Area with soft blue studio tint & grayscale portrait */}
               <div
                 className="leader-photo-wrap relative w-full overflow-hidden flex items-end justify-center"
                 style={{
                   position: "relative",
                   width: "100%",
-                  aspectRatio: "1 / 1.05",
-                  backgroundColor: "#dce8f3",
+                  aspectRatio: "1 / 0.84",
+                  backgroundColor: "#eceff2",
                   overflow: "hidden",
                   display: "flex",
                   alignItems: "flex-end",
@@ -121,12 +131,11 @@ function LeadershipPage() {
                     objectFit: "cover",
                     objectPosition: "top",
                     mixBlendMode: "multiply",
-                    filter: "grayscale(100%) contrast(1.03)",
-                    WebkitFilter: "grayscale(100%) contrast(1.03)",
+                    filter: "grayscale(100%) contrast(1.04)",
+                    WebkitFilter: "grayscale(100%) contrast(1.04)",
                   }}
                 />
 
-                {/* LinkedIn Badge Button */}
                 <a
                   href={person.linkedin}
                   target="_blank"
@@ -144,10 +153,10 @@ function LeadershipPage() {
                     width: "34px",
                     alignItems: "center",
                     justifyContent: "center",
-                    borderRadius: "6px",
-                    backgroundColor: "#85b5db",
+                    borderRadius: "7px",
+                    backgroundColor: "#94a3b8",
                     color: "#ffffff",
-                    boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
                   }}
                 >
                   <svg className="h-4 w-4 fill-current" style={{ width: "16px", height: "16px", fill: "#ffffff" }} viewBox="0 0 24 24" aria-hidden="true">
@@ -156,12 +165,11 @@ function LeadershipPage() {
                 </a>
               </div>
 
-              {/* Bottom Dark Navy Bar */}
               <div
                 className="leader-info-bar flex flex-1 flex-col justify-center px-4 py-5 text-center"
                 style={{
                   backgroundColor: "#07152b",
-                  padding: "18px 16px 20px",
+                  padding: "14px 14px 16px",
                   textAlign: "center",
                   display: "flex",
                   flex: "1 1 auto",
@@ -205,37 +213,48 @@ function LeadershipPage() {
           ))}
         </div>
       </Section>
-      <Section eyebrow="Team Culture" title="How we work">
-        <div className="grid md:grid-cols-3 gap-6">
+
+      <Section eyebrow="Culture" title="How we work with customers and each other">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
-              t: "Product engineering mindset",
-              d: "We build for scale, reliability, and long-term maintainability.",
+              icon: Layers,
+              t: "Product-minded engineering",
+              d: "Think beyond features to reliability and life-cycle cost.",
             },
             {
-              t: "Implementation capability",
-              d: "Strong delivery discipline across complex programs.",
+              icon: Users,
+              t: "Collaborative delivery",
+              d: "Work transparently with client stakeholders and internal teams.",
             },
-            { t: "Customer success approach", d: "Long-term partnership beyond go-live." },
-          ].map((b) => (
+            {
+              icon: BookOpen,
+              t: "Continuous learning",
+              d: "Prepare people for demanding and changing technical work.",
+            },
+            {
+              icon: Heart,
+              t: "Long-term relationships",
+              d: "Stay engaged beyond initial deployment.",
+            },
+          ].map((item) => (
             <div
-              key={b.t}
-              className="rounded-2xl border border-border bg-gradient-card p-7 shadow-card"
+              key={item.t}
+              className="rounded-2xl border border-border bg-gradient-card p-7 shadow-card transition-all duration-300 hover:-translate-y-1"
             >
-              <div className="text-base font-semibold leading-6 text-foreground">{b.t}</div>
-              <div className="mt-2 text-sm leading-6 text-foreground/78">{b.d}</div>
+              <item.icon className="mb-4 h-6 w-6 text-accent" />
+              <div className="text-base font-semibold leading-6 text-foreground">{item.t}</div>
+              <div className="mt-2 text-sm leading-6 text-muted-foreground">{item.d}</div>
             </div>
           ))}
         </div>
       </Section>
 
       <CTABanner
-        title="Want to work with our team?"
-        primary={{ label: "Talk to Our Experts", to: "/contact" }}
+        title="Meet the team behind your next project."
+        primary={{ label: "Talk to Our Experts", to: "/contact-us" }}
         secondary={{ label: "Explore Careers", to: "/careers" }}
       />
     </>
   );
 }
-
-

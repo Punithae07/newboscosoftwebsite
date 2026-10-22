@@ -15,29 +15,57 @@ export function SuccessStoriesListingPage() {
         <div className="page-hero-inner">
           <Breadcrumbs items={[{ label: "Success Stories" }]} variant="light" />
           <div className="mt-8 max-w-4xl animate-fade-up">
-            <div className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3.5 py-1.5 text-xs font-medium">
-              Customer implementation case studies
+            <div className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3.5 py-1.5 text-xs font-medium text-white/92">
+              Customer Stories
             </div>
             <h1 className="page-hero-title mt-5">
-              Success stories from real Boscosoft implementations
+              Real challenges. Thoughtful solutions. Meaningful progress.
             </h1>
             <p className="page-hero-copy mt-5 max-w-3xl">
-              Browse written case studies that highlight implementation outcomes, operational
-              improvements, and customer impact across Boscosoft solutions.
+              Every technology project starts with a problem worth solving. Explore how customers
+              have approached modernization, operational integration, and software implementation
+              with Boscosoft.
             </p>
           </div>
         </div>
       </section>
 
       <Section
-        title="Success stories"
-        subtitle="Detailed implementation narratives with outcomes, highlights, and structured content."
+        eyebrow="Case Studies"
+        title="Explore the work behind the results"
+        subtitle="Explore how customers have approached modernization, operational integration, and software implementation with Boscosoft."
         introWidth="wide"
       >
         <StoryGrid stories={articleStories} ctaLabel="Read Story" />
       </Section>
 
-      <CTABanner />
+      <section className="relative overflow-hidden border-t border-border/80 bg-gradient-cta py-20 text-primary-foreground sm:py-24">
+        <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+            Let’s talk about your next outcome.
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base text-primary-foreground/85 sm:text-lg">
+            Connect with our team to discuss software modernization, custom development, or domain-specific SaaS platforms.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <Button
+              asChild
+              size="lg"
+              className="bg-white text-primary hover:bg-white/90 shadow-elegant font-semibold px-7"
+            >
+              <Link to="/contact-us">Discuss Your Project</Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-white/40 bg-white/10 text-white hover:bg-white/20 font-semibold px-7"
+            >
+              <Link to="/products">Explore Products</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

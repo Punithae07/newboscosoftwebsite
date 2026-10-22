@@ -49,10 +49,7 @@ const productWebsiteMap: Record<ProductSlug, string> = {
 export function ProductPage({ product }: { product: Product }) {
   const Icon = iconMap[product.slug];
   const productWebsite = productWebsiteMap[product.slug];
-  const heroHeadline = product.headline
-    .replace(`${product.name}: `, "")
-    .replace(/^AI-Ready\s+/i, "")
-    .replace(/^AI-ready\s+/i, "");
+  const heroHeadline = product.headline;
   const featureItems =
     product.featureItems?.map((item, i) => ({
       title: item.title,
@@ -66,7 +63,9 @@ export function ProductPage({ product }: { product: Product }) {
       number: i + 1,
     }));
   const productFaqs =
-    product.slug === "eaudithub"
+    product.faqs && product.faqs.length > 0
+      ? product.faqs
+      : product.slug === "eaudithub"
       ? [
           {
             q: "Is it cloud-friendly, mobile-friendly, and user-friendly?",
@@ -137,7 +136,7 @@ export function ProductPage({ product }: { product: Product }) {
           <div className="mt-8 grid items-center gap-8 lg:grid-cols-12 lg:gap-10">
             <div className="animate-fade-up lg:col-span-7">
               <div className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-sm font-medium backdrop-blur">
-                {product.category}
+                {product.eyebrow || product.category}
               </div>
               <h1 className="page-hero-title mt-5">{heroHeadline}</h1>
               <p className="page-hero-copy mt-5 max-w-2xl text-primary-foreground/90">
@@ -150,7 +149,7 @@ export function ProductPage({ product }: { product: Product }) {
                   className="bg-white text-primary shadow-glow hover:bg-white/90"
                 >
                   <Link to="/contact-us" preload="intent">
-                    Request Demo <ArrowRight className="ml-2 h-4 w-4" />
+                    {product.heroCtas?.primary?.label || "Request a Demo"} <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
                 <Button
@@ -159,8 +158,8 @@ export function ProductPage({ product }: { product: Product }) {
                   variant="outline"
                   className="border-white/30 bg-white/10 text-white hover:bg-white/20 hover:text-white"
                 >
-                  <a href={productWebsite} target="_blank" rel="noreferrer" className="text-white">
-                    Discover the Solution
+                  <a href={product.heroCtas?.secondary?.href || productWebsite} target="_blank" rel="noreferrer" className="text-white">
+                    {product.heroCtas?.secondary?.label || "Explore Features"}
                   </a>
                 </Button>
               </div>
@@ -183,7 +182,7 @@ export function ProductPage({ product }: { product: Product }) {
       </section>
 
       {product.productItems?.length ? (
-        <Section eyebrow="Products" title={`${product.name} Product Lineup`} subtitle={product.productSuiteIntro}>
+        <Section eyebrow="Suite Lineup" title={product.productSuiteTitle || `${product.name} Product Lineup`} subtitle={product.productSuiteIntro}>
           <div className="grid gap-5 md:grid-cols-2">
             {product.productItems.map((item) => (
               <div
@@ -215,14 +214,14 @@ export function ProductPage({ product }: { product: Product }) {
 
       <Section
         eyebrow="Features"
-        title={`Comprehensive ${product.name} Capabilities`}
+        title={product.featuresTitle || `Comprehensive ${product.name} Capabilities`}
         subtitle={product.featuresIntro ?? product.description}
       >
         <FeatureCarousel items={featureItems} />
         <div className="mt-8 flex items-center justify-between">
           <Button asChild size="sm" className="bg-gradient-cta text-primary-foreground">
             <a href={productWebsite} target="_blank" rel="noreferrer" className="text-primary-foreground">
-              View all modules <ArrowRight className="ml-2 h-4 w-4" />
+              {product.featuresCta || "See All Modules"} <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </Button>
           <div className="flex items-center gap-2">
@@ -236,7 +235,7 @@ export function ProductPage({ product }: { product: Product }) {
       <Section
         bg="surface"
         eyebrow="Advantages"
-        title={`Why ${product.name} is the Better Choice`}
+        title={product.advantagesTitle || `Why ${product.name} is the Better Choice`}
         subtitle={
           product.advantagesIntro ??
           "Purpose-built for organizations that need clarity, accountability, connected workflows, and long-term digital readiness."
@@ -258,7 +257,7 @@ export function ProductPage({ product }: { product: Product }) {
                   </div>
                   <div className="t-card-title">{item.title}</div>
                 </div>
-                <p className="mt-3 t-card-desc">{item.description}</p>
+                {item.description ? <p className="mt-3 t-card-desc">{item.description}</p> : null}
               </div>
             ))}
         </div>
@@ -268,11 +267,15 @@ export function ProductPage({ product }: { product: Product }) {
         <SuccessStoriesStacked
           eyebrow="Success Stories"
           title={
-            product.slug === "higrade"
+            product.caseStudiesTitle ||
+            (product.slug === "higrade"
               ? "Trusted by Higher Education Institutions"
-              : `Trusted by ${product.category} Teams`
+              : `Trusted by ${product.category} Teams`)
           }
-          subtitle={`Discover why organizations choose ${product.name} to modernize operations with structured workflows and better visibility.`}
+          subtitle={
+            product.caseStudiesCopy ||
+            `Discover why organizations choose ${product.name} to modernize operations with structured workflows and better visibility.`
+          }
           testimonials={product.testimonials}
           sideImage={product.successStoriesImage}
           imageAlt={`${product.name} success story`}
@@ -296,7 +299,7 @@ export function ProductPage({ product }: { product: Product }) {
             <div className="mb-3 t-eyebrow text-accent">FAQ</div>
             <h2 className="t-section-title text-white">Common questions about {product.name}</h2>
             <p className="mt-4 text-base leading-8 text-white">
-              Find answers to common questions about School ERP implementation, workflows, support, and AI-ready school management.
+              Find answers to common questions about {product.name} implementation, workflows, support, and platform capabilities.
             </p>
           </div>
           <Accordion type="single" collapsible>
@@ -338,12 +341,12 @@ export function ProductPage({ product }: { product: Product }) {
             <div className="mt-7 flex flex-wrap gap-3">
               <Button asChild className="bg-gradient-cta text-primary-foreground">
                 <Link to="/contact-us" preload="intent">
-                  Request Demo <ArrowRight className="ml-2 h-4 w-4" />
+                  {product.caseStudiesCta || "Request a Demo"} <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button asChild variant="outline" className="text-slate-950 hover:text-slate-950">
                 <a href={productWebsite} target="_blank" rel="noreferrer" className="text-slate-950">
-                  Discover the Solution
+                  {product.featuresCta || "Discover the Solution"}
                 </a>
               </Button>
             </div>

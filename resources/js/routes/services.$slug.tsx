@@ -23,29 +23,37 @@ export const Route = createFileRoute("/services/$slug")({
       ? {
           meta: [
             {
-            title:
-              loaderData.seoTitle ??
-              `${loaderData.name} | Bosco Soft Technologies`,
-          },
-          {
-            name: "description",
-            content:
-              loaderData.seoDescription ??
-              loaderData.tagline,
-          },
-          {
-            property: "og:title",
-            content:
-              loaderData.seoTitle ??
-              `${loaderData.name} | Bosco Soft Technologies`,
-          },
-          {
-            property: "og:description",
-            content:
-              loaderData.seoDescription ??
-              loaderData.tagline,
-          },
-        ],
+              title:
+                loaderData.seoTitle ??
+                `${loaderData.name} | Bosco Soft Technologies`,
+            },
+            {
+              name: "description",
+              content:
+                loaderData.seoDescription ??
+                loaderData.tagline,
+            },
+            ...(loaderData.seoKeywords
+              ? [
+                  {
+                    name: "keywords",
+                    content: loaderData.seoKeywords,
+                  },
+                ]
+              : []),
+            {
+              property: "og:title",
+              content:
+                loaderData.seoTitle ??
+                `${loaderData.name} | Bosco Soft Technologies`,
+            },
+            {
+              property: "og:description",
+              content:
+                loaderData.seoDescription ??
+                loaderData.tagline,
+            },
+          ],
         }
       : {},
   component: ServiceRouteComponent,

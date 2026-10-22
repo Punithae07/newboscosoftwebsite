@@ -21,6 +21,7 @@ import {
   Bookmark,
   Globe,
   User,
+  Heart,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { navProducts, navServices } from "@/lib/site-data";
@@ -31,18 +32,19 @@ const resourcesItems = [
   {
     label: "Success Stories",
     to: "/resources/success-stories",
-    desc: "Real-world transformation impact stories",
+    desc: "Verified customer outcomes & modernization stories",
   },
-  { label: "Blog", to: "/resources/blogs", desc: "ERP, AI, and digital transformation articles" },
+  { label: "Blog", to: "/resources/blogs", desc: "Enterprise software, AI & SaaS insights" },
   {
     label: "White Papers",
     to: "/resources/white-papers",
-    desc: "In-depth industry research and guides",
+    desc: "Research and practical guides for tech leaders",
   },
 ];
 
 const aboutItems = [
   { label: "About Us", to: "/about", desc: "Who we are and our global heritage", icon: User },
+  { label: "Social Impact", to: "/social-impact", desc: "Rural engineering talent & inclusive growth", icon: Heart },
   { label: "Leadership", to: "/leadership", desc: "Meet the experts steering our vision" },
   { label: "Careers", to: "/careers", desc: "Join our global engineering team" },
 ];
@@ -135,19 +137,19 @@ export function SiteHeader() {
               Home
             </Link>
             <NavTrigger
-              label="Products"
-              active={open === "products"}
-              current={pathname.startsWith("/products")}
-              onEnter={() => setOpen("products")}
-              onClick={() => setOpen((current) => (current === "products" ? null : "products"))}
-              className="flex h-10 items-center rounded-[0.85rem] border px-4 text-[0.95rem] font-medium transition-all duration-200"
-            />
-            <NavTrigger
               label="Services"
               active={open === "services"}
               current={pathname.startsWith("/services")}
               onEnter={() => setOpen("services")}
               onClick={() => setOpen((current) => (current === "services" ? null : "services"))}
+              className="flex h-10 items-center rounded-[0.85rem] border px-4 text-[0.95rem] font-medium transition-all duration-200"
+            />
+            <NavTrigger
+              label="Products"
+              active={open === "products"}
+              current={pathname.startsWith("/products")}
+              onEnter={() => setOpen("products")}
+              onClick={() => setOpen((current) => (current === "products" ? null : "products"))}
               className="flex h-10 items-center rounded-[0.85rem] border px-4 text-[0.95rem] font-medium transition-all duration-200"
             />
             {/* Industries nav removed per redesign */}
@@ -165,6 +167,7 @@ export function SiteHeader() {
               active={open === "company"}
               current={
                 pathname.startsWith("/about") ||
+                pathname.startsWith("/social-impact") ||
                 pathname.startsWith("/leadership") ||
                 pathname.startsWith("/careers")
               }
@@ -436,10 +439,9 @@ export function SiteHeader() {
             <div className="grid grid-cols-12 rounded-xl overflow-hidden border border-border/80 bg-background shadow-elegant">
               <div className="col-span-12 md:col-span-3 bg-gradient-cta p-4 text-primary-foreground flex flex-col justify-between">
                 <div>
-                  <h3 className="text-2xl font-bold tracking-tight">Resources Hub</h3>
+                  <h3 className="text-2xl font-bold tracking-tight">Ideas & Insights</h3>
                   <p className="mt-3 text-sm text-primary-foreground/80 leading-relaxed">
-                    In-depth insights into AI adoption, enterprise software implementation, and
-                    digital transformation.
+                    Practical perspectives on software engineering, cloud modernization, enterprise SaaS, and applied AI.
                   </p>
                 </div>
                 <div className="mt-8">
@@ -448,8 +450,8 @@ export function SiteHeader() {
                     variant="secondary"
                     className="w-full bg-white text-primary hover:bg-white/95"
                   >
-                    <Link to="/resources" onClick={() => setOpen(null)}>
-                      All Resources
+                    <Link to="/resources/blogs" onClick={() => setOpen(null)}>
+                      Explore Insights
                     </Link>
                   </Button>
                 </div>
@@ -457,7 +459,7 @@ export function SiteHeader() {
 
               <div className="col-span-12 md:col-span-6 p-4 bg-background">
                 <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-6">
-                  Knowledge & Guides
+                  Knowledge & Case Studies
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-3 gap-y-3">
                   {resourcesItems.map((r, idx) => {
@@ -477,10 +479,10 @@ export function SiteHeader() {
               </div>
 
               <MegaPromo
-                tag="New"
-                title="Digital Transformation"
-                desc="A practical guide for leaders modernizing platforms, data, and AI."
-                ctaLabel="Read White Paper"
+                tag="Research"
+                title="Technology Guides"
+                desc="Go deeper on the architectural and operational choices shaping modern business software."
+                ctaLabel="Explore White Papers"
                 ctaTo="/resources/white-papers"
                 imageSrc="/images/slider-03.avif"
                 imageAlt="Resources and white paper preview"
@@ -579,13 +581,13 @@ export function SiteHeader() {
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <MobileGroup
-                label="Products"
-                items={navProducts.map((p) => ({ label: p.name, to: `/products/${p.slug}` }))}
+                label="Services"
+                items={navServices.map((s) => ({ label: s.name, to: `/services/${s.slug}` }))}
                 onItemClick={() => setMobileOpen(false)}
               />
               <MobileGroup
-                label="Services"
-                items={navServices.map((s) => ({ label: s.name, to: `/services/${s.slug}` }))}
+                label="Products"
+                items={navProducts.map((p) => ({ label: p.name, to: `/products/${p.slug}` }))}
                 onItemClick={() => setMobileOpen(false)}
               />
 

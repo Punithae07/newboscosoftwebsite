@@ -23,19 +23,27 @@ export const Route = createFileRoute("/products/$slug")({
       ? {
           meta: [
             { title: loaderData.seoTitle },
-          {
-            name: "description",
-            content: loaderData.seoDescription,
-          },
-          {
-            property: "og:title",
-            content: loaderData.seoTitle,
-          },
-          {
-            property: "og:description",
-            content: loaderData.seoDescription,
-          },
-        ],
+            {
+              name: "description",
+              content: loaderData.seoDescription,
+            },
+            ...(loaderData.seoKeywords
+              ? [
+                  {
+                    name: "keywords",
+                    content: loaderData.seoKeywords,
+                  },
+                ]
+              : []),
+            {
+              property: "og:title",
+              content: loaderData.seoTitle,
+            },
+            {
+              property: "og:description",
+              content: loaderData.seoDescription,
+            },
+          ],
         }
       : {},
   component: ProductRouteComponent,

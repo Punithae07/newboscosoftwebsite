@@ -4,13 +4,19 @@ import { WhitePapersListingPage } from "@/components/site/resources/WhitePapersL
 export const Route = createFileRoute("/whitepapers/")({
   head: () => ({
     meta: [
-      { title: "White Papers | Bosco Soft Technologies " },
+      { title: "Enterprise AI, SaaS & Modernization White Papers | Boscosoft" },
       {
         name: "description",
         content:
-          "Explore white papers from Bosco Soft Technologies covering AI, ERP, cloud, SaaS, digital transformation, and enterprise technology insights.",
+          "Explore practical Boscosoft guides to AI adoption, cloud software modernization, enterprise data architecture, and connected systems.",
       },
-      { property: "og:title", content: "White Papers | Bosco Soft Technologies" },
+      { name: "keywords", content: "enterprise AI white papers, SaaS modernization, data architecture, cloud software guides" },
+      { property: "og:title", content: "Enterprise AI, SaaS & Modernization White Papers | Boscosoft" },
+      {
+        property: "og:description",
+        content:
+          "Explore practical Boscosoft guides to AI adoption, cloud software modernization, enterprise data architecture, and connected systems.",
+      },
     ],
     links: [{ rel: "canonical", href: "/whitepapers" }],
   }),

@@ -38,6 +38,129 @@
         min-height: 100vh;
         background: transparent;
       }
+
+      /* Leader Card Customizations */
+      .leader-card {
+        border-radius: 14px !important;
+        overflow: hidden !important;
+        border: 1px solid #e2e8f0 !important;
+        background-color: #ffffff !important;
+        box-shadow: 0 6px 20px -8px rgba(15, 23, 42, 0.12) !important;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease !important;
+      }
+
+      .leader-card:hover {
+        transform: translateY(-5px) !important;
+        border-color: #cbd5e1 !important;
+        box-shadow: 0 16px 32px -10px rgba(15, 23, 42, 0.2) !important;
+      }
+
+      /* Reduced photo height and light gray background */
+      .leader-photo-wrap {
+        position: relative !important;
+        width: 100% !important;
+        aspect-ratio: 1 / 0.84 !important;
+        background-color: #eceff2 !important;
+        overflow: hidden !important;
+        display: flex !important;
+        align-items: flex-end !important;
+        justify-content: center !important;
+        transition: background-color 0.3s ease !important;
+      }
+
+      .leader-card:hover .leader-photo-wrap {
+        background-color: #e5e9ed !important;
+      }
+
+      .leader-photo-wrap img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: top center !important;
+        mix-blend-mode: multiply !important;
+        filter: grayscale(100%) contrast(1.04) !important;
+        -webkit-filter: grayscale(100%) contrast(1.04) !important;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      }
+
+      .leader-card:hover .leader-photo-wrap img {
+        transform: scale(1.04) !important;
+      }
+
+      /* LinkedIn Button with light bright hover */
+      .leader-linkedin-btn {
+        position: absolute !important;
+        right: 14px !important;
+        top: 14px !important;
+        z-index: 10 !important;
+        display: flex !important;
+        height: 34px !important;
+        width: 34px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 7px !important;
+        background-color: #94a3b8 !important;
+        color: #ffffff !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12) !important;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      }
+
+      .leader-linkedin-btn svg {
+        width: 17px !important;
+        height: 17px !important;
+        fill: #ffffff !important;
+        transition: filter 0.25s ease, transform 0.25s ease !important;
+      }
+
+      /* Hover on the card lights up LinkedIn icon bright */
+      .leader-card:hover .leader-linkedin-btn {
+        background-color: #0077b5 !important;
+        box-shadow: 0 4px 14px rgba(0, 119, 181, 0.45) !important;
+        transform: scale(1.06) !important;
+      }
+
+      .leader-card:hover .leader-linkedin-btn svg {
+        filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.8)) !important;
+      }
+
+      /* Hover directly on LinkedIn button shines light bright */
+      .leader-linkedin-btn:hover {
+        background-color: #0096e6 !important;
+        box-shadow: 0 6px 18px rgba(0, 150, 230, 0.6) !important;
+        transform: scale(1.16) !important;
+      }
+
+      .leader-linkedin-btn:hover svg {
+        filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.95)) !important;
+      }
+
+      /* Compact and sleek bottom bar */
+      .leader-info-bar {
+        background-color: #07152b !important;
+        padding: 14px 14px 16px !important;
+        text-align: center !important;
+        display: flex !important;
+        flex: 1 1 auto !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+      }
+
+      .leader-name {
+        color: #ffffff !important;
+        font-size: 0.92rem !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.05em !important;
+        margin: 0 !important;
+        line-height: 1.3 !important;
+      }
+
+      .leader-role {
+        color: #cbd5e1 !important;
+        font-size: 0.8rem !important;
+        font-weight: 500 !important;
+        margin-top: 5px !important;
+      }
     </style>
     @unless(app()->environment('local'))
       <script>

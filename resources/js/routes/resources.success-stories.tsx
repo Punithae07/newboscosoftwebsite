@@ -12,13 +12,19 @@ const SuccessStoriesListingPage = lazyWithRetry("SuccessStoriesListingPage", () 
 export const Route = createFileRoute("/resources/success-stories")({
   head: () => ({
     meta: [
-      { title: "Success Stories | Bosco Soft Technologies" },
+      { title: "Software Engineering & SaaS Customer Success Stories | Boscosoft" },
       {
         name: "description",
         content:
-          "Customer success stories from Boscosoft implementations across finance, healthcare, and operational transformation.",
+          "Explore Boscosoft software engineering, modernization, ERP, and SaaS implementation stories with verified customer outcomes.",
       },
-      { property: "og:title", content: "Success Stories | Bosco Soft Technologies" },
+      { name: "keywords", content: "software engineering case studies, SaaS modernization, ERP implementation, Boscosoft success stories" },
+      { property: "og:title", content: "Software Engineering & SaaS Customer Success Stories | Boscosoft" },
+      {
+        property: "og:description",
+        content:
+          "Explore Boscosoft software engineering, modernization, ERP, and SaaS implementation stories with verified customer outcomes.",
+      },
     ],
     links: [{ rel: "canonical", href: "/success-stories" }],
   }),

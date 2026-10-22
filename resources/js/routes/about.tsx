@@ -7,6 +7,8 @@ import {
   Users,
   Layers,
   Rocket,
+  CheckCircle2,
+  BookOpen,
 } from "lucide-react";
 import { Section } from "@/components/site/Section";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
@@ -22,16 +24,21 @@ const partners = [
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us | Bosco Soft Technologies " },
+      { title: "About Boscosoft | Enterprise Engineering with Social Impact" },
       {
         name: "description",
         content:
-          "Learn about Bosco Soft Technologies, an IT consulting & services company delivering AI, ERP, SaaS, cloud, and digital transformation solutions.",
+          "Discover Boscosoft’s journey from rural Yelagiri to international enterprise software engineering and SaaS, powered by inclusive talent development.",
       },
-      { property: "og:title", content: "About Bosco Soft Technologies" },
+      {
+        name: "keywords",
+        content: "Boscosoft technology company, global software engineering, social impact technology",
+      },
+      { property: "og:title", content: "About Boscosoft | Enterprise Engineering with Social Impact" },
       {
         property: "og:description",
-        content: "Technology partner for enterprises and institutions.",
+        content:
+          "Discover Boscosoft’s journey from rural Yelagiri to international enterprise software engineering and SaaS, powered by inclusive talent development.",
       },
     ],
     links: [{ rel: "canonical", href: "/about" }],
@@ -45,22 +52,21 @@ function AboutPage() {
       <section className="page-hero">
         <div className="page-hero-inner">
           <Breadcrumbs items={[{ label: "About" }]} variant="light" />
-          <h1 className="page-hero-title">About Bosco Soft Technologies</h1>
+          <h1 className="page-hero-title">An engineering company with an uncommon beginning</h1>
           <p className="page-hero-copy content-measure-wide">
-            We help organizations modernize operations, connect systems, adopt AI responsibly, and
-            scale through domain-focused platforms and digital transformation services.
+            We help organizations build and modernize software, connect data and workflows, and turn technology investments into systems people can depend on. Our roots in rural Yelagiri Hills also shape how we find talent, develop engineers, and create opportunity.
           </p>
         </div>
       </section>
 
-      <Section>
+      <Section eyebrow="Corporate Introduction" title="Serious engineering. A wider sense of purpose.">
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.3fr)_minmax(320px,420px)]">
           <div className="content-measure-wide stack-copy">
             <p className="t-body-lg">
-              Bosco Soft Technologies Pvt. Ltd., owned, managed, and operated by the Salesians of Don Bosco, is a technology partner focused on helping enterprises and institutions become more connected, efficient, data-driven, and future-ready.
+              Bosco Soft Technologies Pvt. Ltd. combines enterprise software development, domain-specific SaaS platforms, ERP/CRM implementation, data engineering, AI solutions, and long-term technology support.
             </p>
-            <p className="t-body-lg">
-              Our work spans AI-enabled SaaS platforms, enterprise integrations, ERP/CRM implementation, cloud infrastructure, analytics, workflow automation, and long-term digital transformation support.
+            <p className="t-body-lg text-muted-foreground">
+              We work with clients navigating the real challenges of modernization: keeping critical systems stable, integrating new capabilities, and supporting users through change.
             </p>
           </div>
           <div className="overflow-hidden rounded-[2rem] border border-border/70 bg-gradient-card shadow-card">
@@ -98,33 +104,39 @@ function AboutPage() {
           </div>
         </div>
       </section>
-      <Section bg="surface" eyebrow="Our Journey" title="How Boscosoft has evolved">
+
+      <Section
+        bg="surface"
+        eyebrow="Journey"
+        title="From an idea on the hills to technology for a connected world"
+        subtitle="In 1998, BICS InfoTech took shape at Don Bosco Centre, Yelagiri Hills, to make professional technology training accessible to rural and disadvantaged youth. Learning grew into practical software and service delivery through BOSCO-ITS. Bosco Soft Technologies Pvt. Ltd. was established in February 2011 to grow commercial technology services and career opportunities. Today, the same belief—talent deserves opportunity—continues alongside an expanded engineering and software platform business."
+      >
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {[
             {
               i: Layers,
-              t: "From Custom Dev to AI Platforms",
-              d: "We built deep platform IP across domains.",
+              t: "Skills into software",
+              d: "Practical training and real-world delivery built the engineering foundation.",
             },
             {
               i: Rocket,
-              t: "From Projects to SaaS",
-              d: "Multi-tenant, scalable, cloud-native delivery.",
+              t: "Services into platforms",
+              d: "Recurring industry needs shaped domain products in education, healthcare, finance, faith organizations, and audit.",
             },
             {
               i: Sparkles,
-              t: "From Apps to Integrated Systems",
-              d: "Connected ecosystems, not isolated tools.",
+              t: "Applications into ecosystems",
+              d: "Integrations, cloud, data, and enterprise workflows connected previously isolated functions.",
             },
             {
               i: Heart,
-              t: "From Systems to AI-Driven Workflows",
-              d: "Responsible AI adoption with clear outcomes.",
+              t: "Technology into intelligent operations",
+              d: "New AI and data approaches open opportunities for responsible automation and better decisions.",
             },
           ].map((entry) => (
             <div
               key={entry.t}
-              className="rounded-2xl border border-border bg-background p-6 shadow-card"
+              className="rounded-2xl border border-border bg-background p-6 shadow-card transition-all duration-300 hover:-translate-y-1"
             >
               <entry.i className="mb-3 h-6 w-6 text-accent" />
               <h3 className="t-card-title">{entry.t}</h3>
@@ -134,33 +146,33 @@ function AboutPage() {
         </div>
       </Section>
 
-      <Section eyebrow="Milestones" title="A story of steady expansion and practical innovation">
+      <Section eyebrow="Milestones" title="Key milestones along our journey">
         <div className="grid gap-5 lg:grid-cols-4">
           {[
             {
-              year: "1999",
-              title: "Founded with a product mindset",
-              copy: "Started by solving real operational challenges with durable software systems.",
+              year: "1998",
+              title: "BICS InfoTech at Yelagiri",
+              copy: "Rural youth technology training and hands-on exposure.",
             },
             {
-              year: "2010+",
-              title: "Scaled into domain platforms",
-              copy: "Expanded from project execution into repeatable ERP and SaaS products.",
+              year: "2002",
+              title: "Early corporate expansion",
+              copy: "Bosco InfoTech Pvt. Ltd. was established; historical activities later consolidated.",
             },
             {
-              year: "2020+",
-              title: "Connected ecosystems",
-              copy: "Added integration, analytics, cloud, and modernization capability across sectors.",
+              year: "2011",
+              title: "Boscosoft incorporated",
+              copy: "Bosco Soft Technologies Pvt. Ltd. established to develop business and rural employment.",
             },
             {
               year: "Today",
-              title: "AI-enabled transformation",
-              copy: "Helping organizations adopt AI responsibly on top of strong digital foundations.",
+              title: "International engineering ambition",
+              copy: "Enterprise software services, domain platforms, and a continuing academy-to-industry commitment.",
             },
           ].map((milestone) => (
             <div
               key={milestone.title}
-              className="rounded-2xl border border-border bg-background p-6 shadow-card"
+              className="rounded-2xl border border-border bg-background p-6 shadow-card transition-all duration-300 hover:-translate-y-1"
             >
               <div className="t-eyebrow">{milestone.year}</div>
               <h3 className="mt-3 t-card-title">{milestone.title}</h3>
@@ -170,69 +182,60 @@ function AboutPage() {
         </div>
       </Section>
 
-      <Section eyebrow="Vision & Mission" title="Why we exist">
+      <Section bg="surface" eyebrow="Vision & Mission" title="Why we work the way we do">
         <div className="grid gap-6 md:grid-cols-2">
           <div className="rounded-2xl border border-border bg-gradient-card p-8 shadow-card">
-            <div className="mb-3 t-eyebrow">Vision</div>
-            <p className="t-card-title-lg text-foreground">Innovate and Lead.</p>
-            <p className="mt-3 t-body text-muted-foreground">
-              Innovating emerging technologies. Leading digital ecosystems. Transforming
-              institutional operations.
+            <div className="mb-3 t-eyebrow text-accent">Vision</div>
+            <p className="t-card-title-lg text-foreground">
+              A world where excellent engineering creates enduring value for customers and meaningful opportunity for talented people, wherever they begin.
             </p>
           </div>
           <div className="rounded-2xl border border-border bg-gradient-card p-8 shadow-card">
-            <div className="mb-3 t-eyebrow">Mission</div>
-            <p className="content-measure t-body text-muted-foreground">
-              We strive to achieve optimal results in the interest of stakeholders, employing
-              cutting-edge technologies, involving committed associates, driven by innovation and
-              leadership.
+            <div className="mb-3 t-eyebrow text-accent">Mission</div>
+            <p className="t-body text-foreground/90">
+              Help organizations solve complex technology problems through capable teams, dependable systems, and lasting partnerships while developing pathways into professional technology careers for underserved young people.
             </p>
           </div>
         </div>
       </Section>
 
-      <Section bg="surface" eyebrow="Values" title="What we stand for">
+      <Section eyebrow="Values" title="Principles that guide our engineering and partnerships">
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {[
             {
               i: ShieldCheck,
               t: "Integrity",
-              d: "Integrity in technology, relationships, and delivery.",
+              d: "Make clear commitments and communicate transparently.",
             },
             {
               i: Award,
-              t: "Commitment",
-              d: "Dedicated to long-term outcomes and dependable execution.",
-            },
-            {
-              i: Heart,
-              t: "Customer Delight",
-              d: "Focused on meaningful experiences and client trust.",
-            },
-            {
-              i: Sparkles,
-              t: "Technology Innovation & Leadership",
-              d: "Driving progress through future-ready solutions.",
+              t: "Engineering quality",
+              d: "Build for maintainability, reliability, and responsible operation.",
             },
             {
               i: Users,
-              t: "Stakeholder Participation",
-              d: "Engaging partners, teams, and communities in the journey.",
+              t: "Customer partnership",
+              d: "Understand the context before prescribing a solution.",
             },
             {
-              i: Layers,
-              t: "Quality Focus",
-              d: "Building reliable, scalable, and well-governed systems.",
+              i: BookOpen,
+              t: "Continuous learning",
+              d: "Keep teams adaptable to changing technologies.",
             },
             {
-              i: Rocket,
-              t: "Youth Empowerment",
-              d: "Nurturing talent, innovation, and future growth.",
+              i: Heart,
+              t: "Inclusive opportunity",
+              d: "Recognize potential and invest in development.",
+            },
+            {
+              i: CheckCircle2,
+              t: "Stewardship",
+              d: "Respect customer resources, data, and long-term outcomes.",
             },
           ].map((value) => (
             <div
               key={value.t}
-              className="rounded-2xl border border-border bg-background p-6 shadow-card"
+              className="rounded-2xl border border-border bg-background p-6 shadow-card transition-all duration-300 hover:-translate-y-1"
             >
               <value.i className="mb-3 h-6 w-6 text-accent" />
               <h3 className="t-card-title">{value.t}</h3>
@@ -242,36 +245,19 @@ function AboutPage() {
         </div>
       </Section>
 
-      <Section eyebrow="Why Trust Us" title="Why clients trust Boscosoft">
-        <div className="grid gap-5 md:grid-cols-4">
-          {[
-            { v: "25+", l: "Years of experience" },
-            { v: "2,600+", l: "Institutions served" },
-            { v: "22+", l: "Countries reached" },
-            { v: "India + UAE", l: "Delivery presence" },
-          ].map((stat) => (
-            <div
-              key={stat.l}
-              className="rounded-2xl border border-border bg-gradient-card p-6 shadow-card"
-            >
-              <div className="t-stat-value">{stat.v}</div>
-              <div className="mt-2 t-stat-label">{stat.l}</div>
-            </div>
-          ))}
+      <Section bg="surface" eyebrow="Why Trust Us" title="Experience that grows through delivery">
+        <div className="max-w-3xl">
+          <p className="t-body text-foreground/90">
+            Our history spans more than two decades of technology roots, multiple domain platforms, and work with organizations in India and beyond. Final publication of installation counts, countries served, branch locations, and named client logos requires confirmation of the reporting period and authorization.
+          </p>
         </div>
       </Section>
 
       <CTABanner
-        title="Let's build your digital transformation roadmap"
-        primary={{ label: "Talk to Our Experts", to: "/contact" }}
-        secondary={{ label: "Explore Our Platforms", to: "/products" }}
+        title="See what we could build together."
+        primary={{ label: "Talk to Our Experts", to: "/contact-us" }}
+        secondary={{ label: "Explore SaaS Platforms", to: "/products" }}
       />
     </>
   );
 }
-
-
-
-
-
-

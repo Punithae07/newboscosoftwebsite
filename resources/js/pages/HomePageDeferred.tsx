@@ -47,7 +47,114 @@ const productSeoAltMap = {
 
   "cristo-suite":
     "CristO Suite faith-based digital platform with church staff | Church Management Software | Church Management System | CHMS",
-} as const; 
+} as const;
+
+const homeProductOverrides: Record<
+  string,
+  {
+    name?: string;
+    tag?: string;
+    content: string;
+    cta: string;
+    points?: string[];
+  }
+> = {
+  "acme-erp": {
+    name: "Acme.erp",
+    tag: "Financial Management ERP",
+    content:
+      "Put financial stewardship in focus. Manage funds, branches, reporting, assets, and financial controls with greater clarity.",
+    cta: "Explore Acme.erp",
+  },
+  microfund: {
+    name: "MicroFUND",
+    tag: "Microfinance ERP",
+    content:
+      "Bring clarity to every lending cycle. Support borrower onboarding, repayments, field collections, and portfolio visibility.",
+    cta: "Explore MicroFUND",
+  },
+  medsysb: {
+    name: "MedSysB",
+    tag: "Hospital Software",
+    content:
+      "Connect care with operations. Coordinate patient journeys, diagnostics, pharmacy, billing, and hospital administration.",
+    cta: "Explore MedSysB",
+  },
+  smartschoolnxt: {
+    name: "SmartSchoolNxt",
+    tag: "School ERP",
+    content:
+      "Keep your school connected. Bring admissions, academics, attendance, fees, exams, and parent communication into coordinated workflows.",
+    cta: "Explore SmartSchoolNxt",
+  },
+  higrade: {
+    name: "HiGrade",
+    tag: "Higher Education ERP",
+    content:
+      "Make campus operations work as one. Connect the student lifecycle, academic administration, exams, and institutional reporting.",
+    cta: "Explore HiGrade",
+  },
+  eaudithub: {
+    name: "eAuditHub",
+    tag: "Audit Platform",
+    content:
+      "Move from findings to action. Plan audits, capture evidence, assign corrective actions, and track compliance activity.",
+    cta: "Explore eAuditHub",
+  },
+  "cristo-suite": {
+    name: "CristO Suite",
+    tag: "FaithTech ERP",
+    content:
+      "Connect communities and institutions. Manage parish, diocesan, religious institute, and community processes with systems designed for faith organizations.",
+    cta: "Explore CristO Suite",
+  },
+};
+
+const homeServiceOverrides: Record<
+  string,
+  {
+    title?: string;
+    description: string;
+    cta: string;
+  }
+> = {
+  "ai-transformation": {
+    title: "AI Transformation & Automation",
+    description:
+      "Give teams trusted access to knowledge, streamline manual work, and apply AI with human oversight.",
+    cta: "Discuss an AI Use Case",
+  },
+  "integration-ecosystems": {
+    title: "Integration & Digital Ecosystems",
+    description:
+      "Make business systems exchange accurate data and support coordinated workflows.",
+    cta: "Connect Your Systems",
+  },
+  "saas-engineering": {
+    title: "SaaS Engineering & Modernization",
+    description:
+      "Build cloud-native products and modernize applications without losing the value of what already works.",
+    cta: "Modernize Your Platform",
+  },
+  "erp-crm-implementation": {
+    title: "ERP & CRM Implementation",
+    description:
+      "Adapt enterprise systems to real business processes, adoption needs, and reporting requirements.",
+    cta: "Talk ERP & CRM",
+  },
+  "data-analytics-ai": {
+    title: "Data, Analytics & AI",
+    description:
+      "Make fragmented data usable through pipelines, lakehouses, dashboards, and governed insights.",
+    cta: "Plan Your Data Platform",
+  },
+  "cloud-infrastructure": {
+    title: "Cloud Infrastructure & Support",
+    description:
+      "Design, deploy, operate, and improve infrastructure for dependable digital services.",
+    cta: "Review Your Cloud Architecture",
+  },
+};
 
 const testimonialCards = [
   {
@@ -128,19 +235,20 @@ export function HomePageDeferred() {
     <>
       <Section bg="surface" className="cv-auto pb-[72px] md:pb-[88px] lg:pb-[104px]">
         <div className="mx-auto max-w-4xl text-center animate-slide-right">
-          <div className="mb-3 t-eyebrow">From friction to flow</div>
+          <div className="mb-3 t-eyebrow">Make technology work together</div>
           <h2 className="mx-auto mb-4 max-w-2xl t-section-title">
-            From fragmented operations to connected digital ecosystems
+            Turn complex systems into a competitive advantage
           </h2>
           <p className="mx-auto max-w-4xl t-body">
-            Many organizations face fragmented systems, manual processes, delayed reporting, disconnected data, and limited business visibility. Boscosoft helps overcome these challenges by delivering connected platforms, AI-enabled solutions, system integrations, data analytics, and scalable digital transformation solutions that streamline operations and support long-term growth.           </p>
+            Legacy applications, disconnected data, manual processes, and growing product demands can slow even strong organizations. We help you simplify that complexity through deliberate architecture, interoperable platforms, applied AI, and reliable engineering execution.
+          </p>
         </div>
         <div className="mt-12 grid gap-8 lg:mt-14 lg:grid-cols-2">
           <div className="rounded-3xl border border-border bg-gradient-card p-8 shadow-card">
             <div className="mb-3 t-eyebrow">Who we are</div>
-            <h2 className="t-section-title">A platform-led technology partner for the AI era</h2>
+            <h2 className="t-section-title">An engineering partner invested in the long run.</h2>
             <p className="mt-4 t-body">
-              Boscosoft brings together AI-enabled SaaS products, ERP/CRM implementation, AI automation, cloud infrastructure, data analytics, and deep industry expertise to help organizations modernize operations, accelerate digital transformation, and achieve sustainable business growth with confidence. 	
+              We collaborate with your team to develop, modernize, integrate, and support software that performs today and is ready for tomorrow.
             </p>
             <Button asChild variant="outline" className="mt-6 text-slate-950 hover:text-slate-950">
               <Link to="/about" className="text-slate-950">
@@ -153,8 +261,11 @@ export function HomePageDeferred() {
             <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gradient-fluent opacity-30 blur-3xl" />
             <div className="relative">
               <div className="mb-3 t-eyebrow text-accent">What we build</div>
-              <h2 className="t-section-title">What we help you build</h2>
-              <ul className="mt-5 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
+              <h2 className="t-section-title">From product vision to operating reality.</h2>
+              <p className="mt-4 t-body">
+                Enterprise applications; multi-tenant SaaS; AI assistants and document intelligence; data platforms and dashboards; ERP/CRM extensions; cloud deployment and support.
+              </p>
+              {/* <ul className="mt-5 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
                 {[
                   "AI-enabled workflows",
                   "Connected digital ecosystems",
@@ -171,7 +282,7 @@ export function HomePageDeferred() {
                     <span className="text-base leading-7 text-white">{item}</span>
                   </li>
                 ))}
-              </ul>
+              </ul> */}
               <Button asChild className="mt-7 bg-white text-primary hover:bg-white/90">
                 <Link to="/contact-us" preload="intent">
                   Talk to Our Experts <ArrowRight className="ml-2 h-4 w-4" />
@@ -185,26 +296,29 @@ export function HomePageDeferred() {
       <ViewportSection minHeightClassName="min-h-[980px] md:min-h-[1120px] lg:min-h-[1040px]">
         <Section
           className="cv-auto bg-white"
-          eyebrow="Products"
-          title="AI-enabled SaaS products for domain-specific transformation"
-          subtitle="From schools and colleges to hospitals, churches, NGOs, microfinance institutions, and audit teams, Boscosoft delivers AI-enabled SaaS products tailored to the unique needs of each sector. Our solutions are designed to streamline operations, improve efficiency, and support digital transformation based on how organizations work in the real world."
+          eyebrow="Domain-ready Products"
+          title="Proven industry platforms. Built for the way you work."
+          subtitle="Our product portfolio brings together critical records, everyday processes, and management visibility for specialized industries. Start with an established platform, then configure and integrate around your operating model."
           align="center"
         >
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-7">
-            {navProducts.map((product) => (
-              <PremiumProductCard
-                key={product.slug}
-                to={`/products/${product.slug}`}
-                name={product.name}
-                category={product.category}
-                tagline={product.tagline}
-                logoSrc={productLogoMap[product.slug]}
-                illustrationSrc={products[product.slug].heroImage}
-                seoAlt={productSeoAltMap[product.slug as keyof typeof productSeoAltMap]}
-                features={products[product.slug].benefits.slice(0, 3)}
-                cta="Explore Product"
-              />
-            ))}
+            {navProducts.map((product) => {
+              const override = homeProductOverrides[product.slug];
+              return (
+                <PremiumProductCard
+                  key={product.slug}
+                  to={`/products/${product.slug}`}
+                  name={override?.name || product.name}
+                  category={override?.tag || product.category}
+                  tagline={override?.content || product.tagline}
+                  logoSrc={productLogoMap[product.slug]}
+                  illustrationSrc={products[product.slug].heroImage}
+                  seoAlt={productSeoAltMap[product.slug as keyof typeof productSeoAltMap]}
+                  features={override?.points || products[product.slug].benefits.slice(0, 3)}
+                  cta={override?.cta || "Explore Product"}
+                />
+              );
+            })}
           </div>
         </Section>
       </ViewportSection>
@@ -212,32 +326,36 @@ export function HomePageDeferred() {
       <Section
         className="cv-auto"
         bg="surface"
-        eyebrow="Services"
-        title="Digital transformation services built around practical outcomes"
-        subtitle="Boscosoft helps organizations adopt AI, modernize platforms, connect applications, implement ERP/CRM systems, strengthen data analytics, and manage cloud infrastructure with a practical, implementation-focused approach."
+        eyebrow="Engineering services"
+        title="The technical expertise to move your business forward"
+        subtitle="Whether you need an experienced extension of your engineering team or a complete platform transformation, we focus on usable systems, sustainable architecture, and business-ready outcomes."
         align="center"
       >
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {navServices.map((service) => (
-            <FeatureCard
-              key={service.slug}
-              to={`/services/${service.slug}`}
-              category={service.group}
-              title={service.name}
-              description={service.tagline}
-              cta={service.cta}
-              backgroundImageSrc={service.heroImage}
-              immersive
-            />
-          ))}
+          {navServices.map((service) => {
+            const override = homeServiceOverrides[service.slug];
+            return (
+              <FeatureCard
+                key={service.slug}
+                to={`/services/${service.slug}`}
+                category={service.group}
+                title={override?.title || service.name}
+                description={override?.description || service.tagline}
+                cta={override?.cta || service.cta}
+                backgroundImageSrc={service.heroImage}
+                immersive
+              />
+            );
+          })}
         </div>
       </Section>
 
       <Section
         className="cv-auto"
-        eyebrow="Technology Ecosystem"
-        title="Flexible technology ecosystem for modern digital transformation"
-        subtitle="Boscosoft works across enterprise platforms, cloud-native technologies, open-source frameworks, ERP ecosystems, AI tools, and analytics platforms."
+        eyebrow="Built for your stack"
+        title="Practical expertise across enterprise technology
+"
+        subtitle="Work with teams familiar with fullstack development including Microsoft Dynamics 365, Power Platform, Azure, AWS, Google Cloud, Databricks, .NET Core, Frappe/ERPNext, Zoho, API architectures, and modern AI development patterns. Specific platform competencies and official partner designations should be verified before publication."
         align="center"
       >
         <div className="overflow-hidden">
@@ -257,35 +375,35 @@ export function HomePageDeferred() {
       <Section
         className="cv-auto"
         bg="surface"
-        eyebrow="Why Boscosoft"
-        title="Why organizations choose Boscosoft"
+        eyebrow="Why choose us"
+        title="Strong engineering. Thoughtful collaboration. Lasting value."
         align="center"
       >
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {[
             {
-              t: "Platform + service capability",
-              d: " AI-enabled SaaS products and ERP/CRM implementation services designed to work together.",
+              t: "Product and services under one roof",
+              d: "Experience developing our own platforms informs the way we engineer yours.",
             },
             {
-              t: "Domain-specific experience",
-              d: " Proven expertise across education, healthcare, finance, NGOs, faith, and audit.",
+              t: "Complex-domain understanding",
+              d: "Delivery exposure across education, healthcare, finance, community organizations, and enterprise operations.",
             },
             {
-              t: "Practical AI adoption",
-              d: " Practical AI transformation, automation, and business visibility improvements.",
+              t: "Modernize without unnecessary disruption",
+              d: "Incremental architecture and migration planning around business continuity.",
             },
             {
-              t: "Enterprise integration expertise",
-              d: "System integrations, ERP/CRM systems, data, and cloud infrastructure in one connected ecosystem.",
+              t: "Integration-first thinking",
+              d: "Connect applications, data, workflows, and users instead of creating another isolated system.",
             },
             {
-              t: "Long-term support model",
-              d: "Implementation, training, and long-term support for sustainable digital transformation.",
+              t: "Dedicated delivery relationships",
+              d: "Align the right specialists with your technology environment and evolving road map.",
             },
             {
-              t: "Cloud-ready engineering",
-              d: " Scalable cloud infrastructure, secure, and implementation-ready from the start.",
+              t: "An uncommon talent model",
+              d: "Our academy-to-industry pathway invests in technical growth and opportunity for rural youth.",
             },
           ].map((item) => (
             <div
@@ -305,8 +423,9 @@ export function HomePageDeferred() {
       <Section
         bg="surface"
         className="cv-auto bg-[#eef7ff]"
-        eyebrow="Client Proof"
-        title="Success stories with measurable outcomes"
+        eyebrow="Customer perspective"
+        title="The work speaks through our customers"
+        subtitle="Explore examples of long-standing product delivery, technology modernization, and enterprise implementation. Feature the OptionC modernization testimonial and other attributed references only once approval for current public use is confirmed."
         align="center"
       >
         <Carousel
@@ -351,7 +470,7 @@ export function HomePageDeferred() {
         </div>
       </Section>
 
-      <Section className="cv-auto" eyebrow="Leadership" title="From the leadership desk" align="center">
+      <Section className="cv-auto" eyebrow="Our perspective" title="Technology is valuable when it makes work better" align="center">
         <div className="grid items-start gap-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-stretch lg:gap-3">
           <div className="space-y-5 text-muted-foreground lg:flex lg:max-w-none lg:flex-col">
             <p className="t-body">
@@ -376,7 +495,7 @@ export function HomePageDeferred() {
             <div className="relative grid h-full gap-5 sm:grid-cols-[200px_minmax(0,1fr)] sm:items-start lg:grid-cols-[190px_minmax(0,1fr)]">
               <div className="overflow-hidden rounded-2xl border border-white/15 bg-white shadow-card">
                 <img
-                  src="/images/leaders/Thaddeus Singarayan SDB.png"
+                  src="/images/leaders/thaddeus-singarayan.png"
                   alt="Dr Thaddeus Singarayan SDB | MD & CEO at Bosco Soft Technologies Pvt. Ltd. | Bosco Soft Technologies CEO"
                   loading="lazy"
                   decoding="async"
@@ -405,26 +524,29 @@ export function HomePageDeferred() {
       <Section
         className="cv-auto"
         bg="surface"
-        eyebrow="Resources"
-        title="Insights for AI, SaaS, ERP, and digital transformation"
+        eyebrow="Insights & proof"
+        title="Ideas you can put to work"
         align="center"
       >
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {[
             {
               t: "Success Stories",
-              d: "How institutions transformed operations with Boscosoft platforms.",
+              d: "See the challenges, design decisions, and outcomes behind real implementations.",
               to: "/resources/success-stories",
+              cta: "Read Stories",
             },
             {
               t: "White Papers",
-              d: "Deep dives on AI adoption, ERP, and modernization.",
+              d: "Explore practical approaches to AI, legacy modernization, enterprise data, and SaaS delivery.",
               to: "/resources/white-papers",
+              cta: "Explore Papers",
             },
             {
               t: "Blogs",
-              d: "Practical insights on digital transformation.",
+              d: "Get clear perspectives on software products, integration, and changing technology demands.",
               to: "/resources/blogs",
+              cta: "Read Insights",
             },
           ].map((resource) => (
             <FeatureCard
@@ -432,7 +554,7 @@ export function HomePageDeferred() {
               to={resource.to}
               title={resource.t}
               description={resource.d}
-              cta="Read more"
+              cta={resource.cta}
             />
           ))}
         </div>

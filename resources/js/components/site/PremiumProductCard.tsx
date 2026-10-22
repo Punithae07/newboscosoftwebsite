@@ -59,7 +59,7 @@ export function PremiumProductCard({
           className=""
         />
 
-        <div className="absolute left-4 top-4 max-w-[calc(100%-2rem)]">
+        <div className="absolute left-4 top-4 z-10 max-w-[calc(100%-2rem)]">
           <span className="inline-flex max-w-full items-center rounded-full border border-[#9fc7ff]/45 bg-[#0b2e68] px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-white shadow-[0_10px_24px_-16px_rgba(3,17,51,0.9)]">
             <span className="truncate">{categoryLabel}</span>
           </span>
@@ -78,14 +78,14 @@ export function PremiumProductCard({
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col p-6 md:p-7">
+      <div className="flex flex-1 flex-col p-5 sm:p-6">
         <h3 className="t-card-title">{name}</h3>
-        <p className="t-card-desc mt-3 line-clamp-2 text-foreground/88">{tagline}</p>
+        <p className="t-card-desc mt-2.5 line-clamp-3 min-h-[4.25rem] text-foreground/88">{tagline}</p>
 
-        <ul className="mt-6 space-y-3">
+        <ul className="mt-4 space-y-2.5">
           {features.slice(0, 3).map((f) => (
             <li key={f} className="t-list flex items-start gap-2.5 text-foreground/85">
-              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
+              <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
                 <CheckCircle2 className="h-3.5 w-3.5" />
               </span>
               <span className="leading-snug">{f}</span>
@@ -93,7 +93,7 @@ export function PremiumProductCard({
           ))}
         </ul>
 
-        <div className="mt-7 border-t border-border/60 pt-4">
+        <div className="mt-auto border-t border-border/60 pt-4">
           <span className="t-button inline-flex items-center gap-1.5 rounded-full bg-accent/10 px-4 py-2 text-accent transition-all group-hover:gap-3 group-hover:bg-accent/14">
             {cta}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />

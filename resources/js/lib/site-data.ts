@@ -26,69 +26,106 @@ export const products: Record<
     clients: { name: string; location?: string; logo: string }[];
     testimonials: { q: string; n: string; o: string }[];
     cta: string;
+    seoTitle?: string;
+    seoDescription?: string;
+    seoKeywords?: string;
+    eyebrow?: string;
+    heroCtas?: { primary: { label: string; href?: string }; secondary: { label: string; href?: string } };
+    productSuiteTitle?: string;
     productSuiteIntro?: string;
     productItems?: { title: string; description: string; logo?: string }[];
+    featuresTitle?: string;
     featuresIntro?: string;
+    featuresCta?: string;
     featureItems?: { title: string; description: string }[];
+    advantagesTitle?: string;
     advantagesIntro?: string;
-    advantageItems?: { title: string; description: string }[];
+    advantageItems?: { title: string; description?: string }[];
+    caseStudiesTitle?: string;
+    caseStudiesCopy?: string;
+    caseStudiesCta?: string;
+    faqs?: { q: string; a: string }[];
   }
 > = {
   smartschoolnxt: {
     name: "SmartSchoolNxt",
     slug: "smartschoolnxt",
-    seoTitle: "School Management System | SmartSchoolNxt | Free Demo",
+    seoTitle: "School Management ERP & Administration Software | SmartSchoolNxt",
     seoDescription:
-    "SmartSchoolNxt is a school management system that simplifies admissions, attendance, examinations, fees, communication, transport, and school administration.",
-    category: "EdTech",
-    tagline: "AI-ready school ERP for connected school management.",
-    description:
-      "Simplify academics, administration, communication, fees, attendance, transport, exams, and reporting in one digital school platform.",
-    headline: "SmartSchoolNxt: AI-Ready School ERP for Connected School Management",
+      "Connect admissions, academics, attendance, fees, exams, and school communication in one configurable school management platform.",
+    seoKeywords:
+      "school management ERP, student information system, school administration software, school fee management",
+    category: "School ERP",
+    eyebrow: "K–12 School Management",
+    tagline: "Bring every part of school operations together.",
+    headline: "Bring every part of school operations together",
     subheadline:
-      "Simplify academics, administration, communication, fees, attendance, transport, exams, and reporting in one digital school platform.",
+      "Give administrators, teachers, and school leaders a clearer way to manage admissions, academics, fees, attendance, examinations, and daily communication. SmartSchoolNxt creates connected workflows so teams spend less time moving information and more time supporting learning.",
+    description:
+      "Give administrators, teachers, and school leaders a clearer way to manage admissions, academics, fees, attendance, examinations, and daily communication. SmartSchoolNxt creates connected workflows so teams spend less time moving information and more time supporting learning.",
+    heroCtas: {
+      primary: { label: "Request a Demo", href: "/contact-us" },
+      secondary: { label: "Explore Features", href: "https://smartschoolonline.com/" },
+    },
+    featuresTitle: "The tools behind a better-run school",
     featuresIntro:
-      "SmartSchoolNxt brings together the day-to-day workflows schools need to manage academics, administration, parent communication, and reporting with greater speed and clarity.",
+      "SmartSchoolNxt creates connected workflows so teams spend less time moving information and more time supporting learning.",
+    featuresCta: "See All Modules",
     featureItems: [
       {
-        title: "Admissions Management",
+        title: "Admissions",
         description:
-          "Manage student admissions with streamlined registration, documentation, and approval workflows.",
+          "Organize applications, enrollment decisions, and student onboarding in one workflow.",
       },
       {
-        title: "Academic Administration",
+        title: "Academics",
         description:
-          "Manage academic operations with connected curriculum, classes, and performance tracking.",
+          "Maintain classes, academic structures, and learning-related records without scattered spreadsheets.",
       },
       {
-        title: "Fee Collection Control",
+        title: "Fees",
         description:
-          "Simplify fee management with secure collection, tracking, and payment reporting.",
+          "Track invoices, receipts, balances, and collections with transparent records.",
       },
       {
-        title: "Attendance Tracking",
+        title: "Attendance",
         description:
-          "Track student attendance with automated records and real-time monitoring.",
+          "Record attendance and provide authorized staff with timely visibility.",
       },
       {
-        title: "Examination Workflows",
+        title: "Examinations",
         description:
-          "Manage examinations with scheduling, grading, results, and report generation.",
+          "Coordinate assessment schedules, marks, and published results.",
       },
       {
-        title: "Parent Communication",
+        title: "Homework",
         description:
-          "Strengthen parent-school communication through connected alerts, notices, and updates.",
+          "Share assignments and track classroom follow-up.",
       },
       {
-        title: "Transport Coordination",
+        title: "Communication",
         description:
-          "Manage school transport with route planning, vehicle tracking, and student allocation.",
+          "Keep parents, staff, and students informed through structured channels.",
       },
       {
-        title: "Reports and Dashboards",
+        title: "Transport",
         description:
-          "Generate school reports with real-time insights for academic and operational decisions.",
+          "Organize routes, student allocations, and relevant transport records.",
+      },
+      {
+        title: "Timetable",
+        description:
+          "Build and maintain coordinated class and staff schedules.",
+      },
+      {
+        title: "Reports",
+        description:
+          "Give school leaders a consistent view of operations and performance.",
+      },
+      {
+        title: "Mobile access",
+        description:
+          "Help authorized users stay connected beyond the desktop, subject to deployed modules.",
       },
     ],
     modules: [
@@ -104,45 +141,72 @@ export const products: Record<
       "Reports",
       "Mobile access",
     ],
-    benefits: [
-      "Reduced paperwork and manual administration",
-      "Better parent-school communication",
-      "Faster fee, attendance, and examination workflows",
-      "Improved academic visibility",
-      "More organized school operations",
-    ],
+    advantagesTitle: "Less administration. More room to lead.",
     advantagesIntro:
-      "SmartSchoolNxt is designed for schools that need tighter process control, better parent engagement, and more reliable academic and administrative visibility.",
+      "SmartSchoolNxt is designed for schools that need tighter process control, better family engagement, and more reliable academic and administrative visibility.",
     advantageItems: [
       {
-        title: "Reduced paperwork and manual administration",
+        title: "One student record",
         description:
-          "Reduce paperwork with automated workflows, centralized records, and efficient school management.",
+          "Reduce duplicate entry across admissions, academics, and administration.",
       },
       {
-        title: "Better parent-school communication",
+        title: "Clearer fee visibility",
         description:
-          "Strengthen parent-school communication through timely updates, notices, and connected communication.",
+          "Give finance teams an organized view of dues and receipts.",
       },
       {
-        title: "Faster fee, attendance, and examination workflows",
+        title: "Closer family engagement",
         description:
-          "Simplify fee management, attendance, and examinations with automated digital workflows.",
+          "Make important school communication easier to access.",
       },
       {
-        title: "Improved academic visibility",
+        title: "More reliable examination workflows",
         description:
-          "Gain better academic visibility with real-time insights, reports, and performance tracking.",
+          "Coordinate marks, schedules, and reporting.",
       },
       {
-        title: "More organized school operations",
+        title: "Multi-role usability",
         description:
-          "Streamline school management with connected academic and administrative workflows.",
+          "Give each user access appropriate to their responsibilities.",
       },
       {
-        title: "Implementation-friendly for growing institutions",
+        title: "Management oversight",
         description:
-          "Support schools as they scale with a platform that is easier to manage, train, and adopt across teams.",
+          "Make routine school decisions with up-to-date operational information.",
+      },
+    ],
+    benefits: [
+      "One student record across admissions and academics",
+      "Clearer fee visibility and collections",
+      "Closer family engagement",
+      "More reliable examination workflows",
+      "Multi-role usability and management oversight",
+    ],
+    caseStudiesTitle: "Designed around real school needs",
+    caseStudiesCopy:
+      "Schools use connected digital tools to improve administration and communication. Feature verified SmartSchoolNxt customer statements here; do not publish the unverified percentage improvement or unattributed names appearing in Version 1.",
+    caseStudiesCta: "Ask for a School Demo",
+    faqs: [
+      {
+        q: "Who is SmartSchoolNxt for?",
+        a: "Independent schools, school networks, and K–12 administrators seeking a coordinated school operations platform.",
+      },
+      {
+        q: "Can it cover admissions through examinations?",
+        a: "The platform’s module portfolio includes admissions, academics, fees, attendance, timetables, and examinations; scope depends on configuration.",
+      },
+      {
+        q: "Can families and teachers access information?",
+        a: "Role-based access and supported communication modules are available subject to deployment scope.",
+      },
+      {
+        q: "Is SmartSchoolNxt designed for US schools?",
+        a: "Local terminology, integration, data privacy, and regulatory needs should be reviewed during discovery before a US deployment is proposed.",
+      },
+      {
+        q: "What happens during implementation?",
+        a: "We assess your workflows, configure relevant modules, support data migration and training, and plan rollout in stages.",
       },
     ],
     idealUsers: ["Schools", "School groups", "Principals", "Administrators", "Teachers", "Parents", "Students"],
@@ -187,118 +251,146 @@ export const products: Record<
         q: "We would like to extend our heartfelt gratitude for the exceptional support and dedication in implementing and utilizing various modules such as Student Attendance, Examination, Mark Entry, Report Card, Fees, Fee Reminder, Inventory, Circular & Notification, Staff Attendance, and Website. The seamless integration of these features has played a pivotal role in streamlining our administrative processes and significantly enhancing the overall efficiency of our school operations. Your tireless efforts in ensuring the successful execution of these modules have not only improved day-to-day management but also brought about a more structured and effective system. We greatly appreciate the continuous support and collaboration that has been key to achieving these milestones.",
         n: "Fr. Dr J. Dennis solomon sdb",
         o: "Baithalongso, Assam",
-      },    ],
+      },
+    ],
     cta: "Request a SmartSchoolNxt Demo",
   },
   higrade: {
     name: "HiGrade",
     slug: "higrade",
     category: "Higher Education ERP",
-    seoTitle: "ERP for Colleges | Campus Management System | HiGrade",
+    seoTitle: "Higher Education ERP & Campus Management | HiGrade",
     seoDescription:
-    "HiGrade is an ERP for colleges and a campus management system that manages admissions, academics, examinations, faculty, fees, accreditation, and campus operations.",
-    tagline: "AI-ready higher education ERP for connected campus management.",
-    description:
-      "Unify admissions, academics, examinations, accreditation, finance, HR, LMS, communication, and reporting in one higher education ERP.",
-    headline: "HiGrade: AI-Ready Higher Education ERP for Connected Campus Management",
+      "Unify admissions, student lifecycle, academics, exams, accreditation-related records, finance, and campus reporting with HiGrade.",
+    seoKeywords: "higher education ERP, university management system, student lifecycle software, campus ERP",
+    eyebrow: "Higher Education Technology",
+    tagline: "One connected foundation for the modern campus.",
+    headline: "One connected foundation for the modern campus",
     subheadline:
-      "Unify admissions, academics, examinations, accreditation, finance, HR, LMS, communication, and reporting in one scalable higher education ERP.",
+      "Colleges and universities work across a complex mix of student services, academic departments, examinations, administration, and finance. HiGrade helps bring these operations together so teams work with consistent information and leadership has greater visibility.",
+    description:
+      "Colleges and universities work across a complex mix of student services, academic departments, examinations, administration, and finance. HiGrade helps bring these operations together so teams work with consistent information and leadership has greater visibility.",
+    heroCtas: {
+      primary: { label: "Request a Demo", href: "/contact-us" },
+      secondary: { label: "Explore Modules", href: "https://higrade.live/" },
+    },
+    featuresTitle: "Support students and staff across the institutional lifecycle",
     featuresIntro:
-      "HiGrade is built to support the full academic and administrative lifecycle of colleges and universities, from admissions to accreditation and reporting.",
+      "HiGrade brings operations together so teams work with consistent information and leadership has greater visibility across the academic and administrative lifecycle.",
+    featuresCta: "See All Modules",
     featureItems: [
       {
-        title: "Student Lifecycle Management",
-        description:
-          "Track admissions, enrollment, progression, examination history, and academic records from one campus platform.",
+        title: "Admissions",
+        description: "Organize applicant processes and enrollment records.",
       },
       {
-        title: "Academic Programme Coordination",
-        description:
-          "Manage courses, departments, timetables, faculty allocation, and academic calendars with better institutional control.",
+        title: "Program management",
+        description: "Structure programs, courses, cohorts, and academic details.",
       },
       {
-        title: "Examinations and Results",
-        description:
-          "Handle exam planning, marks processing, results publication, and student performance review through structured workflows.",
+        title: "Timetables",
+        description: "Coordinate class schedules and resources.",
       },
       {
-        title: "Outcome-Based Education Support",
-        description:
-          "Capture academic outcomes, assessment alignment, and program performance to strengthen institutional quality processes.",
+        title: "Examinations",
+        description: "Manage assessment processes and result workflows.",
       },
       {
-        title: "Accreditation Readiness",
-        description:
-          "Organize compliance documentation, reports, and academic evidence needed for NAAC, NBA, and institutional review cycles.",
+        title: "Outcome-based education",
+        description: "Support outcome mapping and academic evaluation where configured.",
       },
       {
-        title: "LMS and Communication Integration",
-        description:
-          "Support connected learning, notifications, and campus communication between faculty, students, and administrators.",
+        title: "Accreditation",
+        description: "Organize evidence and reporting for applicable accreditation processes.",
       },
       {
-        title: "Finance and HR Administration",
-        description:
-          "Connect academic operations with finance, payroll, and staff administration for smoother institutional management.",
+        title: "Learning management",
+        description: "Connect teaching and learning workflows through supported modules.",
       },
       {
-        title: "Campus Reporting",
-        description:
-          "Generate dashboards and reports that help management monitor academic, operational, and accreditation performance.",
+        title: "Finance",
+        description: "Coordinate institutional financial operations.",
+      },
+      {
+        title: "HR and payroll",
+        description: "Manage personnel and compensation records.",
+      },
+      {
+        title: "Reports",
+        description: "Make academic and administrative information more accessible.",
+      },
+      {
+        title: "Student portals",
+        description: "Give students access to relevant services and information.",
       },
     ],
     modules: [
       "Admissions",
-      "Academic programme management",
-      "Timetable",
+      "Program management",
+      "Timetables",
       "Examinations",
-      "OBE",
+      "Outcome-based education",
       "Accreditation",
-      "LMS",
+      "Learning management",
       "Finance",
-      "HR & Payroll",
+      "HR and payroll",
       "Reports",
       "Student portals",
     ],
-    benefits: [
-      "Improved academic and administrative coordination",
-      "Better accreditation and documentation readiness",
-      "Centralized student lifecycle management",
-      "Faster reporting and decision-making",
-      "Stronger stakeholder communication",
-    ],
+    advantagesTitle: "Less fragmentation. Better academic and administrative decisions.",
     advantagesIntro:
       "HiGrade helps higher education institutions improve coordination, documentation, student visibility, and decision-making across the campus ecosystem.",
     advantageItems: [
       {
-        title: "Improved academic and administrative coordination",
-        description:
-          "Bring departments, faculty, examination offices, and administration teams onto one coordinated operational system.",
+        title: "Connect student information across the institution.",
       },
       {
-        title: "Better accreditation and documentation readiness",
-        description:
-          "Maintain organized records and academic evidence that support faster response during audits and accreditation cycles.",
+        title: "Reduce repeated data entry among departments.",
       },
       {
-        title: "Centralized student lifecycle management",
-        description:
-          "Manage student information from application to graduation without fragmented systems and duplicated records.",
+        title: "Make examination and academic processes more consistent.",
       },
       {
-        title: "Faster reporting and decision-making",
-        description:
-          "Provide institutional leaders with timely reports on academics, compliance, and operational performance.",
+        title: "Support preparation of accreditation evidence.",
       },
       {
-        title: "Stronger stakeholder communication",
-        description:
-          "Improve communication across faculty, students, departments, and administration with more connected workflows.",
+        title: "Improve access to operational reporting.",
       },
       {
-        title: "Built for multi-campus and evolving institutions",
-        description:
-          "Support institutions that need a scalable ERP foundation for growth, compliance, and academic modernization.",
+        title: "Support responsible access for students, faculty, and staff.",
+      },
+    ],
+    benefits: [
+      "Connect student information across the institution",
+      "Reduce repeated data entry among departments",
+      "Make examination and academic processes more consistent",
+      "Support preparation of accreditation evidence",
+      "Improve access to operational reporting",
+    ],
+    caseStudiesTitle: "Trusted by Higher Education Institutions",
+    caseStudiesCopy:
+      "Discover why colleges and universities choose HiGrade to bring campus operations together with consistent data and leadership visibility.",
+    caseStudiesCta: "Request a HiGrade Demo",
+    faqs: [
+      {
+        q: "Who is HiGrade for?",
+        a: "Colleges, universities, and education groups seeking coordinated campus administration.",
+      },
+      {
+        q: "Can it manage the complete student lifecycle?",
+        a: "Core modules support multiple phases from admissions through academic administration; exact scope is confirmed in implementation.",
+      },
+      {
+        q: "Does it support accreditation?",
+        a: "It can organize data and evidence, but accreditation requirements differ by jurisdiction and framework.",
+      },
+      {
+        q: "Is HiGrade suitable for US higher education?",
+        a: "US terminology, SIS/LMS integrations, FERPA and other obligations, and local processes require a separate suitability assessment.",
+      },
+      {
+        q: "Can we migrate from an existing system?",
+        a: "Migration feasibility and data quality are reviewed during discovery.",
       },
     ],
     idealUsers: ["Colleges", "Universities", "Autonomous institutions", "Multi-campus education groups"],
@@ -308,13 +400,13 @@ export const products: Record<
     clients: [
       { name: "Mar Gregorios College", location: "Chennai", logo: "/images/higrade/client01.avif" },
       { name: "Voorhees College", location: "Vellore", logo: "/images/higrade/client012.avif" },
-            {
+      {
         name: "Chevalier T. Thomas Elizabeth College for Women",
         location: "Perambur",
         logo: "/images/higrade/client03.avif",
       },
       { name: "Don Bosco College", location: "Yelagiri Hills", logo: "/images/higrade/client04.avif" },
-            {
+      {
         name: "Marudhar Kesari Jain College for Women",
         location: "Vaniyambadi",
         logo: "/images/higrade/client05.avif",
@@ -363,58 +455,67 @@ export const products: Record<
   "acme-erp": {
     name: "Acme.erp",
     slug: "acme-erp",
-    seoTitle: "NGO Accounting Software | Acme ERP | Book a Free Demo",
+    seoTitle: "Financial ERP for NGOs & Multi-Branch Organizations | Acme.erp",
     seoDescription:
-    "Acme ERP is NGO accounting software that simplifies fund accounting, financial management, payroll, reporting, compliance, and branch accounting for nonprofit organizations.",
+      "Improve fund accounting, branch oversight, budgeting, assets, payroll, and consolidated financial reporting with Acme.erp.",
+    seoKeywords:
+      "nonprofit financial management software, fund accounting ERP, multi-branch accounting, NGO accounting software",
     category: "Financial Management ERP",
-    tagline: "ERP for accounting, fund control, branch reporting, payroll, assets, and compliance.",
-    description:
-      "Manage accounting, fund control, branch reporting, payroll, assets, compliance, and consolidated financial visibility in one ERP platform.",
-    headline: "Acme.erp: Financial Management ERP for Purpose-Driven Organizations",
+    eyebrow: "Financial Management & Accountability",
+    tagline: "Make every fund, branch, and financial decision clearer.",
+    headline: "Make every fund, branch, and financial decision clearer",
     subheadline:
-      "Manage accounting, fund control, branch reporting, payroll, assets, compliance, and consolidated financial visibility in one ERP platform.",
+      "Financial stewardship becomes harder when teams manage restricted funds, multiple locations, assets, budgets, and reports in disconnected tools. Acme.erp brings these processes into a more coherent financial management environment.",
+    description:
+      "Financial stewardship becomes harder when teams manage restricted funds, multiple locations, assets, budgets, and reports in disconnected tools. Acme.erp brings these processes into a more coherent financial management environment.",
+    heroCtas: {
+      primary: { label: "Request a Demo", href: "/contact-us" },
+      secondary: { label: "Explore Acme.erp", href: "https://www.acmeerp.org/" },
+    },
+    featuresTitle: "Financial control without the spreadsheet sprawl",
     featuresIntro:
-      "Acme.erp delivers financial control, branch-wise reporting, payroll, and compliance workflows for organizations that need stronger accounting discipline across distributed operations.",
+      "Acme.erp brings restricted funds, branch transactions, budgeting, assets, and payroll into a coherent financial management environment.",
+    featuresCta: "See All Modules",
     featureItems: [
       {
-        title: "Financial Accounting",
-        description:
-          "Record transactions accurately and maintain structured accounting workflows with stronger control over day-to-day finance operations.",
+        title: "Financial accounting",
+        description: "Maintain transactions, ledgers, and financial records.",
       },
       {
-        title: "Fund Management",
-        description:
-          "Track designated funds, internal allocations, and fund utilization with clearer accountability and reporting.",
+        title: "Fund management",
+        description: "Track designated resources and related activity.",
       },
       {
-        title: "Branch-Level Monitoring",
-        description:
-          "Monitor branch performance, expenses, and compliance from head office without relying on disconnected spreadsheets.",
+        title: "Branch control",
+        description: "Organize transactions and oversight across locations.",
       },
       {
-        title: "Head Office Consolidation",
-        description:
-          "Combine branch financial data into consolidated reports for leadership review, planning, and audit readiness.",
+        title: "Head office consolidation",
+        description: "Bring branch-level information together for group reporting.",
       },
       {
-        title: "Payroll Administration",
-        description:
-          "Manage salary processing, payroll records, and employee-related finance workflows with greater consistency.",
+        title: "Payroll",
+        description: "Support staff payroll processes.",
       },
       {
-        title: "Asset and Stock Control",
-        description:
-          "Track assets and stock movements alongside financial records to improve operational and accounting alignment.",
+        title: "Assets",
+        description: "Record and manage fixed assets.",
       },
       {
-        title: "Budgeting and Compliance",
-        description:
-          "Support planned spending, internal controls, and compliance processes with structured digital finance workflows.",
+        title: "Stock",
+        description: "Track inventory where applicable.",
       },
       {
-        title: "Management Reporting",
-        description:
-          "Generate reports that help organizations monitor fund utilization, branch performance, and financial health.",
+        title: "Budgeting",
+        description: "Compare planned expenditure and activity against actuals.",
+      },
+      {
+        title: "Reporting",
+        description: "Generate management and financial statements.",
+      },
+      {
+        title: "Compliance",
+        description: "Organize documentation and reports for applicable internal requirements.",
       },
     ],
     modules: [
@@ -429,45 +530,57 @@ export const products: Record<
       "Reporting",
       "Compliance",
     ],
-    benefits: [
-      "Better fund visibility and transparency",
-      "Faster financial consolidation",
-      "Stronger audit and compliance readiness",
-      "Improved branch-level control",
-      "Better financial governance",
-    ],
+    advantagesTitle: "Financial confidence across complex organizations",
     advantagesIntro:
       "Acme.erp is built for mission-driven and multi-branch organizations that need trustworthy finance operations, stronger controls, and transparent reporting.",
     advantageItems: [
       {
-        title: "Better fund visibility and transparency",
-        description:
-          "Give leadership and finance teams a clearer picture of fund inflows, allocations, utilization, and accountability.",
+        title: "Give finance leaders a consolidated view of operations.",
       },
       {
-        title: "Faster financial consolidation",
-        description:
-          "Reduce the time and effort required to combine branch data and prepare consolidated financial reports.",
+        title: "Strengthen controls around fund use and reporting.",
       },
       {
-        title: "Stronger audit and compliance readiness",
-        description:
-          "Keep financial records more organized and review-friendly for internal checks, external audits, and governance needs.",
+        title: "Reduce duplication in branch reporting.",
       },
       {
-        title: "Improved branch-level control",
-        description:
-          "Support distributed institutions with stronger oversight into branch transactions, reporting discipline, and performance.",
+        title: "Improve preparation for internal and external audits.",
       },
       {
-        title: "Better financial governance",
-        description:
-          "Enable smarter decisions through timely reports, stronger controls, and consistent finance workflows across the organization.",
+        title: "Support better budget accountability and decision-making.",
+      },
+    ],
+    benefits: [
+      "Consolidated view of operations for finance leaders",
+      "Strengthen controls around fund use and reporting",
+      "Reduce duplication in branch reporting",
+      "Improve preparation for internal and external audits",
+      "Support better budget accountability and decision-making",
+    ],
+    caseStudiesTitle: "Financial Confidence in Action",
+    caseStudiesCopy:
+      "Discover how NGOs, religious institutes, and multi-branch institutions gain consolidated financial visibility and audit readiness with Acme.erp.",
+    caseStudiesCta: "Request an Acme.erp Demo",
+    faqs: [
+      {
+        q: "Who is Acme.erp for?",
+        a: "NGOs, religious institutes, charitable institutions, and multi-branch organizations managing complex finances.",
       },
       {
-        title: "Purpose-built for nonprofit and institutional finance",
-        description:
-          "Fit the needs of organizations that require accountability, branch visibility, and dependable long-term financial structure.",
+        q: "Does it support fund accounting?",
+        a: "Fund tracking and related reporting are within the product domain; specific accounting requirements must be validated.",
+      },
+      {
+        q: "Can branches report to headquarters?",
+        a: "Branch management and consolidation are core functional areas.",
+      },
+      {
+        q: "Does it meet US nonprofit accounting requirements?",
+        a: "This must be assessed against US GAAP, local tax rules, and the organization’s reporting obligations; compliance is not assumed.",
+      },
+      {
+        q: "How is implementation approached?",
+        a: "We map accounts, funds, locations, approval flows, reporting, and migration needs before configuration.",
       },
     ],
     idealUsers: [
@@ -477,7 +590,6 @@ export const products: Record<
       "Nonprofit networks",
       "Multi-branch organizations",
     ],
-    // Acme ERP currently falls back to the shared corporate banking hero.
     heroImage: "/images/product/acme-erp-finance-hd.avif",
     successStoriesImage: "/images/acemerp/accounitsoftware01.avif",
     ctaBannerImage: "/images/acemerp/accounitsoftware02.avif",
@@ -514,58 +626,69 @@ export const products: Record<
     cta: "Request an Acme.erp Demo",
   },
   microfund: {
-    name: "MicroFund",
+    name: "MicroFUND",
     slug: "microfund",
-    category: "Microfinance ERP",
-    tagline:
-      "Digital platform for microfinance lending, collections, borrower management, reporting, and field operations.",
-    description:
-      "Manage loan origination, borrower accounts, repayments, collections, field operations, reporting, and compliance through one connected platform.",
-    headline: "MicroFund: Digital Microfinance ERP for Responsible Financial Inclusion",
+    seoTitle: "Microfinance Loan & Field Collection Management | MicroFUND",
+    seoDescription:
+      "Manage borrower records, loan origination, disbursements, repayments, field collections, and portfolio reporting with MicroFUND.",
+    seoKeywords:
+      "microfinance management software, loan management software, field collection platform, borrower management",
+    category: "Microfinance Management",
+    eyebrow: "Financial Inclusion Technology",
+    tagline: "Keep lending operations connected from application to repayment.",
+    headline: "Keep lending operations connected from application to repayment",
     subheadline:
-      "Manage loan origination, borrower accounts, repayments, collections, field operations, reporting, and compliance through one connected platform.",
+      "MicroFUND helps community finance institutions and microfinance operators organize borrower information, loans, collections, and field operations so teams can work with greater accuracy and visibility.",
+    description:
+      "MicroFUND helps community finance institutions and microfinance operators organize borrower information, loans, collections, and field operations so teams can work with greater accuracy and visibility.",
+    heroCtas: {
+      primary: { label: "Request a Demo", href: "/contact-us" },
+      secondary: { label: "Discover Capabilities", href: "https://microfund.in/" },
+    },
+    featuresTitle: "Clearer control throughout the lending lifecycle",
     featuresIntro:
-      "MicroFund helps microfinance institutions manage lending, collections, borrower records, and field operations through one connected digital workflow.",
+      "Organize borrower information, loans, collections, and field operations with greater accuracy and operational clarity.",
+    featuresCta: "See All Modules",
     featureItems: [
       {
-        title: "Loan Origination",
-        description:
-          "Capture borrower applications, eligibility details, and approval steps in a structured and traceable lending workflow.",
+        title: "Loan origination",
+        description: "Structure applications, review, and approval records.",
       },
       {
-        title: "Disbursement Management",
-        description:
-          "Manage approved disbursements with better visibility into loan release timing, borrower records, and controls.",
+        title: "Disbursement",
+        description: "Track approved loans and disbursement activities.",
       },
       {
-        title: "Repayment Tracking",
-        description:
-          "Monitor installments, overdue accounts, repayment history, and loan performance with better operational clarity.",
+        title: "Repayment tracking",
+        description: "Monitor schedules, installments, and balances.",
       },
       {
-        title: "Borrower Management",
-        description:
-          "Maintain organized borrower profiles, group information, loan history, and related documentation in one system.",
+        title: "Borrower management",
+        description: "Maintain a consistent borrower profile and loan history.",
       },
       {
-        title: "Field Staff Mobility",
-        description:
-          "Support field operations with mobile-friendly workflows for collection activity, borrower follow-up, and on-ground updates.",
+        title: "Field staff mobile access",
+        description: "Give field teams relevant account information where configured.",
       },
       {
-        title: "Collections Control",
-        description:
-          "Coordinate collection processes with stronger visibility into dues, receipts, and field recovery progress.",
+        title: "Collections",
+        description: "Record and monitor collection activity and follow-up.",
       },
       {
-        title: "Savings and Compliance Records",
-        description:
-          "Track savings-linked activity and maintain cleaner compliance records for operational and regulatory review.",
+        title: "Savings",
+        description: "Support savings-related workflows where applicable to the operating model.",
       },
       {
-        title: "MIS and Impact Reporting",
-        description:
-          "Generate reporting that helps leadership monitor portfolio health, field execution, and institutional impact.",
+        title: "Compliance reports",
+        description: "Produce reports required for internal governance and configured jurisdictions.",
+      },
+      {
+        title: "MIS dashboards",
+        description: "Review portfolio indicators and field performance.",
+      },
+      {
+        title: "Impact reporting",
+        description: "Assess reach and participation using available data.",
       },
     ],
     modules: [
@@ -580,45 +703,57 @@ export const products: Record<
       "MIS dashboards",
       "Impact reporting",
     ],
-    benefits: [
-      "Improved borrower visibility",
-      "Better repayment tracking",
-      "Stronger field collection management",
-      "Reduced manual loan administration",
-      "More reliable financial and impact reporting",
-    ],
+    advantagesTitle: "More visibility across every branch and field team",
     advantagesIntro:
-      "MicroFund is built for community lending and microfinance teams that need stronger borrower visibility, collection control, and field-level execution.",
+      "Built for community lending and microfinance teams that need stronger borrower visibility, collection control, and field-level execution.",
     advantageItems: [
       {
-        title: "Improved borrower visibility",
-        description:
-          "Help teams access complete borrower and loan information more quickly for better follow-up and decision-making.",
+        title: "Organize borrower histories for more informed servicing.",
       },
       {
-        title: "Better repayment tracking",
-        description:
-          "Track collection status, overdue accounts, and repayment patterns with stronger operational discipline.",
+        title: "Reduce dependence on disconnected loan and collection registers.",
       },
       {
-        title: "Stronger field collection management",
-        description:
-          "Support field officers with connected workflows that reduce delays and improve collection accountability.",
+        title: "Give management a clearer view of repayment activity.",
       },
       {
-        title: "Reduced manual loan administration",
-        description:
-          "Minimize paperwork and fragmented processes across origination, disbursement, collections, and reporting.",
+        title: "Support field operations with current information.",
       },
       {
-        title: "More reliable financial and impact reporting",
-        description:
-          "Provide management with clearer reporting on portfolio performance, operational efficiency, and outreach impact.",
+        title: "Improve consistency in portfolio and impact reporting.",
+      },
+    ],
+    benefits: [
+      "Organize borrower histories for more informed servicing",
+      "Reduce dependence on disconnected loan and collection registers",
+      "Give management a clearer view of repayment activity",
+      "Support field operations with current information",
+      "Improve consistency in portfolio and impact reporting",
+    ],
+    caseStudiesTitle: "Trusted by Community Finance Providers",
+    caseStudiesCopy:
+      "Discover how microfinance operators and community lenders use MicroFUND to keep credit operations connected from application to repayment.",
+    caseStudiesCta: "Request a MicroFUND Demo",
+    faqs: [
+      {
+        q: "Who is MicroFUND designed for?",
+        a: "Microfinance institutions, community finance providers, cooperatives, and NGOs managing structured credit operations.",
       },
       {
-        title: "Purpose-built for responsible lending operations",
-        description:
-          "Fit the needs of institutions that balance financial sustainability, compliance, and community-focused lending.",
+        q: "Can field teams record collections?",
+        a: "Collection and field mobility workflows are part of the product scope, subject to configuration and connectivity requirements.",
+      },
+      {
+        q: "Does MicroFUND include financial reporting?",
+        a: "It supports management reporting; statutory reports require jurisdiction-specific review.",
+      },
+      {
+        q: "Can it support US lending operations?",
+        a: "Regulatory, licensing, consumer protection, disclosure, and data handling requirements must be assessed before making a US suitability claim.",
+      },
+      {
+        q: "Can it integrate with accounting?",
+        a: "Integration options can be scoped using the customer’s data and system requirements.",
       },
     ],
     idealUsers: ["Microfinance institutions", "SHGs", "Cooperatives", "NGOs", "Community finance organizations"],
@@ -654,71 +789,82 @@ export const products: Record<
     ],
     cta: "See MicroFund in Action",
   },
-  
   medsysb: {
     name: "MedSysB",
     slug: "medsysb",
-    category: "Hospital Management Software",
-    seoTitle: "Hospital Management System | MedSysB HMS | Free Demo",
+    category: "Hospital Management",
+    seoTitle: "Hospital Management Software & Integrated ERP | MedSysB",
     seoDescription:
-   "MedSysB is a hospital management system (HMS) that streamlines patient registration, appointments, billing, pharmacy, laboratory, EMR, and hospital administration.",
-    tagline:
-      "AI-ready hospital ERP for patient workflows, diagnostics, pharmacy, billing, and reporting.",
-    description:
-      "Connect patient workflows, diagnostics, pharmacy, billing, OT, medical records, HR, payroll, and reporting in one secure hospital ERP.",
-    headline: "MedSysB: AI-Ready Hospital Management Software for Connected Healthcare Operations",
+      "Connect patient registration, diagnostics, pharmacy, billing, medical records, and hospital administration with MedSysB.",
+    seoKeywords:
+      "hospital management software, hospital ERP, patient administration system, pharmacy and billing integration",
+    eyebrow: "Healthcare Operations",
+    tagline: "Connected hospital operations, from registration to reporting.",
+    headline: "Connected hospital operations, from registration to reporting",
     subheadline:
-      "Connect patient workflows, diagnostics, pharmacy, billing, OT, medical records, HR, payroll, and reporting with an AI-ready hospital management system (HMS)..",
+      "Hospitals depend on accurate information moving between care and administrative teams. MedSysB brings patient workflows, departments, financial processes, and management reporting into a coordinated operating platform.",
+    description:
+      "Hospitals depend on accurate information moving between care and administrative teams. MedSysB brings patient workflows, departments, financial processes, and management reporting into a coordinated operating platform.",
+    heroCtas: {
+      primary: { label: "Request a Demo", href: "/contact-us" },
+      secondary: { label: "Explore the Solution", href: "https://medsysb.com/" },
+    },
+    featuresTitle: "Support the hospital journey end to end",
     featuresIntro:
-      "MedSysB supports hospitals with connected clinical, administrative, pharmacy, billing, and reporting workflows through one unified ERP environment.",
+      "MedSysB brings patient workflows, departments, financial processes, and management reporting into a coordinated operating platform.",
+    featuresCta: "View All Modules",
     featureItems: [
       {
-        title: "Patient Registration and Flow",
-        description:
-          "Manage OP and IP registration, patient movement, and visit records with faster access to essential patient information.",
+        title: "Outpatient and inpatient registration",
+        description: "Organize patient arrival, admissions, and related records.",
       },
       {
-        title: "Diagnostics Coordination",
-        description:
-          "Connect lab and diagnostic workflows with patient records and downstream billing for smoother clinical operations.",
+        title: "Diagnostics",
+        description: "Connect laboratory and diagnostic requests, results, and departmental workflows.",
       },
       {
-        title: "Pharmacy Management",
-        description:
-          "Track prescriptions, dispensing, stock, and medicine-related workflows with better control and visibility.",
+        title: "Pharmacy",
+        description: "Track medication-related operations, stock activity, and pharmacy billing.",
       },
       {
-        title: "Billing Operations",
-        description:
-          "Handle patient billing, service charges, and financial records with greater accuracy and fewer manual gaps.",
+        title: "Billing",
+        description: "Coordinate billable services, charges, and receipts with greater accuracy.",
       },
       {
-        title: "Operation Theatre Support",
-        description:
-          "Support OT-related coordination, scheduling, records, and hospital workflows with more operational clarity.",
+        title: "Operating theater",
+        description: "Support scheduling and procedure-related administrative records.",
       },
       {
-        title: "Medical Records Access",
-        description:
-          "Maintain secure patient records that are easier to retrieve, manage, and review across departments.",
+        title: "Medical records",
+        description: "Maintain authorized access to structured patient information.",
       },
       {
-        title: "HR and Payroll Integration",
-        description:
-          "Connect staff administration, payroll, and internal hospital workflows through one structured system.",
+        title: "HR",
+        description: "Organize employee records, leave, and workforce administration.",
       },
       {
-        title: "Hospital Reporting",
-        description:
-          "Generate management reports that improve visibility into patient flow, departmental operations, and hospital performance.",
+        title: "Payroll",
+        description: "Connect staff compensation processes with organizational records.",
+      },
+      {
+        title: "Dietary",
+        description: "Support diet-related requests and internal coordination where configured.",
+      },
+      {
+        title: "Reports",
+        description: "Surface key hospital operational and financial indicators.",
+      },
+      {
+        title: "Messaging",
+        description: "Improve communication among authorized teams using supported channels.",
       },
     ],
     modules: [
-      "OP/IP registration",
+      "Outpatient and inpatient registration",
       "Diagnostics",
       "Pharmacy",
       "Billing",
-      "OT",
+      "Operating theater",
       "Medical records",
       "HR",
       "Payroll",
@@ -726,45 +872,66 @@ export const products: Record<
       "Reports",
       "Messaging",
     ],
-    benefits: [
-      "Reduced patient waiting time",
-      "Better departmental coordination",
-      "Improved billing accuracy",
-      "Stronger reporting and management visibility",
-      "More organized patient and hospital workflows",
-    ],
+    advantagesTitle: "Better coordination for a more responsive hospital",
     advantagesIntro:
-      "MedSysB is built for hospitals that need stronger coordination across departments, faster patient workflows, and better operational control.MedSysB enables compliance-ready hospital operations with support for NABH, NABL quality workflows and ICD-10 clinical coding standards.",
+      "MedSysB brings services and charges into clearer alignment while supporting seamless communication across departments.",
     advantageItems: [
       {
-        title: "Reduced patient waiting time",
-        description:
-          "Speed up registration, diagnostics coordination, billing, and other patient-facing workflows through connected operations.",
+        title: "Joined-up departments",
+        description: "Reduce information gaps across reception, pharmacy, diagnostics, and accounts.",
       },
       {
-        title: "Better departmental coordination",
-        description:
-          "Improve information flow across reception, diagnostics, pharmacy, billing, and administration teams.",
+        title: "Organized patient movement",
+        description: "Help teams coordinate stages of the hospital visit.",
       },
       {
-        title: "Improved billing accuracy",
-        description:
-          "Reduce errors and strengthen revenue control with more consistent and connected billing workflows.",
+        title: "More dependable billing",
+        description: "Bring services and charges into clearer alignment.",
       },
       {
-        title: "Stronger reporting and management visibility",
-        description:
-          "Give hospital leadership a clearer view of departmental performance, patient flow, and administrative operations.",
+        title: "Appropriate data access",
+        description: "Define permissions according to responsibilities.",
       },
       {
-        title: "More organized patient and hospital workflows",
-        description:
-          "Bring clinical and administrative activity into one structured environment that is easier to manage at scale.",
+        title: "Operational visibility",
+        description: "Equip hospital managers with reports that inform daily decisions.",
       },
       {
-        title: "Built for secure healthcare operations",
-        description:
-          "Support hospitals that need dependable workflows, better records, and safer access to sensitive operational data.",
+        title: "Configurable workflows",
+        description: "Adapt rollout to departments, capacity, and procedures.",
+      },
+    ],
+    benefits: [
+      "Joined-up departments and reduced information gaps",
+      "Organized patient movement and visit workflows",
+      "More dependable billing and service charges alignment",
+      "Appropriate data access based on responsibilities",
+      "Operational visibility and configurable workflows",
+    ],
+    caseStudiesTitle: "Healthcare teams need systems they can trust",
+    caseStudiesCopy:
+      "Use existing verified customer feedback from St. Louis Hospital and St. Luke’s Health Centre only after confirming exact wording, consent, and current affiliation. Any claim of a 50% improvement requires independent evidence.",
+    caseStudiesCta: "Request a MedSysB Demo",
+    faqs: [
+      {
+        q: "Is MedSysB a complete hospital ERP?",
+        a: "Its portfolio covers core clinical-administrative and financial workflows; specific clinical functionalities depend on the licensed and configured scope.",
+      },
+      {
+        q: "Can departments share information?",
+        a: "Yes, integration between deployed modules supports coordinated records and processes.",
+      },
+      {
+        q: "What about patient privacy?",
+        a: "Access control, hosting, data governance, and the jurisdiction-specific obligations must be assessed for each deployment. No HIPAA compliance claim is made without independent verification.",
+      },
+      {
+        q: "Can the product support multiple facilities?",
+        a: "Multi-facility workflows and deployment architecture should be reviewed against the customer’s requirements.",
+      },
+      {
+        q: "Do you offer implementation support?",
+        a: "Yes, Boscosoft can scope configuration, migration, training, integration, and continued support.",
       },
     ],
     idealUsers: ["Hospitals", "Clinics", "Healthcare administrators", "Doctors", "Finance teams", "Pharmacy teams"],
@@ -791,7 +958,7 @@ export const products: Record<
         o: "India",
       },
       {
-        q: "Patient registration and discharge times have been cut in half. The seamless integration of diagnostic reports with pharmacy billing has simplified our operations.",
+        q: "Patient registration and discharge times have been significantly streamlined. The seamless integration of diagnostic reports with pharmacy billing has simplified our operations.",
         n: "Dr. S. Karthik",
         o: "Medical Director, City Care Multi-Specialty Hospital",
       },
@@ -806,148 +973,151 @@ export const products: Record<
   "cristo-suite": {
     name: "CristO Suite",
     slug: "cristo-suite",
-    category: "FaithTech ERP",
-    seoTitle: "Church Management Software | CristO Suite | Free Demo",
+    category: "Faith-Based Digital Ecosystem",
+    seoTitle: "Church & Religious Organization Management Software | CristO Suite",
     seoDescription:
-    "CristO Suite is church management software that simplifies parish administration, member management, donations, events, communication, and church records.",
-    tagline:
-      "Digital platform for parishes, dioceses, religious institutes, congregations, records, communication, giving, and reporting.",
-    description:
-      "Connect parishes, dioceses, congregations, religious institutes, records, communication, giving, reporting, and community engagement.",
-    headline: "CristO Suite: Digital Platform for Faith-Based Organizations",
+      "Connect parish, diocesan, religious institute, and community records, administration, communication, and giving with CristO Suite.",
+    seoKeywords:
+      "church management software, parish management system, diocesan software, religious institute management",
+    eyebrow: "Faith Community Technology",
+    tagline: "Help your mission thrive with connected administration.",
+    headline: "Help your mission thrive with connected administration",
     subheadline:
-      "Connect parishes, dioceses, congregations, religious institutes, records, communication, giving, reporting, and community engagement.",
+      "Churches, dioceses, congregations, and faith communities rely on trusted records and coordinated communication. CristO Suite brings the right information and workflows together so leaders and administrators can devote more attention to the communities they serve.",
+    description:
+      "Churches, dioceses, congregations, and faith communities rely on trusted records and coordinated communication. CristO Suite brings the right information and workflows together so leaders and administrators can devote more attention to the communities they serve.",
+    heroCtas: {
+      primary: { label: "Request a Demo", href: "/contact-us" },
+      secondary: { label: "Discover CristO Suite", href: "https://cristoerp.com/" },
+    },
+    productSuiteTitle: "Purpose-built tools for every level of the community",
     productSuiteIntro:
       "CristO Suite brings together four purpose-built products designed for Church, parish, diocesan, religious institute, and community administration.",
     productItems: [
       {
-        title: "CristO - Parokia",
-        logo: "/images/cristo/parokia.avif",
-        description:
-          "A smart parish management solution that simplifies family records, sacraments, certificates, contributions, and parish communication. It helps parishes manage daily administration with better clarity, speed, and accuracy.",
-      },
-      {
-        title: "CristO - ReligiO",
-        logo: "/images/cristo/religio.avif",
-        description:
-          "A dedicated solution for religious institutes, congregations, provinces, and communities. It supports member records, assignments, community details, communication, archives, and institute-level administration.",
-      },
-      {
-        title: "CristO - Cathedra",
+        title: "Cathedra — Diocesan administration",
         logo: "/images/cristo/cathedra.avif",
         description:
-          "A diocesan management platform that connects parishes, clergy, families, institutions, and diocesan offices. It helps dioceses improve coordination, governance, reporting, and pastoral administration.",
+          "Connect diocesan offices, parishes, clergy, institutions, oversight, and reporting.",
       },
       {
-        title: "CristO - Charisma",
+        title: "Parokia — Parish management",
+        logo: "/images/cristo/parokia.avif",
+        description:
+          "Organize family and parishioner records, sacramental registers, certificates, contributions, and communication.",
+      },
+      {
+        title: "Charisma — Community engagement",
         logo: "/images/cristo/charisma.avif",
         description:
-          "A community engagement solution for faith communities, groups, associations, and ministries. It helps strengthen participation, communication, events, activities, and member involvement.",
+          "Coordinate ministries, associations, events, participation, and member communication.",
+      },
+      {
+        title: "ReligiO — Religious institute management",
+        logo: "/images/cristo/religio.avif",
+        description:
+          "Manage member histories, assignments, communities, records, and institutional administration.",
       },
     ],
+    featuresTitle: "One suite. Stronger continuity of records and service.",
     featuresIntro:
-      "CristO Suite offers connected digital capabilities that support administration, communication, records, engagement, and reporting across Church and faith-based organizations.",
+      "CristO Suite brings the right information and workflows together so leaders and administrators can devote more attention to the communities they serve.",
+    featuresCta: "See All Modules",
     featureItems: [
       {
-        title: "Centralized Records Management",
-        description:
-          "Maintain organized digital records for families, members, clergy, sacraments, certificates, institutions, communities, and archives.",
+        title: "Centralized records",
+        description: "Keep vital institutional information organized and findable.",
       },
       {
-        title: "Parish & Diocese Administration",
-        description:
-          "Manage parish and diocesan operations, clergy details, family data, institution records, pastoral activities, and administrative workflows.",
+        title: "Parish and diocesan workflows",
+        description: "Coordinate administration at different levels of a church structure.",
       },
       {
-        title: "Religious Institute Management",
-        description:
-          "Support congregations and religious institutes with member profiles, assignments, province details, community records, and internal communication.",
+        title: "Religious institute administration",
+        description: "Maintain community and member-related information.",
       },
       {
-        title: "Community Engagement",
-        description:
-          "Connect communities, groups, ministries, associations, and members through events, activities, announcements, and participation tracking.",
+        title: "Community engagement",
+        description: "Plan events, activities, and follow-up.",
       },
       {
-        title: "Communication Tools",
-        description:
-          "Share announcements, circulars, updates, reminders, emails, and notifications with the right people at the right time.",
+        title: "Communication",
+        description: "Reach relevant groups using supported channels.",
       },
       {
-        title: "Giving & Contribution Management",
-        description:
-          "Track donations, offerings, contributions, receipts, and giving records with improved transparency and accountability.",
+        title: "Giving and contributions",
+        description: "Organize donation and receipt processes.",
       },
       {
-        title: "Reports & Insights",
-        description:
-          "Generate clear reports for administration, planning, review, decision-making, audits, and long-term institutional visibility.",
+        title: "Reporting",
+        description: "Equip leaders with clearer operational information.",
       },
       {
-        title: "Secure Digital Access",
-        description:
-          "Protect important organizational and member data with structured access, reliable storage, and secure digital workflows.",
+        title: "Access controls",
+        description: "Limit information according to authorized roles.",
       },
     ],
     modules: [
-      "Parokia (Parish)",
-      "ReligiO (Religious Institutes)",
       "Cathedra (Diocese)",
+      "Parokia (Parish)",
       "Charisma (Community)",
-      "Records",
+      "ReligiO (Religious Institutes)",
+      "Centralized records",
       "Communication",
-      "Giving",
+      "Giving & contributions",
       "Reporting",
     ],
-    benefits: [
-      "Stronger record continuity",
-      "Better parish and diocesan communication",
-      "Improved institutional governance",
-      "More transparent giving and reporting",
-      "Secure digital administration for faith communities",
-    ],
+    advantagesTitle: "Preserve your records. Simplify your work. Strengthen community life.",
     advantagesIntro:
       "CristO Suite is designed specifically for Church and faith-based organizations that need connected administration, secure records, transparent workflows, and stronger community engagement.",
     advantageItems: [
       {
-        title: "Purpose-Built for Faith-Based Organizations",
-        description:
-          "Designed for the real needs of parishes, dioceses, religious institutes, congregations, and faith communities.",
+        title: "Reduce manual handling of long-lived institutional records.",
       },
       {
-        title: "Four Products, One Connected Suite",
-        description:
-          "Bring Parokia, ReligiO, Cathedra, and Charisma together under one CristO ecosystem for smoother administration and better collaboration.",
+        title: "Improve coordination from local communities to central offices.",
       },
       {
-        title: "Reduced Manual Work",
-        description:
-          "Minimize paperwork, repeated data entry, scattered records, and manual follow-ups through structured digital workflows.",
+        title: "Make pastoral and administrative information easier to access appropriately.",
       },
       {
-        title: "Stronger Record Continuity",
-        description:
-          "Preserve important records securely and make them easy to access, update, and manage over time.",
+        title: "Support leadership reporting without repeatedly requesting information.",
       },
       {
-        title: "Better Communication",
-        description:
-          "Improve communication between dioceses, parishes, clergy, religious institutes, families, members, groups, and communities.",
+        title: "Create more consistent processes across multiple locations.",
+      },
+    ],
+    benefits: [
+      "Reduce manual handling of long-lived institutional records",
+      "Improve coordination from local communities to central offices",
+      "Make pastoral and administrative information easier to access appropriately",
+      "Support leadership reporting without repeatedly requesting information",
+      "Create more consistent processes across multiple locations",
+    ],
+    caseStudiesTitle: "Connected Faith Communities",
+    caseStudiesCopy:
+      "Discover how dioceses, parishes, religious institutes, and community ministries preserve history and simplify ministry with CristO Suite.",
+    caseStudiesCta: "Request a CristO Suite Demo",
+    faqs: [
+      {
+        q: "Who is CristO Suite for?",
+        a: "Parishes, dioceses, religious institutes, congregations, and faith-based community networks.",
       },
       {
-        title: "Improved Governance & Accountability",
-        description:
-          "Support better planning, approvals, documentation, reporting, and institutional decision-making.",
+        q: "Must we use all four products?",
+        a: "A phased, module-based implementation can be scoped around the institution’s actual needs.",
       },
       {
-        title: "Transparent Giving & Reporting",
-        description:
-          "Manage contributions, donations, receipts, and reports with greater accuracy, clarity, and confidence.",
+        q: "Can records be migrated?",
+        a: "Migration scope depends on source format, completeness, and privacy requirements.",
       },
       {
-        title: "Better Visibility for Leadership",
-        description:
-          "Provide leaders and administrators with organized information, meaningful reports, and a clearer view of operations.",
+        q: "Can it support contributions and giving?",
+        a: "Supported components can manage donation-related workflows; payment processors and regional rules require separate assessment.",
+      },
+      {
+        q: "How is sensitive personal information handled?",
+        a: "Roles, permissions, retention, hosting, and applicable privacy rules must be established in implementation.",
       },
     ],
     idealUsers: ["Dioceses", "Parishes", "Religious institutes", "Congregations", "Christian communities"],
@@ -984,59 +1154,71 @@ export const products: Record<
   eaudithub: {
     name: "eAuditHub",
     slug: "eaudithub",
-    category: "Audit & Compliance Platform",
-    seoTitle: "Audit Management System | eAuditHub | Free Demo",
+    category: "Audit & Compliance",
+    seoTitle: "Digital Audit Management & CAPA Software | eAuditHub",
     seoDescription:
-    "eAuditHub is an audit management system that streamlines audit planning, compliance management, inspections, CAPA tracking, reporting, and risk management.",
-    tagline:
-      "Audit management and compliance platform for checklists, field audits, CAPA, dashboards, and risk visibility.",
-    description:
-      "Digitize audit planning, field execution, checklist management, evidence capture, CAPA, dashboards, and compliance visibility.",
-    headline: "eAuditHub: Audit Management and Compliance Intelligence Platform",
+      "Organize audit scheduling, mobile checklists, findings, evidence, CAPA, and compliance dashboards in one audit management platform.",
+    seoKeywords:
+      "audit management software, CAPA tracking, digital audit checklists, compliance audit platform",
+    eyebrow: "Audit & Compliance Operations",
+    tagline: "Turn every audit into accountable improvement.",
+    headline: "Turn every audit into accountable improvement",
     subheadline:
-      "Digitize audit planning, field execution, checklist management, evidence capture, CAPA, dashboards, and compliance visibility.",
+      "Replace paper checklists and scattered follow-up with coordinated planning, field execution, evidence capture, corrective actions, and management visibility. eAuditHub makes it easier to move from observations to resolution.",
+    description:
+      "Replace paper checklists and scattered follow-up with coordinated planning, field execution, evidence capture, corrective actions, and management visibility. eAuditHub makes it easier to move from observations to resolution.",
+    heroCtas: {
+      primary: { label: "Request a Demo", href: "/contact-us" },
+      secondary: { label: "Explore Audit Workflows", href: "https://eaudithub.com/" },
+    },
+    featuresTitle: "Make every audit easier to plan, execute, and close",
     featuresIntro:
-      "eAuditHub helps audit and compliance teams digitize planning, field execution, evidence capture, CAPA tracking, and management reporting.",
+      "Replace paper checklists and scattered follow-up with coordinated planning, field execution, evidence capture, corrective actions, and management visibility.",
+    featuresCta: "See All Modules",
     featureItems: [
       {
-        title: "SOP and Checklist Management",
-        description:
-          "Maintain structured procedures and digital checklists that standardize audits across teams, locations, and review cycles.",
+        title: "SOP management",
+        description: "Connect audits to documented operating expectations.",
       },
       {
-        title: "Audit Scheduling",
-        description:
-          "Plan and assign audits with better visibility into timing, audit scope, and accountability across teams.",
+        title: "Checklist management",
+        description: "Build consistent assessment templates.",
       },
       {
-        title: "Field and Mobile Audits",
-        description:
-          "Support audits in the field with mobile-friendly workflows, including offline execution where needed.",
+        title: "Audit scheduling",
+        description: "Assign reviews, locations, and responsible auditors.",
       },
       {
-        title: "Evidence Capture",
-        description:
-          "Collect observations, supporting records, and photo evidence in one structured audit trail.",
+        title: "Mobile audits",
+        description: "Record findings where work happens.",
       },
       {
-        title: "Observation Tracking",
-        description:
-          "Record findings consistently and make it easier for teams to review, escalate, and act on issues.",
+        title: "Offline audits",
+        description: "Capture information in supported offline scenarios and synchronize when available.",
       },
       {
-        title: "CAPA Management",
-        description:
-          "Track corrective and preventive actions with better follow-up, accountability, and closure visibility.",
+        title: "Photo evidence",
+        description: "Attach supporting images to observations.",
       },
       {
-        title: "Risk Scoring and Visibility",
-        description:
-          "Highlight risk areas and compliance gaps so leadership can focus on priority actions more effectively.",
+        title: "Observation recording",
+        description: "Document nonconformities and improvement opportunities.",
       },
       {
-        title: "Audit Dashboards and Analytics",
-        description:
-          "Generate reporting that helps managers monitor audit progress, compliance trends, and operational risk exposure.",
+        title: "CAPA",
+        description: "Assign corrective and preventive actions with ownership and deadlines.",
+      },
+      {
+        title: "Risk scoring",
+        description: "Prioritize issues using configured assessment criteria.",
+      },
+      {
+        title: "Analytics",
+        description: "Identify recurring observations and trends, subject to deployed reporting modules.",
+      },
+      {
+        title: "Audit trails",
+        description: "Track changes and accountability across the audit lifecycle.",
       },
     ],
     modules: [
@@ -1049,48 +1231,60 @@ export const products: Record<
       "Observation recording",
       "CAPA",
       "Risk scoring",
-      "Predictive analytics",
+      "Analytics",
       "Audit trails",
     ],
-    benefits: [
-      "Faster and more structured audits",
-      "Stronger evidence management",
-      "Better CAPA tracking",
-      "Improved compliance visibility",
-      "Reduced manual reporting effort",
-    ],
+    advantagesTitle: "From inspection activity to operational accountability",
     advantagesIntro:
-      "eAuditHub is designed for organizations that need consistent audit execution, stronger compliance visibility, and faster follow-through on findings.",
+      "eAuditHub makes it easier to move from observations to resolution with structured execution and transparent audit trails.",
     advantageItems: [
       {
-        title: "Faster and more structured audits",
-        description:
-          "Reduce reliance on paper and ad hoc processes with digital workflows that standardize execution across teams.",
+        title: "Standardize how audits are performed across teams.",
       },
       {
-        title: "Stronger evidence management",
-        description:
-          "Keep observations, records, and supporting evidence organized for easier review, escalation, and audit traceability.",
+        title: "Make evidence easier to review and retrieve.",
       },
       {
-        title: "Better CAPA tracking",
-        description:
-          "Follow corrective actions through to closure with clearer ownership, due dates, and accountability.",
+        title: "Keep corrective actions visible until closure.",
       },
       {
-        title: "Improved compliance visibility",
-        description:
-          "Help leadership see compliance gaps, risk areas, and audit trends without waiting for fragmented reports.",
+        title: "Escalate higher-priority findings more effectively.",
       },
       {
-        title: "Reduced manual reporting effort",
-        description:
-          "Generate clearer audit reporting with less manual compilation and fewer delays in decision-making.",
+        title: "Reduce manual compilation of audit reports.",
+      },
+    ],
+    benefits: [
+      "Standardize how audits are performed across teams",
+      "Make evidence easier to review and retrieve",
+      "Keep corrective actions visible until closure",
+      "Escalate higher-priority findings more effectively",
+      "Reduce manual compilation of audit reports",
+    ],
+    caseStudiesTitle: "Operational Accountability in Action",
+    caseStudiesCopy:
+      "See how audit, quality, and compliance teams use eAuditHub to digitize checklists, capture photo evidence, and manage CAPA to closure.",
+    caseStudiesCta: "Request an eAuditHub Demo",
+    faqs: [
+      {
+        q: "Can eAuditHub replace paper audits?",
+        a: "It supports digital checklists and structured evidence capture for many audit processes.",
       },
       {
-        title: "Built for field, office, and leadership teams",
-        description:
-          "Support audit operations end to end, from site-level execution to management review and governance oversight.",
+        q: "Does it support CAPA?",
+        a: "Yes, corrective and preventive action tracking is a core workflow.",
+      },
+      {
+        q: "Can checklists be customized?",
+        a: "Audit templates, categories, and approval processes can be configured according to scope.",
+      },
+      {
+        q: "Does it certify our compliance?",
+        a: "No. The platform supports audit administration; certification and compliance determinations depend on the relevant authority and assessment.",
+      },
+      {
+        q: "Can teams work offline?",
+        a: "Supported offline capabilities require validation on the proposed platform and device configuration.",
       },
     ],
     idealUsers: [
@@ -1139,179 +1333,821 @@ export type ServiceSlug =
   | "data-analytics-ai"
   | "cloud-infrastructure";
 
-export const services: Record<
-  ServiceSlug,
-  {
-    name: string;
-    slug: ServiceSlug;
-    group: string;
-    tagline: string;
-    headline: string;
-    deliverables: string[];
-    businessProblem: string;
-    outcomes: string[];
-    heroImage: string;
-    process?: string[];
-    cta: string;
-  }
-> = {
+export interface ServiceItem {
+  name: string;
+  slug: ServiceSlug;
+  seoTitle?: string;
+  seoDescription?: string;
+  seoKeywords?: string;
+  group: string;
+  eyebrow?: string;
+  tagline: string;
+  headline: string;
+  body?: string;
+  heroCtas?: {
+    primary: { label: string; href?: string };
+    secondary: { label: string; href?: string };
+  };
+  businessProblemTitle?: string;
+  businessProblem: string;
+  outcomes: string[];
+  deliverablesTitle?: string;
+  deliverables: string[];
+  deliverableItems?: { title: string; description?: string }[];
+  processTitle?: string;
+  processIntro?: string;
+  process?: string[];
+  techTitle?: string;
+  techBody?: string;
+  outcomesTitle?: string;
+  outcomesBody?: string;
+  faqs?: { q: string; a: string }[];
+  heroImage: string;
+  cta: string;
+  ctaTitle?: string;
+  ctaBody?: string;
+  ctaButton?: string;
+}
+
+export const services: Record<ServiceSlug, ServiceItem> = {
   "ai-transformation": {
     name: "AI Transformation & Automation",
     slug: "ai-transformation",
-    seoTitle: "Artificial Intelligence Solutions | AI Automation Services",
+    seoTitle: "Enterprise AI, RAG & Workflow Automation Services | Boscosoft",
     seoDescription:
-    "Artificial Intelligence Solutions help businesses automate workflows with AI automation services, AI workflow automation, and enterprise AI solutions.",
-    group: "AI & Automation",
+      "Build enterprise AI assistants, RAG knowledge systems, intelligent document workflows, and practical automation with Boscosoft.",
+    seoKeywords:
+      "enterprise AI development services, RAG application development, agentic AI, workflow automation",
+    group: "Applied AI & Automation",
+    eyebrow: "Applied AI & Automation",
     tagline:
-      "AI transformation, AI automation, AI assistants, workflow automation, predictive analytics, and intelligent reporting.",
-    headline: "Practical AI Transformation for Measurable Business Outcomes",
+      "Move beyond isolated AI experiments. We help identify practical use cases, prepare the data and systems behind them, and build intelligent workflows that make knowledge easier to access and processes easier to run—while keeping people in control of important decisions.",
+    headline: "Put AI to work where it makes a difference",
+    body: "Move beyond isolated AI experiments. We help identify practical use cases, prepare the data and systems behind them, and build intelligent workflows that make knowledge easier to access and processes easier to run—while keeping people in control of important decisions.",
+    heroCtas: {
+      primary: { label: "Discuss Your AI Use Case", href: "/contact-us" },
+      secondary: { label: "Explore Services", href: "/services" },
+    },
+    businessProblemTitle: "From AI enthusiasm to operational value",
+    businessProblem:
+      "Teams often have ideas for AI but lack connected information, well-defined guardrails, or a clear path into everyday work. The result is impressive demos without dependable business adoption. We start with workflows, data readiness, and measurable objectives.",
+    outcomes: [
+      "Reduce repetitive steps",
+      "Improve knowledge discovery",
+      "Support faster responses",
+      "Create better decision support",
+    ],
+    deliverablesTitle: "Build AI around the work your teams actually do",
     deliverables: [
       "AI roadmap",
       "AI assistants",
-      "Chatbots",
+      "Customer-facing conversational tools",
       "Workflow automation",
-      "RAG systems",
+      "RAG knowledge systems",
       "Predictive analytics",
       "AI reporting",
       "Smart alerts",
-      "Conversational AI",
+      "Natural-language interfaces",
       "Intelligent document processing",
     ],
-    businessProblem:
-      "Organizations want to adopt AI but often struggle to identify practical use cases, connect data, and turn AI into measurable outcomes.",
-    outcomes: ["Reduced manual work", "Faster response times", "Better decision support", "Improved productivity"],
-    heroImage: "/images/digital-transformation.avif",
-    process: ["Discover", "Prioritize", "Prototype", "Integrate", "Train", "Optimize"],
-    cta: "Build Your AI Roadmap",
-  },
-  "integration-ecosystems": {
-    name: "Integration & Digital Ecosystems",
-    seoTitle: "Enterprise Application Integration | System Integration Services",
-    seoDescription:
-    "Enterprise Application Integration from Bosco Soft connects business applications with system integration services, ERP integration, and digital solutions.",
-    slug: "integration-ecosystems",
-    group: "Enterprise Systems",
-    tagline:
-      "Boscosoft works across enterprise platforms, cloud infrastructure, open-source frameworks, ERP/CRM systems, AI technologies, and data analytics platforms.",
-    headline: "Connect Your Systems, Data, Teams, and Workflows",
-    deliverables: [
-      "API development",
-      "ERP integrations",
-      "Third-party integrations",
-      "Cloud and on-premise connectivity",
-      "Data synchronization",
-      "Payment integrations",
-      "Communication integrations",
-      "DevOps and CI/CD automation",
+    deliverableItems: [
+      {
+        title: "AI roadmap",
+        description:
+          "Prioritize use cases based on business value, data readiness, and risk.",
+      },
+      {
+        title: "AI assistants",
+        description:
+          "Give employees task-focused tools connected to approved information.",
+      },
+      {
+        title: "Customer-facing conversational tools",
+        description:
+          "Guide users through FAQs, workflows, and supported services.",
+      },
+      {
+        title: "Workflow automation",
+        description:
+          "Connect triggers, approvals, records, and actions across systems.",
+      },
+      {
+        title: "RAG knowledge systems",
+        description:
+          "Ground responses in selected internal documents and provide traceable references.",
+      },
+      {
+        title: "Predictive analytics",
+        description:
+          "Explore forecasting and pattern detection where suitable data exists.",
+      },
+      {
+        title: "AI reporting",
+        description:
+          "Make narrative explanations and management summaries easier to generate and review.",
+      },
+      {
+        title: "Smart alerts",
+        description: "Surface exceptions that merit human attention.",
+      },
+      {
+        title: "Natural-language interfaces",
+        description:
+          "Help users find information without specialized query knowledge.",
+      },
+      {
+        title: "Intelligent document processing",
+        description:
+          "Extract, classify, and route information from structured and unstructured files.",
+      },
     ],
+    processTitle: "From discovery to controlled adoption",
+    processIntro:
+      "A structured pathway ensuring use cases are feasible, integrated securely, and adopted with confidence.",
+    process: [
+      "Discover",
+      "Prioritize",
+      "Prototype",
+      "Integrate",
+      "Train",
+      "Optimize",
+    ],
+    techTitle: "Designed for your security and architecture context",
+    techBody:
+      "Solutions can use Azure AI, OpenAI-based application components, modern APIs, enterprise data stores, and cloud-native architectures, selected according to requirements. Model governance, sensitive data handling, permission boundaries, and human review are considered during design.",
+    outcomesTitle: "Focus on adoption, accuracy, and useful automation",
+    outcomesBody:
+      "Define success through process time saved, search effectiveness, response quality, escalation rates, and actual user adoption—not the number of AI features deployed.",
+    faqs: [
+      {
+        q: "Where should we start?",
+        a: "With a targeted discovery workshop and one measurable use case.",
+      },
+      {
+        q: "Can AI work with our private documents?",
+        a: "RAG and permission-aware retrieval architectures can be designed, with security controls specified for the engagement.",
+      },
+      {
+        q: "Will AI take actions automatically?",
+        a: "Actions can be limited by role, approval gates, audit trails, and human oversight.",
+      },
+      {
+        q: "Can you work with our existing applications?",
+        a: "Yes, subject to API access, integration constraints, and security review.",
+      },
+      {
+        q: "Do you guarantee model accuracy?",
+        a: "No. AI requires evaluation, monitoring, and processes for handling errors.",
+      },
+    ],
+    heroImage: "/images/digital-transformation.avif",
+    cta: "Build Your AI Roadmap",
+    ctaTitle: "Have a workflow that AI could improve?",
+    ctaBody:
+      "Show us the problem, and we will help frame a technically grounded starting point.",
+    ctaButton: "Build Your AI Roadmap",
+  },
+  "erp-crm-implementation": {
+    name: "ERP & CRM Platform Implementation",
+    slug: "erp-crm-implementation",
+    seoTitle: "Dynamics 365, Power Platform & ERP Implementation | Boscosoft",
+    seoDescription:
+      "Implement and integrate Dynamics 365, Power Platform, Zoho, and Frappe/ERPNext with business-focused discovery, configuration, and support.",
+    seoKeywords:
+      "ERP and CRM implementation services, Dynamics 365 implementation, Power Platform consulting, ERPNext implementation",
+    group: "Enterprise Business Systems",
+    eyebrow: "Enterprise Business Systems",
+    tagline:
+      "Turn scattered processes into connected operations through thoughtful platform selection, implementation, customization, and integration. We focus on usable workflows, relevant data, and adoption—not merely switching on modules.",
+    headline: "ERP and CRM that fit the way your business works",
+    body: "Turn scattered processes into connected operations through thoughtful platform selection, implementation, customization, and integration. We focus on usable workflows, relevant data, and adoption—not merely switching on modules.",
+    heroCtas: {
+      primary: { label: "Discuss Your ERP & CRM Needs", href: "/contact-us" },
+      secondary: { label: "All Services", href: "/services" },
+    },
+    businessProblemTitle:
+      "Your business should not have to work around the software",
     businessProblem:
-      "Disconnected applications and data silos slow down reporting, coordination, customer experiences, and daily operations.",
-    outcomes: ["Reduced data silos", "Real-time information flow", "Better coordination", "Smoother user experiences"],
-    heroImage: "/images/ecommerce-analytics.avif",
-    cta: "Connect Your Digital Ecosystem",
+      "Rigid configurations and disconnected systems make teams duplicate effort, maintain side spreadsheets, and lose visibility. We translate real operating requirements into practical processes and well-governed systems.",
+    outcomes: [
+      "Streamlined processes",
+      "Clearer user responsibilities",
+      "Stronger reporting",
+      "Sustainable platform growth",
+    ],
+    deliverablesTitle: "Implementation services from requirements to adoption",
+    deliverables: [
+      "Dynamics 365 deployment",
+      "Dynamics 365 customization",
+      "Zoho implementation",
+      "Frappe/ERPNext development",
+      "CRM process design",
+      "ERP integrations",
+      "Power Platform extensions",
+      "Dashboards",
+      "AI-enabled extensions",
+    ],
+    deliverableItems: [
+      {
+        title: "Dynamics 365 deployment",
+        description:
+          "Configure appropriate Dynamics workloads and business processes.",
+      },
+      {
+        title: "Dynamics 365 customization",
+        description:
+          "Extend data models, forms, rules, and workflows responsibly.",
+      },
+      {
+        title: "Zoho implementation",
+        description:
+          "Align relevant business modules with operational requirements.",
+      },
+      {
+        title: "Frappe/ERPNext development",
+        description: "Build and adapt open-source enterprise workflows.",
+      },
+      {
+        title: "CRM process design",
+        description: "Configure pipelines, interactions, and service workflows.",
+      },
+      {
+        title: "ERP integrations",
+        description:
+          "Connect finance, operations, sales, and third-party systems.",
+      },
+      {
+        title: "Power Platform extensions",
+        description: "Develop apps and automations for defined use cases.",
+      },
+      {
+        title: "Dashboards",
+        description:
+          "Show meaningful operational KPIs to the right decision-makers.",
+      },
+      {
+        title: "AI-enabled extensions",
+        description:
+          "Explore knowledge and automation components where justified and approved.",
+      },
+    ],
+    processTitle: "Discover. Configure. Validate. Adopt.",
+    processIntro:
+      "Begin with process mapping and fit-gap analysis; design roles and data; configure and integrate; migrate and test; train users; stabilize the rollout and support improvements.",
+    process: [
+      "Map & Analyze",
+      "Design Roles",
+      "Configure",
+      "Integrate",
+      "Migrate & Test",
+      "Adopt & Support",
+    ],
+    techTitle: "Built on the platform that fits your requirements",
+    techBody:
+      "Work across Dynamics 365, Dataverse, Power Platform, Odoo, Frappe/ERPNext, APIs, Power BI, and cloud services as scoped. Aim for less manual re-entry, better process visibility, and stronger user adoption.",
+    outcomesTitle: "Focus on adoption, process visibility, and platform fit",
+    outcomesBody:
+      "Aim for less manual re-entry, clearer user responsibilities, better process visibility, and stronger user adoption across departments.",
+    faqs: [
+      {
+        q: "Do you work with an existing ERP?",
+        a: "Yes, we can evaluate extensions, integrations, and modernization of deployed systems.",
+      },
+      {
+        q: "Can you migrate our data?",
+        a: "Migration plans depend on data quality, mappings, and the target platform.",
+      },
+      {
+        q: "Are you an official Microsoft partner?",
+        a: "Do not publish partner-status language without current confirmation.",
+      },
+      {
+        q: "How do you limit implementation disruption?",
+        a: "Through phased rollout, stakeholder review, testing, and training.",
+      },
+      {
+        q: "Is post-go-live support available?",
+        a: "Yes, support terms are defined with each engagement.",
+      },
+    ],
+    heroImage: "/images/banking-system.avif",
+    cta: "Schedule an ERP Discovery Call",
+    ctaTitle: "Get more from your enterprise platform.",
+    ctaBody:
+      "Turn scattered operations into connected workflows with platform selection, configuration, and long-term support.",
+    ctaButton: "Schedule an ERP Discovery Call",
   },
   "saas-engineering": {
     name: "SaaS Engineering & Modernization",
     slug: "saas-engineering",
-    seoTitle: "SaaS Development Services | SaaS Application Development",
+    seoTitle: "SaaS Product Engineering & Legacy Modernization | Boscosoft",
     seoDescription:
-    "SaaS Development Services from Bosco Soft build scalable applications with SaaS application development, modernization, and product engineering.",
-    group: "Platform Engineering",
+      "Modernize legacy products and build cloud-native SaaS platforms with architecture, APIs, dedicated teams, integration, and ongoing engineering.",
+    seoKeywords:
+      "SaaS development services, legacy application modernization, offshore product engineering, multi-tenant SaaS development",
+    group: "Product Engineering",
+    eyebrow: "Product Engineering",
     tagline:
-      "AI-enabled SaaS products and ERP/CRM implementation services designed to work together.",
-    headline: "Build and Modernize Cloud-Native SaaS Platforms",
+      "Whether you are rebuilding an established product or scaling a new SaaS offering, Boscosoft helps design, develop, and modernize applications for evolving customer expectations, integration requirements, and cloud operations.",
+    headline: "Give your software a stronger future",
+    body: "Whether you are rebuilding an established product or scaling a new SaaS offering, Boscosoft helps design, develop, and modernize applications for evolving customer expectations, integration requirements, and cloud operations.",
+    heroCtas: {
+      primary: { label: "Discuss a Modernization Project", href: "/contact-us" },
+      secondary: { label: "All Services", href: "/services" },
+    },
+    businessProblemTitle:
+      "Valuable software should not be held back by its architecture",
+    businessProblem:
+      "Aging codebases, tightly coupled modules, fragile releases, and growing maintenance costs slow innovation. Modernization needs a path that preserves business value while improving maintainability and future adaptability.",
+    outcomes: [
+      "Easier releases",
+      "Improved system maintainability",
+      "Scalable architecture",
+      "Reduced operational friction",
+    ],
+    deliverablesTitle: "Product engineering across the application lifecycle",
     deliverables: [
       "Cloud-native application development",
-      "Multi-tenant SaaS",
+      "Multi-tenant SaaS architecture",
       "Legacy modernization",
       "Workflow automation",
       "Role-based access",
-      "Secure tenant separation",
-      "Scalable product engineering",
+      "Tenant isolation",
+      "Product engineering teams",
     ],
-    businessProblem:
-      "Legacy platforms and rigid applications make it difficult to scale, improve performance, and release useful capabilities quickly.",
-    outcomes: ["Improved scalability", "Better performance", "Reduced technical debt", "Faster platform evolution"],
+    deliverableItems: [
+      {
+        title: "Cloud-native application development",
+        description:
+          "Build services and applications for modern deployment environments.",
+      },
+      {
+        title: "Multi-tenant SaaS architecture",
+        description:
+          "Define tenant boundaries, common services, and configuration patterns.",
+      },
+      {
+        title: "Legacy modernization",
+        description:
+          "Assess and refactor, replatform, or selectively rebuild aging applications.",
+      },
+      {
+        title: "Workflow automation",
+        description: "Reduce repetitive actions with integrated business rules.",
+      },
+      {
+        title: "Role-based access",
+        description:
+          "Establish permissions consistent with user responsibilities.",
+      },
+      {
+        title: "Tenant isolation",
+        description:
+          "Design appropriate security boundaries for multi-customer platforms.",
+      },
+      {
+        title: "Product engineering teams",
+        description:
+          "Align specialists with your backlog, stack, releases, and architecture goals.",
+      },
+    ],
+    processTitle: "Co-develop with your team, not around it",
+    processIntro:
+      "Engage a dedicated engineering team or scope a defined modernization program. Begin with architecture discovery, define incremental milestones, work through joint review cycles, and plan handover and support intentionally.",
+    process: [
+      "Discover Architecture",
+      "Set Milestones",
+      "Co-Develop",
+      "Review Cycles",
+      "Plan Handover",
+      "Support & Scale",
+    ],
+    techTitle: "Modern architecture, chosen for business reasons",
+    techBody:
+      "Architecture may include .NET, React, PostgreSQL, cloud-native services, APIs, containers, and managed platforms as appropriate. Evaluate success through release reliability, maintainability, performance, and customer experience.",
+    outcomesTitle: "Focus on release reliability, performance, and scale",
+    outcomesBody:
+      "Evaluate success through release reliability, maintainability, performance, and customer experience while preserving business continuity.",
+    faqs: [
+      {
+        q: "Do you rebuild everything at once?",
+        a: "Not necessarily. An incremental approach often protects business continuity.",
+      },
+      {
+        q: "Can your engineers join our product team?",
+        a: "Dedicated co-development arrangements can be scoped around stack, collaboration, and capacity needs.",
+      },
+      {
+        q: "Will we own the source code?",
+        a: "IP and source-code ownership are defined in the commercial agreement.",
+      },
+      {
+        q: "Can you modernize without interrupting customers?",
+        a: "We plan staged migrations, but downtime and technical risk depend on the current system.",
+      },
+      {
+        q: "Have you modernized long-running products?",
+        a: "The PDF cites a US education product modernization testimonial; publish detailed case facts only after client approval.",
+      },
+    ],
     heroImage: "/images/resource-laptop.avif",
-    cta: "Start Your SaaS Journey",
-  },
-  "erp-crm-implementation": {
-    name: "ERP & CRM Platform Implementation",
-    seoTitle: "ERP & CRM Implementation Services | CRM Integration | Bosco Soft",
-    seoDescription:
-    "CRM implementation services from Bosco Soft simplify customer management through CRM integration, customization, deployment, and automation.",
-    slug: "erp-crm-implementation",
-    group: "Enterprise Systems",
-    tagline:
-      "ERP/CRM implementation, Dynamics 365, Zoho, Frappe/ERP Next, CRM workflows, system integrations, dashboards, and AI-powered extensions.",
-    headline: "Implement ERP and CRM Systems That Fit Your Business Workflows",
-    deliverables: [
-      "Dynamics 365 deployment",
-      "Dynamics 365 customization",
-      "Frappe/ERPNext development",
-      "CRM workflows",
-      "ERP integrations",
-      "Power Platform extensions",
-      "Dashboards",
-      "AI-powered ERP extensions",
-    ],
-    businessProblem:
-      "ERP and CRM programs fail when systems are configured around software defaults instead of real workflows, users, and reporting needs.",
-    outcomes: ["Streamlined operations", "Better user adoption", "Improved process control", "Scalable enterprise systems"],
-    heroImage: "/images/banking-system.avif",
-    cta: "Discuss Your ERP Needs",
+    cta: "Talk to a Product Engineering Lead",
+    ctaTitle: "Modernize what you have. Build what comes next.",
+    ctaBody:
+      "Rebuild legacy platforms or scale your cloud-native SaaS product with dedicated engineering teams and sustainable architecture.",
+    ctaButton: "Talk to a Product Engineering Lead",
   },
   "data-analytics-ai": {
     name: "Data, Analytics & AI",
     slug: "data-analytics-ai",
-    seoTitle: "Data Analytics Services | Data Engineering Services | Bosco Soft",
+    seoTitle: "Databricks Data Engineering & Analytics Services | Boscosoft",
     seoDescription:
-    "Data Analytics Services from Bosco Soft transform business data through data engineering services, data visualization, and big data analytics.",
-    group: "AI & Automation",
+      "Connect fragmented enterprise data with modern pipelines, lakehouse architectures, dashboards, governance, and AI-ready analytics.",
+    seoKeywords:
+      "data engineering services, Databricks lakehouse consulting, cloud data migration, enterprise analytics",
+    group: "Enterprise Data Engineering",
+    eyebrow: "Enterprise Data Engineering",
     tagline:
-      "Data analytics, dashboards, predictive analytics, AI insights, real-time reporting, and decision intelligence.",
-    headline: "Turn Business Data Into Actionable Intelligence",
+      "Data only creates value when teams can find, understand, and use it. We help organizations integrate sources, design governed pipelines, build analytics environments, and deliver information that supports clearer, faster decisions.",
+    headline: "Turn disconnected data into decisions you can trust",
+    body: "Data only creates value when teams can find, understand, and use it. We help organizations integrate sources, design governed pipelines, build analytics environments, and deliver information that supports clearer, faster decisions.",
+    heroCtas: {
+      primary: { label: "Plan Your Data Platform", href: "/contact-us" },
+      secondary: { label: "All Services", href: "/services" },
+    },
+    businessProblemTitle:
+      "Too many data sources. Not enough usable insight.",
+    businessProblem:
+      "Fragmented systems, manual exports, inconsistent definitions, and slow reporting leave leaders questioning the numbers. Modern data architecture brings order, traceability, and relevance to enterprise information.",
+    outcomes: [
+      "Shared metrics",
+      "More dependable reporting",
+      "Timely insights",
+      "Foundations for AI",
+    ],
+    deliverablesTitle:
+      "Data foundations for analytics and intelligent operations",
     deliverables: [
       "Data engineering",
-      "Lakehouse platforms",
+      "Lakehouse architecture",
+      "Databricks migration planning",
+      "Medallion pipelines",
+      "Governance",
       "Executive dashboards",
       "KPI analytics",
-      "Predictive models",
-      "AI insights",
-      "Real-time reporting",
-      "Natural language analytics",
+      "Predictive modeling",
+      "AI-assisted insight",
+      "Near-real-time reporting",
     ],
-    businessProblem:
-      "Leaders need reliable dashboards and insights, but the data is often scattered, inconsistent, delayed, or difficult to interpret.",
-    outcomes: ["Better data visibility", "Faster decision-making", "Predictive planning", "Leadership clarity"],
+    deliverableItems: [
+      {
+        title: "Data engineering",
+        description:
+          "Build pipelines that ingest, transform, and validate data.",
+      },
+      {
+        title: "Lakehouse architecture",
+        description:
+          "Organize structured and semi-structured data for multiple analytical needs.",
+      },
+      {
+        title: "Databricks migration planning",
+        description:
+          "Assess source databases, target architecture, transformations, and cutover requirements.",
+      },
+      {
+        title: "Medallion pipelines",
+        description:
+          "Organize Bronze, Silver, and Gold data layers where appropriate.",
+      },
+      {
+        title: "Governance",
+        description:
+          "Design access, cataloging, lineage, and quality practices using suitable platform controls.",
+      },
+      {
+        title: "Executive dashboards",
+        description:
+          "Translate consistent metrics into decision-ready views.",
+      },
+      {
+        title: "KPI analytics",
+        description:
+          "Define indicators with business stakeholders rather than guessing from available tables.",
+      },
+      {
+        title: "Predictive modeling",
+        description:
+          "Explore patterns and forecasts when data quality and purpose allow.",
+      },
+      {
+        title: "AI-assisted insight",
+        description:
+          "Add conversational and explanatory interfaces with appropriate controls.",
+      },
+      {
+        title: "Near-real-time reporting",
+        description:
+          "Design latency according to actual operating needs.",
+      },
+    ],
+    processTitle: "From source integration to governed insight",
+    processIntro:
+      "Ingest, model, catalog, and present data through robust medallion pipelines and intuitive dashboards.",
+    process: [
+      "Assess Sources",
+      "Pipeline Design",
+      "Medallion Architecture",
+      "Governance Setup",
+      "KPI Dashboards",
+      "AI & Predictive Modeling",
+    ],
+    techTitle: "Architecture designed for your cloud and workloads",
+    techBody:
+      "Explore Databricks, Delta Lake, Power BI, Azure, AWS, and GCP, subject to proven competencies and engagement scope. Databricks Unity Catalog and other governance services may be included where relevant.",
+    outcomesTitle: "Focus on clarity, trust, and analytical readiness",
+    outcomesBody:
+      "Modern data architecture brings order, traceability, and relevance to enterprise information so leaders can make confident decisions.",
+    faqs: [
+      {
+        q: "Can you migrate from SQL Server or Oracle?",
+        a: "Migrations can be assessed and planned after examining data volume, dependencies, and downtime constraints.",
+      },
+      {
+        q: "Do we need a lakehouse?",
+        a: "Not always. We recommend the simplest architecture that addresses your scale and analytical requirements.",
+      },
+      {
+        q: "Can analytics connect with existing ERPs?",
+        a: "Yes, subject to system interfaces and source data accessibility.",
+      },
+      {
+        q: "Does this make our data AI-ready?",
+        a: "A governed foundation helps; AI readiness also depends on data quality, permissions, and use-case design.",
+      },
+      {
+        q: "Can you promise zero downtime?",
+        a: "No. Migration downtime targets require technical discovery and a validated migration plan.",
+      },
+    ],
     heroImage: "/images/ecommerce-analytics.avif",
-    cta: "Turn Data Into Decisions",
+    cta: "Discuss Your Data Architecture",
+    ctaTitle: "Make your data an asset—not another integration problem.",
+    ctaBody:
+      "Design governed pipelines, modern lakehouse environments, and decision-ready dashboards with our data engineering team.",
+    ctaButton: "Discuss Your Data Architecture",
+  },
+  "integration-ecosystems": {
+    name: "Integration & Digital Ecosystems",
+    slug: "integration-ecosystems",
+    seoTitle: "Enterprise API Integration & Connected Systems | Boscosoft",
+    seoDescription:
+      "Connect ERP, CRM, cloud, finance, and operational systems using APIs, synchronization, and enterprise integration workflows.",
+    seoKeywords:
+      "enterprise system integration services, API integration company, ERP CRM integration, application interoperability",
+    group: "Enterprise Integration",
+    eyebrow: "Enterprise Integration",
+    tagline:
+      "When information is trapped in separate applications, teams spend time re-entering data and reconciling conflicting records. We connect systems and workflows so information moves where it is needed, with appropriate validation and control.",
+    headline: "Make your systems work together, naturally",
+    body: "When information is trapped in separate applications, teams spend time re-entering data and reconciling conflicting records. We connect systems and workflows so information moves where it is needed, with practical validation and control.",
+    heroCtas: {
+      primary: { label: "Discuss an Integration", href: "/contact-us" },
+      secondary: { label: "All Services", href: "/services" },
+    },
+    businessProblemTitle: "Disconnected technology creates invisible costs",
+    businessProblem:
+      "Delayed reporting, inconsistent customer records, missed handoffs, and duplicated effort are often symptoms of the same problem: systems that cannot reliably exchange information. An integration-first architecture helps remove that friction.",
+    outcomes: [
+      "Fewer silos",
+      "More consistent information",
+      "Faster handoffs",
+      "Better user experiences",
+    ],
+    deliverablesTitle: "Interoperability built into daily operations",
+    deliverables: [
+      "API development",
+      "ERP integration",
+      "Third-party integration",
+      "Cloud and on-premises connectivity",
+      "Data synchronization",
+      "Payment connectivity",
+      "Communication integrations",
+      "DevOps and CI/CD",
+    ],
+    deliverableItems: [
+      {
+        title: "API development",
+        description:
+          "Design secure interfaces for required business capabilities.",
+      },
+      {
+        title: "ERP integration",
+        description:
+          "Connect enterprise systems with related operational platforms.",
+      },
+      {
+        title: "Third-party integration",
+        description:
+          "Coordinate exchanges with approved external services.",
+      },
+      {
+        title: "Cloud and on-premises connectivity",
+        description:
+          "Plan interfaces across different hosting environments.",
+      },
+      {
+        title: "Data synchronization",
+        description:
+          "Establish mappings, validation, and recovery rules.",
+      },
+      {
+        title: "Payment connectivity",
+        description:
+          "Integrate approved processors and reconcile relevant events.",
+      },
+      {
+        title: "Communication integrations",
+        description:
+          "Connect notifications, messaging, and engagement services.",
+      },
+      {
+        title: "DevOps and CI/CD",
+        description:
+          "Manage integration deployment with repeatable release practices.",
+      },
+    ],
+    processTitle: "Reliable integration begins with the data contract",
+    processIntro:
+      "Document source-of-truth ownership, access rules, data fields, error handling, monitoring, and exception workflows before implementation. The result is a more dependable information flow that is easier to support as platforms change.",
+    process: [
+      "Define Contracts",
+      "Design APIs",
+      "Data Mapping",
+      "Connect & Secure",
+      "Handle Exceptions",
+      "Monitor & Maintain",
+    ],
+    techTitle: "Architectures for resilient enterprise connectivity",
+    techBody:
+      "Document source-of-truth ownership, access rules, data fields, error handling, monitoring, and exception workflows before implementation. The result is a more dependable information flow that is easier to support as platforms change.",
+    outcomesTitle: "Focus on dependable flow, auditability, and speed",
+    outcomesBody:
+      "Remove manual re-entry and friction so information moves where it is needed with appropriate validation and control.",
+    faqs: [
+      {
+        q: "Can you connect older systems without modern APIs?",
+        a: "Sometimes, through adapters or controlled data exchange; feasibility depends on the system.",
+      },
+      {
+        q: "Do you build real-time integrations?",
+        a: "We design real-time, event-driven, or scheduled exchange according to business needs.",
+      },
+      {
+        q: "How are errors handled?",
+        a: "Retry, validation, alerts, and reconciliation can be part of the integration design.",
+      },
+      {
+        q: "Can you work with our current vendors?",
+        a: "Yes, coordination with incumbent vendors is often essential.",
+      },
+      {
+        q: "Who maintains integrations after launch?",
+        a: "Support responsibilities and monitoring arrangements are agreed during implementation.",
+      },
+    ],
+    heroImage: "/images/ecommerce-analytics.avif",
+    cta: "Connect Your Digital Ecosystem",
+    ctaTitle: "Stop moving data by hand.",
+    ctaBody:
+      "Connect your core applications, APIs, payment gateways, and operational platforms into a seamless digital ecosystem.",
+    ctaButton: "Connect Your Digital Ecosystem",
   },
   "cloud-infrastructure": {
     name: "Cloud Infrastructure & Support",
     slug: "cloud-infrastructure",
-    seoTitle: "Cloud Solutions Company | Cloud Consulting Services | Bosco Soft",
+    seoTitle: "Cloud Infrastructure, DevOps & Managed Support | Boscosoft",
     seoDescription:
-    "Bosco Soft is a Cloud Solutions Company offering cloud consulting services, cloud infrastructure management, and cloud managed services.",
-    group: "Platform Engineering",
+      "Design, deploy, monitor, and optimize applications across AWS, Azure, and Google Cloud with DevOps and infrastructure support.",
+    seoKeywords:
+      "cloud infrastructure services, DevOps consulting, cloud application support, cloud migration services",
+    group: "Cloud Operations",
+    eyebrow: "Cloud Operations",
     tagline:
-      "Cloud infrastructure, deployment, management, optimization, security, compliance, monitoring, backups, and ongoing support. ",
-    headline: "Reliable Cloud Infrastructure for Scalable Digital Operations",
+      "Cloud infrastructure should support your applications—not become another source of uncertainty. Boscosoft helps plan deployment architectures, automate releases, monitor performance, improve recovery readiness, and manage operational change.",
+    headline: "Build a cloud foundation your business can rely on",
+    body: "Cloud infrastructure should support your applications—not become another source of uncertainty. Boscosoft helps plan deployment architectures, automate releases, monitor performance, improve recovery readiness, and manage operational change.",
+    heroCtas: {
+      primary: { label: "Discuss Your Cloud Needs", href: "/contact-us" },
+      secondary: { label: "All Services", href: "/services" },
+    },
+    businessProblemTitle: "Reliable applications need reliable operations",
+    businessProblem:
+      "Poor observability, inconsistent deployments, untested backups, and unclear security ownership can undermine otherwise successful products. We bring engineering discipline to the foundations those products depend on.",
+    outcomes: [
+      "Improved resilience",
+      "Clearer operating controls",
+      "Performance visibility",
+      "Supportable deployments",
+    ],
+    deliverablesTitle: "The essentials of sustainable cloud operations",
     deliverables: [
       "Cloud deployment",
       "Cloud management",
       "Performance optimization",
-      "Security",
+      "Security practices",
       "Compliance support",
       "Monitoring",
       "Backup planning",
       "Ongoing support",
     ],
-    businessProblem:
-      "Digital platforms need reliable cloud foundations, monitoring, backups, security, and performance tuning to support long-term operations.",
-    outcomes: ["Better uptime", "Improved performance", "Stronger security", "Operational continuity"],
+    deliverableItems: [
+      {
+        title: "Cloud deployment",
+        description:
+          "Configure suitable infrastructure and application hosting.",
+      },
+      {
+        title: "Cloud management",
+        description:
+          "Maintain agreed operational tasks and environments.",
+      },
+      {
+        title: "Performance optimization",
+        description:
+          "Review utilization, bottlenecks, and scaling strategies.",
+      },
+      {
+        title: "Security practices",
+        description:
+          "Apply principle-of-least-privilege access, configuration controls, and monitoring as scoped.",
+      },
+      {
+        title: "Compliance support",
+        description:
+          "Supply technical controls and documentation for applicable assessments; do not imply certification.",
+      },
+      {
+        title: "Monitoring",
+        description:
+          "Create alerts, logs, and dashboards that aid incident response.",
+      },
+      {
+        title: "Backup planning",
+        description:
+          "Define recovery objectives, schedules, retention, and verification.",
+      },
+      {
+        title: "Ongoing support",
+        description:
+          "Establish responsibilities, change procedures, and support coverage by contract.",
+      },
+    ],
+    processTitle: "Disciplined cloud lifecycle management",
+    processIntro:
+      "From architecture assessment and IaC automation to monitoring, backup testing, and defined SLA support.",
+    process: [
+      "Assess & Plan",
+      "Automate Deployments",
+      "Secure Access",
+      "Set Up Monitoring",
+      "Test Backups",
+      "Ongoing Support",
+    ],
+    techTitle: "Operate with visibility, not guesswork",
+    techBody:
+      "Support architectures across AWS, Azure, and GCP as appropriate, combining infrastructure automation, CI/CD, monitoring, and documented runbooks. Design support commitments based on agreed service levels, not generic 24/7 claims.",
+    outcomesTitle: "Focus on uptime, resilience, and operational clarity",
+    outcomesBody:
+      "Bring engineering discipline to cloud deployment, release pipelines, monitoring, and disaster recovery.",
+    faqs: [
+      {
+        q: "Can you support our existing cloud setup?",
+        a: "We begin with an architecture and operational review.",
+      },
+      {
+        q: "Do you provide 24/7 support?",
+        a: "Coverage and response targets depend on the signed service agreement; do not assume round-the-clock service.",
+      },
+      {
+        q: "Can you help with backups and disaster recovery?",
+        a: "Yes, through scoped planning, implementation, and recovery testing.",
+      },
+      {
+        q: "Can you migrate from local hosting?",
+        a: "We assess dependencies, data, downtime tolerances, and application changes first.",
+      },
+      {
+        q: "Who controls our cloud account?",
+        a: "Account ownership and permissions should be explicitly defined, preferably with customer-controlled governance.",
+      },
+    ],
     heroImage: "/images/cloud-security.avif",
-    cta: "Modernize Your Infrastructure",
+    cta: "Schedule a Cloud Review",
+    ctaTitle: "More dependable infrastructure starts with a clear plan.",
+    ctaBody:
+      "Plan deployment architectures, automate releases, monitor performance, and improve recovery readiness with our cloud engineers.",
+    ctaButton: "Schedule a Cloud Review",
   },
 };
 
@@ -1385,7 +2221,7 @@ export const industries: Record<
     slug: "finance-microfinance",
     seoTitle: "Finance Management System | Finance ERP | MicroFUND",
     seoDescription:
-    "MicroFUND is a finance management system and finance ERP that simplifies loans, savings, repayments, collections, reporting, and financial operations for institutions.",
+      "MicroFUND is a finance management system and finance ERP that simplifies loans, savings, repayments, collections, reporting, and financial operations for institutions.",
     tagline: "Digital platforms for responsible financial operations.",
     pains: [
       "Loan tracking",

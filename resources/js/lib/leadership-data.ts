@@ -3,7 +3,7 @@ export const leadershipProfiles = [
     slug: "fr-don-bosco",
     name: "Fr. Don Bosco Lourdusamy SDB",
     role: "President",
-    image: "/images/leaders/Don Bosco Lourdusamy SDB.png",
+    image: "/images/leaders/don-bosco-lourdusamy.png",
     linkedin: "https://in.linkedin.com/company/boscosoft-technologies",
     bio: "A global leader for institution-led digital transformation, Fr. Don Bosco brings mission-driven strategy and trusted guidance across schools, hospitals, and social service organizations.",
     focus: "Institutional strategy, stakeholder alignment, and long-term sustainability.",
@@ -16,7 +16,7 @@ export const leadershipProfiles = [
     slug: "fr-thaddeus-singarayan",
     name: "Dr Thaddeus Singarayan SDB, MD & CEO",
     role: "CEO & Managing Director",
-    image: "/images/leaders/Thaddeus Singarayan SDB.png",
+    image: "/images/leaders/thaddeus-singarayan.png",
     linkedin: "https://in.linkedin.com/company/boscosoft-technologies",
     bio: "Fr. Thaddeus Singarayan is the founding Director of Bosco Soft Technologies. He brings nearly three decades of experience in business modeling and information system development across education, healthcare, micro-financing, and logistics, and he continues to define and drive the company's technology and product strategy.",
     focus:
@@ -32,7 +32,7 @@ export const leadershipProfiles = [
     slug: "fr-bosco-augustine",
     name: "Fr.Bosco Augustine SDB",
     role: "Chief Finance Officer",
-    image: "/images/leaders/Bosco Augustine SDB.png",
+    image: "/images/leaders/bosco-augustine.png",
     linkedin: "https://in.linkedin.com/company/boscosoft-technologies",
     bio: "Fr. Bosco Augustine SDB is a respected educationist who has helped shape many young people into leaders in the Catholic Church. He has served as Principal of Don Bosco Theological College, Kavaraipettai, Chennai, and brings a distinctive blend of academic, pastoral, and administrative leadership into Boscosoft's financial operations.",
     focus:
@@ -48,7 +48,7 @@ export const leadershipProfiles = [
     slug: "mr-m-lingesh",
     name: "Mr. M Lingesh",
     role: "Chief Operations Officer",
-    image: "/images/leaders/Lingesh.png",
+    image: "/images/leaders/lingesh.png",
     linkedin: "https://in.linkedin.com/company/boscosoft-technologies",
     bio: "Commander Lingesh, an Indian Navy veteran, brings nearly four decades of experience spanning two decades of military service as a submariner and 17 years of cyber security expertise. At Boscosoft, he serves as Chief Operations Officer and contributes deep operational discipline, enterprise security insight, and leadership maturity.",
     focus:
@@ -64,7 +64,7 @@ export const leadershipProfiles = [
     slug: "mr-felix-rajan",
     name: "Mr. Felix Rajan Meri Cruze",
     role: "Chief Technology Officer",
-    image: "/images/leaders/Felix Rajan Meri Cruze.png",
+    image: "/images/leaders/felix-rajan.png",
     linkedin: "https://in.linkedin.com/company/boscosoft-technologies",
     bio: "Felix Rajan Meri Cruze has more than 25 years of experience in Information Technology, including over 13 years at Boscosoft. His work spans MicroFund, healthcare, education, and insurance, with strong expertise in delivery management, process refinement, solution architecture, ISO audits, and business development.",
     focus:

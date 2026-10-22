@@ -1028,41 +1028,19 @@
   }
 }
 
-@keyframes slide-right {
-  from {
-    opacity: 0;
-    transform: translateX(-24px);
-  }
-
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-
 /* Leader Card Explicit Styles */
-.leader-card { border-radius: 14px; overflow: hidden; border: 1px solid #d0e2f2; background-color: #ffffff; box-shadow: 0 8px 24px -10px rgba(7,21,43,0.18); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.leader-card:hover { transform: translateY(-5px); box-shadow: 0 16px 32px -10px rgba(7,21,43,0.25); }
-.leader-photo-wrap { position: relative; width: 100%; aspect-ratio: 1 / 1.05; background-color: #dce8f3 !important; overflow: hidden; display: flex; align-items: flex-end; justify-content: center; }
-.leader-photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: top; mix-blend-mode: multiply !important; filter: grayscale(100%) contrast(1.03) !important; -webkit-filter: grayscale(100%) contrast(1.03) !important; transition: transform 0.5s ease; }
+.leader-card { border-radius: 14px; overflow: hidden; border: 1px solid #e2e8f0; background-color: #ffffff; box-shadow: 0 6px 20px -8px rgba(15,23,42,0.12); transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease; }
+.leader-card:hover { transform: translateY(-5px); border-color: #cbd5e1; box-shadow: 0 16px 32px -10px rgba(15,23,42,0.2); }
+.leader-photo-wrap { position: relative; width: 100%; aspect-ratio: 1 / 0.84; background-color: #eceff2 !important; overflow: hidden; display: flex; align-items: flex-end; justify-content: center; transition: background-color 0.3s ease; }
+.leader-card:hover .leader-photo-wrap { background-color: #e5e9ed !important; }
+.leader-photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: top center; mix-blend-mode: multiply !important; filter: grayscale(100%) contrast(1.04) !important; -webkit-filter: grayscale(100%) contrast(1.04) !important; transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
 .leader-card:hover .leader-photo-wrap img { transform: scale(1.04); }
-.leader-linkedin-btn { position: absolute; right: 14px; top: 14px; z-index: 10; display: flex; height: 34px; width: 34px; align-items: center; justify-content: center; border-radius: 6px; background-color: #85b5db !important; color: #ffffff !important; box-shadow: 0 2px 8px rgba(0,0,0,0.15); transition: background-color 0.2s ease, transform 0.2s ease; }
-.leader-linkedin-btn:hover { background-color: #6da2cb !important; transform: scale(1.1); }
-.leader-info-bar { background-color: #07152b !important; padding: 18px 16px 20px !important; text-align: center; display: flex; flex: 1 1 auto; flex-direction: column; justify-content: center; }
-.leader-name { color: #ffffff !important; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin: 0; line-height: 1.3; }
-.leader-role { color: #cbd5e1 !important; font-size: 0.82rem; font-weight: 500; margin-top: 6px; }
-
-/* Leader Card Styles */
-
-/* Leader Card Explicit Styles */
-.leader-card { border-radius: 14px; overflow: hidden; border: 1px solid #d0e2f2; background-color: #ffffff; box-shadow: 0 8px 24px -10px rgba(7,21,43,0.18); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.leader-card:hover { transform: translateY(-5px); box-shadow: 0 16px 32px -10px rgba(7,21,43,0.25); }
-.leader-photo-wrap { position: relative; width: 100%; aspect-ratio: 1 / 1.05; background-color: #dce8f3 !important; overflow: hidden; display: flex; align-items: flex-end; justify-content: center; }
-.leader-photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: top; mix-blend-mode: multiply !important; filter: grayscale(100%) contrast(1.03) !important; -webkit-filter: grayscale(100%) contrast(1.03) !important; transition: transform 0.5s ease; }
-.leader-card:hover .leader-photo-wrap img { transform: scale(1.04); }
-.leader-linkedin-btn { position: absolute; right: 14px; top: 14px; z-index: 10; display: flex; height: 34px; width: 34px; align-items: center; justify-content: center; border-radius: 6px; background-color: #85b5db !important; color: #ffffff !important; box-shadow: 0 2px 8px rgba(0,0,0,0.15); transition: background-color 0.2s ease, transform 0.2s ease; }
-.leader-linkedin-btn:hover { background-color: #6da2cb !important; transform: scale(1.1); }
-.leader-info-bar { background-color: #07152b !important; padding: 18px 16px 20px !important; text-align: center; display: flex; flex: 1 1 auto; flex-direction: column; justify-content: center; }
-.leader-name { color: #ffffff !important; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin: 0; line-height: 1.3; }
-.leader-role { color: #cbd5e1 !important; font-size: 0.82rem; font-weight: 500; margin-top: 6px; }
+.leader-linkedin-btn { position: absolute; right: 14px; top: 14px; z-index: 10; display: flex; height: 34px; width: 34px; align-items: center; justify-content: center; border-radius: 7px; background-color: #94a3b8 !important; color: #ffffff !important; box-shadow: 0 2px 8px rgba(0,0,0,0.12); transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
+.leader-linkedin-btn svg { width: 17px; height: 17px; fill: #ffffff; transition: filter 0.25s ease, transform 0.25s ease; }
+.leader-card:hover .leader-linkedin-btn { background-color: #0077b5 !important; box-shadow: 0 4px 14px rgba(0, 119, 181, 0.45); transform: scale(1.06); }
+.leader-card:hover .leader-linkedin-btn svg { filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.8)); }
+.leader-linkedin-btn:hover { background-color: #0096e6 !important; box-shadow: 0 6px 18px rgba(0, 150, 230, 0.6); transform: scale(1.16); }
+.leader-linkedin-btn:hover svg { filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.95)); }
+.leader-info-bar { background-color: #07152b !important; padding: 14px 14px 16px !important; text-align: center; display: flex; flex: 1 1 auto; flex-direction: column; justify-content: center; }
+.leader-name { color: #ffffff !important; font-size: 0.92rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0; line-height: 1.3; }
+.leader-role { color: #cbd5e1 !important; font-size: 0.8rem; font-weight: 500; margin-top: 5px; }

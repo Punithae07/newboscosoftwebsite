@@ -4,16 +4,18 @@ import { ContactPage } from "./contact";
 export const Route = createFileRoute("/contact-us")({
   head: () => ({
     meta: [
-      { title: "Contact Us | Bosco Soft Technologies " },
+      { title: "Contact Boscosoft | Enterprise Engineering & SaaS Demos" },
       {
         name: "description",
         content:
-          "Contact Bosco Soft Technologies for product demos, AI transformation, ERP implementation, SaaS development, cloud services, and support.",
+          "Talk with Boscosoft about software modernization, AI, dedicated engineering teams, enterprise integrations, or industry SaaS platforms.",
       },
-      { property: "og:title", content: "Contact Boscosoft" },
+      { name: "keywords", content: "contact Boscosoft, enterprise software consultation, SaaS demos, dedicated engineering teams, software modernization" },
+      { property: "og:title", content: "Contact Boscosoft | Enterprise Engineering & SaaS Demos" },
       {
         property: "og:description",
-        content: "Let's talk about your digital transformation goals.",
+        content:
+          "Talk with Boscosoft about software modernization, AI, dedicated engineering teams, enterprise integrations, or industry SaaS platforms.",
       },
     ],
     links: [{ rel: "canonical", href: "/contact-us" }],

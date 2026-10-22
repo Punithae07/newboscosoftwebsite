@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Section } from "@/components/site/Section";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { CTABanner } from "@/components/site/CTABanner";
-import { Bot, Layers, Network, ShieldCheck, Cloud, HandHeart } from "lucide-react";
+import { ShieldCheck, Award, Users, BookOpen, Heart, CheckCircle2 } from "lucide-react";
 
 export const Route = createFileRoute("/mission-vision")({
   head: () => ({
@@ -11,7 +11,7 @@ export const Route = createFileRoute("/mission-vision")({
       {
         name: "description",
         content:
-          "Our mission, vision, and purpose - to help organizations modernize responsibly and scale with AI-enabled platforms and services.",
+          "Why we work the way we do: A world where excellent engineering creates enduring value for customers and meaningful opportunity for talented people, wherever they begin.",
       },
       { property: "og:title", content: "Mission & Vision - Boscosoft" },
     ],
@@ -21,69 +21,84 @@ export const Route = createFileRoute("/mission-vision")({
     <>
       <section className="page-hero">
         <div className="page-hero-inner">
-          <Breadcrumbs items={[{ label: "Mission & Vision" }]} variant="light" />
+          <Breadcrumbs items={[{ label: "About", to: "/about" }, { label: "Mission & Vision" }]} variant="light" />
           <h1 className="page-hero-title">
-            Our <span className="text-gradient-fluent">Mission & Vision</span>
+            Why we work the <span className="text-gradient-fluent">way we do</span>
           </h1>
           <p className="page-hero-copy content-measure-wide">
-            The principles behind how we modernize systems, guide AI adoption, and build long-term
-            value for institutions and enterprises.
+            The principles behind how we solve complex technology problems, engineer durable platforms, and create meaningful opportunities.
           </p>
         </div>
       </section>
 
       <Section>
-        <div className="grid gap-6 md:grid-cols-3">
-          {[
-            {
-              t: "Our Vision",
-              d: "Innovate and lead.",
-              extra:
-                "Innovating emerging technologies. Leading digital ecosystems. Transforming institutional operations.",
-            },
-            {
-              t: "Our Mission",
-              d: "We strive to achieve optimal results in the interest of stakeholders, employing cutting-edge technologies, involving committed associates, driven by innovation and leadership.",
-            },
-            {
-              t: "Our Core Values",
-              d: "Integrity, Commitment, Customer Delight, Technology Innovation & Leadership, Stakeholder Participation, Quality Focus, Youth Empowerment.",
-            },
-          ].map((b) => (
-            <div
-              key={b.t}
-              className="rounded-2xl border border-border bg-gradient-card p-8 shadow-card"
-            >
-              <div className="t-eyebrow mb-2">{b.t}</div>
-              <p className="t-body-lg text-foreground">{b.d}</p>
-              {b.extra ? <p className="mt-3 t-body text-muted-foreground">{b.extra}</p> : null}
-            </div>
-          ))}
+        <div className="grid gap-6 md:grid-cols-2">
+          <div className="rounded-2xl border border-border bg-gradient-card p-8 shadow-card">
+            <div className="t-eyebrow mb-2 text-accent">Our Vision</div>
+            <p className="t-card-title-lg text-foreground">
+              A world where excellent engineering creates enduring value for customers and meaningful opportunity for talented people, wherever they begin.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-border bg-gradient-card p-8 shadow-card">
+            <div className="t-eyebrow mb-2 text-accent">Our Mission</div>
+            <p className="t-body text-foreground/90 leading-relaxed">
+              Help organizations solve complex technology problems through capable teams, dependable systems, and lasting partnerships while developing pathways into professional technology careers for underserved young people.
+            </p>
+          </div>
         </div>
       </Section>
 
-      <Section bg="surface" eyebrow="Strategic Pillars" title="What guides our delivery">
+      <Section bg="surface" eyebrow="Our Values" title="Principles that guide our engineering and partnerships">
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {[
-            { i: Bot, t: "AI-Driven Transformation" },
-            { i: Layers, t: "Platform-Led SaaS Ecosystem" },
-            { i: Network, t: "Connected Digital Ecosystems" },
-            { i: ShieldCheck, t: "Responsible AI Adoption" },
-            { i: Cloud, t: "Cloud-First Modernization" },
-            { i: HandHeart, t: "Long-Term Client Success" },
+            {
+              i: ShieldCheck,
+              t: "Integrity",
+              d: "Make clear commitments and communicate transparently.",
+            },
+            {
+              i: Award,
+              t: "Engineering quality",
+              d: "Build for maintainability, reliability, and responsible operation.",
+            },
+            {
+              i: Users,
+              t: "Customer partnership",
+              d: "Understand the context before prescribing a solution.",
+            },
+            {
+              i: BookOpen,
+              t: "Continuous learning",
+              d: "Keep teams adaptable to changing technologies.",
+            },
+            {
+              i: Heart,
+              t: "Inclusive opportunity",
+              d: "Recognize potential and invest in development.",
+            },
+            {
+              i: CheckCircle2,
+              t: "Stewardship",
+              d: "Respect customer resources, data, and long-term outcomes.",
+            },
           ].map((p) => (
             <div
               key={p.t}
-              className="rounded-2xl border border-border bg-background p-6 shadow-card"
+              className="rounded-2xl border border-border bg-background p-6 shadow-card transition-all duration-300 hover:-translate-y-1"
             >
               <p.i className="mb-3 h-6 w-6 text-accent" />
               <div className="font-semibold text-foreground">{p.t}</div>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{p.d}</p>
             </div>
           ))}
         </div>
       </Section>
 
-      <CTABanner />
+      <CTABanner
+        title="See what we could build together."
+        primary={{ label: "Talk to Our Experts", to: "/contact-us" }}
+        secondary={{ label: "Explore SaaS Platforms", to: "/products" }}
+      />
     </>
   ),
 });
