@@ -1,10 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
+  Award,
+  Cpu,
+  Globe2,
   Sparkles,
   Heart,
   ShieldCheck,
-  Award,
   Users,
+  Users2,
   Layers,
   Rocket,
   CheckCircle2,
@@ -20,6 +23,13 @@ const partners = [
   { src: "/images/partners/azimpremji.avif", alt: "Azim Premji Foundation | Bosco Soft Technologies Partners | IT Company", width: 600, height: 240 },
   { src: "/images/partners/diggibyte.avif", alt: "Digibyte | Bosco Soft Technologies Partners | IT Solutions Company | Global IT Solutions", width: 600, height: 240 },
 ] as const;
+
+const trustMetrics = [
+  { icon: Award, value: "25+", label: "Years of experience" },
+  { icon: Users2, value: "2,600+", label: "Customers" },
+  { icon: Globe2, value: "20+", label: "Countries reached" },
+  { icon: Cpu, value: "7", label: "Products" },
+];
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -84,6 +94,33 @@ function AboutPage() {
           </div>
         </div>
       </Section>
+
+      <section className="px-4 py-8 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 gap-3 rounded-[1.75rem] border border-border/70 bg-white/70 p-3 backdrop-blur-xl min-[420px]:grid-cols-2 lg:grid-cols-4">
+            {trustMetrics.map((stat) => {
+              const Icon = stat.icon;
+
+              return (
+                <div
+                  key={stat.label}
+                  className="flex flex-col items-center justify-center gap-3 rounded-2xl border border-border/70 bg-white/80 px-4 py-4 text-center shadow-[0_14px_40px_-28px_rgba(8,18,54,0.16)] min-[420px]:px-5 min-[420px]:py-5 sm:flex-row sm:items-center sm:justify-start sm:gap-4 sm:px-6 sm:text-left"
+                >
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#8ec5ff]/45 bg-[linear-gradient(180deg,rgba(77,151,255,0.38),rgba(32,87,184,0.22))] shadow-[inset_0_1px_0_rgba(255,255,255,0.22),0_14px_26px_-18px_rgba(5,15,58,0.9)] backdrop-blur-md">
+                    <Icon className="h-5 w-5 text-[#f8fbff]" />
+                  </div>
+                  <div className="min-w-0 sm:text-left">
+                    <div className="text-lg font-bold tracking-tight text-foreground md:text-xl">
+                      {stat.value}
+                    </div>
+                    <div className="mt-0.5 text-sm leading-6 text-muted-foreground">{stat.label}</div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
       <section className="border-y border-border bg-surface">
         <div className="mx-auto max-w-7xl px-6 py-8 lg:px-8">

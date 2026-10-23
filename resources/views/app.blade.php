@@ -211,63 +211,9 @@
     @endunless
     @php
       $viteEntry = 'resources/js/app.tsx';
-      $manifestPath = public_path('build/manifest.json');
-      $hotCandidates = [public_path('hot'), public_path('hot.bak')];
-      $devServerUrl = null;
-
-      foreach ($hotCandidates as $hotCandidate) {
-        if (! is_file($hotCandidate)) {
-          continue;
-        }
-
-        $candidate = trim((string) file_get_contents($hotCandidate));
-
-        if ($candidate !== '') {
-          $devServerUrl = rtrim($candidate, '/');
-          break;
-        }
-      }
-
-      $useDevServer = false;
-
-      if ($devServerUrl) {
-        $viteClientUrl = $devServerUrl.'/@vite/client';
-        $context = stream_context_create([
-          'http' => [
-            'method' => 'GET',
-            'timeout' => 0.35,
-            'ignore_errors' => true,
-          ],
-        ]);
-
-        $headers = @get_headers($viteClientUrl, true, $context);
-
-        if ($headers !== false) {
-          $statusLine = is_array($headers) ? ((array_values($headers)[0] ?? '') ?: '') : '';
-          $contentType = $headers['Content-Type'] ?? '';
-
-          if (is_array($contentType)) {
-            $contentType = end($contentType);
-          }
-
-          $statusOk = is_string($statusLine) && str_contains($statusLine, '200');
-          $looksLikeVite = is_string($contentType) && (
-            str_contains($contentType, 'javascript') ||
-            str_contains($contentType, 'text/plain')
-          );
-
-          $useDevServer = $statusOk && $looksLikeVite;
-        }
-      }
+      Vite::useHotFile(public_path('hot.bak'));
     @endphp
-   @if ($useDevServer)
-  <!-- <script type="module" src="{{ $devServerUrl }}/@vite{{ '/client' }}"></script> -->
-   <script type="module" src="{{ $devServerUrl }}/@@vite/client"></script>
-  <script type="module" src="{{ $devServerUrl }}/{{ $viteEntry }}"></script>
-@elseif (is_file($manifestPath))
-  {{ Vite::useHotFile(public_path('hot.bak')) }}
-  @vite($viteEntry)
-@endif
+    @vite($viteEntry)
   </head>
   <body>
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-slate-950">Skip to content</a>

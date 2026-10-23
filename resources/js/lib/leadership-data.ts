@@ -45,8 +45,25 @@ export const leadershipProfiles = [
     ],
   },
   {
+    slug: "henry-berchmans-antonysamy",
+    name: "Henry Berchmans Antonysamy",
+    role: "Chief Strategies Officer",
+    image: "/images/leaders/Henry%20Berchmans%20Antonysamy.webp",
+    linkedin: "https://in.linkedin.com/company/boscosoft-technologies",
+    bio: "Henry Berchmans has over 25 years of experience in Information Technology, including 18+ years at Cognizant. His expertise spans banking, financial services, and insurance, with strong experience in delivery management, business development, project management, process optimization, and enterprise application development.",
+    focus:
+      "Delivery management, business development, project management, and enterprise application delivery across banking, financial services, and insurance.",
+    highlights: [
+      "Over 25 years of IT experience, including 18+ years at Cognizant in banking, financial services, and insurance.",
+      "Delivery management and business development experience that includes winning and growing new clients.",
+      "Served twice as a CMMi certification Assessment Team member at organization level and as a Clarity/Optimization account Champion.",
+      "Cards business experience working directly with a cards issuer/acquirers through a leading third-party cards processor.",
+      "Over 6 years of US onsite client-facing experience with FDR, IBM, and ADP, alongside work with clients in the UK, Japan, and Malaysia.",
+    ],
+  },
+  {
     slug: "mr-m-lingesh",
-    name: "M Lingesh",
+    name: "Lingesh Munirathinam",
     role: "Chief Operations Officer",
     image: "/images/leaders/lingesh.png",
     linkedin: "https://in.linkedin.com/company/boscosoft-technologies",

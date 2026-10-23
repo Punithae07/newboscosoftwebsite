@@ -56,7 +56,11 @@ export function PremiumProductCard({
           width={1600}
           height={900}
           sizes="(min-width: 1280px) 420px, (min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-          className=""
+          className="h-full w-full object-cover"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#06152f]/20 via-[#0a2348]/5 to-transparent transition-colors duration-300 group-hover:from-[#06152f]/25 group-hover:via-[#0a2348]/8"
         />
 
         <div className="absolute left-4 top-4 z-10 max-w-[calc(100%-2rem)]">

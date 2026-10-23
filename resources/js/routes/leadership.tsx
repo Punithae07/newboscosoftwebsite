@@ -69,7 +69,7 @@ function LeadershipPage() {
             {
               slug: "fr-thaddeus-singarayan",
               name: "Thaddeus Singarayan SDB",
-              role: "CEO & Managing Director",
+              role: "Managing Director & CEO",
               image: "/images/leaders/thaddeus-singarayan.png",
               linkedin: "https://in.linkedin.com/company/boscosoft-technologies",
             },
@@ -81,10 +81,10 @@ function LeadershipPage() {
               linkedin: "https://in.linkedin.com/company/boscosoft-technologies",
             },
             {
-              slug: "mr-m-lingesh",
-              name: "M Lingesh",
-              role: "Chief Operations Officer",
-              image: "/images/leaders/lingesh.png",
+              slug: "henry-berchmans-antonysamy",
+              name: "Henry Berchmans Antonysamy",
+              role: "Chief Strategies Officer",
+              image: "/images/leaders/Henry%20Berchmans%20Antonysamy.webp",
               linkedin: "https://in.linkedin.com/company/boscosoft-technologies",
             },
             {
@@ -92,6 +92,13 @@ function LeadershipPage() {
               name: "Felix Rajan Meri Cruze",
               role: "Chief Technology Officer",
               image: "/images/leaders/felix-rajan.png",
+              linkedin: "https://in.linkedin.com/company/boscosoft-technologies",
+            },
+            {
+              slug: "mr-m-lingesh",
+              name: "Lingesh Munirathinam",
+              role: "Chief Operations Officer",
+              image: "/images/leaders/lingesh.png",
               linkedin: "https://in.linkedin.com/company/boscosoft-technologies",
             },
           ].map((person) => (

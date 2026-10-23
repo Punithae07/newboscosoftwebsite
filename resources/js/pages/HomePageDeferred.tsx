@@ -61,51 +61,51 @@ const homeProductOverrides: Record<
 > = {
   "acme-erp": {
     name: "Acme.erp",
-    tag: "Financial Management ERP",
+    tag: "Finance",
     content:
       "Put financial stewardship in focus. Manage funds, branches, reporting, assets, and financial controls with greater clarity.",
     cta: "Explore Acme.erp",
   },
   microfund: {
     name: "MicroFUND",
-    tag: "Microfinance ERP",
+    tag: "Microfinance",
     content:
       "Bring clarity to every lending cycle. Support borrower onboarding, repayments, field collections, and portfolio visibility.",
     cta: "Explore MicroFUND",
   },
   medsysb: {
     name: "MedSysB",
-    tag: "Hospital Software",
+    tag: "Healthcare",
     content:
       "Connect care with operations. Coordinate patient journeys, diagnostics, pharmacy, billing, and hospital administration.",
     cta: "Explore MedSysB",
   },
   smartschoolnxt: {
     name: "SmartSchoolNxt",
-    tag: "School ERP",
+    tag: "Education",
     content:
       "Keep your school connected. Bring admissions, academics, attendance, fees, exams, and parent communication into coordinated workflows.",
     cta: "Explore SmartSchoolNxt",
   },
   higrade: {
     name: "HiGrade",
-    tag: "Higher Education ERP",
+    tag: "Higher Education",
     content:
       "Make campus operations work as one. Connect the student lifecycle, academic administration, exams, and institutional reporting.",
     cta: "Explore HiGrade",
   },
   eaudithub: {
     name: "eAuditHub",
-    tag: "Audit Platform",
+    tag: "Quality",
     content:
       "Move from findings to action. Plan audits, capture evidence, assign corrective actions, and track compliance activity.",
     cta: "Explore eAuditHub",
   },
   "cristo-suite": {
     name: "CristO Suite",
-    tag: "FaithTech ERP",
+    tag: "FaithTech",
     content:
-      "Connect communities and institutions. Manage parish, diocesan, religious institute, and community processes with systems designed for faith organizations.",
+      "Connect communities and simplify parish, diocesan, and religious institute management with seamless administration.",
     cta: "Explore CristO Suite",
   },
 };
@@ -196,7 +196,7 @@ const testimonialCards = [
     metric: "Dependable service",
     sector: "Audit & Compliance",
     q: "Efficient audit platform with consistent and dependable service.",
-    n: "World Trade Center (Audit - eAuditHub)",
+    n: "World Trade Center",
     o: "Dubai",
   },
   {
@@ -363,7 +363,7 @@ export function HomePageDeferred() {
             {[...techStack, ...techStack].map((item, index) => (
               <span
                 key={`${item}-${index}`}
-                className="inline-flex whitespace-nowrap rounded-full border border-[#8fb4e5] bg-background px-4 py-2 text-base font-medium text-slate-900 shadow-[0_12px_26px_-18px_rgba(86,191,255,0.55)]"
+                className="inline-flex whitespace-nowrap rounded-full border border-[#8fb4e5] bg-background px-4 py-2 text-base font-medium text-slate-900 shadow-[0_8px_18px_-10px_rgba(15,23,42,0.22),0_2px_6px_-3px_rgba(15,23,42,0.12)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_24px_-12px_rgba(15,23,42,0.24),0_4px_8px_-4px_rgba(15,23,42,0.14)]"
               >
                 {item}
               </span>
@@ -461,39 +461,19 @@ export function HomePageDeferred() {
             ))}
           </CarouselContent>
         </Carousel>
-        <div className="mt-8 text-center">
-          <Button asChild variant="outline" size="lg" className="text-slate-950 hover:text-slate-950">
-            <Link to="/resources/success-stories">
-              View Success Stories <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-        </div>
       </Section>
 
-      <Section className="cv-auto" eyebrow="Our perspective" title="Technology is valuable when it makes work better" align="center">
-        <div className="grid items-start gap-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-stretch lg:gap-3">
-          <div className="space-y-5 text-muted-foreground lg:flex lg:max-w-none lg:flex-col">
-            <p className="t-body">
-              At Boscosoft, we believe technology must serve people, organizations, and long-term purpose.
-              The AI era is opening new possibilities, but successful transformation is not about adopting every new tool. It is about choosing the right systems, connecting the right data, simplifying the right workflows, and building digital foundations that help organizations grow with confidence.
-            </p>
-            <p className="t-body">
-              Our commitment is to help clients modernize responsibly through practical innovation, reliable platforms, domain understanding, ethical implementation, and continuous support.
-            </p>
-            <Button
-              asChild
-              className="mt-2 h-11 w-fit self-start rounded-full bg-gradient-cta px-6 text-sm font-semibold text-primary-foreground"
-            >
-              <Link to="/leadership">
-                Meet Our Leadership <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-
-          <div className="relative w-full max-w-[30rem] overflow-hidden rounded-3xl bg-gradient-hero p-6 text-primary-foreground shadow-elegant lg:h-full lg:max-w-[31rem] lg:p-7">
-            <div className="absolute inset-0 bg-gradient-glow opacity-70" />
-            <div className="relative grid h-full gap-5 sm:grid-cols-[200px_minmax(0,1fr)] sm:items-start lg:grid-cols-[190px_minmax(0,1fr)]">
-              <div className="overflow-hidden rounded-2xl border border-white/15 bg-white shadow-card">
+      <Section className="cv-auto" eyebrow="Leadership perspective" title="Deliver value today. Build the capacity for tomorrow." align="center">
+        <div
+          className="relative overflow-hidden rounded-3xl bg-gradient-hero p-6 text-primary-foreground shadow-elegant sm:p-8 lg:p-10"
+          style={{
+            backgroundImage:
+              "linear-gradient(315deg, oklch(0.22 0.09 260) 0%, oklch(0.3 0.12 250) 40%, oklch(0.55 0.18 230) 100%)",
+          }}
+        >
+          <div className="pointer-events-none absolute inset-0 bg-gradient-glow opacity-70" />
+          <div className="relative grid items-center gap-8 sm:grid-cols-[220px_minmax(0,1fr)] lg:grid-cols-[260px_minmax(0,1fr)] xl:gap-10">
+              <div className="leader-photo-wrap relative mx-auto w-full max-w-[260px] overflow-hidden rounded-2xl sm:mx-0 sm:h-[320px] sm:max-w-none">
                 <img
                   src="/images/leaders/thaddeus-singarayan.png"
                   alt="Thaddeus Singarayan SDB | MD & CEO at Bosco Soft Technologies Pvt. Ltd. | Bosco Soft Technologies CEO"
@@ -501,22 +481,19 @@ export function HomePageDeferred() {
                   decoding="async"
                   width={800}
                   height={1000}
-                  className="h-64 w-full object-cover object-top sm:h-full sm:min-h-[300px] lg:min-h-[280px]"
+                  className="h-72 w-full object-cover object-top transition-transform duration-500 hover:scale-105 sm:h-full"
                 />
               </div>
-              <div className="flex h-full min-w-0 flex-col justify-between">
-                <div>
-                  <Quote className="mb-4 h-8 w-8 text-accent" />
-                  <p className="text-lg font-medium leading-snug text-white sm:text-xl">
-                    "Technology should reduce operational friction and strengthen the mission of the organization."
-                  </p>
-                </div>
-                <div className="mt-6 border-t border-white/20 pt-6 text-base">
+              <div className="min-w-0 py-2 text-white">
+                <Quote className="mb-4 h-8 w-8 text-accent" />
+                <blockquote className="text-lg font-medium leading-relaxed text-white sm:text-xl">
+                  “Every technology investment should strengthen how an organization works today and its ability to adapt tomorrow. At Boscosoft, our commitment is to simplify complex operations, connect essential systems, and apply AI where it can deliver meaningful business value. We place equal importance on developing the people and judgment behind that technology. For our clients, this means a partnership focused on lasting capability: better decisions, dependable operations, and the freedom to grow.”
+                </blockquote>
+                <div className="mt-6 border-t border-white/20 pt-5 text-base">
                   <div className="font-semibold">Thaddeus Singarayan SDB</div>
-                  <div className="text-primary-foreground/84">CEO and MD</div>
+                  <div className="text-primary-foreground/90">Managing Director &amp; CEO</div>
                 </div>
               </div>
-            </div>
           </div>
         </div>
       </Section>

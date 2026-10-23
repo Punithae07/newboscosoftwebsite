@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Suspense, startTransition, useEffect, useRef, useState } from "react";
 import { lazyWithRetry } from "@/lib/lazy-with-retry";
-import { ArrowRight, Award, Cpu, Globe2, Users2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HomePageDeferred = lazyWithRetry("HomePageDeferred", () =>
@@ -9,13 +9,6 @@ const HomePageDeferred = lazyWithRetry("HomePageDeferred", () =>
     default: module.HomePageDeferred,
   })),
 );
-
-const trustMetrics = [
-  { icon: Award, value: "25+", label: "Years of experience" },
-  { icon: Users2, value: "2,600+", label: "Customers" },
-  { icon: Globe2, value: "20+", label: "Countries reached" },
-  { icon: Cpu, value: "7", label: "Products" },
-];
 
 export function HomePage({
   heroVideoUrl,
@@ -156,6 +149,10 @@ export function HomePage({
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-white/15" aria-hidden="true" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 pb-10 pt-12 sm:px-6 md:pb-12 md:pt-16 lg:px-8 lg:pb-16 lg:pt-20">
+          <div
+            aria-hidden="true"
+            className="h-[338px] min-[420px]:h-[182px] sm:h-[118px] lg:h-[90px]"
+          />
           <div className="max-w-6xl animate-slide-right lg:max-w-[67rem]">
             <div className="mb-5 inline-flex flex-wrap items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 backdrop-blur-md">
               <span className="text-sm font-medium tracking-wide text-white/92">Enterprise Software Engineering</span>
@@ -166,8 +163,8 @@ export function HomePage({
             </div>
 
             <h1 className="t-display max-w-6xl text-white lg:max-w-none">
-              <span className="text-white">Engineering What’s Next.</span>
-              <span className="block text-white">Empowering Who’s Next.</span>
+              <span className="text-white">Engineering What’s Next</span>
+              <span className="block text-white">Empowering Who’s Next</span>
             </h1>
 
             <p className="mt-5 max-w-4xl text-[18px] leading-8 text-white">
@@ -198,29 +195,10 @@ export function HomePage({
           </div>
         </div>
 
-        <div className="relative z-10 mx-auto max-w-7xl px-4 pb-10 sm:px-6 md:pb-12 lg:px-8">
-          <div className="grid grid-cols-1 gap-3 rounded-[1.75rem] border border-white/30 bg-white/18 p-3 backdrop-blur-xl min-[420px]:grid-cols-2 lg:grid-cols-4">
-            {trustMetrics.map((stat) => {
-              const Icon = stat.icon;
-              return (
-                <div
-                  key={stat.label}
-                  className="flex flex-col items-center justify-center gap-3 rounded-2xl border border-white/20 bg-[rgba(255,255,255,0.12)] px-4 py-4 text-center shadow-[0_14px_40px_-28px_rgba(8,18,54,0.7)] min-[420px]:px-5 min-[420px]:py-5 sm:flex-row sm:items-center sm:justify-start sm:gap-4 sm:px-6 sm:text-left"
-                >
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#8ec5ff]/45 bg-[linear-gradient(180deg,rgba(77,151,255,0.38),rgba(32,87,184,0.22))] shadow-[inset_0_1px_0_rgba(255,255,255,0.22),0_14px_26px_-18px_rgba(5,15,58,0.9)] backdrop-blur-md">
-                    <Icon className="h-5 w-5 text-[#f8fbff]" />
-                  </div>
-                  <div className="min-w-0 sm:text-left">
-                    <div className="text-lg font-bold tracking-tight text-white md:text-xl">
-                      {stat.value}
-                    </div>
-                    <div className="mt-0.5 text-sm leading-6 text-white/82">{stat.label}</div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        <div
+          aria-hidden="true"
+          className="relative z-10 h-[338px] min-[420px]:h-[182px] sm:h-[118px] lg:h-[90px]"
+        />
       </section>
 
       <Suspense fallback={<HomePageDeferredFallback />}>
