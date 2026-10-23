@@ -59,21 +59,25 @@ function AboutPage() {
         </div>
       </section>
 
-      <Section eyebrow="Corporate Introduction" title="Serious engineering. A wider sense of purpose.">
-        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.3fr)_minmax(320px,420px)]">
-          <div className="content-measure-wide stack-copy">
-            <p className="t-body-lg">
-              Bosco Soft Technologies Pvt. Ltd. combines enterprise software development, domain-specific SaaS platforms, ERP/CRM implementation, data engineering, AI solutions, and long-term technology support.
-            </p>
-            <p className="t-body-lg text-muted-foreground">
-              We work with clients navigating the real challenges of modernization: keeping critical systems stable, integrating new capabilities, and supporting users through change.
-            </p>
+      <Section>
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
+          <div>
+            <div className="t-eyebrow mb-3">Corporate Introduction</div>
+            <h2 className="t-section-title mb-6">Serious engineering. A wider sense of purpose.</h2>
+            <div className="content-measure-wide stack-copy">
+              <p className="t-body-lg">
+                Bosco Soft Technologies Pvt. Ltd. combines enterprise software development, domain-specific SaaS platforms, ERP/CRM implementation, data engineering, AI solutions, and long-term technology support.
+              </p>
+              <p className="t-body-lg text-muted-foreground">
+                We work with clients navigating the real challenges of modernization: keeping critical systems stable, integrating new capabilities, and supporting users through change.
+              </p>
+            </div>
           </div>
           <div className="overflow-hidden rounded-[2rem] border border-border/70 bg-gradient-card shadow-card">
             <img
               src="/images/new-buliding1.png"
               alt="Bosco Soft Technologies building exterior"
-              className="h-full min-h-[260px] w-full object-cover"
+              className="aspect-[4/3] h-full min-h-[260px] w-full object-cover"
               loading="lazy"
               decoding="async"
             />

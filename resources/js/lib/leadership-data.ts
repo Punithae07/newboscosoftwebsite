@@ -1,11 +1,11 @@
 export const leadershipProfiles = [
   {
     slug: "fr-don-bosco",
-    name: "Fr. Don Bosco Lourdusamy SDB",
+    name: "Don Bosco Lourdusamy SDB",
     role: "President",
     image: "/images/leaders/don-bosco-lourdusamy.png",
     linkedin: "https://in.linkedin.com/company/boscosoft-technologies",
-    bio: "A global leader for institution-led digital transformation, Fr. Don Bosco brings mission-driven strategy and trusted guidance across schools, hospitals, and social service organizations.",
+    bio: "A global leader for institution-led digital transformation, Don Bosco brings mission-driven strategy and trusted guidance across schools, hospitals, and social service organizations.",
     focus: "Institutional strategy, stakeholder alignment, and long-term sustainability.",
     highlights: [
       "Steering enterprise technology strategy for multi-campus and mission-based organizations.",
@@ -14,11 +14,11 @@ export const leadershipProfiles = [
   },
   {
     slug: "fr-thaddeus-singarayan",
-    name: "Dr Thaddeus Singarayan SDB, MD & CEO",
+    name: "Thaddeus Singarayan SDB, MD & CEO",
     role: "CEO & Managing Director",
     image: "/images/leaders/thaddeus-singarayan.png",
     linkedin: "https://in.linkedin.com/company/boscosoft-technologies",
-    bio: "Fr. Thaddeus Singarayan is the founding Director of Bosco Soft Technologies. He brings nearly three decades of experience in business modeling and information system development across education, healthcare, micro-financing, and logistics, and he continues to define and drive the company's technology and product strategy.",
+    bio: "Thaddeus Singarayan is the founding Director of Bosco Soft Technologies. He brings nearly three decades of experience in business modeling and information system development across education, healthcare, micro-financing, and logistics, and he continues to define and drive the company's technology and product strategy.",
     focus:
       "Technology strategy, product direction, knowledge-based software engineering, and institution-led digital transformation.",
     highlights: [
@@ -30,11 +30,11 @@ export const leadershipProfiles = [
   },
   {
     slug: "fr-bosco-augustine",
-    name: "Fr.Bosco Augustine SDB",
+    name: "Bosco Augustine SDB",
     role: "Chief Finance Officer",
     image: "/images/leaders/bosco-augustine.png",
     linkedin: "https://in.linkedin.com/company/boscosoft-technologies",
-    bio: "Fr. Bosco Augustine SDB is a respected educationist who has helped shape many young people into leaders in the Catholic Church. He has served as Principal of Don Bosco Theological College, Kavaraipettai, Chennai, and brings a distinctive blend of academic, pastoral, and administrative leadership into Boscosoft's financial operations.",
+    bio: "Bosco Augustine SDB is a respected educationist who has helped shape many young people into leaders in the Catholic Church. He has served as Principal of Don Bosco Theological College, Kavaraipettai, Chennai, and brings a distinctive blend of academic, pastoral, and administrative leadership into Boscosoft's financial operations.",
     focus:
       "Financial stewardship, institutional administration, faith-based network engagement, and long-term organizational strengthening.",
     highlights: [
@@ -46,7 +46,7 @@ export const leadershipProfiles = [
   },
   {
     slug: "mr-m-lingesh",
-    name: "Mr. M Lingesh",
+    name: "M Lingesh",
     role: "Chief Operations Officer",
     image: "/images/leaders/lingesh.png",
     linkedin: "https://in.linkedin.com/company/boscosoft-technologies",
@@ -62,7 +62,7 @@ export const leadershipProfiles = [
   },
   {
     slug: "mr-felix-rajan",
-    name: "Mr. Felix Rajan Meri Cruze",
+    name: "Felix Rajan Meri Cruze",
     role: "Chief Technology Officer",
     image: "/images/leaders/felix-rajan.png",
     linkedin: "https://in.linkedin.com/company/boscosoft-technologies",

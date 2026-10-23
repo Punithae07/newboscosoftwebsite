@@ -261,7 +261,8 @@
       }
     @endphp
    @if ($useDevServer)
-  <script type="module" src="{{ $devServerUrl }}/@vite{{ '/client' }}"></script>
+  <!-- <script type="module" src="{{ $devServerUrl }}/@vite{{ '/client' }}"></script> -->
+   <script type="module" src="{{ $devServerUrl }}/@@vite/client"></script>
   <script type="module" src="{{ $devServerUrl }}/{{ $viteEntry }}"></script>
 @elseif (is_file($manifestPath))
   {{ Vite::useHotFile(public_path('hot.bak')) }}

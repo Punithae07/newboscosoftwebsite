@@ -1,1 +1,0 @@
-import{C as o}from"./app-BTWpbXvB.js";import"./framework-DMb_Ezop.js";import"./admin-C3VXS6qN.js";import"./icons-01YHA_f2.js";import"./date-utils-D5ebMS61.js";import"./ui-vendor-BIuqp1QW.js";import"./forms-BtoikbXL.js";import"./site-content-iTc4o0jf.js";const c=o;export{c as component};

@@ -496,7 +496,7 @@ export function HomePageDeferred() {
               <div className="overflow-hidden rounded-2xl border border-white/15 bg-white shadow-card">
                 <img
                   src="/images/leaders/thaddeus-singarayan.png"
-                  alt="Dr Thaddeus Singarayan SDB | MD & CEO at Bosco Soft Technologies Pvt. Ltd. | Bosco Soft Technologies CEO"
+                  alt="Thaddeus Singarayan SDB | MD & CEO at Bosco Soft Technologies Pvt. Ltd. | Bosco Soft Technologies CEO"
                   loading="lazy"
                   decoding="async"
                   width={800}
@@ -512,7 +512,7 @@ export function HomePageDeferred() {
                   </p>
                 </div>
                 <div className="mt-6 border-t border-white/20 pt-6 text-base">
-                  <div className="font-semibold">Fr. Thaddeus Singarayan SDB</div>
+                  <div className="font-semibold">Thaddeus Singarayan SDB</div>
                   <div className="text-primary-foreground/84">CEO and MD</div>
                 </div>
               </div>
