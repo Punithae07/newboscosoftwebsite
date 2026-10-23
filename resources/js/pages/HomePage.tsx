@@ -13,8 +13,8 @@ const HomePageDeferred = lazyWithRetry("HomePageDeferred", () =>
 const trustMetrics = [
   { icon: Award, value: "25+", label: "Years of experience" },
   { icon: Users2, value: "2,600+", label: "Customers" },
-  { icon: Globe2, value: "22+", label: "Countries reached" },
-  { icon: Cpu, value: "7+", label: "Products" },
+  { icon: Globe2, value: "20+", label: "Countries reached" },
+  { icon: Cpu, value: "7", label: "Products" },
 ];
 
 export function HomePage({

@@ -262,7 +262,7 @@ export function HomePageDeferred() {
             <div className="relative">
               <div className="mb-3 t-eyebrow text-accent">What we build</div>
               <h2 className="t-section-title">From product vision to operating reality.</h2>
-              <p className="mt-4 t-body">
+              <p className="mt-4 t-body !text-white text-white">
                 Enterprise applications; multi-tenant SaaS; AI assistants and document intelligence; data platforms and dashboards; ERP/CRM extensions; cloud deployment and support.
               </p>
               {/* <ul className="mt-5 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
