@@ -46,7 +46,7 @@ export function PremiumProductCard({
         className,
       )}
     >
-      <div className="relative h-44 overflow-hidden bg-white sm:h-48">
+      <div className="relative h-44 overflow-hidden sm:h-48" style={{ backgroundColor: "#dcebf7" }}>
         <img
           src={illustrationSrc}
           alt={seoAlt}
@@ -56,7 +56,12 @@ export function PremiumProductCard({
           width={1600}
           height={900}
           sizes="(min-width: 1280px) 420px, (min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover grayscale contrast-[1.04] transition-transform duration-500 group-hover:scale-105"
+          style={{
+            mixBlendMode: "multiply",
+            filter: "grayscale(100%) contrast(1.04)",
+            WebkitFilter: "grayscale(100%) contrast(1.04)",
+          }}
         />
         <div
           aria-hidden="true"
