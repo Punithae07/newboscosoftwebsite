@@ -44,7 +44,7 @@ export const successStories: SuccessStory[] = [
     description:
       "A long-running education software product was rewritten with a contemporary technology approach. The supplied testimonial from OptionC’s founder praises the usability and performance of the new solution; obtain permission and document stack, scope, and measurable results before publishing a full case study.",
     format: "article",
-    category: "SaaS Modernization",
+    category: "Education",
     location: "United States",
     organization: "OptionC",
     technologyPartner: "Boscosoft",
@@ -84,7 +84,7 @@ Obtain permission and document stack, scope, and measurable results before publi
     description:
       "The supplied Management Concept Group testimonial highlights adaptation to client technology expectations. Publish a named case only with permission and supporting project details.",
     format: "article",
-    category: "Co-Development",
+    category: "Ai & Data",
     location: "International",
     organization: "Management Concept Group",
     technologyPartner: "Boscosoft",
@@ -120,7 +120,7 @@ Publish a named case only with permission and supporting project details.
     description:
       "Connecting care operations through MedSysB. Version 1 references Euphrasia Chikitsalaya; its “90% faster operations” claim needs an approved baseline, measurement method, and customer sign-off. Until then use Connecting care operations through MedSysB.",
     format: "article",
-    category: "Healthcare Implementation",
+    category: "Healthcare",
     location: "Uttar Pradesh, India",
     organization: "Euphrasia Chikitsalaya",
     technologyPartner: "MedSysB",
@@ -160,36 +160,24 @@ The hospital deployed MedSysB's integrated hospital management system:
 
 export const whitePapers: WhitePaper[] = [
   {
-    slug: "incremental-legacy-modernization",
-    title: "Incremental Legacy Modernization",
+    slug: "ai-in-schools-and-colleges",
+    title: "AI in Schools and Colleges: A Strategic Framework for Institutional Intelligence",
     description:
-      "A practical architectural guide for modernizing mission-critical legacy applications through modular decomposition and continuous business continuity.",
-    status: "coming_soon",
-    coverImage: "/images/case-study-corporate.avif",
+      "A white paper on AI-powered knowledge unification, operational governance, data-driven decision-making, and academic continuity.",
+    pdfPath: "/images/whitepaper/AI in Schools and Colleges.pdf",
+    previewPath: "/images/whitepaper/AI in Schools and Colleges.pdf",
+    coverImage: "/images/resources-schools-and-college.png",
+    status: "published",
   },
   {
-    slug: "evaluating-enterprise-rag",
-    title: "Evaluating Enterprise RAG",
+    slug: "clinical-decision-support-platform-for-wilsons-disease",
+    title: "Clinical Decision Support Platform for Wilson’s Disease",
     description:
-      "Architectural criteria, retrieval evaluation, data privacy boundaries, and operational guardrails for enterprise-grade Retrieval-Augmented Generation.",
-    status: "coming_soon",
-    coverImage: "/images/digital-transformation.avif",
-  },
-  {
-    slug: "planning-databricks-migrations",
-    title: "Planning Databricks Migrations",
-    description:
-      "Strategic frameworks and migration patterns for shifting legacy analytical pipelines and fragmented data warehouses to Databricks Lakehouse.",
-    status: "coming_soon",
-    coverImage: "/images/cloud-infrastructure.avif",
-  },
-  {
-    slug: "building-sustainable-offshore-engineering-partnership",
-    title: "Building a Sustainable Offshore Engineering Partnership",
-    description:
-      "A technology leader's handbook on agile governance, code quality standards, talent continuity, and cultural alignment in offshore co-development.",
-    status: "coming_soon",
-    coverImage: "/images/slider-03.avif",
+      "A white paper on AI-driven precision diagnostics, explainable risk assessment, standardized clinical scoring, and early intervention to improve patient outcomes.",
+    pdfPath: "/images/whitepaper/Clinical Decision Support.pdf",
+    previewPath: "/images/whitepaper/Clinical Decision Support.pdf",
+    coverImage: "/images/resources-wilson’s-disease.png",
+    status: "published",
   },
   {
     slug: "embedding-ethics-in-ai-driven-school-management-systems",
@@ -203,7 +191,7 @@ export const whitePapers: WhitePaper[] = [
   },
   {
     slug: "medsysb-white-paper",
-    title: "MedSysB White Paper",
+    title: "Smart Hospital Management Systems",
     description:
       "An overview of hospital digitization, workflow automation, and data-driven operations using the MedSysB ecosystem.",
     pdfPath: "/images/whitepaper/MSB-White-paper.pdf",

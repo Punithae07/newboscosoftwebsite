@@ -9,18 +9,27 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { whitePapers } from "@/lib/resource-data";
 
 function openDownload(targetPath: string) {
-  if (typeof window === "undefined") {
+  if (typeof window === "undefined" || !targetPath) {
     return;
   }
 
+  const encodedPath = encodeURI(targetPath);
+  const rawFileName = targetPath.split("/").pop() || "whitepaper.pdf";
+  const fileName = decodeURIComponent(rawFileName).trim();
+
   const link = document.createElement("a");
-  link.href = targetPath;
-  link.download = "";
+  link.href = encodedPath;
+  link.setAttribute("download", fileName);
   link.target = "_blank";
-  link.rel = "noreferrer";
+  link.rel = "noreferrer noopener";
   document.body.appendChild(link);
   link.click();
-  document.body.removeChild(link);
+
+  setTimeout(() => {
+    if (document.body.contains(link)) {
+      document.body.removeChild(link);
+    }
+  }, 200);
 }
 
 export function WhitePapersListingPage() {
@@ -93,7 +102,6 @@ export function WhitePapersListingPage() {
   };
 
   const publishedPapers = whitePapers.filter((p) => p.status !== "coming_soon");
-  const upcomingPapers = whitePapers.filter((p) => p.status === "coming_soon");
 
   return (
     <>
@@ -113,45 +121,6 @@ export function WhitePapersListingPage() {
           </div>
         </div>
       </section>
-
-      <Section
-        eyebrow="Research Guides"
-        title="Suggested research & architectural frameworks"
-        subtitle="Go deeper on the architectural and operational choices shaping modern business technology."
-      >
-        <div className="grid gap-6 md:grid-cols-2">
-          {upcomingPapers.map((paper) => (
-            <article
-              key={paper.slug}
-              className="group flex flex-col overflow-hidden rounded-[1.75rem] border border-border/70 bg-gradient-card shadow-card transition-all duration-300 hover:border-accent/30 hover:shadow-elegant"
-            >
-              {paper.coverImage && (
-                <div className="relative overflow-hidden">
-                  <img
-                    src={paper.coverImage}
-                    alt={paper.title}
-                    loading="lazy"
-                    decoding="async"
-                    className="aspect-[16/9] w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute top-4 right-4 rounded-full bg-accent/90 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white shadow-sm">
-                    Coming Soon
-                  </div>
-                </div>
-              )}
-              <div className="flex flex-1 flex-col p-6">
-                <div className="flex items-center gap-2">
-                  <span className="inline-block rounded-full bg-accent/10 px-2.5 py-1 text-xs font-semibold text-accent">
-                    Coming Soon
-                  </span>
-                </div>
-                <h2 className="mt-3 t-card-title-lg">{paper.title}</h2>
-                <p className="mt-4 t-card-desc flex-1">{paper.description}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </Section>
 
       {publishedPapers.length > 0 && (
         <Section

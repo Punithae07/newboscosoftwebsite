@@ -1,14 +1,60 @@
+import { useMemo, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import {
+  ArrowRight,
+  Brain,
+  Church,
+  Coins,
+  GraduationCap,
+  HeartPulse,
+  LayoutGrid,
+  ShieldCheck,
+  TrendingUp,
+} from "lucide-react";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { CTABanner } from "@/components/site/CTABanner";
 import { Section } from "@/components/site/Section";
 import { Button } from "@/components/ui/button";
 import { successStories, type SuccessStory } from "@/lib/resource-data";
+import { cn } from "@/lib/utils";
 
 const articleStories = successStories.filter((story) => story.format === "article");
 
+const categories = [
+  { name: "All", icon: LayoutGrid },
+  { name: "Ai & Data", icon: Brain },
+  { name: "Finance", icon: TrendingUp },
+  { name: "Healthcare", icon: HeartPulse },
+  { name: "Education", icon: GraduationCap },
+  { name: "MicroFinance", icon: Coins },
+  { name: "Quality", icon: ShieldCheck },
+  { name: "FaithTech", icon: Church },
+] as const;
+
 export function SuccessStoriesListingPage() {
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const filteredStories = useMemo(() => {
+    if (activeCategory === "All") {
+      return articleStories;
+    }
+
+    return articleStories.filter((story) => {
+      const storyCat = (story.category || "").toLowerCase();
+      const targetCat = activeCategory.toLowerCase();
+
+      if (targetCat === "ai & data") {
+        return (
+          storyCat.includes("ai") ||
+          storyCat.includes("data") ||
+          storyCat.includes("co-development")
+        );
+      }
+
+      return storyCat.includes(targetCat);
+    });
+  }, [activeCategory]);
+
   return (
     <>
       <section className="page-hero">
@@ -30,13 +76,58 @@ export function SuccessStoriesListingPage() {
         </div>
       </section>
 
+      {/* Categories Filter Bar */}
+      <section className="bg-transparent pt-6 pb-1 sm:pt-8 sm:pb-1">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-2 sm:gap-2.5 lg:gap-3 w-full overflow-x-auto scrollbar-none flex-nowrap py-1">
+            {categories.map((cat) => {
+              const Icon = cat.icon;
+              const isActive = activeCategory === cat.name;
+
+              return (
+                <button
+                  key={cat.name}
+                  type="button"
+                  onClick={() => setActiveCategory(cat.name)}
+                  className={cn(
+                    "inline-flex flex-1 min-w-fit items-center justify-center gap-2.5 rounded-2xl px-3.5 py-3 text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer sm:px-4 sm:py-3 sm:text-sm lg:px-5 lg:py-3.5 lg:text-[15px]",
+                    isActive
+                      ? "bg-[#072448] text-white shadow-md shadow-[#072448]/25 hover:bg-[#061e3d]"
+                      : "border border-blue-200/80 bg-white text-[#072448] shadow-[inset_0_2px_8px_rgba(7,83,140,0.12),inset_0_0_0_1px_rgba(7,83,140,0.06),0_2px_5px_rgba(7,83,140,0.04)] hover:border-blue-300 hover:bg-[#f8fbff] hover:shadow-[inset_0_2px_12px_rgba(7,83,140,0.2),inset_0_0_0_1px_rgba(7,83,140,0.1)]"
+                  )}
+                >
+                  <Icon className={cn("h-4.5 w-4.5 sm:h-5 sm:w-5", isActive ? "text-white" : "text-[#072448]")} />
+                  <span>{cat.name}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       <Section
+        className="!pt-3 sm:!pt-4 md:!pt-5 lg:!pt-5"
         eyebrow="Case Studies"
         title="Explore the work behind the results"
         subtitle="Explore how customers have approached modernization, operational integration, and software implementation with Boscosoft."
         introWidth="wide"
       >
-        <StoryGrid stories={articleStories} ctaLabel="Read Story" />
+        {filteredStories.length > 0 ? (
+          <StoryGrid stories={filteredStories} ctaLabel="Read Story" />
+        ) : (
+          <div className="rounded-[1.75rem] border border-border/70 bg-gradient-card py-16 text-center shadow-card">
+            <p className="text-lg font-medium text-muted-foreground">
+              No case studies found for "{activeCategory}".
+            </p>
+            <Button
+              variant="outline"
+              className="mt-5 border-[#072448]/25 text-[#072448] hover:bg-[#072448] hover:text-white"
+              onClick={() => setActiveCategory("All")}
+            >
+              View All Stories
+            </Button>
+          </div>
+        )}
       </Section>
 
       <section className="relative overflow-hidden border-t border-border/80 bg-gradient-cta py-20 text-primary-foreground sm:py-24">

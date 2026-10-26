@@ -93,21 +93,19 @@ function AboutPage() {
             />
           </div>
         </div>
-      </Section>
 
-      <section className="px-4 py-8 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 gap-3 rounded-[1.75rem] border border-border/70 bg-white/70 p-3 backdrop-blur-xl min-[420px]:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 lg:mt-10">
+          <div className="grid grid-cols-1 gap-3 rounded-[1.75rem] border border-slate-300/80 bg-white/85 p-3.5 shadow-[0_12px_36px_-12px_rgba(15,23,42,0.18),0_4px_16px_-4px_rgba(15,23,42,0.08)] backdrop-blur-xl min-[420px]:grid-cols-2 lg:grid-cols-4">
             {trustMetrics.map((stat) => {
               const Icon = stat.icon;
 
               return (
                 <div
                   key={stat.label}
-                  className="flex flex-col items-center justify-center gap-3 rounded-2xl border border-border/70 bg-white/80 px-4 py-4 text-center shadow-[0_14px_40px_-28px_rgba(8,18,54,0.16)] min-[420px]:px-5 min-[420px]:py-5 sm:flex-row sm:items-center sm:justify-start sm:gap-4 sm:px-6 sm:text-left"
+                  className="flex flex-col items-center justify-center gap-3 rounded-2xl border border-slate-200/90 bg-white px-4 py-4 text-center shadow-[0_4px_20px_-8px_rgba(15,23,42,0.1)] min-[420px]:px-5 min-[420px]:py-5 sm:flex-row sm:items-center sm:justify-start sm:gap-4 sm:px-6 sm:text-left"
                 >
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#8ec5ff]/45 bg-[linear-gradient(180deg,rgba(77,151,255,0.38),rgba(32,87,184,0.22))] shadow-[inset_0_1px_0_rgba(255,255,255,0.22),0_14px_26px_-18px_rgba(5,15,58,0.9)] backdrop-blur-md">
-                    <Icon className="h-5 w-5 text-[#f8fbff]" />
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-blue-400/40 bg-gradient-to-b from-[#1d4ed8] to-[#1e40af] text-white shadow-sm shadow-blue-950/20">
+                    <Icon className="h-5 w-5 text-white" strokeWidth={2.2} />
                   </div>
                   <div className="min-w-0 sm:text-left">
                     <div className="text-lg font-bold tracking-tight text-foreground md:text-xl">
@@ -120,7 +118,7 @@ function AboutPage() {
             })}
           </div>
         </div>
-      </section>
+      </Section>
 
       <section className="border-y border-border bg-surface">
         <div className="mx-auto max-w-7xl px-6 py-8 lg:px-8">

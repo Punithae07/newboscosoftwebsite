@@ -77,15 +77,20 @@ class BrochureRequestRepository
     public function hasRecentDuplicate(string $email, ?string $pdfName, int $windowMinutes = 10): bool
     {
         $cutoff = Carbon::now()->subMinutes($windowMinutes);
-        $fingerprint = $this->fingerprint([
-            'email' => $email,
-            'product_interest' => $this->normalizePdfName($pdfName),
-        ]);
+        $normalizedEmail = Str::lower(trim($email));
+        $normalizedPdf = $this->normalizePdfName($pdfName);
 
-        return BrochureRequest::query()
-            ->whereRaw("SHA2(LOWER(CONCAT(COALESCE(organization_email, ''), '|', COALESCE(pdf_name, ''))), 256) = ?", [$fingerprint])
-            ->where('created_at', '>=', $cutoff)
-            ->exists();
+        $query = BrochureRequest::query()
+            ->whereRaw('LOWER(organization_email) = ?', [$normalizedEmail])
+            ->where('created_at', '>=', $cutoff);
+
+        if ($normalizedPdf !== null) {
+            $query->where('pdf_name', $normalizedPdf);
+        } else {
+            $query->whereNull('pdf_name');
+        }
+
+        return $query->exists();
     }
 
     public function delete(string $id): bool
@@ -97,14 +102,6 @@ class BrochureRequestRepository
         }
 
         return (bool) $record->delete();
-    }
-
-    private function fingerprint(array $payload): string
-    {
-        return hash(
-            'sha256',
-            Str::lower(trim(($payload['email'] ?? '').'|'.($payload['product_interest'] ?? '')))
-        );
     }
 
     private function normalizePdfName(?string $value): ?string

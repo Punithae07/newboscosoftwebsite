@@ -298,9 +298,10 @@
             return;
           }
 
-          clearStatus();
-        } catch {
-          clearStatus();
+          const errorMsg = data?.message || (data?.errors ? Object.values(data.errors).flat().join(' ') : 'Unable to complete your request. Please check the details and try again.');
+          setStatus(errorMsg, 'error');
+        } catch (err) {
+          setStatus('An error occurred while submitting your request. Please try again.', 'error');
         } finally {
           submitButton.disabled = false;
           void requestSecurityPayload(true).catch(() => {
