@@ -166,7 +166,7 @@ export const whitePapers: WhitePaper[] = [
       "A white paper on AI-powered knowledge unification, operational governance, data-driven decision-making, and academic continuity.",
     pdfPath: "/images/whitepaper/AI in Schools and Colleges.pdf",
     previewPath: "/images/whitepaper/AI in Schools and Colleges.pdf",
-    coverImage: "/images/resources-schools-and-college.png",
+    coverImage: "/images/resources-schools-and-college.webp",
     status: "published",
   },
   {
@@ -176,7 +176,7 @@ export const whitePapers: WhitePaper[] = [
       "A white paper on AI-driven precision diagnostics, explainable risk assessment, standardized clinical scoring, and early intervention to improve patient outcomes.",
     pdfPath: "/images/whitepaper/Clinical Decision Support.pdf",
     previewPath: "/images/whitepaper/Clinical Decision Support.pdf",
-    coverImage: "/images/resources-wilson’s-disease.png",
+    coverImage: "/images/resources-wilson’s-disease.webp",
     status: "published",
   },
   {

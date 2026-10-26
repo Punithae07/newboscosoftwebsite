@@ -158,6 +158,41 @@ const homeServiceOverrides: Record<
 
 const testimonialCards = [
   {
+    metric: "Reliable Website Support",
+    sector: "Web Development",
+    q: "Boscosoft’s web team provides reliable maintenance and ongoing support for our websites at Options United. We appreciate their prompt responses and dedication to keeping our websites updated and running smoothly.",
+    n: "Thomas Rudkins, Options United,",
+    o: "USA",
+  },
+  {
+    metric: "Reliable Backend Support",
+    sector: "E-commerce",
+    q: "Bosco team provides reliable backend support for our Amazon operations at OZeri, and appreciate their responsiveness and commitment to delivering quality work.",
+    n: "William Huckestein , President,",
+    o: "Ozeri, USA",
+  },
+  {
+    metric: "Agile Product Development",
+    sector: "Software Development",
+    q: "Working with this team has been an absolute pleasure. Their efficiency, clear communication, and unwavering commitment consistently exceed expectations. The AGILE follow‑up process ensures our product development stays on track and responsive. I feel completely comfortable collaborating with the dedicated team assigned to us. We look forward to continuing this long‑term partnership for our product’s growth and success",
+    n: "Sam Kurien, Founder & CEO of CeeS3 Technologies,",
+    o: "USA",
+  },
+  {
+    metric: "Long-Term IT Partnership",
+    sector: "IT Services",
+    q: "We have been working with this team since September 2015, and their consistency has been remarkable. Their availability during US business hours makes collaboration seamless. Our dedicated resource, Christy Chandran, has shown outstanding commitment and efficiency. The development and support provided on our internal projects have been truly invaluable",
+    n: "Jim Montgomery,",
+    o: "A.R.M Solutions",
+  },
+  {
+    metric: "15+ Years of Partnership",
+    sector: "AI & Software Development",
+    q: "Boscosoft has been my go-to development team for over the past 15 years now. They’ve always gone a step above to ensure my clients are 100% satisfied. I cannot recommend them highly enough for any AI, software, or IT development projects!",
+    n: "Adam Limmer, Founder & CEO / Owner",
+    o: "Limnet Software Development",
+  },
+  {
     metric: "Enhanced usability",
     sector: "Enterprise Systems",
     q: "Upgraded system, enhanced usability and performance.",
@@ -221,8 +256,6 @@ const testimonialCards = [
     o: "India",
   },
 ];
-
-const capitalizeFirst = (value: string) => value.charAt(0).toUpperCase() + value.slice(1);
 
 export function HomePageDeferred() {
   const autoplay = useRef(
@@ -437,12 +470,9 @@ export function HomePageDeferred() {
             {testimonialCards.map((card, index) => (
               <CarouselItem key={index} className="pl-2 md:basis-1/2 md:pl-4">
                 <div className="h-full rounded-2xl border border-border bg-background p-7 shadow-card">
-                  <div className="mb-4 flex items-center justify-between gap-3">
+                  <div className="mb-4 flex items-center gap-3">
                     <span className="rounded-full bg-accent/10 px-3 py-1 text-sm font-semibold text-accent">
                       {card.metric}
-                    </span>
-                    <span className="text-sm text-muted-foreground">
-                      {capitalizeFirst(card.sector)}
                     </span>
                   </div>
                   <div className="mb-4 flex gap-0.5 text-[#ff9b09]">
