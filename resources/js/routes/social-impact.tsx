@@ -89,7 +89,7 @@ function SocialImpactPage() {
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.3fr)_minmax(320px,420px)]">
           <div className="content-measure-wide stack-copy">
             <p className="t-body-lg">
-              In Yelagiri Hills, BICS InfoTech began with a conviction: young people from rural and disadvantaged communities deserved a place in the digital economy.
+              In Yelagiri Hills, BICS InfoTech was founded by Rev. Fr. Francis Guezou, SDB, to give bright, disadvantaged youth a place in the digital economy. He believed that delivering top-tier education to talented rural youth was the ultimate strategy to empower families and build the nation.
             </p>
             <p className="t-body-lg text-muted-foreground">
               Training was connected to work, and work was connected to dignity. This foundation continues to inform the company’s approach to talent and engineering delivery.

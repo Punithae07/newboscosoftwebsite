@@ -11,7 +11,7 @@ export const Route = createFileRoute("/mission-vision")({
       {
         name: "description",
         content:
-          "Why we work the way we do: A world where excellent engineering creates enduring value for customers and meaningful opportunity for talented people, wherever they begin.",
+          "Why we work the way we do: Innovate and lead. Innovating emerging technologies. Leading digital ecosystems. Transforming institutional operations.",
       },
       { property: "og:title", content: "Mission & Vision - Boscosoft" },
     ],
@@ -35,14 +35,15 @@ export const Route = createFileRoute("/mission-vision")({
         <div className="grid gap-6 md:grid-cols-2">
           <div className="rounded-2xl border border-border bg-gradient-card p-8 shadow-card">
             <div className="t-eyebrow mb-2 text-accent">Our Vision</div>
-            <p className="t-card-title-lg text-foreground">
-              A world where excellent engineering creates enduring value for customers and meaningful opportunity for talented people, wherever they begin.
+            <p className="t-card-title-lg text-foreground">Innovate and lead.</p>
+            <p className="mt-3 t-body text-foreground/90">
+              Innovating emerging technologies. Leading digital ecosystems. Transforming institutional operations.
             </p>
           </div>
           <div className="rounded-2xl border border-border bg-gradient-card p-8 shadow-card">
             <div className="t-eyebrow mb-2 text-accent">Our Mission</div>
             <p className="t-body text-foreground/90 leading-relaxed">
-              Help organizations solve complex technology problems through capable teams, dependable systems, and lasting partnerships while developing pathways into professional technology careers for underserved young people.
+              We strive to achieve optimal results in the interest of stakeholders, employing cutting-edge technologies, involving committed associates, driven by innovation and leadership.
             </p>
           </div>
         </div>

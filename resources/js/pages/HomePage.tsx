@@ -168,7 +168,7 @@ export function HomePage({
             </h1>
 
             <p className="mt-5 max-w-4xl text-[18px] leading-8 text-white">
-              From legacy systems to modern SaaS, AI-powered workflows, and connected data platforms, Boscosoft brings the engineering talent and implementation experience to move critical technology forward. Work with dedicated teams who understand your systems, your business goals, and the value of long-term partnership.
+              We deliver expert engineering talent to build AI-powered workflows, modern SaaS, and connected data platforms—tailored to your long-term growth.
             </p>
 
             <div className="mt-7 flex flex-wrap gap-3">
@@ -178,7 +178,7 @@ export function HomePage({
                 className="hidden bg-white text-primary hover:bg-white/90 shadow-glow lg:inline-flex"
               >
                 <Link to="/contact-us" preload="intent">
-                  Talk to an Engineering Expert <ArrowRight className="ml-2 h-4 w-4" />
+                  Talk to Our Experts <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button
