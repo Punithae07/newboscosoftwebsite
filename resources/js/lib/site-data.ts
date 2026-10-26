@@ -2016,7 +2016,7 @@ export const services: Record<ServiceSlug, ServiceItem> = {
         a: "Support responsibilities and monitoring arrangements are agreed during implementation.",
       },
     ],
-    heroImage: "/images/Integration%20%26%20Digital%20Ecosystems.avif",
+    heroImage: "/images/ecommerce-analytics.avif",
     cta: "Connect Your Digital Ecosystem",
     ctaTitle: "Stop moving data by hand.",
     ctaBody:
