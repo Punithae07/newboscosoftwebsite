@@ -390,7 +390,7 @@ export function SiteHeader() {
                   />
                   <MegaProductItem
                     to="/services/data-analytics-ai"
-                    title="Data, Analytics & AI"
+                    title="Data Analytics & AI"
                     desc="Lakehouses, dashboards, decision intelligence"
                     onClick={() => setOpen(null)}
                   />

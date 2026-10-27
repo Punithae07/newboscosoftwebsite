@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export function CTABanner({
   title = "Have a technology challenge worth solving?",
-  description = "Tell us what you are building, modernizing, or trying to connect. We will help you explore a practical path forward—from the first architecture conversation to an engineering engagement or product demonstration.",
+  description = "Tell us what you are building, modernizing, or trying to connect. We will help you explore a practical path forward from the first architecture conversation to an engineering engagement or product demonstration.",
   primary = { label: "Schedule a Technical Consultation", to: "/contact-us" },
   secondary = { label: "Request a Product Demo", to: "/contact-us" },
 }: {

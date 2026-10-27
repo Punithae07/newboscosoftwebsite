@@ -49,7 +49,7 @@ function ResourcesPage() {
             },
             {
               i: Newspaper,
-              t: "Transformation case studies",
+              t: "Transformation success stories",
               d: "Customer stories that show measurable outcomes from ERP modernization and digital workflows.",
               to: "/success-stories",
             },

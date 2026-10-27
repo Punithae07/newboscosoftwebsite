@@ -89,11 +89,11 @@
 
       /* LinkedIn Button with light sky-blue matching reference */
       .leader-linkedin-btn {
+        display: none !important;
         position: absolute !important;
         right: 14px !important;
         top: 14px !important;
         z-index: 10 !important;
-        display: flex !important;
         height: 34px !important;
         width: 34px !important;
         align-items: center !important;

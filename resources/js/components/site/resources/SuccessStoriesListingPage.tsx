@@ -1,13 +1,13 @@
-import { useMemo, useState } from "react";
-import { Link } from "@tanstack/react-router";
+import { useEffect, useMemo, useState } from "react";
+import { Link, useLocation } from "@tanstack/react-router";
 import {
   ArrowRight,
   Brain,
-  Church,
   Coins,
   GraduationCap,
   HeartPulse,
   LayoutGrid,
+  School,
   ShieldCheck,
   TrendingUp,
 } from "lucide-react";
@@ -25,14 +25,76 @@ const categories = [
   { name: "Ai & Data", icon: Brain },
   { name: "Finance", icon: TrendingUp },
   { name: "Healthcare", icon: HeartPulse },
-  { name: "Education", icon: GraduationCap },
+  { name: "Education", icon: School },
+  { name: "Higher Education", icon: GraduationCap },
   { name: "MicroFinance", icon: Coins },
   { name: "Quality", icon: ShieldCheck },
-  { name: "FaithTech", icon: Church },
 ] as const;
 
+function getInitialCategory(): string {
+  if (typeof window !== "undefined") {
+    const urlCategory = new URLSearchParams(window.location.search).get("category");
+    if (urlCategory) {
+      const match = categories.find(
+        (c) => c.name.toLowerCase() === urlCategory.trim().toLowerCase()
+      );
+      if (match) return match.name;
+    }
+
+    const savedCategory = sessionStorage.getItem("success_stories_active_category");
+    if (savedCategory) {
+      const match = categories.find(
+        (c) => c.name.toLowerCase() === savedCategory.trim().toLowerCase()
+      );
+      if (match) return match.name;
+    }
+  }
+  return "All";
+}
+
 export function SuccessStoriesListingPage() {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const location = useLocation();
+  const [activeCategory, setActiveCategory] = useState<string>(() => getInitialCategory());
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const urlCategory = new URLSearchParams(window.location.search).get("category");
+      if (urlCategory) {
+        const match = categories.find(
+          (c) => c.name.toLowerCase() === urlCategory.trim().toLowerCase()
+        );
+        if (match && match.name !== activeCategory) {
+          setActiveCategory(match.name);
+          sessionStorage.setItem("success_stories_active_category", match.name);
+          return;
+        }
+      }
+
+      const savedCategory = sessionStorage.getItem("success_stories_active_category");
+      if (savedCategory) {
+        const match = categories.find(
+          (c) => c.name.toLowerCase() === savedCategory.trim().toLowerCase()
+        );
+        if (match && match.name !== activeCategory) {
+          setActiveCategory(match.name);
+        }
+      }
+    }
+  }, [location.search]);
+
+  const handleCategoryChange = (categoryName: string) => {
+    setActiveCategory(categoryName);
+    if (typeof window !== "undefined") {
+      sessionStorage.setItem("success_stories_active_category", categoryName);
+      const url = new URL(window.location.href);
+      if (categoryName === "All") {
+        url.searchParams.delete("category");
+      } else {
+        url.searchParams.set("category", categoryName);
+      }
+      window.history.replaceState({}, "", url.toString());
+    }
+  };
 
   const filteredStories = useMemo(() => {
     if (activeCategory === "All") {
@@ -49,6 +111,22 @@ export function SuccessStoriesListingPage() {
           storyCat.includes("data") ||
           storyCat.includes("co-development")
         );
+      }
+
+      if (targetCat === "finance") {
+        return storyCat === "finance";
+      }
+
+      if (targetCat === "education") {
+        return storyCat === "education";
+      }
+
+      if (targetCat === "higher education") {
+        return storyCat.includes("higher education");
+      }
+
+      if (targetCat === "microfinance") {
+        return storyCat.includes("microfinance");
       }
 
       return storyCat.includes(targetCat);
@@ -88,7 +166,7 @@ export function SuccessStoriesListingPage() {
                 <button
                   key={cat.name}
                   type="button"
-                  onClick={() => setActiveCategory(cat.name)}
+                  onClick={() => handleCategoryChange(cat.name)}
                   className={cn(
                     "inline-flex flex-1 min-w-fit items-center justify-center gap-2.5 rounded-2xl px-3.5 py-3 text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer sm:px-4 sm:py-3 sm:text-sm lg:px-5 lg:py-3.5 lg:text-[15px]",
                     isActive
@@ -107,7 +185,7 @@ export function SuccessStoriesListingPage() {
 
       <Section
         className="!pt-3 sm:!pt-4 md:!pt-5 lg:!pt-5"
-        eyebrow="Case Studies"
+        eyebrow="Success Stories"
         title="Explore the work behind the results"
         subtitle="Explore how customers have approached modernization, operational integration, and software implementation with Boscosoft."
         introWidth="wide"
@@ -117,12 +195,12 @@ export function SuccessStoriesListingPage() {
         ) : (
           <div className="rounded-[1.75rem] border border-border/70 bg-gradient-card py-16 text-center shadow-card">
             <p className="text-lg font-medium text-muted-foreground">
-              No case studies found for "{activeCategory}".
+              No success stories found for "{activeCategory}".
             </p>
             <Button
               variant="outline"
               className="mt-5 border-[#072448]/25 text-[#072448] hover:bg-[#072448] hover:text-white"
-              onClick={() => setActiveCategory("All")}
+              onClick={() => handleCategoryChange("All")}
             >
               View All Stories
             </Button>
@@ -190,14 +268,9 @@ function StoryGrid({
           <div className="flex flex-1 flex-col p-6">
             <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
               {story.category && <span>{story.category}</span>}
-              {story.location && (
-                <span className="text-muted-foreground normal-case tracking-normal">
-                  {story.location}
-                </span>
-              )}
             </div>
             <h2 className="mt-4 t-card-title-lg">{story.title}</h2>
-            <p className="mt-4 t-card-desc flex-1">{story.description}</p>
+            <p className="mt-4 text-[15.5px] leading-relaxed text-muted-foreground flex-1">{story.description}</p>
             <Button
               asChild
               className="mt-6 w-full bg-gradient-cta text-primary-foreground hover:opacity-95 sm:w-auto"

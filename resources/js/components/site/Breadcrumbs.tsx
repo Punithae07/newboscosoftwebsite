@@ -5,7 +5,7 @@ export function Breadcrumbs({
   items, 
   variant = "default" 
 }: { 
-  items: { label: string; to?: string }[];
+  items: { label: string; to?: string; search?: Record<string, unknown> }[];
   variant?: "default" | "light";
 }) {
   const textClasses = variant === "light" ? "text-white/70" : "text-muted-foreground";
@@ -24,7 +24,7 @@ export function Breadcrumbs({
           <li key={i} className="flex items-center gap-1.5">
             <ChevronRight className="h-3.5 w-3.5 opacity-50" />
             {it.to ? (
-              <Link to={it.to} className={linkClasses}>
+              <Link to={it.to} search={it.search} className={linkClasses}>
                 {it.label}
               </Link>
             ) : (

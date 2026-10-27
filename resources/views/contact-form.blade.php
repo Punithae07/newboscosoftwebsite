@@ -41,7 +41,7 @@
         <label class="full" for="contact-interest"><span class="label-text">I'm interested in <span class="required">*</span></span><select id="contact-interest" name="product_interest" required><option value="">Select an interest</option><option value="Product Demo">Product Demo</option><option value="AI Transformation">AI Transformation</option><option value="ERP Implementation">ERP Implementation</option><option value="SaaS Modernization">SaaS Modernization</option><option value="Integration">Integration</option><option value="Cloud">Cloud</option><option value="Support">Support</option><option value="Partnership">Partnership</option></select></label>
         <label class="full" for="contact-message"><span class="label-text">Message <span class="required">*</span></span><textarea id="contact-message" name="message" required placeholder="Tell us a bit about your goals, current systems, or timeline."></textarea></label>
       </div>
-      <button id="contact-submit" type="submit">Send Inquiry <span aria-hidden="true">-></span></button>
+      <button id="contact-submit" type="submit">Submit <span aria-hidden="true">-></span></button>
     </form>
   </section>
   <script>

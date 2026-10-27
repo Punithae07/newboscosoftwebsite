@@ -13,6 +13,7 @@ import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/site/Section";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
+import { FeatureCarousel } from "@/components/site/FeatureCarousel";
 import { services, type ServiceSlug, techStack } from "@/lib/site-data";
 import {
   Accordion,
@@ -95,39 +96,24 @@ export function ServicePage({ service }: { service: Service }) {
       </section>
 
       <Section bg="surface">
-        <div className="grid items-center gap-10 lg:grid-cols-2">
-          <div>
-            <div className="mb-3 t-eyebrow">Business Problem</div>
-            <h2 className="t-section-title">{service.businessProblemTitle || "The challenge we help you solve"}</h2>
-            <p className="mt-5 t-body">{service.businessProblem}</p>
-            <div className="mt-7 grid gap-3 sm:grid-cols-2">
-              {service.outcomes.slice(0, 4).map((outcome) => (
-                <div
-                  key={outcome}
-                  className="rounded-lg border border-border bg-background p-4 shadow-card"
-                >
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-success" />
-                    <div className="text-[0.95rem] font-semibold leading-6 text-foreground">
-                      {outcome}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="relative animate-float-slow overflow-hidden rounded-xl shadow-elegant">
-            <img
-              src={service.heroImage}
-              alt={`${service.name} business problem`}
-              loading="lazy"
-              decoding="async"
-              className="aspect-[4/3] w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/10 to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6 text-white">
-              <div className="text-sm font-semibold">{service.eyebrow || service.group}</div>
-              <div className="mt-1 text-2xl font-bold">{service.name}</div>
+        <div className="max-w-4xl">
+          <div className="mb-3 t-eyebrow">Business Problem</div>
+          <h2 className="t-section-title">{service.businessProblemTitle || "The challenge we help you solve"}</h2>
+          <p className="mt-5 t-body text-muted-foreground">{service.businessProblem}</p>
+        </div>
+
+        <div className="mt-8">
+          <FeatureCarousel
+            items={service.outcomes.map((outcome, index) => ({
+              title: outcome,
+              number: index + 1,
+            }))}
+          />
+          <div className="mt-6 flex items-center justify-end">
+            <div className="flex items-center gap-2">
+              <span className="h-1.5 w-6 rounded-full bg-accent" />
+              <span className="h-1.5 w-1.5 rounded-full bg-accent/40" />
+              <span className="h-1.5 w-1.5 rounded-full bg-accent/40" />
             </div>
           </div>
         </div>
@@ -162,13 +148,12 @@ export function ServicePage({ service }: { service: Service }) {
           subtitle={service.processIntro}
         >
           <div className="relative grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
-            {service.process.map((step, i) => (
+            {service.process.map((step) => (
               <div
                 key={step}
                 className="rounded-xl border border-border bg-background p-5 shadow-card transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="t-eyebrow">Step {String(i + 1).padStart(2, "0")}</div>
-                <div className="mt-2 t-card-title">{step}</div>
+                <div className="t-card-title">{step}</div>
               </div>
             ))}
           </div>
@@ -262,32 +247,23 @@ export function ServicePage({ service }: { service: Service }) {
       </section>
 
       <section className="cv-auto bg-[#f7ead8]">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-[60px] md:py-[80px] lg:grid-cols-2 lg:px-8 lg:py-[84px]">
-          <img
-            src={service.heroImage}
-            alt={`${service.name} consultation preview`}
-            loading="lazy"
-            decoding="async"
-            className="aspect-[4/3] w-full rounded-xl object-cover shadow-elegant"
-          />
-          <div>
-            <h2 className="t-section-title text-[#f1662d]">
-              {service.ctaTitle || `Ready to plan your ${service.name.toLowerCase()} roadmap?`}
-            </h2>
-            <p className="mt-4 t-body">
-              {service.ctaBody ||
-                "Work with Boscosoft to connect strategy, platforms, data, AI, infrastructure, and adoption into a practical transformation program."}
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <Button asChild className="bg-gradient-cta text-primary-foreground">
-                <Link to="/contact-us" preload="intent">
-                  {service.ctaButton || service.cta} <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" className="text-slate-950 hover:text-slate-950">
-                <Link to="/services">Explore Services</Link>
-              </Button>
-            </div>
+        <div className="mx-auto max-w-3xl px-6 py-12 text-center md:py-14 lg:px-8">
+          <h2 className="t-section-title text-[#f1662d]">
+            {service.ctaTitle || `Ready to plan your ${service.name.toLowerCase()} roadmap?`}
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-[1.05rem] leading-7 text-slate-700">
+            {service.ctaBody ||
+              "Work with Boscosoft to connect strategy, platforms, data, AI, infrastructure, and adoption into a practical transformation program."}
+          </p>
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
+            <Button asChild className="bg-gradient-cta text-primary-foreground shadow-md hover:opacity-95">
+              <Link to="/contact-us" preload="intent">
+                {service.ctaButton || service.cta} <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" className="border-slate-300 bg-white text-slate-950 shadow-sm hover:bg-slate-50 hover:text-slate-950">
+              <Link to="/services">Explore Services</Link>
+            </Button>
           </div>
         </div>
       </section>

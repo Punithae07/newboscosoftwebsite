@@ -168,7 +168,7 @@ export function HomePage({
             </h1>
 
             <p className="mt-5 max-w-4xl text-[18px] leading-8 text-white">
-              We deliver expert engineering talent to build AI-powered workflows, modern SaaS, and connected data platforms—tailored to your long-term growth.
+              We deliver expert engineering talent to build AI-powered workflows, modern SaaS, and connected data platforms tailored to your long-term growth.
             </p>
 
             <div className="mt-7 flex flex-wrap gap-3">

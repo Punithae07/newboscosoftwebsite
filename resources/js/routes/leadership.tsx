@@ -55,7 +55,6 @@ function LeadershipPage() {
         bg="surface"
         eyebrow="Leadership"
         title="People behind the work"
-        subtitle="Display approved leadership profiles, titles, photographs, and brief expertise statements. Current names, roles, and biographies must be confirmed with HR or the corporate office before publication."
       >
         <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
@@ -149,21 +148,9 @@ function LeadershipPage() {
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
                   aria-label={`${person.name} LinkedIn Profile`}
-                  className="leader-linkedin-btn absolute right-3.5 top-3.5 z-10 flex h-8 w-8 items-center justify-center rounded-[5px] text-white shadow-sm transition-all duration-200 hover:scale-110 active:scale-95"
+                  className="leader-linkedin-btn hidden"
                   style={{
-                    position: "absolute",
-                    right: "14px",
-                    top: "14px",
-                    zIndex: 10,
-                    display: "flex",
-                    height: "34px",
-                    width: "34px",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    borderRadius: "7px",
-                    backgroundColor: "#8bb9da",
-                    color: "#ffffff",
-                    boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
+                    display: "none",
                   }}
                 >
                   <svg className="h-4 w-4 fill-current" style={{ width: "16px", height: "16px", fill: "#ffffff" }} viewBox="0 0 24 24" aria-hidden="true">

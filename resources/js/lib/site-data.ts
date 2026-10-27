@@ -995,25 +995,25 @@ export const products: Record<
       "CristO Suite brings together four purpose-built products designed for Church, parish, diocesan, religious institute, and community administration.",
     productItems: [
       {
-        title: "Cathedra — Diocesan administration",
+        title: "Cathedra - Diocesan administration",
         logo: "/images/cristo/cathedra.avif",
         description:
           "Connect diocesan offices, parishes, clergy, institutions, oversight, and reporting.",
       },
       {
-        title: "Parokia — Parish management",
+        title: "Parokia - Parish management",
         logo: "/images/cristo/parokia.avif",
         description:
           "Organize family and parishioner records, sacramental registers, certificates, contributions, and communication.",
       },
       {
-        title: "Charisma — Community engagement",
+        title: "Charisma - Community engagement",
         logo: "/images/cristo/charisma.avif",
         description:
           "Coordinate ministries, associations, events, participation, and member communication.",
       },
       {
-        title: "ReligiO — Religious institute management",
+        title: "ReligiO - Religious institute management",
         logo: "/images/cristo/religio.avif",
         description:
           "Manage member histories, assignments, communities, records, and institutional administration.",
@@ -1381,9 +1381,9 @@ export const services: Record<ServiceSlug, ServiceItem> = {
     group: "Applied AI & Automation",
     eyebrow: "Applied AI & Automation",
     tagline:
-      "Move beyond isolated AI experiments. We help identify practical use cases, prepare the data and systems behind them, and build intelligent workflows that make knowledge easier to access and processes easier to run—while keeping people in control of important decisions.",
+      "Move beyond isolated AI experiments. We help identify practical use cases, prepare the data and systems behind them, and build intelligent workflows that make knowledge easier to access and processes easier to run while keeping people in control of important decisions.",
     headline: "Put AI to work where it makes a difference",
-    body: "Move beyond isolated AI experiments. We help identify practical use cases, prepare the data and systems behind them, and build intelligent workflows that make knowledge easier to access and processes easier to run—while keeping people in control of important decisions.",
+    body: "Move beyond isolated AI experiments. We help identify practical use cases, prepare the data and systems behind them, and build intelligent workflows that make knowledge easier to access and processes easier to run while keeping people in control of important decisions.",
     heroCtas: {
       primary: { label: "Discuss Your AI Use Case", href: "/contact-us" },
       secondary: { label: "Explore Services", href: "/services" },
@@ -1477,7 +1477,7 @@ export const services: Record<ServiceSlug, ServiceItem> = {
       "Solutions can use Azure AI, OpenAI-based application components, modern APIs, enterprise data stores, and cloud-native architectures, selected according to requirements. Model governance, sensitive data handling, permission boundaries, and human review are considered during design.",
     outcomesTitle: "Focus on adoption, accuracy, and useful automation",
     outcomesBody:
-      "Define success through process time saved, search effectiveness, response quality, escalation rates, and actual user adoption—not the number of AI features deployed.",
+      "Define success through process time saved, search effectiveness, response quality, escalation rates, and actual user adoption, not the number of AI features deployed.",
     faqs: [
       {
         q: "Where should we start?",
@@ -1518,9 +1518,9 @@ export const services: Record<ServiceSlug, ServiceItem> = {
     group: "Enterprise Business Systems",
     eyebrow: "Enterprise Business Systems",
     tagline:
-      "Turn scattered processes into connected operations through thoughtful platform selection, implementation, customization, and integration. We focus on usable workflows, relevant data, and adoption—not merely switching on modules.",
+      "Turn scattered processes into connected operations through thoughtful platform selection, implementation, customization, and integration. We focus on usable workflows, relevant data, and adoption not merely switching on modules.",
     headline: "ERP and CRM that fit the way your business works",
-    body: "Turn scattered processes into connected operations through thoughtful platform selection, implementation, customization, and integration. We focus on usable workflows, relevant data, and adoption—not merely switching on modules.",
+    body: "Turn scattered processes into connected operations through thoughtful platform selection, implementation, customization, and integration. We focus on usable workflows, relevant data, and adoption not merely switching on modules.",
     heroCtas: {
       primary: { label: "Discuss Your ERP & CRM Needs", href: "/contact-us" },
       secondary: { label: "All Services", href: "/services" },
@@ -1758,7 +1758,7 @@ export const services: Record<ServiceSlug, ServiceItem> = {
     ctaButton: "Talk to a Product Engineering Lead",
   },
   "data-analytics-ai": {
-    name: "Data, Analytics & AI",
+    name: "Data Analytics & AI",
     slug: "data-analytics-ai",
     seoTitle: "Databricks Data Engineering & Analytics Services | Boscosoft",
     seoDescription:
@@ -1892,7 +1892,7 @@ export const services: Record<ServiceSlug, ServiceItem> = {
     ],
     heroImage: "/images/ecommerce-analytics.avif",
     cta: "Discuss Your Data Architecture",
-    ctaTitle: "Make your data an asset—not another integration problem.",
+    ctaTitle: "Make your data an asset not another integration problem.",
     ctaBody:
       "Design governed pipelines, modern lakehouse environments, and decision-ready dashboards with our data engineering team.",
     ctaButton: "Discuss Your Data Architecture",
@@ -2016,7 +2016,7 @@ export const services: Record<ServiceSlug, ServiceItem> = {
         a: "Support responsibilities and monitoring arrangements are agreed during implementation.",
       },
     ],
-    heroImage: "/images/ecommerce-analytics.avif",
+    heroImage: "/images/ecosystem.avif",
     cta: "Connect Your Digital Ecosystem",
     ctaTitle: "Stop moving data by hand.",
     ctaBody:
@@ -2034,9 +2034,9 @@ export const services: Record<ServiceSlug, ServiceItem> = {
     group: "Cloud Operations",
     eyebrow: "Cloud Operations",
     tagline:
-      "Cloud infrastructure should support your applications—not become another source of uncertainty. Boscosoft helps plan deployment architectures, automate releases, monitor performance, improve recovery readiness, and manage operational change.",
+      "Cloud infrastructure should support your applications not become another source of uncertainty. Boscosoft helps plan deployment architectures, automate releases, monitor performance, improve recovery readiness, and manage operational change.",
     headline: "Build a cloud foundation your business can rely on",
-    body: "Cloud infrastructure should support your applications—not become another source of uncertainty. Boscosoft helps plan deployment architectures, automate releases, monitor performance, improve recovery readiness, and manage operational change.",
+    body: "Cloud infrastructure should support your applications not become another source of uncertainty. Boscosoft helps plan deployment architectures, automate releases, monitor performance, improve recovery readiness, and manage operational change.",
     heroCtas: {
       primary: { label: "Discuss Your Cloud Needs", href: "/contact-us" },
       secondary: { label: "All Services", href: "/services" },

@@ -22,6 +22,7 @@ const partners = [
   { src: "/images/partners/nttdataservice.avif", alt: "NTT DATA Payment Services | Bosco Soft Technologies Partners | IT Solutions Companys", width: 600, height: 240 },
   { src: "/images/partners/azimpremji.avif", alt: "Azim Premji Foundation | Bosco Soft Technologies Partners | IT Company", width: 600, height: 240 },
   { src: "/images/partners/diggibyte.avif", alt: "Digibyte | Bosco Soft Technologies Partners | IT Solutions Company | Global IT Solutions", width: 600, height: 240 },
+  { src: "/images/partners/zoho-partners.avif", alt: "Zoho Partner | Bosco Soft Technologies Partners | IT Solutions Company | Global IT Solutions", width: 400, height: 140 },
 ] as const;
 
 const trustMetrics = [
@@ -125,7 +126,7 @@ function AboutPage() {
           <div className="mb-6 flex justify-center text-center">
             <div className="t-eyebrow text-muted-foreground">Partnered with leading enterprises</div>
           </div>
-          <div className="grid grid-cols-2 items-center justify-items-center gap-6 md:grid-cols-3 lg:grid-cols-4">
+          <div className="grid grid-cols-2 items-center justify-items-center gap-6 sm:grid-cols-3 lg:grid-cols-5">
             {partners.map((partner, index) => (
               <div key={partner.alt} className="grid h-14 place-items-center">
                 <img

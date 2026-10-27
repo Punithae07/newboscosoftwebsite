@@ -28,7 +28,7 @@ const interests = [
   "Integration & Digital Ecosystems",
   "SaaS Engineering & Modernization",
   "ERP & CRM Implementation",
-  "Data, Analytics & AI",
+  "Data Analytics & AI",
   "Cloud Infrastructure & Support",
   "SmartSchoolNxt (School ERP)",
   "HiGrade (Higher Ed ERP)",
@@ -259,14 +259,13 @@ export function ContactConsultationForm({ sourcePage }: { sourcePage: string }) 
           </select>
         </Field>
 
-        <Field label="Phone (Optional)" htmlFor="contact-phone">
+        <Field label="Phone" htmlFor="contact-phone">
           <input
             id="contact-phone"
             name="phone"
             type="tel"
             autoComplete="tel"
             inputMode="numeric"
-            placeholder="+91 98765 43210"
             value={values.phone}
             onChange={(event) =>
               updateValue("phone", event.target.value.replace(/[^\d+\-\s()]/g, "").slice(0, 20))
@@ -312,7 +311,7 @@ export function ContactConsultationForm({ sourcePage }: { sourcePage: string }) 
             disabled={isSubmitting}
             className="inline-flex min-h-14 items-center justify-center rounded-[1.1rem] bg-primary px-7 text-base font-semibold text-primary-foreground shadow-elegant transition hover:translate-y-[-1px] hover:shadow-[0_18px_40px_rgba(7,83,140,0.25)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-accent/20 disabled:cursor-progress disabled:opacity-75"
           >
-            {isSubmitting ? "Sending..." : "Send Inquiry"}
+            {isSubmitting ? "Submitting..." : "Submit"}
           </button>
         </div>
       </form>

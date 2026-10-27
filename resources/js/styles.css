@@ -130,7 +130,7 @@
     scroll-behavior: smooth;
     /* Establish a consistent base for rem-based typography */
     font-size: 16px;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
   body {
     background-color: var(--color-background);
@@ -144,7 +144,7 @@
     letter-spacing: 0;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    overflow-x: hidden;
+    overflow-x: clip;
     width: 100%;
   }
 
@@ -1036,7 +1036,7 @@
 .leader-card:hover .leader-photo-wrap { background-color: #d0e4f5 !important; }
 .leader-photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: top center; mix-blend-mode: multiply !important; filter: grayscale(100%) contrast(1.04) !important; -webkit-filter: grayscale(100%) contrast(1.04) !important; transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
 .leader-card:hover .leader-photo-wrap img { transform: scale(1.04); }
-.leader-linkedin-btn { position: absolute; right: 14px; top: 14px; z-index: 10; display: flex; height: 34px; width: 34px; align-items: center; justify-content: center; border-radius: 7px; background-color: #8bb9da !important; color: #ffffff !important; box-shadow: 0 2px 8px rgba(0,0,0,0.12); transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
+.leader-linkedin-btn { display: none !important; position: absolute; right: 14px; top: 14px; z-index: 10; height: 34px; width: 34px; align-items: center; justify-content: center; border-radius: 7px; background-color: #8bb9da !important; color: #ffffff !important; box-shadow: 0 2px 8px rgba(0,0,0,0.12); transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
 .leader-linkedin-btn svg { width: 17px; height: 17px; fill: #ffffff; transition: filter 0.25s ease, transform 0.25s ease; }
 .leader-card:hover .leader-linkedin-btn { background-color: #0077b5 !important; box-shadow: 0 4px 14px rgba(0, 119, 181, 0.45); transform: scale(1.06); }
 .leader-card:hover .leader-linkedin-btn svg { filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.8)); }

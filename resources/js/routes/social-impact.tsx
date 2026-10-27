@@ -52,35 +52,37 @@ function SocialImpactPage() {
             items={[{ label: "About", to: "/about" }, { label: "Social Impact" }]}
             variant="light"
           />
-          <div className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-sm font-medium backdrop-blur">
-            Our Difference
-          </div>
-          <h1 className="page-hero-title mt-5">
-            Opportunity changes lives. Great engineering changes businesses.
-          </h1>
-          <p className="page-hero-copy content-measure-wide mt-5">
-            At Boscosoft, these two ideas belong together. Our roots are in a rural technology initiative that opened the door to professional careers for young people whose potential had rarely been matched by access.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Button
-              asChild
-              size="lg"
-              className="bg-white text-primary shadow-glow hover:bg-white/90"
-            >
-              <Link to="/contact-us" preload="intent">
-                Discuss a Technology Partnership <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-white/30 bg-white/10 text-white hover:bg-white/20 hover:text-white"
-            >
-              <Link to="/careers" className="text-white">
-                Explore Careers
-              </Link>
-            </Button>
+          <div className="mt-8 max-w-4xl animate-fade-up">
+            <div className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3.5 py-1.5 text-xs font-medium text-white/92">
+              Our Difference
+            </div>
+            <h1 className="page-hero-title mt-5">
+              Opportunity changes lives. Great engineering changes businesses.
+            </h1>
+            <p className="page-hero-copy content-measure-wide mt-5">
+              At Boscosoft, these two ideas belong together. Our roots are in a rural technology initiative that opened the door to professional careers for young people whose potential had rarely been matched by access.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button
+                asChild
+                size="lg"
+                className="bg-white text-primary shadow-glow hover:bg-white/90"
+              >
+                <Link to="/contact-us" preload="intent">
+                  Discuss a Technology Partnership <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-white/30 bg-white/10 text-white hover:bg-white/20 hover:text-white"
+              >
+                <Link to="/careers" className="text-white">
+                  Explore Careers
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -115,25 +117,21 @@ function SocialImpactPage() {
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {[
             {
-              step: "01",
               icon: Compass,
               title: "Discover talent",
               desc: "Reach young people whose circumstances may have limited opportunity.",
             },
             {
-              step: "02",
               icon: GraduationCap,
               title: "Develop skills",
               desc: "Combine technology learning, communication, workplace habits, and mentoring.",
             },
             {
-              step: "03",
               icon: Briefcase,
               title: "Learn through delivery",
               desc: "Connect practical work with real customer needs and professional standards.",
             },
             {
-              step: "04",
               icon: TrendingUp,
               title: "Build careers",
               desc: "Support continued technical development within the wider industry.",
@@ -143,12 +141,11 @@ function SocialImpactPage() {
               key={item.title}
               className="rounded-2xl border border-border bg-background p-6 shadow-card transition-all duration-300 hover:-translate-y-1"
             >
-              <div className="flex items-center justify-between">
-                <span className="t-eyebrow text-accent">Step {item.step}</span>
-                <item.icon className="h-5 w-5 text-accent" />
+              <div className="flex items-center justify-between gap-3">
+                <h3 className="t-card-title">{item.title}</h3>
+                <item.icon className="h-5 w-5 shrink-0 text-accent" />
               </div>
-              <h3 className="mt-3 t-card-title">{item.title}</h3>
-              <p className="mt-2 t-card-desc">{item.desc}</p>
+              <p className="mt-3 t-card-desc">{item.desc}</p>
             </div>
           ))}
         </div>

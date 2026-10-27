@@ -318,38 +318,25 @@ export function ProductPage({ product }: { product: Product }) {
       </section>
 
       <section className="cv-auto bg-[#f7ead8]">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-[60px] md:py-[80px] lg:grid-cols-2 lg:px-8 lg:py-[84px]">
-          <div className="animate-float-slow overflow-hidden rounded-xl shadow-elegant">
-            <img
-              src={product.ctaBannerImage}
-              alt={`${product.name} transformation`}
-              loading="lazy"
-              decoding="async"
-              className={`aspect-4/3 w-full ${
-                product.slug === "smartschoolnxt" ? "bg-white object-contain p-6" : "object-cover"
-              }`}
-            />
-          </div>
-          <div>
-            <h2 className="t-section-title text-[#f1662d]">
-              Ready to transform your operations with {product.name}?
-            </h2>
-            <p className="mt-4 t-body">
-              Experience how Boscosoft combines platform capability, domain workflows, and long-term
-              support to help your organization modernize with confidence.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <Button asChild className="bg-gradient-cta text-primary-foreground">
-                <Link to="/contact-us" preload="intent">
-                  {product.caseStudiesCta || "Request a Demo"} <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" className="text-slate-950 hover:text-slate-950">
-                <a href={productWebsite} target="_blank" rel="noreferrer" className="text-slate-950">
-                  {product.featuresCta || "Discover the Solution"}
-                </a>
-              </Button>
-            </div>
+        <div className="mx-auto max-w-3xl px-6 py-12 text-center md:py-14 lg:px-8">
+          <h2 className="t-section-title text-[#f1662d]">
+            Ready to transform your operations with {product.name}?
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-[1.05rem] leading-7 text-slate-700">
+            Experience how Boscosoft combines platform capability, domain workflows, and long-term
+            support to help your organization modernize with confidence.
+          </p>
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
+            <Button asChild className="bg-gradient-cta text-primary-foreground shadow-md hover:opacity-95">
+              <Link to="/contact-us" preload="intent">
+                {product.caseStudiesCta || "Request a Demo"} <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" className="border-slate-300 bg-white text-slate-950 shadow-sm hover:bg-slate-50 hover:text-slate-950">
+              <a href={productWebsite} target="_blank" rel="noreferrer" className="text-slate-950">
+                {product.featuresCta || "Discover the Solution"}
+              </a>
+            </Button>
           </div>
         </div>
       </section>

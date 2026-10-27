@@ -4,7 +4,7 @@ import { useDragScroll } from "@/hooks/useDragScroll";
 interface FeatureCarouselProps {
   items: {
     title: string;
-    description: string;
+    description?: string;
     number: number;
   }[];
 }
@@ -15,14 +15,16 @@ function FeatureCard({
   item: FeatureCarouselProps["items"][number];
 }) {
   return (
-    <div className="shrink-0 w-[82vw] rounded-xl border border-accent/60 bg-background p-5 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-elegant sm:w-[17rem] md:w-[19rem] md:p-6">
-      <div className="mb-4 flex items-center gap-3">
+    <div className="shrink-0 w-[82vw] rounded-xl border border-accent/60 bg-background p-5 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-elegant sm:w-[17rem] md:w-[19rem] md:p-6 flex flex-col justify-center min-h-[5.5rem]">
+      <div className={`flex items-center gap-3 ${item.description ? "mb-3" : ""}`}>
         <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-accent/70 text-sm font-semibold text-accent">
           {String(item.number).padStart(2, "0")}
         </div>
-        <div className="font-semibold text-lg">{item.title}</div>
+        <div className="font-semibold text-base sm:text-lg text-foreground leading-snug">{item.title}</div>
       </div>
-      <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+      {item.description ? (
+        <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+      ) : null}
     </div>
   );
 }
@@ -63,6 +65,11 @@ export function FeatureCarousel({ items }: FeatureCarouselProps) {
     return () => cancelAnimationFrame(animationRef.current);
   }, [isPaused, isDragging, items.length]);
 
+  const displayItems =
+    items.length > 0 && items.length < 6
+      ? [...items, ...items, ...items]
+      : items;
+
   return (
     <div
       ref={scrollContainerRef}
@@ -78,14 +85,14 @@ export function FeatureCarousel({ items }: FeatureCarouselProps) {
         isDragging ? "cursor-grabbing" : "cursor-grab"
       }`}
       style={{ WebkitOverflowScrolling: "touch" }}
-      aria-label="Product features carousel"
-      aria-description="Auto-scrolling feature cards. Drag horizontally to browse."
+      aria-label="Features carousel"
+      aria-description="Auto-scrolling cards. Drag horizontally to browse."
     >
-      {items.map((item) => (
-        <FeatureCard key={`original-${item.number}`} item={item} />
+      {displayItems.map((item, idx) => (
+        <FeatureCard key={`original-${item.number}-${idx}`} item={item} />
       ))}
-      {items.map((item) => (
-        <FeatureCard key={`duplicate-${item.number}`} item={item} />
+      {displayItems.map((item, idx) => (
+        <FeatureCard key={`duplicate-${item.number}-${idx}`} item={item} />
       ))}
     </div>
   );

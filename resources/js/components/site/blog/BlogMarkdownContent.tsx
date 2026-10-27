@@ -20,11 +20,18 @@ export function normalizeBlogContent(content: string) {
     .trim();
 }
 
-export function BlogMarkdownContent({ content }: { content: string }) {
+export function BlogMarkdownContent({
+  content,
+  size = "default",
+}: {
+  content: string;
+  size?: "default" | "lg";
+}) {
   const blocks = parseBlocks(normalizeBlogContent(content));
+  const isLg = size === "lg";
 
   return (
-    <div className="space-y-6">
+    <div className={isLg ? "space-y-7" : "space-y-6"}>
       {blocks.map((block, index) => {
         if (block.type === "divider") {
           return <hr key={`divider-${index}`} className="border-border/80" />;
@@ -35,7 +42,11 @@ export function BlogMarkdownContent({ content }: { content: string }) {
             return (
               <h2
                 key={`heading-${index}`}
-                className="border-l-4 border-accent/60 pl-4 text-xl font-semibold leading-tight tracking-tight text-foreground md:text-2xl"
+                className={
+                  isLg
+                    ? "border-l-4 border-accent/70 pl-4 text-2xl font-bold leading-snug tracking-tight text-foreground md:text-[1.75rem] my-6"
+                    : "border-l-4 border-accent/60 pl-4 text-xl font-semibold leading-tight tracking-tight text-foreground md:text-2xl"
+                }
                 dangerouslySetInnerHTML={{ __html: formatInline(block.content) }}
               />
             );
@@ -44,7 +55,11 @@ export function BlogMarkdownContent({ content }: { content: string }) {
           return (
             <h3
               key={`heading-${index}`}
-              className="text-lg font-semibold leading-tight text-foreground/90 md:text-xl"
+              className={
+                isLg
+                  ? "text-xl font-bold leading-snug text-foreground md:text-[1.35rem] my-4"
+                  : "text-lg font-semibold leading-tight text-foreground/90 md:text-xl"
+              }
               dangerouslySetInnerHTML={{ __html: formatInline(block.content) }}
             />
           );
@@ -54,7 +69,11 @@ export function BlogMarkdownContent({ content }: { content: string }) {
           return (
             <p
               key={`paragraph-${index}`}
-              className="text-base leading-8 text-muted-foreground md:text-[1.02rem]"
+              className={
+                isLg
+                  ? "text-[17px] leading-[1.85] text-muted-foreground md:text-[1.125rem] md:leading-[1.9]"
+                  : "text-base leading-8 text-muted-foreground md:text-[1.02rem]"
+              }
               dangerouslySetInnerHTML={{ __html: formatInline(block.content) }}
             />
           );
@@ -70,7 +89,11 @@ export function BlogMarkdownContent({ content }: { content: string }) {
                 "
               </div>
               <p
-                className="relative pl-5 text-lg leading-8 text-foreground md:text-xl"
+                className={
+                  isLg
+                    ? "relative pl-6 text-xl leading-relaxed text-foreground md:text-2xl"
+                    : "relative pl-5 text-lg leading-8 text-foreground md:text-xl"
+                }
                 dangerouslySetInnerHTML={{ __html: formatInline(block.content) }}
               />
             </blockquote>
@@ -84,9 +107,13 @@ export function BlogMarkdownContent({ content }: { content: string }) {
             <ListTag
               key={`list-${index}`}
               className={
-                block.ordered
-                  ? "list-decimal space-y-3 pl-5 text-base leading-7 text-muted-foreground"
-                  : "list-disc space-y-3 pl-5 text-base leading-7 text-muted-foreground"
+                isLg
+                  ? block.ordered
+                    ? "list-decimal space-y-3.5 pl-6 text-[17px] leading-[1.8] text-muted-foreground md:text-[1.125rem] md:leading-[1.85]"
+                    : "list-disc space-y-3.5 pl-6 text-[17px] leading-[1.8] text-muted-foreground md:text-[1.125rem] md:leading-[1.85]"
+                  : block.ordered
+                    ? "list-decimal space-y-3 pl-5 text-base leading-7 text-muted-foreground"
+                    : "list-disc space-y-3 pl-5 text-base leading-7 text-muted-foreground"
               }
             >
               {block.items.map((item, itemIndex) => (
@@ -111,7 +138,11 @@ export function BlogMarkdownContent({ content }: { content: string }) {
                     {block.headers.map((header, headerIndex) => (
                       <th
                         key={`table-header-${index}-${headerIndex}`}
-                        className="px-4 py-3 text-left text-sm font-semibold text-foreground"
+                        className={
+                          isLg
+                            ? "px-5 py-3.5 text-left text-base font-semibold text-foreground"
+                            : "px-4 py-3 text-left text-sm font-semibold text-foreground"
+                        }
                         dangerouslySetInnerHTML={{ __html: formatInline(header) }}
                       />
                     ))}
@@ -123,7 +154,11 @@ export function BlogMarkdownContent({ content }: { content: string }) {
                       {row.map((cell, cellIndex) => (
                         <td
                           key={`table-cell-${index}-${rowIndex}-${cellIndex}`}
-                          className="px-4 py-3 text-sm leading-6 text-muted-foreground"
+                          className={
+                            isLg
+                              ? "px-5 py-3.5 text-base leading-relaxed text-muted-foreground"
+                              : "px-4 py-3 text-sm leading-6 text-muted-foreground"
+                          }
                           dangerouslySetInnerHTML={{ __html: formatInline(cell) }}
                         />
                       ))}

@@ -116,6 +116,7 @@ const homeServiceOverrides: Record<
     title?: string;
     description: string;
     cta: string;
+    image?: string;
   }
 > = {
   "ai-transformation": {
@@ -129,6 +130,7 @@ const homeServiceOverrides: Record<
     description:
       "Make business systems exchange accurate data and support coordinated workflows.",
     cta: "Connect Your Systems",
+    image: "/images/ecosystem.avif",
   },
   "saas-engineering": {
     title: "SaaS Engineering & Modernization",
@@ -143,7 +145,7 @@ const homeServiceOverrides: Record<
     cta: "Talk ERP & CRM",
   },
   "data-analytics-ai": {
-    title: "Data, Analytics & AI",
+    title: "Data Analytics & AI",
     description:
       "Make fragmented data usable through pipelines, lakehouses, dashboards, and governed insights.",
     cta: "Plan Your Data Platform",
@@ -157,6 +159,20 @@ const homeServiceOverrides: Record<
 };
 
 const testimonialCards = [
+  {
+    metric: "Financial Transparency",
+    sector: "Finance & ERP",
+    q: "ACME.ERP has brought great hope for transparency and sustainability in our province.",
+    n: "Br. Nyondo Joseph, SDB ZMB Economer,",
+    o: "Zambia Province",
+  },
+  {
+    metric: "Accounting & Financial ERP",
+    sector: "Finance & ERP",
+    q: "The Salesians of Don Bosco AOS Province have found ACME.ERP to be an excellent accounting and financial management solution. Its user-friendly design, comprehensive accounting features, and reliable reporting tools have greatly enhanced our financial administration. The software has improved efficiency, strengthened accountability, and provided timely financial information for informed decision-making. We are pleased with its performance and recommend ACME.ERP as a dependable ERP solution for organisations seeking for other provinces financial management.",
+    n: "Mr. Isaac Oppong, SDB AOS Head of Finance and Administration,",
+    o: "Ghana Province",
+  },
   {
     metric: "Reliable Website Support",
     sector: "Web Development",
@@ -375,7 +391,7 @@ export function HomePageDeferred() {
                 title={override?.title || service.name}
                 description={override?.description || service.tagline}
                 cta={override?.cta || service.cta}
-                backgroundImageSrc={service.heroImage}
+                backgroundImageSrc={override?.image || service.heroImage}
                 immersive
               />
             );
@@ -458,7 +474,7 @@ export function HomePageDeferred() {
         className="cv-auto bg-[#eef7ff]"
         eyebrow="Customer perspective"
         title="The work speaks through our customers"
-        subtitle="Explore examples of long-standing product delivery, technology modernization, and enterprise implementation. Feature the OptionC modernization testimonial and other attributed references only once approval for current public use is confirmed."
+        subtitle="Explore examples of long-standing product delivery, technology modernization, and enterprise implementation."
         align="center"
       >
         <Carousel

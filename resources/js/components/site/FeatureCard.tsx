@@ -49,7 +49,10 @@ export function FeatureCard({
               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
           ) : null}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#06152f] via-[#0a2348]/84 to-[#0b2850]/40 transition-opacity duration-300 group-hover:from-[#051127] group-hover:via-[#081d3f]/92 group-hover:to-[#0a2348]/58" />
+          {/* Subtle bottom gradient to keep title readable while preserving original image colors */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 via-35% to-transparent transition-opacity duration-300 group-hover:opacity-0" />
+          {/* Blue shade overlay that comes in on hover */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#06152f] via-[#0a2348]/88 to-[#0b2850]/55 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
         </div>
 
         <div className="relative flex h-full min-h-[23rem] flex-col justify-end p-6 md:p-7">
@@ -61,7 +64,7 @@ export function FeatureCard({
                 </span>
               </div>
             )}
-            <h3 className="max-w-[18rem] text-[1.65rem] font-bold leading-tight text-white">
+            <h3 className="max-w-[18rem] text-[1.65rem] font-bold leading-tight text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
               {title}
             </h3>
             <div className="mt-5 overflow-hidden opacity-100 transition-all duration-300 md:max-h-0 md:translate-y-3 md:opacity-0 md:group-hover:max-h-48 md:group-hover:translate-y-0 md:group-hover:opacity-100">
