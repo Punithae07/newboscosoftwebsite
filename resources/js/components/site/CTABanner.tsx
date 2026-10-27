@@ -45,7 +45,11 @@ export function CTABanner({
               variant="outline"
               className="border-white/30 bg-white/10 text-white hover:bg-white/20 hover:text-white"
             >
-              <Link to={secondaryTo} preload="intent">
+              <Link
+                to={secondaryTo}
+                hash={secondaryTo.includes("contact") ? "contact-form" : undefined}
+                preload="intent"
+              >
                 {secondary.label}
               </Link>
             </Button>

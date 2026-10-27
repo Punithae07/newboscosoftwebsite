@@ -34,7 +34,7 @@ export const Route = createFileRoute("/products/")({
         content:
           "Discover business software solutions from Bosco Soft Technologies for schools, hospitals, colleges, finance, churches, accounting, and audits.",
       },
-      { property: "og:title", content: "AI-Enabled SaaS Platforms — Boscosoft" },
+      { property: "og:title", content: "AI-Enabled SaaS Platforms | Boscosoft" },
       {
         property: "og:description",
         content: "Domain-specific platforms for enterprises and institutions.",

@@ -41,8 +41,8 @@ const interests = [
 
 const timelines = [
   "Immediate (< 1 month)",
-  "1–3 months",
-  "3–6 months",
+  "1-3 months",
+  "3-6 months",
   "Exploring options",
 ];
 
@@ -278,7 +278,7 @@ export function ContactConsultationForm({ sourcePage }: { sourcePage: string }) 
           <textarea
             id="contact-message"
             name="message"
-            placeholder="Tell us what you need to build, improve, or connect—including current systems, technical requirements, or business goals."
+            placeholder="Tell us what you need to build, improve, or connect, including current systems, technical requirements, or business goals."
             value={values.message}
             onChange={(event) => updateValue("message", event.target.value)}
             required

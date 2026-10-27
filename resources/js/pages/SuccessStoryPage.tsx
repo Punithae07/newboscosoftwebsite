@@ -323,6 +323,7 @@ function getCategoryCtaContent(category?: string) {
       description: "Deploy intelligent workflows, unified data pipelines & enterprise automation.",
       buttonText: "Book Demo",
       buttonLink: "/contact-us",
+      buttonHash: "contact-form",
       tags: ["Intelligence", "Automation", "Innovation", "Analytics", "Optimization"],
       features: ["Technical POC", "24/7 Support", "Zero Obligation", "Enterprise SLA"],
     };
@@ -336,6 +337,7 @@ function getCategoryCtaContent(category?: string) {
       description: "Automate Billing, EMR, Pharmacy & Patient Management.",
       buttonText: "Book Demo",
       buttonLink: "/contact-us",
+      buttonHash: "contact-form",
       tags: ["Healthcare", "Diagnostics", "Pharmacy", "Patientcare", "Efficiency"],
       features: ["Fixed Price", "24/7 Support", "Zero Obligation", "Fast Setup"],
     };
@@ -349,6 +351,7 @@ function getCategoryCtaContent(category?: string) {
       description: "Streamline university admissions, accreditation tracking & multi-campus workflows.",
       buttonText: "Book Demo",
       buttonLink: "/contact-us",
+      buttonHash: "contact-form",
       tags: ["Academics", "Admissions", "Examinations", "Automation", "Excellence"],
       features: ["Live Demo", "24/7 Support", "Zero Obligation", "Fast Setup"],
     };
@@ -362,6 +365,7 @@ function getCategoryCtaContent(category?: string) {
       description: "Consolidate campus records, admissions, fee management & academic workflows.",
       buttonText: "Book Demo",
       buttonLink: "/contact-us",
+      buttonHash: "contact-form",
       tags: ["Learning", "Admissions", "Attendance", "Academics", "Engagement"],
       features: ["Live Demo", "24/7 Support", "Zero Obligation", "Fast Setup"],
     };
@@ -375,6 +379,7 @@ function getCategoryCtaContent(category?: string) {
       description: "Accelerate loan disbursements, automate recovery tracking & branch audits.",
       buttonText: "Book Demo",
       buttonLink: "/contact-us",
+      buttonHash: "contact-form",
       tags: ["Lending", "Repayments", "Collections", "Analytics", "Inclusion"],
       features: ["Live Demo", "24/7 Support", "Zero Obligation", "Fast Setup"],
     };
@@ -388,6 +393,7 @@ function getCategoryCtaContent(category?: string) {
       description: "Connect branch accounts, automate reporting & achieve audit-ready compliance.",
       buttonText: "Book Demo",
       buttonLink: "/contact-us",
+      buttonHash: "contact-form",
       tags: ["Accounting", "Compliance", "Payroll", "Budgeting", "Transparency"],
       features: ["Live Demo", "24/7 Support", "Zero Obligation", "Fast Setup"],
     };
@@ -401,6 +407,7 @@ function getCategoryCtaContent(category?: string) {
       description: "Automate audit reporting, compliance workflows & enterprise cycle time reduction.",
       buttonText: "Book Demo",
       buttonLink: "/contact-us",
+      buttonHash: "contact-form",
       tags: ["Auditing", "Compliance", "Risk", "Reporting", "Quality"],
       features: ["Live Demo", "24/7 Support", "Zero Obligation", "Fast Setup"],
     };
@@ -413,6 +420,7 @@ function getCategoryCtaContent(category?: string) {
     description: "Automate workflows, unify systems & achieve measurable outcomes with our custom solutions.",
     buttonText: "Book Demo",
     buttonLink: "/contact-us",
+    buttonHash: "contact-form",
     tags: ["Innovation", "Cloud", "Architecture", "Transformation", "Scalability"],
     features: ["Tailored Demo", "24/7 Support", "Zero Obligation", "Fast Delivery"],
   };
@@ -444,7 +452,7 @@ function SuccessStoryCtaCard({ story }: { story: SuccessStory }) {
           {cta.prefix}{" "}
           <span className="block text-[#38ef7d] drop-shadow-sm">{cta.highlight}</span>
         </h3>
-        <p className="mt-2.5 text-[14px] leading-relaxed text-blue-100/90 font-normal">
+        <p className="mt-3 text-[16px] leading-relaxed text-blue-100/95 font-normal">
           {cta.description}
         </p>
       </div>
@@ -456,7 +464,7 @@ function SuccessStoryCtaCard({ story }: { story: SuccessStory }) {
           size="lg"
           className="w-full rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 font-bold text-[15px] shadow-lg shadow-cyan-500/30 hover:from-cyan-300 hover:to-blue-400 hover:text-black transition-all duration-200"
         >
-          <Link to={cta.buttonLink}>
+          <Link to={cta.buttonLink} hash={cta.buttonHash}>
             {cta.buttonText}
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
@@ -482,10 +490,10 @@ function SuccessStoryCtaCard({ story }: { story: SuccessStory }) {
       </div>
 
       {/* Feature Bullets (Sample Image 2) */}
-      <div className="relative mt-3.5 grid grid-cols-2 gap-2 text-[11px] font-medium text-blue-100/80">
+      <div className="relative mt-4 grid grid-cols-2 gap-x-3 gap-y-2.5 text-[13.5px] font-medium text-blue-100">
         {cta.features.map((feature) => (
-          <div key={feature} className="flex items-center gap-1.5">
-            <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 shrink-0" />
+          <div key={feature} className="flex items-center gap-2">
+            <span className="h-2 w-2 rounded-full bg-cyan-400 shrink-0" />
             <span className="truncate">{feature}</span>
           </div>
         ))}

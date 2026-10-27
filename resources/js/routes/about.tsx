@@ -149,7 +149,7 @@ function AboutPage() {
         bg="surface"
         eyebrow="Journey"
         title="From an idea on the hills to technology for a connected world"
-        subtitle="In 1998, BICS InfoTech took shape at Don Bosco Centre, Yelagiri Hills, to make professional technology training accessible to rural and disadvantaged youth. Learning grew into practical software and service delivery through BOSCO-ITS. Bosco Soft Technologies Pvt. Ltd. was established in February 2011 to grow commercial technology services and career opportunities. Today, the same belief—talent deserves opportunity—continues alongside an expanded engineering and software platform business."
+        subtitle="In 1998, BICS InfoTech took shape at Don Bosco Centre, Yelagiri Hills, to make professional technology training accessible to rural and disadvantaged youth. Learning grew into practical software and service delivery through BOSCO-ITS. Bosco Soft Technologies Pvt. Ltd. was established in February 2011 to grow commercial technology services and career opportunities. Today, the same belief that talent deserves opportunity continues alongside an expanded engineering and software platform business."
       >
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {[

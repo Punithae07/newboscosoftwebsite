@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Curved path for Ayushman Bharat Digital Mission -->
+    <path id="curvePath" d="M 85 235 A 165 165 0 1 1 415 235" fill="none" />
+    <filter id="badgeShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Clean background circle -->
+  <circle cx="250" cy="250" r="248" fill="#ffffff" />
+
+  <!-- Outer concentric blue rings -->
+  <circle cx="250" cy="235" r="190" fill="none" stroke="#223983" stroke-width="7" />
+  <circle cx="250" cy="235" r="178" fill="none" stroke="#223983" stroke-width="2.5" />
+
+  <!-- Arced text: Ayushman Bharat Digital Mission -->
+  <text font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="31.5" font-weight="800" fill="#223983" letter-spacing="1.2">
+    <textPath href="#curvePath" startOffset="50%" text-anchor="middle">
+      Ayushman Bharat Digital Mission
+    </textPath>
+  </text>
+
+  <!-- Inner concentric rings -->
+  <circle cx="250" cy="235" r="135" fill="none" stroke="#223983" stroke-width="4" />
+  <circle cx="250" cy="235" r="126" fill="none" stroke="#223983" stroke-width="2" />
+
+  <!-- Center green checkmark -->
+  <path d="M 198 238 L 235 275 L 305 185" fill="none" stroke="#16a34a" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Ribbon back ends (Green folded accents) -->
+  <polygon points="68,348 105,320 105,360" fill="#16a34a" />
+  <polygon points="432,348 395,320 395,360" fill="#16a34a" />
+
+  <!-- Ribbon notched tails (Navy blue) -->
+  <polygon points="40,325 105,325 105,375 40,375 62,350" fill="#223983" />
+  <polygon points="460,325 395,325 395,375 460,375 438,350" fill="#223983" />
+
+  <!-- Central Ribbon Banner -->
+  <rect x="85" y="325" width="330" height="52" fill="#223983" rx="2" />
+  <!-- Inner White Border in Ribbon -->
+  <rect x="91" y="330" width="318" height="42" fill="none" stroke="#ffffff" stroke-width="2.2" />
+
+  <!-- Company Name inside Ribbon -->
+  <text x="250" y="358" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.3">
+    Bosco Soft Technologies Pvt. Ltd
+  </text>
+
+  <!-- Bottom subtitle: Integrated: M1, M2, M3 -->
+  <text x="250" y="415" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="28" font-weight="700" fill="#223983" text-anchor="middle" letter-spacing="0.5">
+    Integrated: M1, M2, M3
+  </text>
+</svg>

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { useRouterState } from "@tanstack/react-router";
 import {
@@ -79,15 +80,29 @@ const consultationSignals = [
 
 export function ContactPage() {
   const pathname = useRouterState({ select: (state) => state.location.pathname });
+  const hash = useRouterState({ select: (state) => state.location.hash });
   const mapEmbedUrl =
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104792.83434429424!2d78.5268132125547!3d12.556713640930164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bac5479d7985c59%3A0x87189b52ee2bb632!2sBosco%20Soft%20Technologies%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1781515587038!5m2!1sen!2sin";
 
   const scrollToForm = () => {
     const el = document.getElementById("contact-form");
     if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
+
+  useEffect(() => {
+    const shouldScroll =
+      hash === "contact-form" ||
+      (typeof window !== "undefined" && window.location.hash === "#contact-form");
+
+    if (shouldScroll) {
+      const timer = setTimeout(() => {
+        scrollToForm();
+      }, 150);
+      return () => clearTimeout(timer);
+    }
+  }, [hash, pathname]);
 
   return (
     <>
@@ -211,7 +226,7 @@ export function ContactPage() {
             </div>
           </aside>
 
-          <div id="contact-form" className="order-1 relative z-10 lg:order-2 lg:col-span-3 animate-slide-left">
+          <div id="contact-form" className="order-1 relative z-10 lg:order-2 lg:col-span-3 animate-slide-left scroll-mt-28">
             <ContactConsultationForm sourcePage={pathname || "/contact-us"} />
           </div>
         </div>

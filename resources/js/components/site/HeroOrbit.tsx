@@ -31,7 +31,7 @@ const pods: Pod[] = [
   { name: "CristO Suite",    subtitle: "NGO & Community",    tag: "Impact",      icon: Users,         angle: 225, hue: "text-teal-300",    glow: "#2dd4bf" },
 ];
 
-// Tilted orbit (ellipse) — radii in %
+// Tilted orbit (ellipse): radii in %
 const ORBIT_RX = 40;
 const ORBIT_RY = 28;
 const ORBIT_TILT = -10; // deg

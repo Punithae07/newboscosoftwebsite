@@ -16,6 +16,7 @@ import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { FeatureCarousel } from "@/components/site/FeatureCarousel";
 import { ClientLogosScroll } from "@/components/site/ClientLogosScroll";
 import { SuccessStoriesStacked } from "@/components/site/SuccessStoriesStacked";
+import { MedSysBABDMSection } from "@/components/site/MedSysBABDMSection";
 import { products as productsData, type ProductSlug } from "@/lib/site-data";
 import {
   Accordion,
@@ -148,7 +149,7 @@ export function ProductPage({ product }: { product: Product }) {
                   size="lg"
                   className="bg-white text-primary shadow-glow hover:bg-white/90"
                 >
-                  <Link to="/contact-us" preload="intent">
+                  <Link to="/contact-us" hash="contact-form" preload="intent">
                     {product.heroCtas?.primary?.label || "Request a Demo"} <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
@@ -231,6 +232,8 @@ export function ProductPage({ product }: { product: Product }) {
           </div>
         </div>
       </Section>
+
+      {product.slug === "medsysb" ? <MedSysBABDMSection /> : null}
 
       <Section
         bg="surface"
@@ -328,7 +331,7 @@ export function ProductPage({ product }: { product: Product }) {
           </p>
           <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
             <Button asChild className="bg-gradient-cta text-primary-foreground shadow-md hover:opacity-95">
-              <Link to="/contact-us" preload="intent">
+              <Link to="/contact-us" hash="contact-form" preload="intent">
                 {product.caseStudiesCta || "Request a Demo"} <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>

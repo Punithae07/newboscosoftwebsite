@@ -35,7 +35,7 @@ export const Route = createFileRoute("/industries/")({
         content:
           "Boscosoft serves education, healthcare, finance, microfinance, NGOs, enterprises, audit & compliance, and faith-based organizations.",
       },
-      { property: "og:title", content: "Industries — Boscosoft" },
+      { property: "og:title", content: "Industries | Boscosoft" },
       {
         property: "og:description",
         content: "Industry-specific digital transformation solutions.",

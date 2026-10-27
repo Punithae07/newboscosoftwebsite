@@ -155,7 +155,7 @@ export function HomePage({
           />
           <div className="max-w-6xl animate-slide-right lg:max-w-[67rem]">
             <div className="mb-5 inline-flex flex-wrap items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 backdrop-blur-md">
-              <span className="text-sm font-medium tracking-wide text-white/92">Enterprise Software Engineering</span>
+              <span className="text-sm font-medium tracking-wide text-white/92">Enterprise Engineering</span>
               <span aria-hidden="true" className="text-sm text-white/55">|</span>
               <span className="text-sm font-medium tracking-wide text-white/92">Applied AI</span>
               <span aria-hidden="true" className="text-sm text-white/55">|</span>

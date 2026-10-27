@@ -10,7 +10,7 @@ export const Route = createFileRoute("/resources/product-guides")({
     meta: [
       { title: "Product Guides | Bosco Soft Technologies" },
       { name: "description", content: "Detailed product guides for each Boscosoft platform." },
-      { property: "og:title", content: "Product Guides — Boscosoft" },
+      { property: "og:title", content: "Product Guides | Boscosoft" },
     ],
     links: [{ rel: "canonical", href: "/resources/product-guides" }],
   }),

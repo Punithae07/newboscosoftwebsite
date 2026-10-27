@@ -12,7 +12,7 @@ export type BlogArticle = {
 export const blogArticles: BlogArticle[] = [
   {
     slug: "acme-erp-automation-reporting",
-    title: "Acme.erp — Build stronger financial oversight across complex organizations",
+    title: "Acme.erp: Build stronger financial oversight across complex organizations",
     description:
       "See how coordinated fund accounting, budgets, assets, and reporting can improve finance operations.",
     category: "Acme.erp",
@@ -33,7 +33,7 @@ Acme ERP not only handles day-to-day tasks but also enhances decision-making wit
   },
   {
     slug: "acme-erp-multi-branch-accounting",
-    title: "Acme.erp — One financial view across multiple branches",
+    title: "Acme.erp: One financial view across multiple branches",
     description:
       "Explore branch consolidation, permissions, and clearer reporting for distributed institutions.",
     category: "Acme.erp",
@@ -54,7 +54,7 @@ Acme ERP's robust design enables CFOs, finance teams, and compliance officers to
   },
   {
     slug: "higrade-higher-education-management",
-    title: "HiGrade — A connected campus is more than a student database",
+    title: "HiGrade: A connected campus is more than a student database",
     description:
       "Understand how student services, academics, administration, and reporting fit together.",
     category: "HiGrade",
@@ -103,7 +103,7 @@ Visit [www.higrade.live](https://higrade.live/) or contact us at +91 96268 00800
   },
   {
     slug: "higrade-institutional-efficiency",
-    title: "HiGrade — Make institutional data more useful",
+    title: "HiGrade: Make institutional data more useful",
     description:
       "Discover how coordinated workflows support decisions, academic reporting, and accountability.",
     category: "HiGrade",
@@ -142,7 +142,7 @@ Discover how HiGrade ERP can transform your operations by visiting [www.higrade.
   },
   {
     slug: "parokia-transforming-church-management",
-    title: "Parokia — Give parish administration a reliable digital foundation",
+    title: "Parokia: Give parish administration a reliable digital foundation",
     description:
       "Explore organized parish records, certificates, communication, and member care.",
     category: "Parokia",
@@ -204,7 +204,7 @@ The Church Management System (CMS) is purpose-built for churches seeking to bett
   },
   {
     slug: "parokia-digital-future-church-management",
-    title: "Parokia — What modern church technology should make easier",
+    title: "Parokia: What modern church technology should make easier",
     description:
       "Consider data continuity, user access, community communication, and governance.",
     category: "Parokia",
@@ -276,7 +276,7 @@ With the Church Management System (CMS), churches can strengthen their ministrie
   },
   {
     slug: "parokia-right-fit-for-church-community",
-    title: "Parokia — When a connected parish management system makes sense",
+    title: "Parokia: When a connected parish management system makes sense",
     description:
       "Assess the signals that scattered records and manual updates are limiting effectiveness.",
     category: "Parokia",
@@ -348,7 +348,7 @@ The Church Management System (CMS) empowers churches to lead with clarity, commu
   },
   {
     slug: "ai-tracking-academic-progress-intelligently",
-    title: "SmartSchoolNxt — Use school data to support timely decisions",
+    title: "SmartSchoolNxt: Use school data to support timely decisions",
     description:
       "Explore dashboards, student progress insights, and the careful application of AI to school operations.",
     category: "SmartSchoolNxt",

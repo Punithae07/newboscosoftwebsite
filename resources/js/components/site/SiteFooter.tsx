@@ -1,10 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Globe, Mail, Phone, MapPin } from "lucide-react";
+import { Globe, Mail, Phone, MapPin, ExternalLink, Award } from "lucide-react";
 import { submitNewsletterSubscription } from "@/lib/contacts";
 import { warmSecureFormChallenge } from "@/lib/public-form-security";
 import { navProducts, navServices } from "@/lib/site-data";
- 
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+
 const officeLocations = [
   {
     title: "Registered Office",
@@ -36,7 +42,7 @@ const officeLocations = [
       "Guzou Nagar, Don Bosco Centre,",
       "Yelagiri Hills,",
       "Tirupattur District,",
-      "Tamil Nadu, India - 635853" ,
+      "Tamil Nadu, India - 635853",
     ],
     phone: "+91 9626 800 800",
     email: "binfo@boscosofttech.com",
@@ -54,9 +60,9 @@ const officeLocations = [
     website: "www.boscosoft.ae",
   },
 ] as const;
- 
+
 const branchLocations = ["Mumbai", "Hyderabad", "Bengaluru", "Guwahati", "Kochi", "Salem"] as const;
- 
+
 const socialLinks = [
   {
     label: "Facebook",
@@ -89,12 +95,12 @@ const socialLinks = [
     key: "whatsapp",
   },
 ] as const;
- 
+
 type FooterNotice = {
   type: "success" | "error";
   message: string;
 };
- 
+
 export function SiteFooter() {
   const pathname = useRouterState({ select: (state) => state.location.pathname });
   const isHomePage = pathname === "/";
@@ -102,21 +108,26 @@ export function SiteFooter() {
   const [botcheck, setBotcheck] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [notice, setNotice] = useState<FooterNotice | null>(null);
- 
+  const [activeCert, setActiveCert] = useState<{
+    title: string;
+    subtitle: string;
+    image: string;
+  } | null>(null);
+
   useEffect(() => {
     void warmSecureFormChallenge("newsletter").catch(() => {
       // Silence preload errors and let submit handle any real failure state.
     });
   }, []);
- 
+
   async function handleNewsletterSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setNotice(null);
- 
+
     try {
       setIsSubmitting(true);
       const response = await submitNewsletterSubscription({ email, botcheck });
- 
+
       setNotice({
         type: "success",
         message: response.message,
@@ -129,7 +140,7 @@ export function SiteFooter() {
       setIsSubmitting(false);
     }
   }
- 
+
   return (
     <footer className="bg-primary text-primary-foreground">
       {isHomePage ? (
@@ -148,7 +159,7 @@ export function SiteFooter() {
                     For receiving our news and updates in your inbox directly.
                   </p>
                 </div>
- 
+
                 <div>
                   {notice?.type === "success" ? (
                     <div
@@ -158,7 +169,7 @@ export function SiteFooter() {
                       {notice.message}
                     </div>
                   ) : null}
- 
+
                   <form
                     className="rounded-[1.5rem] border border-white/10 bg-white/8 p-3 backdrop-blur-sm"
                     onSubmit={handleNewsletterSubmit}
@@ -203,7 +214,7 @@ export function SiteFooter() {
           </div>
         </div>
       ) : null}
- 
+
       <div className="mx-auto grid max-w-7xl grid-cols-2 gap-x-8 gap-y-10 px-5 py-14 md:grid-cols-3 lg:grid-cols-[1.3fr_0.95fr_1.15fr_0.95fr] lg:px-8">
         <div className="col-span-2 md:col-span-3 lg:col-span-1">
           <Link
@@ -222,7 +233,7 @@ export function SiteFooter() {
             Boscosoft is an enterprise engineering and SaaS solutions company combining software delivery, domain experience, and a distinctive talent development mission.
           </p>
         </div>
- 
+
         <FooterCol title="Products">
           {navProducts.map((p) => (
             <FooterLink key={p.slug} to={`/products/${p.slug}`}>
@@ -230,7 +241,7 @@ export function SiteFooter() {
             </FooterLink>
           ))}
         </FooterCol>
- 
+
         <FooterCol title="Services">
           {navServices.map((s) => (
             <FooterLink key={s.slug} to={`/services/${s.slug}`}>
@@ -238,7 +249,7 @@ export function SiteFooter() {
             </FooterLink>
           ))}
         </FooterCol>
- 
+
         <FooterCol title="Company">
           <FooterLink to="/about">About Us</FooterLink>
           <FooterLink to="/social-impact">Social Impact</FooterLink>
@@ -247,7 +258,7 @@ export function SiteFooter() {
           <FooterLink to="/contact-us">Contact Us</FooterLink>
         </FooterCol>
       </div>
- 
+
       <div className="border-t border-white/5">
         <div className="mx-auto max-w-7xl px-5 py-12 lg:px-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4">
@@ -263,13 +274,15 @@ export function SiteFooter() {
               />
             ))}
           </div>
- 
+
           <div className="mt-10 border-t border-white/10 pt-8">
             <div className="grid gap-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(280px,420px)] lg:items-start">
-              <div className="flex items-start gap-3">
-                <MapPin className="mt-1 h-5 w-5 shrink-0 text-white/80" />
-                <div className="w-full">
-                  <h3 className="text-[1.2rem] font-semibold tracking-tight text-white">Branches</h3>
+              <div className="space-y-8">
+                <div>
+                  <div className="flex items-center gap-2.5">
+                    <MapPin className="h-5 w-5 shrink-0 text-white/80" />
+                    <h3 className="text-[1.2rem] font-semibold tracking-tight text-white">Branches</h3>
+                  </div>
                   <div className="mt-3 flex flex-wrap items-center gap-1.5 text-[1.0625rem] leading-7 text-primary-foreground/86 md:justify-start">
                     {branchLocations.map((branch) => (
                       <div
@@ -279,6 +292,63 @@ export function SiteFooter() {
                         {branch}
                       </div>
                     ))}
+                  </div>
+                </div>
+
+                {/* Certification Badges Bar */}
+                <div>
+                  <div className="flex items-center gap-2.5">
+                    <Award className="h-5 w-5 shrink-0 text-white/80" />
+                    <h3 className="text-[1.2rem] font-semibold tracking-tight text-white">
+                      Certifications
+                    </h3>
+                  </div>
+                  <div className="mt-3 inline-flex items-center gap-4 rounded-full border border-white/15 bg-white/8 px-5 py-2.5 shadow-[0_12px_30px_-6px_rgba(0,0,0,0.35)] backdrop-blur-md sm:gap-5 sm:px-6 sm:py-3.5">
+                    {/* ISO 9001 Badge */}
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setActiveCert({
+                          title: "ISO 9001 Certified",
+                          subtitle: "Quality Management System Certification",
+                          image: "/images/product/ISO-certificate.jpg",
+                        })
+                      }
+                      title="ISO 9001:2015 Certified - Quality Management System (Click to view certificate)"
+                      className="group relative flex h-16 w-16 sm:h-20 sm:w-20 shrink-0 items-center justify-center rounded-full border-2 border-white/30 bg-white p-0.5 shadow-md transition-all duration-300 hover:scale-108 hover:border-white hover:shadow-[0_0_20px_rgba(255,255,255,0.45)] cursor-pointer overflow-hidden focus:outline-none focus:ring-2 focus:ring-white/40"
+                    >
+                      <img
+                        src="/images/product/ISO-certificate.jpg"
+                        alt="ISO 9001 Certified"
+                        width={160}
+                        height={160}
+                        className="h-full w-full object-contain rounded-full transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </button>
+
+                    {/* ABDM Badge */}
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setActiveCert({
+                          title: "ABDM Certificate of Recognition",
+                          subtitle: "National Health Authority & Ayushman Bharat Digital Mission Integration",
+                          image: "/images/product/IBDM-certificate.avif",
+                        })
+                      }
+                      title="ABDM Integrated - Ayushman Bharat Digital Mission, National Health Authority (Click to view certificate)"
+                      className="group relative flex h-16 w-16 sm:h-20 sm:w-20 shrink-0 items-center justify-center rounded-full border-2 border-white/30 bg-white p-1 shadow-md transition-all duration-300 hover:scale-108 hover:border-white hover:shadow-[0_0_20px_rgba(255,255,255,0.45)] cursor-pointer overflow-hidden focus:outline-none focus:ring-2 focus:ring-white/40"
+                    >
+                      <img
+                        src="/images/product/IBDM-certificate.avif"
+                        alt="ABDM Integration Certified - National Health Authority"
+                        width={160}
+                        height={160}
+                        className="h-full w-full object-contain rounded-full transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </button>
                   </div>
                 </div>
               </div>
@@ -309,7 +379,7 @@ export function SiteFooter() {
           </div>
         </div>
       </div>
- 
+
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 py-6 text-sm text-primary-foreground/76 md:flex-row lg:px-8">
           <div>
@@ -331,10 +401,49 @@ export function SiteFooter() {
           </div>
         </div>
       </div>
+
+      <Dialog open={activeCert !== null} onOpenChange={(open) => !open && setActiveCert(null)}>
+        <DialogContent className="max-w-3xl p-4 sm:p-6 bg-white border border-slate-200/90 shadow-2xl rounded-2xl sm:rounded-3xl">
+          <DialogHeader className="mb-2 text-left">
+            <DialogTitle className="text-xl font-bold text-slate-900">
+              {activeCert?.title}
+            </DialogTitle>
+            <p className="text-xs text-slate-500 sm:text-sm">
+              {activeCert?.subtitle}
+            </p>
+          </DialogHeader>
+
+          <div className="overflow-hidden rounded-xl border border-slate-200/80 bg-slate-50 p-2 sm:p-3 flex items-center justify-center">
+            {activeCert ? (
+              <img
+                src={activeCert.image}
+                alt={activeCert.title}
+                className="max-h-[75vh] w-auto max-w-full rounded-lg object-contain"
+              />
+            ) : null}
+          </div>
+
+          <div className="mt-3 flex items-center justify-between pt-2 border-t border-slate-100">
+            <span className="text-xs text-slate-500">
+              Verified Certification: Bosco Soft Technologies Pvt. Ltd.
+            </span>
+            {activeCert ? (
+              <a
+                href={activeCert.image}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-600 hover:text-blue-800 transition"
+              >
+                Open full image <ExternalLink className="h-3.5 w-3.5" />
+              </a>
+            ) : null}
+          </div>
+        </DialogContent>
+      </Dialog>
     </footer>
   );
 }
- 
+
 function OfficeColumn({
   title,
   company,
@@ -398,10 +507,10 @@ function OfficeColumn({
     </div>
   );
 }
- 
+
 function SocialIcon({ kind }: { kind: (typeof socialLinks)[number]["key"] }) {
   const className = "h-5 w-5";
- 
+
   switch (kind) {
     case "facebook":
       return (
@@ -451,7 +560,7 @@ function FooterCol({ title, children }: { title: string; children: React.ReactNo
     </div>
   );
 }
- 
+
 function FooterLink({
   to,
   children,
@@ -461,7 +570,7 @@ function FooterLink({
 }) {
   const className =
     "text-[1.0625rem] leading-8 text-primary-foreground/86 transition-colors hover:text-white lg:whitespace-nowrap";
- 
+
   return (
     <li>
       <Link to={to} className={className} preload="intent">

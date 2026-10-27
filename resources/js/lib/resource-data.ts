@@ -77,14 +77,14 @@ export const successStories: SuccessStory[] = [
     ],
     content: `## Executive Summary
 
-Leading a group of schools requires more than knowing how each institution operates. It requires dependable information across the group—available when decisions need to be made.
+Leading a group of schools requires more than knowing how each institution operates. It requires dependable information across the group, available when decisions need to be made.
 
 For diocesan and provincial authorities overseeing multiple schools, that information was previously spread across separate institutional records. Bringing it together took time and complicated planning.
 
 SmartSchoolNxt introduced a centralized management framework for participating schools, delivering 100% multi-school data consolidation, a 75% reduction in report-preparation time, and near-zero data discrepancies following centralized validation.
 
 * **Clients:** SDB-INM Province, SDB-INH Province, Hyderabad Archdiocese Educational Society
-* **Industry:** Education — multi-school administration
+* **Industry:** Education, multi-school administration
 * **Size:** 40+ Group of Schools
 * **Core challenge:** Separately maintained school records slowed consolidated reporting and limited leadership’s visibility into fees, student categories, and staffing.
 * **Solution implemented:** A centralized SmartSchoolNxt multi-school ERP framework with consolidated dashboards, school-wise reporting, configurable reports, and role-based access.
@@ -140,7 +140,7 @@ The broader value extended beyond reporting speed. Consolidated information supp
 
 ## Next Steps
 
-### Spend less time compiling reports—and more time acting on them
+### Spend less time compiling reports and more time acting on them
 Bring your school-wise fee reports, student categories, and staffing requirements to a personalized demonstration. Explore how SmartSchoolNxt can connect institutional records with the decisions your leadership team needs to make.
 
 Book a SmartSchoolNxt Multi-School Management Demo with Bosco Soft Technologies Pvt. Ltd.
@@ -252,7 +252,7 @@ Book a personalized Acme.erp demo with Bosco Soft Technologies Pvt. Ltd. to expl
     format: "article",
     category: "Finance",
     location: "Yercaud, Tamil Nadu",
-    organization: "Montfort Brothers of St. Gabriel – Province of Yercaud",
+    organization: "Montfort Brothers of St. Gabriel - Province of Yercaud",
     technologyPartner: "Bosco Soft Technologies Pvt. Ltd.",
     heroImage: "/images/success-story/montfort-brothers.avif",
     relatedImage: "/images/success-story/montfort-brothers.avif",
@@ -283,9 +283,9 @@ Book a personalized Acme.erp demo with Bosco Soft Technologies Pvt. Ltd. to expl
     ],
     content: `## Executive Summary
 
-For the Montfort Brothers of St. Gabriel – Province of Yercaud, financial administration supports a wider purpose: education, vocational training, and service to society. Across a diverse network of communities and institutions, the Province needed consistent financial information without losing the ability to manage accounting locally. Acme.erp helped establish a common financial management framework, giving Provincial administration greater visibility while communities continued handling their daily accounting responsibilities.
+For the Montfort Brothers of St. Gabriel - Province of Yercaud, financial administration supports a wider purpose: education, vocational training, and service to society. Across a diverse network of communities and institutions, the Province needed consistent financial information without losing the ability to manage accounting locally. Acme.erp helped establish a common financial management framework, giving Provincial administration greater visibility while communities continued handling their daily accounting responsibilities.
 
-* **Client:** Montfort Brothers of St. Gabriel – Province of Yercaud
+* **Client:** Montfort Brothers of St. Gabriel - Province of Yercaud
 * **Industry:** Religious congregation, education, and social service
 * **Location:** Yercaud, Tamil Nadu
 * **Size:** Multiple communities and institutions
@@ -355,7 +355,7 @@ Book a personalized Acme.erp demo with Bosco Soft Technologies Pvt. Ltd. to expl
     format: "article",
     category: "Finance",
     location: "Bengaluru, Karnataka",
-    organization: "Society of Sisters of St. Anne – Bangalore Province",
+    organization: "Society of Sisters of St. Anne - Bangalore Province",
     technologyPartner: "Bosco Soft Technologies Pvt. Ltd.",
     heroImage: "/images/product/acme-erp-finance-hd.avif",
     relatedImage: "/images/blog/acme-finance-detail.avif",
@@ -386,9 +386,9 @@ Book a personalized Acme.erp demo with Bosco Soft Technologies Pvt. Ltd. to expl
     ],
     content: `## Executive Summary
 
-Serving through education and social ministries requires responsible financial administration at every level. For the Society of Sisters of St. Anne – Bangalore Province, that meant supporting daily accounting within communities while giving Provincial administration the information needed to oversee the whole. Acme.erp helped connect these responsibilities within a common accounting and reporting framework, supporting more structured and transparent financial management.
+Serving through education and social ministries requires responsible financial administration at every level. For the Society of Sisters of St. Anne - Bangalore Province, that meant supporting daily accounting within communities while giving Provincial administration the information needed to oversee the whole. Acme.erp helped connect these responsibilities within a common accounting and reporting framework, supporting more structured and transparent financial management.
 
-* **Client:** Society of Sisters of St. Anne – Bangalore Province
+* **Client:** Society of Sisters of St. Anne - Bangalore Province
 * **Industry:** Religious congregation, education, and social service
 * **Location:** Bengaluru, Karnataka
 * **Size:** Multiple communities and institutions
@@ -1020,7 +1020,7 @@ Schedule a custom MedSysB enterprise demonstration with Bosco Soft Technologies 
 
 At the beginning of an academic year, schools need their administrative teams focused on welcoming students and supporting staff. Yet producing ID cards had become a prolonged cycle of manual preparation, checking, and corrections.
 
-For the partner schools described in this case, the process could take more than four months. SmartSchoolNxt brought centralized records, reusable templates, and bulk generation into the workflow—reducing the reported ID card generation timeline to one week.
+For the partner schools described in this case, the process could take more than four months. SmartSchoolNxt brought centralized records, reusable templates, and bulk generation into the workflow, reducing the reported ID card generation timeline to one week.
 
 * **Schools:** LFC School, Shantinikethan School, Sigaram School, Holy Angels School, and multiple Don Bosco Schools.
 * **Industry:** Education
@@ -1065,7 +1065,7 @@ The automated workflow connected ID card preparation to centralized student and 
 ## Measurable Business Impact
 
 ### From More Than Four Months to One Week
-The reported generation timeline fell from over four months to one week—a reduction of more than 90%.
+The reported generation timeline fell from over four months to one week, a reduction of more than 90%.
 
 For school administrators, the practical value was a much shorter preparation cycle. Cards could be made ready sooner, supporting earlier issuance and more efficient onboarding of new students and staff.
 
@@ -1081,7 +1081,7 @@ Reusable templates provided a consistent institutional format, while bulk genera
 
 ## Next Steps
 
-### Make ID cards an early-year essential—not a months-long task
+### Make ID cards an early-year essential, not a months-long task
 Bring your current card design, student and staff record format, and expected card volume to a personalized demonstration.
 
 Book a SmartSchoolNxt ID Card Automation Demo with Bosco Soft Technologies Pvt. Ltd. and explore a simpler workflow for your school.
@@ -1131,7 +1131,7 @@ MarineIQ Solutions reduces repetitive specialist queries by 60% with SeaK. A Wha
 * **Client:** MarineIQ Solutions
 * **Industry:** Maritime technology and intelligent automation
 * **Core challenge:** Slow, fragmented communication made safety, compliance, and operational queries difficult to resolve consistently and trace.
-* **Solution implemented:** SeaK Maritime AI Assistant—a WhatsApp-native solution combining source-backed answers, confidence assessment, specialist escalation, and centralized oversight.
+* **Solution implemented:** SeaK Maritime AI Assistant, a WhatsApp-native solution combining source-backed answers, confidence assessment, specialist escalation, and centralized oversight.
 
 ## Key Results
 
@@ -1226,7 +1226,7 @@ How a hospital piloted an AI Conversational Patient Desk to handle routine reque
 * **Core challenge:** Repetitive calls and messages consumed front-desk capacity, while language barriers and disconnected records complicated patient access and staff coordination.
 * **Solution implemented:** An AI Conversational Patient Desk on WhatsApp, supporting text and voice interactions, specialized agents, and centralized staff oversight.
 
-## Key Results — Pilot Capabilities
+## Key Results: Pilot Capabilities
 
 * **24/7 patient access** through WhatsApp.
 * **7 languages supported** for multilingual patient communication (Tamil, Hindi, Telugu, Malayalam, Kannada, Urdu, and English).
@@ -1253,7 +1253,7 @@ The Patient Desk addressed these requirements through specialized agents, backen
 The working pilot connected WhatsApp to an AI intent router that interpreted patient requests and directed them to the appropriate specialist workflow.
 
 * **Six Specialized Workflows:** Specialized agents and workflows covered appointments, patient profiles, doctor availability, hospital information, pre-admission coordination, and human escalation.
-* **Conversational Booking & Validation:** Patients could book, cancel, or reschedule appointments through conversation. Before a booking was completed, the system checked availability, prevented double-booking, and requested confirmation. For family requests, it validated patient–dependent relationships before showing information.
+* **Conversational Booking & Validation:** Patients could book, cancel, or reschedule appointments through conversation. Before a booking was completed, the system checked availability, prevented double-booking, and requested confirmation. For family requests, it validated patient-dependent relationships before showing information.
 * **Approved Knowledge Retrieval:** Hospital questions were answered using approved content retrieved from a knowledge base. Pre-admission workflows handled confirmations, instructions, document requests, and reminders.
 * **Human Escalation:** When a request was unsupported, uncertain, or required personal assistance, the conversation smoothly moved to hospital staff.
 * **Enterprise Security & Validation:** Backend services validated every action before execution; the AI did not write directly to the database. Audit and agent-action logs recorded activity for review.
@@ -1278,7 +1278,7 @@ The pilot provides a foundation for broader deployment. Deeper hospital-system i
 ## Next Steps
 
 ### Give patients a simpler way to reach your hospital
-Explore how multilingual WhatsApp conversations can support appointments, hospital inquiries, and pre-admission coordination—with staff oversight built into the workflow.
+Explore how multilingual WhatsApp conversations can support appointments, hospital inquiries, and pre-admission coordination, with staff oversight built into the workflow.
 
 Schedule a custom demo with Bosco Soft Technologies Pvt. Ltd. to explore an AI Conversational Patient Desk for your hospital.
 `,
@@ -1287,7 +1287,7 @@ Schedule a custom demo with Bosco Soft Technologies Pvt. Ltd. to explore an AI C
     slug: "automated-clinical-discharge-summary-ai",
     title: "From 45 minutes to under 2 minutes: Streamlining hospital discharge with physician-led AI",
     description:
-      "Automated Clinical Discharge Summary reduced paperwork time by more than 90% and helped save 2–3 hours per patient during discharge, while keeping physicians responsible for final approval.",
+      "Automated Clinical Discharge Summary reduced paperwork time by more than 90% and helped save 2-3 hours per patient during discharge, while keeping physicians responsible for final approval.",
     format: "article",
     category: "Ai & Data",
     location: "Hospital Operations",
@@ -1298,7 +1298,7 @@ Schedule a custom demo with Bosco Soft Technologies Pvt. Ltd. to explore an AI C
     highlights: [
       "45 minutes to under 2 minutes for discharge paperwork",
       "90%+ reduction in paperwork time",
-      "2–3 hours saved per patient during discharge",
+      "2-3 hours saved per patient during discharge",
     ],
     metrics: [
       {
@@ -1310,7 +1310,7 @@ Schedule a custom demo with Bosco Soft Technologies Pvt. Ltd. to explore an AI C
       {
         label: "Discharge Process Time",
         before: "Extended hospital delay",
-        after: "2–3 hours saved",
+        after: "2-3 hours saved",
         impact: "Accelerated bed turnaround",
       },
       {
@@ -1322,7 +1322,7 @@ Schedule a custom demo with Bosco Soft Technologies Pvt. Ltd. to explore an AI C
     ],
     content: `## Executive Summary
 
-Automated Clinical Discharge Summary reduced paperwork time by more than 90% and helped save 2–3 hours per patient during discharge, while keeping physicians responsible for final approval.
+Automated Clinical Discharge Summary reduced paperwork time by more than 90% and helped save 2-3 hours per patient during discharge, while keeping physicians responsible for final approval.
 
 * **Core challenge:** Manual discharge documentation delayed patient departures and bed availability, added to physicians’ administrative workload, and created inconsistencies across clinical, billing, and insurance records.
 * **Solution implemented:** An Automated Clinical Discharge Summary Generator that prepares structured summaries using an AI Clinical Agent, with mandatory physician review, editing, and digital sign-off.
@@ -1331,7 +1331,7 @@ Automated Clinical Discharge Summary reduced paperwork time by more than 90% and
 
 * **45 minutes to under 2 minutes** for discharge paperwork.
 * **90%+ reduction** in paperwork time.
-* **2–3 hours saved** per patient during discharge.
+* **2-3 hours saved** per patient during discharge.
 
 ## The Challenge
 
@@ -1366,7 +1366,7 @@ The Automated Clinical Discharge Summary Generator connected data ingestion, cle
 The reported time required for discharge paperwork fell from 45 minutes to under 2 minutes, a 90%+ reduction. This addressed a recurring administrative burden and created more room for physicians to focus on patient care.
 
 ### Earlier Discharge and Faster Bed Availability
-The wider discharge process saved 2–3 hours per patient, helping accelerate bed turnover. For hospitals managing waiting admissions, this improvement supported a more responsive patient flow.
+The wider discharge process saved 2-3 hours per patient, helping accelerate bed turnover. For hospitals managing waiting admissions, this improvement supported a more responsive patient flow.
 
 ### A More Consistent and Accountable Process
 Beyond speed, the source reports fewer billing disputes and reduced 30-day readmissions, although it does not quantify either outcome. Structured prescriptions, prerequisite checks, aligned records, and physician approval supported a more controlled discharge process.

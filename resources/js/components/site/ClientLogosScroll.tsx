@@ -7,33 +7,40 @@ interface ClientLogosScrollProps {
 }
 
 function LogoCard({ client }: { client: ClientLogosScrollProps["clients"][number] }) {
+  const clientLabel = client.location ? `${client.name}, ${client.location}` : client.name;
+
   return (
-    <div className="flex min-h-24 w-[6.5rem] shrink-0 flex-col items-center justify-center rounded-xl border border-border bg-background p-3 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-elegant sm:w-[7.5rem]">
+    <div
+      title={clientLabel}
+      className="group flex h-28 w-36 shrink-0 items-center justify-center rounded-2xl border border-border/80 bg-background p-3.5 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-elegant sm:h-32 sm:w-44 sm:p-5"
+    >
       <img
         src={client.logo}
         alt={client.name}
         width={240}
         height={120}
-        className="max-h-12 max-w-full object-contain sm:max-h-14"
+        className="max-h-20 w-auto max-w-[85%] object-contain transition-transform duration-300 group-hover:scale-105 sm:max-h-24 sm:max-w-[88%]"
         loading="lazy"
       />
-      <div className="mt-2 w-full px-1 text-center text-[0.75rem] leading-5 text-muted-foreground line-clamp-2">
-        {client.name}
-        {client.location ? `, ${client.location}` : ""}
-      </div>
     </div>
   );
 }
 
 export function ClientLogosScroll({ clients }: ClientLogosScrollProps) {
+  // Ensure enough items so the 50% translation marquee loops seamlessly on large screens
+  const normalizedClients =
+    clients.length > 0 && clients.length < 6
+      ? [...clients, ...clients]
+      : clients;
+
   return (
-    <div className="relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 bg-linear-to-r from-surface to-transparent sm:w-16" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-linear-to-l from-surface to-transparent sm:w-16" />
+    <div className="relative overflow-hidden py-1">
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-linear-to-r from-surface to-transparent sm:w-20" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-linear-to-l from-surface to-transparent sm:w-20" />
 
       <div
         tabIndex={0}
-        className="client-logos-marquee flex w-max py-2"
+        className="client-logos-marquee flex w-max py-3"
         aria-label="Client logos carousel"
         aria-description="Auto-scrolling client logos."
       >
@@ -43,9 +50,9 @@ export function ClientLogosScroll({ clients }: ClientLogosScrollProps) {
             className="flex shrink-0 gap-4 pr-4 sm:gap-6 sm:pr-6"
             aria-hidden={groupIndex === 1}
           >
-            {clients.map((client) => (
+            {normalizedClients.map((client, index) => (
               <LogoCard
-                key={`${groupIndex}-${client.name}-${client.location ?? "na"}`}
+                key={`${groupIndex}-${client.name}-${client.location ?? "na"}-${index}`}
                 client={client}
               />
             ))}
@@ -55,3 +62,4 @@ export function ClientLogosScroll({ clients }: ClientLogosScrollProps) {
     </div>
   );
 }
+

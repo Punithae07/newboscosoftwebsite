@@ -285,7 +285,7 @@
     } /* 18 */
   }
   .t-body-sm {
-    font-size: 0.9375rem; /* 15px — was 14, bumped for readability */
+    font-size: 0.9375rem; /* 15px: was 14, bumped for readability */
     line-height: 1.65;
     color: var(--color-muted-foreground);
   }
@@ -354,7 +354,7 @@
     color: var(--color-foreground);
   }
   .t-stat-label {
-    font-size: 0.8125rem; /* 13px — bumped from 12 */
+    font-size: 0.8125rem; /* 13px: bumped from 12 */
     line-height: 1.4;
     color: var(--color-muted-foreground);
     text-transform: none;
@@ -553,7 +553,7 @@
     display: none;
   }
 
-  /* ─── Success Stories — simple static two-column layout ─────────── */
+  /* ─── Success Stories: simple static two-column layout ─────────── */
   .ss-grid {
     display: grid;
     gap: 1.5rem;

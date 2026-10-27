@@ -56,7 +56,7 @@ export const products: Record<
     seoKeywords:
       "school management ERP, student information system, school administration software, school fee management",
     category: "School ERP",
-    eyebrow: "K–12 School Management",
+    eyebrow: "K-12 School Management",
     tagline: "Bring every part of school operations together.",
     headline: "Bring every part of school operations together",
     subheadline:
@@ -190,7 +190,7 @@ export const products: Record<
     faqs: [
       {
         q: "Who is SmartSchoolNxt for?",
-        a: "Independent schools, school networks, and K–12 administrators seeking a coordinated school operations platform.",
+        a: "Independent schools, school networks, and K-12 administrators seeking a coordinated school operations platform.",
       },
       {
         q: "Can it cover admissions through examinations?",
