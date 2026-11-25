@@ -8,9 +8,7 @@ use Illuminate\Http\Request;
 
 class AdminUserController
 {
-    public function __construct(private readonly AdminUserRepository $adminUsers)
-    {
-    }
+    public function __construct(private readonly AdminUserRepository $adminUsers) {}
 
     public function index(Request $request): JsonResponse
     {

@@ -759,6 +759,7 @@ export const products: Record<
     idealUsers: ["Microfinance institutions", "SHGs", "Cooperatives", "NGOs", "Community finance organizations"],
     heroImage: "/images/product/microfund-lending-platform-hd.avif",
     successStoriesImage: "/images/microfund/microfund012.avif",
+    successStoriesVideo: "https://www.youtube.com/embed/hjlMFKBbo78?si=7gJ3MA3cNaKYgz60",
     ctaBannerImage: "/images/microfund/microfund011.avif",
     clients: [
       { name: "Regional microfinance partner", logo: "/images/microfund/mic-clit1.avif" },
@@ -1297,6 +1298,7 @@ export const products: Record<
     ],
     heroImage: "/images/product/eaudithub-audit-platform-hd.avif",
     successStoriesImage: "/images/eaudithub/eaudithub01.avif",
+    successStoriesVideo: "https://www.youtube.com/embed/19V3OyI9L7k?si=Qk-T83IYkpCJbSna",
     ctaBannerImage: "/images/eaudithub/eaudithub02.avif",
     clients: [],
     testimonials: [

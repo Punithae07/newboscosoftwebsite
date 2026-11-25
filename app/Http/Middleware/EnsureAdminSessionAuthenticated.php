@@ -10,9 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class EnsureAdminSessionAuthenticated
 {
-    public function __construct(private readonly AdminUserRepository $adminUsers)
-    {
-    }
+    public function __construct(private readonly AdminUserRepository $adminUsers) {}
 
     public function handle(Request $request, Closure $next): Response
     {

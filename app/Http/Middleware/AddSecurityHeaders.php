@@ -23,7 +23,7 @@ class AddSecurityHeaders
             "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms https://www.google.com https://www.gstatic.com https://challenges.cloudflare.com; ".
             "style-src 'self' 'unsafe-inline'; font-src 'self' data:; ".
             "connect-src 'self' https://api.web3forms.com https://www.google-analytics.com https://www.clarity.ms https://www.google.com https://www.gstatic.com https://challenges.cloudflare.com; ".
-            "frame-src 'self' https://www.google.com https://challenges.cloudflare.com;"
+            "frame-src 'self' https://www.google.com https://challenges.cloudflare.com https://www.youtube.com https://www.youtube-nocookie.com https://youtube.com;"
         );
 
         if ($request->isSecure()) {

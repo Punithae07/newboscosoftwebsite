@@ -12,6 +12,7 @@ interface Testimonial {
 interface SuccessStoriesStackedProps {
   testimonials: Testimonial[];
   sideImage?: string;
+  sideVideoEmbedUrl?: string;
   imageAlt?: string;
   imageBadgeLabel?: string;
   imageClassName?: string;
@@ -42,8 +43,9 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
 export function SuccessStoriesStacked({
   testimonials,
   sideImage,
+  sideVideoEmbedUrl,
   imageAlt = "Success story",
-  imageBadgeLabel = "Accounting Excellence",
+  imageBadgeLabel,
   imageClassName,
   highlights = [],
   eyebrow,
@@ -69,8 +71,10 @@ export function SuccessStoriesStacked({
           },
         ];
 
+  const hasSideMedia = Boolean(sideVideoEmbedUrl || sideImage);
+
   return (
-    <div className={`ss-grid ${sideImage ? "ss-grid--with-image" : "ss-grid--no-image"}`}>
+    <div className={`ss-grid ${hasSideMedia ? "ss-grid--with-image" : "ss-grid--no-image"}`}>
       <div className="ss-cards-col">
         {(eyebrow || title || subtitle) && (
           <div className="max-w-3xl">
@@ -110,20 +114,58 @@ export function SuccessStoriesStacked({
         </div>
       </div>
 
-      {sideImage && (
-        <div className="ss-image-col">
-          <div className="ss-image-wrap">
-            <img
-              src={sideImage}
-              alt={imageAlt}
-              className={`ss-image ${imageClassName ?? ""}`.trim()}
-              loading="lazy"
-            />
-            <div className="ss-image-badge">
-              <Calculator className="h-4 w-4" strokeWidth={2} />
-              <span>{imageBadgeLabel}</span>
+      {hasSideMedia && (
+        <div
+          className="ss-image-col"
+          style={
+            sideVideoEmbedUrl
+              ? { display: "flex", alignItems: "center", justifyContent: "center" }
+              : undefined
+          }
+        >
+          {sideVideoEmbedUrl ? (
+            <div
+              className="relative overflow-hidden rounded-2xl shadow-xl bg-black"
+              style={{
+                width: "560px",
+                maxWidth: "100%",
+                aspectRatio: "16 / 9",
+                height: "auto",
+                margin: "auto",
+              }}
+            >
+              <iframe
+                width="560"
+                height="315"
+                src={sideVideoEmbedUrl}
+                title={imageAlt || "YouTube video player"}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  border: 0,
+                  display: "block",
+                }}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
             </div>
-          </div>
+          ) : sideImage ? (
+            <div className="ss-image-wrap">
+              <img
+                src={sideImage}
+                alt={imageAlt}
+                className={`ss-image ${imageClassName ?? ""}`.trim()}
+                loading="lazy"
+              />
+              {imageBadgeLabel ? (
+                <div className="ss-image-badge">
+                  <Calculator className="h-4 w-4" strokeWidth={2} />
+                  <span>{imageBadgeLabel}</span>
+                </div>
+              ) : null}
+            </div>
+          ) : null}
         </div>
       )}
     </div>

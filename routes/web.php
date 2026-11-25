@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 

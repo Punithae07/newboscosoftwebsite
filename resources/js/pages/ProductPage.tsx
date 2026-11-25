@@ -47,6 +47,11 @@ const productWebsiteMap: Record<ProductSlug, string> = {
   eaudithub: "https://eaudithub.com/",
 };
 
+const productSuccessStoriesVideoMap: Partial<Record<ProductSlug, string>> = {
+  eaudithub: "https://www.youtube.com/embed/19V3OyI9L7k?si=Qk-T83IYkpCJbSna",
+  microfund: "https://www.youtube.com/embed/hjlMFKBbo78?si=7gJ3MA3cNaKYgz60",
+};
+
 export function ProductPage({ product }: { product: Product }) {
   const Icon = iconMap[product.slug];
   const productWebsite = productWebsiteMap[product.slug];
@@ -280,9 +285,13 @@ export function ProductPage({ product }: { product: Product }) {
             `Discover why organizations choose ${product.name} to modernize operations with structured workflows and better visibility.`
           }
           testimonials={product.testimonials}
-          sideImage={product.successStoriesImage}
+          sideImage={
+            productSuccessStoriesVideoMap[product.slug]
+              ? undefined
+              : product.successStoriesImage
+          }
+          sideVideoEmbedUrl={productSuccessStoriesVideoMap[product.slug]}
           imageAlt={`${product.name} success story`}
-          imageBadgeLabel="Customer Impact"
           imageClassName={
             product.slug === "medsysb" ? "bg-white object-contain object-center p-4" : undefined
           }

@@ -124,9 +124,9 @@ export function WhitePapersListingPage() {
 
       {publishedPapers.length > 0 && (
         <Section
-          eyebrow="Published Downloads"
-          title="Available white papers & publications"
-          subtitle="Click download, fill the popup form, and the PDF will start immediately after submission."
+          eyebrow="KNOWLEDGE HUB"
+          title="Knowledge That Drives Innovation"
+          subtitle="Explore our white papers and publications to make informed business decisions."
         >
           <div className="grid gap-6 lg:grid-cols-2">
             {publishedPapers.map((paper) => (

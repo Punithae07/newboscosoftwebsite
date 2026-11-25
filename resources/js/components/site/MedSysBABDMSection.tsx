@@ -50,17 +50,17 @@ export function MedSysBABDMSection() {
           {/* Left Column: Content */}
           <div className="lg:col-span-7">
             {/* Pill Badge */}
-            <div className="inline-flex items-center rounded-full border border-blue-200/90 bg-blue-50/90 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-blue-700 shadow-xs">
+            <div className="t-eyebrow mb-3">
               ABDM Integration
             </div>
 
             {/* Title */}
-            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.65rem] lg:leading-[1.18]">
+            <h2 className="t-section-title">
               MedSysB Supports India’s Digital Healthcare Ecosystem
             </h2>
 
             {/* Paragraph */}
-            <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-[17px]">
+            <p className="mt-4 t-lead">
               MedSysB is ABDM integrated, enabling secure and standardised exchange of health information in alignment with India’s digital health mission. This reflects our commitment to interoperable, patient-centric and future-ready healthcare.
             </p>
 
@@ -74,10 +74,10 @@ export function MedSysBABDMSection() {
                       <Icon className="h-5 w-5" strokeWidth={2.2} />
                     </div>
                     <div>
-                      <div className="text-base font-bold leading-tight text-slate-900">
+                      <div className="t-card-title">
                         {item.title}
                       </div>
-                      <div className="mt-0.5 text-xs font-medium text-slate-500 sm:text-[13px]">
+                      <div className="mt-0.5 text-xs font-medium text-muted-foreground sm:text-[13px]">
                         {item.subtitle}
                       </div>
                     </div>

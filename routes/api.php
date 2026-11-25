@@ -69,4 +69,3 @@ Route::prefix('admin')->middleware('web')->group(function () {
         Route::delete('/brochures/{id}', [AdminContactController::class, 'destroyBrochure']);
     });
 });
-

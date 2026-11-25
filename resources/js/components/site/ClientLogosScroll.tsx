@@ -4,29 +4,41 @@ interface ClientLogosScrollProps {
     location?: string;
     logo: string;
   }[];
+  logoClassName?: string;
 }
 
-function LogoCard({ client }: { client: ClientLogosScrollProps["clients"][number] }) {
+function LogoCard({
+  client,
+  logoClassName,
+}: {
+  client: ClientLogosScrollProps["clients"][number];
+  logoClassName?: string;
+}) {
   const clientLabel = client.location ? `${client.name}, ${client.location}` : client.name;
+  const isMicrofund = client.logo.includes("microfund") || client.logo.includes("mic-clit");
 
   return (
     <div
       title={clientLabel}
-      className="group flex h-28 w-36 shrink-0 items-center justify-center rounded-2xl border border-border/80 bg-background p-3.5 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-elegant sm:h-32 sm:w-44 sm:p-5"
+      className="group flex h-28 w-36 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-border/80 bg-background p-3.5 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-elegant sm:h-32 sm:w-44 sm:p-5"
     >
       <img
         src={client.logo}
         alt={client.name}
         width={240}
         height={120}
-        className="max-h-20 w-auto max-w-[85%] object-contain transition-transform duration-300 group-hover:scale-105 sm:max-h-24 sm:max-w-[88%]"
+        className={`max-h-20 w-auto max-w-[85%] object-contain transition-transform duration-300 sm:max-h-24 sm:max-w-[88%] ${
+          isMicrofund
+            ? "scale-[1.65] sm:scale-[1.75] group-hover:scale-[1.8]"
+            : "group-hover:scale-105"
+        } ${logoClassName ?? ""}`.trim()}
         loading="lazy"
       />
     </div>
   );
 }
 
-export function ClientLogosScroll({ clients }: ClientLogosScrollProps) {
+export function ClientLogosScroll({ clients, logoClassName }: ClientLogosScrollProps) {
   // Ensure enough items so the 50% translation marquee loops seamlessly on large screens
   const normalizedClients =
     clients.length > 0 && clients.length < 6
@@ -54,6 +66,7 @@ export function ClientLogosScroll({ clients }: ClientLogosScrollProps) {
               <LogoCard
                 key={`${groupIndex}-${client.name}-${client.location ?? "na"}-${index}`}
                 client={client}
+                logoClassName={logoClassName}
               />
             ))}
           </div>

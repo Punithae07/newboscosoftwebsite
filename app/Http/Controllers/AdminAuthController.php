@@ -14,9 +14,7 @@ use Illuminate\Support\Str;
 
 class AdminAuthController
 {
-    public function __construct(private readonly AdminUserRepository $adminUsers)
-    {
-    }
+    public function __construct(private readonly AdminUserRepository $adminUsers) {}
 
     public function login(AdminLoginRequest $request): JsonResponse
     {

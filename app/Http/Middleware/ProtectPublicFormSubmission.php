@@ -9,9 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ProtectPublicFormSubmission
 {
-    public function __construct(private readonly FormSecurityService $formSecurity)
-    {
-    }
+    public function __construct(private readonly FormSecurityService $formSecurity) {}
 
     public function handle(Request $request, Closure $next, string $form): Response
     {

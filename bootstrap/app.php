@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Middleware\AddSecurityHeaders;
+use App\Http\Middleware\EnsureAdminSessionAuthenticated;
+use App\Http\Middleware\ProtectPublicFormSubmission;
 use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -16,15 +19,15 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        $middleware->append(\App\Http\Middleware\AddSecurityHeaders::class);
+        $middleware->append(AddSecurityHeaders::class);
         $middleware->validateCsrfTokens(except: [
             'api/contact',
             'api/newsletter-subscribe',
             'api/brochure-request',
         ]);
         $middleware->alias([
-            'admin.session' => \App\Http\Middleware\EnsureAdminSessionAuthenticated::class,
-            'public.form' => \App\Http\Middleware\ProtectPublicFormSubmission::class,
+            'admin.session' => EnsureAdminSessionAuthenticated::class,
+            'public.form' => ProtectPublicFormSubmission::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

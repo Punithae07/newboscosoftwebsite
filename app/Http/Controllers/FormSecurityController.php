@@ -8,9 +8,7 @@ use Illuminate\Http\Request;
 
 class FormSecurityController
 {
-    public function __construct(private readonly FormSecurityService $formSecurity)
-    {
-    }
+    public function __construct(private readonly FormSecurityService $formSecurity) {}
 
     public function challenge(Request $request, string $form): JsonResponse
     {

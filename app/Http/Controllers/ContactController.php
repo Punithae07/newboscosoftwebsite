@@ -19,8 +19,7 @@ class ContactController
         private readonly NewsletterRepository $newsletters,
         private readonly BrochureRequestRepository $brochures,
         private readonly AdminFormNotificationService $notifications,
-    ) {
-    }
+    ) {}
 
     public function store(ContactStoreRequest $request)
     {
@@ -63,9 +62,6 @@ class ContactController
             app(AdminFormNotificationService::class)->sendContactSubmission($validated);
         });
 
-        
-        
-        
         logger()->info('Contact form submission saved.', [
             'id' => $record['id'],
             'email' => $record['email'],
@@ -74,7 +70,7 @@ class ContactController
         ]);
 
         if (! $request->expectsJson()) {
-            return redirect($redirectTo . '?submitted=1')->with(
+            return redirect($redirectTo.'?submitted=1')->with(
                 'contact_success',
                 'Thank you. Your message has been received. Our team will contact you shortly.'
             );
@@ -170,7 +166,7 @@ class ContactController
     private function duplicateResponse(Request $request, string $redirectTo, string $message)
     {
         if (! $request->expectsJson()) {
-            return redirect($redirectTo . '?error=1')
+            return redirect($redirectTo.'?error=1')
                 ->withInput($request->except(['captcha_token', 'company_url', 'website', 'botcheck', 'form_signature']))
                 ->withErrors(['form' => $message]);
         }
